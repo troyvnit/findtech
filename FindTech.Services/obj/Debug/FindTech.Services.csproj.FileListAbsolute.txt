@@ -1,0 +1,17 @@
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\FindTech.Services.dll.config
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\FindTech.Services.dll
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\FindTech.Services.pdb
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\FindTech.Entities.dll
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\Repository.Pattern.dll
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\Repository.Pattern.Ef6.dll
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\Service.Pattern.dll
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\EntityFramework.dll
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\LinqKit.dll
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\FindTech.Entities.pdb
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\Repository.Pattern.Ef6.pdb
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\Repository.Pattern.pdb
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\Service.Pattern.pdb
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\bin\Debug\EntityFramework.xml
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\obj\Debug\FindTech.Services.csprojResolveAssemblyReference.cache
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\obj\Debug\FindTech.Services.dll
+\\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Services\obj\Debug\FindTech.Services.pdb
