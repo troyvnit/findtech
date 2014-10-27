@@ -1,0 +1,7 @@
+\\psf\Home\Documents\Visual Studio 2013\Projects\ForBiz\Framework\Repository.Pattern\bin\Debug\Repository.Pattern.dll.config
+\\psf\Home\Documents\Visual Studio 2013\Projects\ForBiz\Framework\Repository.Pattern\bin\Debug\Repository.Pattern.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\ForBiz\Framework\Repository.Pattern\bin\Debug\Repository.Pattern.pdb
+\\psf\Home\Documents\Visual Studio 2013\Projects\ForBiz\Framework\Repository.Pattern\bin\Debug\System.Data.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\ForBiz\Framework\Repository.Pattern\obj\Debug\Repository.Pattern.csprojResolveAssemblyReference.cache
+\\psf\Home\Documents\Visual Studio 2013\Projects\ForBiz\Framework\Repository.Pattern\obj\Debug\Repository.Pattern.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\ForBiz\Framework\Repository.Pattern\obj\Debug\Repository.Pattern.pdb
