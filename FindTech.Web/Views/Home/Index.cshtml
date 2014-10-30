@@ -2,30 +2,405 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+<div class="breadcrumb-box">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">Social Feed</li>
+        </ul>
     </div>
 </div>
+<div class="clearfix"></div>
+<section id="main">
+    <header class="page-header">
+        <div class="container">
+            <h1 class="title">Social Feed</h1>
+        </div>
+    </header>
+
+    <div class="container" style="width: 100%">
+        <div class="content">
+            <div class="row social-feed">
+                <div class="col-xs-12 col-sm-6 col-md-4 isotope-item">
+                    <div class="post tabs add-post">
+                        <ul class="nav nav-tabs no-responsive">
+                            <li class="active">
+                                <a href="#text" data-toggle="tab"><i class="fa fa-pencil"></i> Text</a>
+                            </li>
+                            <li>
+                                <a href="#photo" data-toggle="tab"><i class="fa fa-camera"></i> Photo</a>
+                            </li>
+                            <li>
+                                <a href="#link" data-toggle="tab"><i class="fa fa-link"></i> Link</a>
+                            </li>
+                            <li>
+                                <a href="#video" data-toggle="tab"><i class="fa fa-youtube-play"></i> Video</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane active fade in" id="text">
+                                <form class="form">
+                                    <textarea class="form-control" placeholder="What's new..."></textarea>
+                                    <button class="btn btn-block">Submit</button>
+                                </form>
+                            </div><!-- .tab-pane -->
+
+                            <div class="tab-pane fade in" id="photo">
+                                <form class="form">
+                                    <textarea class="form-control" placeholder="What's new..."></textarea>
+                                    <button class="btn btn-block">Submit</button>
+                                </form>
+                            </div><!-- .tab-pane -->
+
+                            <div class="tab-pane fade in" id="link">
+                                <form class="form">
+                                    <textarea class="form-control" placeholder="What's new..."></textarea>
+                                    <button class="btn btn-block">Submit</button>
+                                </form>
+                            </div><!-- .tab-pane -->
+
+                            <div class="tab-pane fade in" id="video">
+                                <form class="form">
+                                    <textarea class="form-control" placeholder="What's new..."></textarea>
+                                    <button class="btn btn-block">Submit</button>
+                                </form>
+                            </div><!-- .tab-pane -->
+                        </div>
+                    </div><!-- .tabs -->
+                </div><!-- .isotope-item -->
+
+                <article class="col-xs-12 col-sm-6 col-md-4 isotope-item item-clone">
+                    <div class="post bg bg-primary">
+                        <div class="author-info">
+                            <div class="avatar">
+                                <img width="50" height="50" src="img/content/avatar-1.jpg">
+                            </div>
+                            <div class="author-details">
+                                <div class="user-name">
+                                    <a href="#">Stan Humanbot</a>
+                                </div>
+                                <time datetime="2014-06-23">2 days ago</time>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <p class="content">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi.
+                        </p>
+
+                        <div class="buttons">
+                            <button type="button" class="btn btn-xs"><i class="fa fa-thumbs-o-up"></i></button>
+                            <button type="button" class="btn btn-xs"><i class="fa fa-share"></i></button>
+                        </div>
+
+                        <div class="comments">
+                            <div class="form">
+                                <textarea class="form-control" placeholder="Add a comment..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </article><!-- .isotope-item -->
+
+                <article class="col-xs-12 col-sm-6 col-md-4 isotope-item item-clone">
+                    <div class="post bg bg-success">
+                        <div class="author-info">
+                            <div class="avatar">
+                                <img width="50" height="50" src="img/content/avatar-2.jpg">
+                            </div>
+                            <div class="author-details">
+                                <div class="user-name">
+                                    <a href="#">Stan Humanbot</a>
+                                </div>
+                                <time datetime="2014-06-23">3 days ago</time>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <p class="content">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi.
+                        </p>
+
+                        <div class="buttons">
+                            <button type="button" class="btn btn-xs"><i class="fa fa-thumbs-o-up"></i></button>
+                            <button type="button" class="btn btn-xs"><i class="fa fa-share"></i></button>
+                        </div>
+
+                        <div class="comments">
+                            <div class="comment">
+                                <div class="avatar">
+                                    <img width="50" height="50" src="img/content/avatar-3.jpg">
+                                </div>
+
+                                <div class="author-details">
+                                    <div class="user-name">
+                                        <a href="#">Amanda Cerri</a>
+                                    </div>
+                                    <time datetime="2014-06-23">3 days ago</time>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <p class="content">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                </p>
+                            </div>
+
+                            <div class="comment">
+                                <div class="avatar">
+                                    <img width="50" height="50" src="img/content/avatar-4.jpg">
+                                </div>
+
+                                <div class="author-details">
+                                    <div class="user-name">
+                                        <a href="#">Amanda Cerri</a>
+                                    </div>
+                                    <time datetime="2014-06-23">3 days ago</time>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <p class="content">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ipsam!
+                                </p>
+                            </div>
+
+                            <div class="form">
+                                <textarea class="form-control" placeholder="Add a comment..."></textarea>
+                            </div>
+                        </div><!-- .comments -->
+                    </div>
+                </article><!-- .isotope-item -->
+
+                <article class="col-xs-12 col-sm-6 col-md-4 isotope-item item-clone">
+                    <div class="post bg number twitter">
+                        <i class="fa fa-twitter post-icon"></i>
+                        <div class="social-data">
+                            <div class="count">150</div> Followers
+                        </div>
+                    </div>
+                </article><!-- .isotope-item -->
+
+                <article class="col-xs-12 col-sm-6 col-md-4 isotope-item item-clone">
+                    <div class="post bg bg-danger">
+                        <div class="author-info">
+                            <div class="avatar">
+                                <img width="50" height="50" src="img/content/avatar-4.jpg">
+                            </div>
+                            <div class="author-details">
+                                <div class="user-name">
+                                    <a href="#">Stan Humanbot</a>
+                                </div>
+                                <time datetime="2014-06-23">4 days ago</time>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="preview">
+                            <img width="370" height="270" src="img/content/portfolio-2.jpg">
+                        </div>
+
+                        <p class="content">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit.
+                        </p>
+
+                        <div class="buttons">
+                            <button type="button" class="btn btn-xs"><i class="fa fa-thumbs-o-up"></i></button>
+                            <button type="button" class="btn btn-xs"><i class="fa fa-share"></i></button>
+                        </div>
+
+                        <div class="comments">
+                            <div class="form">
+                                <textarea class="form-control" placeholder="Add a comment..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </article><!-- .isotope-item -->
+
+                <article class="col-xs-12 col-sm-6 col-md-4 isotope-item item-clone">
+                    <div class="post">
+                        <div class="author-info">
+                            <div class="avatar">
+                                <img width="50" height="50" src="img/content/avatar-1.jpg">
+                            </div>
+                            <div class="author-details">
+                                <div class="user-name">
+                                    <a href="#">Stan Humanbot</a>
+                                </div>
+                                <time datetime="2014-06-23">2 days ago</time>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <p class="content">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi.
+                        </p>
+
+                        <div class="buttons">
+                            <button type="button" class="btn btn-xs"><i class="fa fa-thumbs-o-up"></i></button>
+                            <button type="button" class="btn btn-xs"><i class="fa fa-share"></i></button>
+                        </div>
+
+                        <div class="comments">
+                            <div class="form">
+                                <textarea class="form-control" placeholder="Add a comment..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </article><!-- .isotope-item -->
+
+                <article class="col-xs-12 col-sm-6 col-md-4 isotope-item item-clone">
+                    <div class="post bg number facebook">
+                        <i class="fa fa-facebook post-icon"></i>
+                        <div class="social-data">
+                            <div class="count">350</div> Followers
+                        </div>
+                    </div>
+                </article><!-- .isotope-item -->
+
+                <article class="col-xs-12 col-sm-6 col-md-4 isotope-item item-clone">
+                    <div class="post bg number google">
+                        <i class="fa fa-google-plus post-icon"></i>
+                        <div class="social-data">
+                            <div class="count">68</div> Followers
+                        </div>
+                    </div>
+                </article><!-- .isotope-item -->
+
+                <article class="col-xs-12 col-sm-6 col-md-4 isotope-item">
+                    <div class="post bg bg-warning">
+                        <div class="author-info">
+                            <div class="avatar">
+                                <img width="50" height="50" src="img/content/avatar-4.jpg">
+                            </div>
+                            <div class="author-details">
+                                <div class="user-name">
+                                    <a href="#">Stan Humanbot</a>
+                                </div>
+                                <time datetime="2014-06-23">4 days ago</time>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="preview">
+                            <div class="video-box youtube">
+                                <iframe frameborder="0" allowfullscreen="" src="//www.youtube.com/embed/oNBBijn4JuY?showinfo=0&amp;wmode=opaque"></iframe>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <button type="button" class="btn btn-xs"><i class="fa fa-thumbs-o-up"></i></button>
+                            <button type="button" class="btn btn-xs"><i class="fa fa-share"></i></button>
+                        </div>
+
+                        <div class="comments">
+                            <div class="form">
+                                <textarea class="form-control" placeholder="Add a comment..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </article><!-- .isotope-item -->
+
+                <article class="col-xs-12 col-sm-6 col-md-4 isotope-item item-clone">
+                    <div class="post bg bg-info">
+                        <div class="author-info">
+                            <div class="avatar">
+                                <img width="50" height="50" src="img/content/avatar-2.jpg">
+                            </div>
+                            <div class="author-details">
+                                <div class="user-name">
+                                    <a href="#">Stan Humanbot</a>
+                                </div>
+                                <time datetime="2014-06-23">3 days ago</time>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="preview">
+                            <img width="370" height="270" src="img/content/portfolio-4.jpg">
+                        </div>
+                        <div class="buttons">
+                            <button type="button" class="btn btn-xs"><i class="fa fa-thumbs-o-up"></i></button>
+                            <button type="button" class="btn btn-xs"><i class="fa fa-share"></i></button>
+                        </div>
+
+                        <div class="comments">
+                            <div class="comment">
+                                <div class="avatar">
+                                    <img width="50" height="50" src="img/content/avatar-3.jpg">
+                                </div>
+
+                                <div class="author-details">
+                                    <div class="user-name">
+                                        <a href="#">Amanda Cerri</a>
+                                    </div>
+                                    <time datetime="2014-06-23">3 days ago</time>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <p class="content">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                </p>
+                            </div>
+                            <div class="form">
+                                <textarea class="form-control" placeholder="Add a comment..."></textarea>
+                            </div>
+                        </div><!-- .comments -->
+                    </div>
+                </article><!-- .isotope-item -->
+
+                <article class="col-xs-12 col-sm-6 col-md-4 isotope-item item-clone">
+                    <div class="post bg bg-success">
+                        <div class="author-info">
+                            <div class="avatar">
+                                <img width="50" height="50" src="img/content/avatar-2.jpg">
+                            </div>
+                            <div class="author-details">
+                                <div class="user-name">
+                                    <a href="#">Stan Humanbot</a>
+                                </div>
+                                <time datetime="2014-06-23">3 days ago</time>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="preview">
+                            <img width="370" height="270" src="img/content/portfolio-5.jpg">
+                        </div>
+                        <div class="buttons">
+                            <button type="button" class="btn btn-xs"><i class="fa fa-thumbs-o-up"></i></button>
+                            <button type="button" class="btn btn-xs"><i class="fa fa-share"></i></button>
+                        </div>
+
+                        <div class="comments">
+                            <div class="form">
+                                <textarea class="form-control" placeholder="Add a comment..."></textarea>
+                            </div>
+                        </div><!-- .comments -->
+                    </div>
+                </article><!-- .isotope-item -->
+
+                <article class="col-xs-12 col-sm-6 col-md-4 isotope-item item-clone">
+                    <div class="post bg number linkedin">
+                        <i class="fa fa-linkedin post-icon"></i>
+                        <div class="social-data">
+                            <div class="count">99</div> Followers
+                        </div>
+                    </div>
+                </article><!-- .isotope-item -->
+
+                <article class="col-xs-12 col-sm-6 col-md-4 isotope-item item-clone">
+                    <div class="post bg number youtube">
+                        <i class="fa fa-youtube post-icon"></i>
+                        <div class="social-data">
+                            <div class="count">882</div> Followers
+                        </div>
+                    </div>
+                </article><!-- .isotope-item -->
+            </div><!-- .social-feed -->
+
+            <div class="clearfix"></div>
+
+            <div id="load-more" class="btn btn-lg btn-block btn-default">Load more</div>
+        </div><!-- .content -->
+    </div>
+</section><!-- #main -->
