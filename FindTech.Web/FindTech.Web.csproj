@@ -623,6 +623,7 @@
     <Content Include="img\rs-slider\bullets.psd" />
     <Content Include="img\rs-slider\small_arrows.psd" />
     <None Include="Project_Readme.html" />
+    <Content Include="Views\Home\Minh.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">
