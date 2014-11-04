@@ -5,3 +5,10 @@
 \\psf\Home\Documents\Visual Studio 2013\Projects\ForBiz\Framework\Repository.Pattern\obj\Debug\Repository.Pattern.csprojResolveAssemblyReference.cache
 \\psf\Home\Documents\Visual Studio 2013\Projects\ForBiz\Framework\Repository.Pattern\obj\Debug\Repository.Pattern.dll
 \\psf\Home\Documents\Visual Studio 2013\Projects\ForBiz\Framework\Repository.Pattern\obj\Debug\Repository.Pattern.pdb
+D:\Projects\FindTech\Framework\Repository.Pattern\bin\Debug\Repository.Pattern.dll.config
+D:\Projects\FindTech\Framework\Repository.Pattern\bin\Debug\Repository.Pattern.dll
+D:\Projects\FindTech\Framework\Repository.Pattern\bin\Debug\Repository.Pattern.pdb
+D:\Projects\FindTech\Framework\Repository.Pattern\bin\Debug\System.Data.dll
+D:\Projects\FindTech\Framework\Repository.Pattern\obj\Debug\Repository.Pattern.csprojResolveAssemblyReference.cache
+D:\Projects\FindTech\Framework\Repository.Pattern\obj\Debug\Repository.Pattern.dll
+D:\Projects\FindTech\Framework\Repository.Pattern\obj\Debug\Repository.Pattern.pdb
