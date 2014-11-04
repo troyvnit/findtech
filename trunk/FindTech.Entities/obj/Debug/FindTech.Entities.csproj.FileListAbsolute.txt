@@ -13,3 +13,18 @@
 \\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Entities\bin\Debug\EntityFramework.SqlServer.xml
 \\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Entities\obj\Debug\FindTech.Entities.dll
 \\psf\home\documents\visual studio 2013\Projects\FindTech\FindTech.Entities\obj\Debug\FindTech.Entities.pdb
+D:\Projects\FindTech\FindTech.Entities\bin\Debug\FindTech.Entities.dll.config
+D:\Projects\FindTech\FindTech.Entities\bin\Debug\FindTech.Entities.dll
+D:\Projects\FindTech\FindTech.Entities\bin\Debug\FindTech.Entities.pdb
+D:\Projects\FindTech\FindTech.Entities\bin\Debug\EntityFramework.dll
+D:\Projects\FindTech\FindTech.Entities\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\FindTech\FindTech.Entities\bin\Debug\Repository.Pattern.dll
+D:\Projects\FindTech\FindTech.Entities\bin\Debug\Repository.Pattern.Ef6.dll
+D:\Projects\FindTech\FindTech.Entities\bin\Debug\LinqKit.dll
+D:\Projects\FindTech\FindTech.Entities\bin\Debug\Repository.Pattern.Ef6.pdb
+D:\Projects\FindTech\FindTech.Entities\bin\Debug\Repository.Pattern.pdb
+D:\Projects\FindTech\FindTech.Entities\bin\Debug\EntityFramework.xml
+D:\Projects\FindTech\FindTech.Entities\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\FindTech\FindTech.Entities\obj\Debug\FindTech.Entities.csprojResolveAssemblyReference.cache
+D:\Projects\FindTech\FindTech.Entities\obj\Debug\FindTech.Entities.dll
+D:\Projects\FindTech\FindTech.Entities\obj\Debug\FindTech.Entities.pdb

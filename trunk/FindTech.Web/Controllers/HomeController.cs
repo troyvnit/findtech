@@ -1,4 +1,8 @@
 ﻿using System.Web.Mvc;
+using System.Xml;
+using System.ServiceModel.Syndication;
+using System.Collections.Generic;
+using System.Linq;
 using FindTech.Services;
 using Repository.Pattern.UnitOfWork;
 
@@ -16,6 +20,10 @@ namespace FindTech.Web.Controllers
         }
         public ActionResult Index()
         {
+            var xmlReader = XmlReader.Create("http://vnexpress.net/rss/so-hoa.rss");
+            var feed = SyndicationFeed.Load(xmlReader);
+            xmlReader.Close();
+            if (feed != null) ViewBag.FeedItems = feed.Items.Take(10);
             return View();
         }
 
