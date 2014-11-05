@@ -1597,8 +1597,10 @@ function locationSocialFeed() {
 	  socialFeed = $('.social-feed');
   
   if(typeof($.fn.isotope) !== 'undefined') {
-	socialFeed.isotope({
-	  itemSelector: '.isotope-item',
+      socialFeed.isotope({
+          resizable: true,
+          layoutMode: 'masonry',
+	    itemSelector: '.isotope-item'
 	}).addClass('loaded');
 	
 	$('#load-more').click(function() {

@@ -626,6 +626,7 @@
     <Content Include="img\rs-slider\arrows.psd" />
     <Content Include="img\rs-slider\bullets.psd" />
     <Content Include="img\rs-slider\small_arrows.psd" />
+    <Content Include="css\custom.bootstrap.css" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\Minh.cshtml" />
   </ItemGroup>
