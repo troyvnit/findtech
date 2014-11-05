@@ -13,6 +13,7 @@ namespace FindTech.Web
                     "~/css/buttons/social-icons.css",
                     "~/css/font-awesome.min.css",
                     "~/css/bootstrap.min.css",
+                    "~/css/custom.bootstrap.css",
                     "~/css/jslider.css",
                     "~/css/settings.css",
                     "~/css/jquery.fancybox.css",
