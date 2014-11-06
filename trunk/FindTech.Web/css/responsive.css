@@ -1579,7 +1579,7 @@
   }
   .product,
   .double-product {
-    width: 300px;
+    /*width: 300px;*/
   }
   .double-product .product {
     max-width: 100%;

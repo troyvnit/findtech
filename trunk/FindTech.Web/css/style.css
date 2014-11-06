@@ -6859,7 +6859,7 @@ a.big-icon:hover {
   font-size: 12px;
   line-height: 20px;
   left: 0;
-  padding: 16px 20px 90px;
+  padding: 16px 15px 90px;
   position: absolute;
   right: 0;
   top: 0;
@@ -6876,9 +6876,11 @@ a.big-icon:hover {
 .col-md-9.product .product-hover,
 .col-md-10.product .product-hover,
 .col-md-11.product .product-hover,
-.col-md-11.product .product-hover {
-  left: 15px;
-  right: 15px;
+.col-md-12.product .product-hover,
+.col-md-20.product .product-hover,
+.col-md-40.product .product-hover {
+  left: 7.5px;
+  right: 7.5px;
 }
 .product:hover .product-hover {
   display: block;
@@ -10502,7 +10504,7 @@ a.big-icon:hover {
   transition: opacity .2s linear;
 }
 .social-feed .isotope-item {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .social-feed .post {
   background: #fff;
@@ -10511,7 +10513,7 @@ a.big-icon:hover {
   -moz-border-radius: 3px;
   border-radius: 3px;
   margin: 0;
-  padding: 19px;
+  padding: 14px;
 }
 .social-feed .add-post {
   background: none;
@@ -10587,15 +10589,15 @@ a.big-icon:hover {
 }
 .social-feed .toolbar .post-info{
     float: left;
-    height: 28px;
+    height: 25px;
     line-height: 15px;
 }
 .social-feed .toolbar .avatar {
   float: left;
-  height: 28px;
+  height: 25px;
   margin: 0 10px 0 0;
   overflow: hidden;
-  width: 28px;
+  width: 25px;
 }
 .social-feed .toolbar time {
     color: #7f7f7f;
@@ -10604,8 +10606,9 @@ a.big-icon:hover {
     line-height: 12px;
 }
 .social-feed .toolbar .user-name {
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: bold;
 }
 .social-feed .toolbar .user-name a{
   color: #1e1e1e;
@@ -10614,7 +10617,7 @@ a.big-icon:hover {
   transition: opacity .2s linear;
 }
 .social-feed .preview {
-  margin: 0 -20px 20px;
+  margin: 0 -15px 15px;
   text-align: center;
 }
 .social-feed .preview img {
@@ -11345,4 +11348,20 @@ a.big-icon:hover {
     -webkit-transition: opacity .2s linear;
     transition: opacity .2s linear;
   }
+}
+
+/******************************************************************************
+  Custom
+*******************************************************************************/
+
+.header .search-form .search-submit svg path{
+    fill: #00ade0 !important;
+}
+
+.btn.btn-xs{
+    padding: 2px 5px;
+}
+
+.button-margin{
+    text-align: right;
 }
