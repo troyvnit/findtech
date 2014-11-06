@@ -5,10 +5,10 @@
 }
 <div class="clearfix"></div>
 <section id="main">
-    <div class="container-fluid">
+    <div class="container">
         <div class="content">
             <div class="row social-feed">
-                @*<div class="col-xs-6 col-sm-4 col-md-2 col-md-20 isotope-item">
+                @*<div class="col-xs-12 col-sm-4 col-md-2 col-md-20 isotope-item">
                     <div class="post tabs add-post">
                         <ul class="nav nav-tabs no-responsive">
                             <li class="active">
@@ -56,7 +56,7 @@
                         </div>
                     </div><!-- .tabs -->
                 </div><!-- .isotope-item -->*@
-                <div class="col-xs-6 col-sm-4 col-md-2 col-md-20 isotope-item product rotation">
+                <div class="col-xs-12 col-sm-4 col-md-20 isotope-item product product-info rotation">
                     <div class="default">
                         <span class="sale best"></span>
                         <a href="shop-product-view.html" class="product-image">
@@ -117,7 +117,7 @@
                         </div><!-- .actions -->
                     </div><!-- .product-hover -->
                 </div>
-                <div class="col-xs-6 col-sm-4 col-md-2 col-md-20 isotope-item product product-danger rotation">
+                <div class="col-xs-12 col-sm-4 col-md-20 isotope-item product product-info rotation">
                     <div class="default">
                         <span class="sale"></span>
                         <a href="shop-product-view.html" class="product-image">
@@ -187,7 +187,7 @@
     {
         var doc = new HtmlAgilityPack.HtmlDocument();
         doc.LoadHtml(feedItem.Summary.Text);
-        <article class="col-xs-6 col-sm-4 col-md-2 col-md-20 isotope-item item-clone">
+        <article class="col-xs-12 col-sm-4 col-md-20 isotope-item item-clone">
             <div class="post">
                 <div class="author-info">
                     <div class="author-details">
@@ -214,9 +214,9 @@
                         </div>
                         <time datetime="2014-06-23">3 ngày trước</time>
                     </div>
-                    <div class="buttons">
-                        <button type="button" class="btn btn-xs"><i class="fa fa-thumbs-o-up"></i></button>
-                        <button type="button" class="btn btn-xs"><i class="fa fa-share"></i></button>
+                    <div class="button-margin">
+                        <button class="btn btn-success btn-xs">20 <i class="livicon" data-n="comments" data-s="16" data-c="#fff" data-hc="0"></i></button>
+                        <button class="btn btn-danger btn-xs">5 <i class="livicon" data-n="star-full" data-s="16" data-c="#fff" data-hc="0"></i></button>
                     </div>
                 </div>
             </div>
