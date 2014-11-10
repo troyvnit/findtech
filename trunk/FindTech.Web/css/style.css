@@ -6881,7 +6881,8 @@ a.big-icon:hover {
 .col-md-12.product .product-hover,
 .col-md-20.product .product-hover,
 .col-md-40.product .product-hover,
-.box-1.product .product-hover {
+.box-1.product .product-hover,
+.box-2.product .product-hover {
   left: 7.5px;
   right: 7.5px;
 }
@@ -10516,7 +10517,7 @@ a.big-icon:hover {
   -moz-border-radius: 3px;
   border-radius: 3px;
   margin: 0;
-  padding: 14px;
+  padding: 15px;
 }
 .social-feed .add-post {
   background: none;
@@ -11392,4 +11393,35 @@ border-radius: 50%;
     text-align: center;
     background: #f2f2f2;
     padding: 5px 0;
+    position: relative;
+}
+
+.site-menu{
+    position: absolute;
+    top: 7px;
+    left: 7px; 
+}
+
+.post-type{
+    margin: -15px -15px 0 -15px;
+    color: white;
+    padding: 5px 15px;
+}
+
+.social-feed .title{
+    margin-bottom: 10px;
+}
+
+.social-feed .title a{
+    font-weight: bold;
+    color: #1e1e1e;
+    text-decoration: none;
+}
+
+.social-feed .bg-info .user-name a{
+    color: white;
+}
+
+.social-feed .bg-info time{
+    color: rgba(255,255,255,.8);
 }

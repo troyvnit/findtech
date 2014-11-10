@@ -1599,7 +1599,9 @@ function locationSocialFeed() {
   if(typeof($.fn.isotope) !== 'undefined') {
       socialFeed.isotope({
           resizable: true,
-          layoutMode: 'masonry',
+          masonry: {
+              columnWidth: $('.box-1').width() + 15
+          },
 	    itemSelector: '.isotope-item'
 	}).addClass('loaded');
 	
