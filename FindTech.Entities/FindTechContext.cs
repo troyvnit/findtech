@@ -14,5 +14,6 @@ namespace FindTech.Entities
         }
 
         DbSet<Article> Articles { get; set; }
+        DbSet<ArticleCategory> ArticleCategories { get; set; }
     }
 }
