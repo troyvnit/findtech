@@ -195,6 +195,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\BO\BOAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -208,6 +209,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\buttons\buttons.css" />
@@ -602,6 +604,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\BO\Controllers\" />
+    <Folder Include="Areas\BO\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -627,6 +631,9 @@
     <Content Include="img\rs-slider\bullets.psd" />
     <Content Include="img\rs-slider\small_arrows.psd" />
     <Content Include="css\custom.bootstrap.css" />
+    <Content Include="Areas\BO\Views\web.config" />
+    <Content Include="Areas\BO\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\BO\Views\Shared\_Layout.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\Minh.cshtml" />
   </ItemGroup>
