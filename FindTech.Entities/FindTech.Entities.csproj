@@ -52,7 +52,12 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticleCategory.cs" />
+    <Compile Include="Models\Benchmark.cs" />
+    <Compile Include="Models\BenchmarkDisplay.cs" />
+    <Compile Include="Models\BenchmarkDisplayGroup.cs" />
+    <Compile Include="Models\Device.cs" />
     <Compile Include="Models\Enums\BoxSize.cs" />
+    <Compile Include="Models\Enums\MarketStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
