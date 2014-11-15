@@ -56,13 +56,23 @@
     <Compile Include="Models\Benchmark.cs" />
     <Compile Include="Models\BenchmarkDetail.cs" />
     <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Device.cs" />
+    <Compile Include="Models\DeviceColor.cs" />
     <Compile Include="Models\Enums\BenchmarkDataType.cs" />
     <Compile Include="Models\Enums\BoxSize.cs" />
+    <Compile Include="Models\Enums\ImageType.cs" />
     <Compile Include="Models\Enums\MarketStatus.cs" />
+    <Compile Include="Models\Enums\ObjectType.cs" />
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\Like.cs" />
+    <Compile Include="Models\Rating.cs" />
+    <Compile Include="Models\RatingCriteria.cs" />
+    <Compile Include="Models\RatingScore.cs" />
     <Compile Include="Models\Spec.cs" />
     <Compile Include="Models\SpecDetail.cs" />
     <Compile Include="Models\SpecGroup.cs" />
+    <Compile Include="Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

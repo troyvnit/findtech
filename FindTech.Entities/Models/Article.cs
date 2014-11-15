@@ -13,7 +13,6 @@ namespace FindTech.Entities.Models
         public string Tags { get; set; }
         public int Priority { get; set; }
         public string Avatar { get; set; }
-        public DateTime CreatedDate { get; set; }
         public DateTime PublishedDate { get; set; }
         public string Author { get; set; }
         public string Source { get; set; }
