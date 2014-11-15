@@ -1,7 +1,7 @@
 ﻿namespace FindTech.Entities.Models.Enums
 {
-    public enum BoxSize
+    public enum ImageType
     {
-        Box1, Box2, Box3
+        Image, Image360, Gif
     }
 }
