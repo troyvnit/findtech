@@ -1,9 +1,12 @@
-﻿using System.Web.Mvc;
+﻿using System.Data.Entity;
+using System.Web.Mvc;
 using System.Xml;
 using System.ServiceModel.Syndication;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using FindTech.Services;
+using FindTech.Web.Models;
 using Repository.Pattern.UnitOfWork;
 
 namespace FindTech.Web.Controllers
@@ -20,10 +23,8 @@ namespace FindTech.Web.Controllers
         }
         public ActionResult Index()
         {
-            var xmlReader = XmlReader.Create("http://vnexpress.net/rss/so-hoa.rss");
-            var feed = SyndicationFeed.Load(xmlReader);
-            xmlReader.Close();
-            if (feed != null) ViewBag.FeedItems = feed.Items.Take(10);
+            var articles = articleService.Queryable().OrderByDescending(a => a.PublishedDate).Include(a => a.Source).Select(Mapper.Map<ArticleViewModel>);
+            ViewBag.Articles = articles;
             return View();
         }
 

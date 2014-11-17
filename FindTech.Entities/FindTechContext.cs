@@ -31,5 +31,7 @@ namespace FindTech.Entities
         DbSet<SpecDetail> SpecDetails { get; set; }
         DbSet<SpecGroup> SpecGroups { get; set; }
         DbSet<Video> Videos { get; set; }
+        DbSet<Source> Sources { get; set; }
+        DbSet<Xpath> Xpaths { get; set; }
     }
 }
