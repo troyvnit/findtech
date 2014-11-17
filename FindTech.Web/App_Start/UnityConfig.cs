@@ -53,7 +53,9 @@ namespace FindTech.Web.App_Start
                 )
                 .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
                 .RegisterType<IRepositoryAsync<Article>, Repository<Article>>()
-                .RegisterType<IArticleService, ArticleService>();
+                .RegisterType<IArticleService, ArticleService>()
+                .RegisterType<IRepositoryAsync<ArticleCategory>, Repository<ArticleCategory>>()
+                .RegisterType<IArticleCategoryService, ArticleCategoryService>();
         }
     }
 }
