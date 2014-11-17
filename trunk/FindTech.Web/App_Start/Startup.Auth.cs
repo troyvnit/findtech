@@ -1,4 +1,5 @@
 ﻿using System;
+using FindTech.Web.Mappers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
@@ -63,6 +64,8 @@ namespace FindTech.Web
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+            AutoMapperConfiguration.Configure();
         }
     }
 }

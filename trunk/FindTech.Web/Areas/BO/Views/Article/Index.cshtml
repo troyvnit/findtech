@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BO/Views/Shared/_Layout.cshtml";
+}
+<div class="breadcrumb-box">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="@Url.Action("Index", "Article")">BO</a> </li>
+            <li class="active">Article</li>
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>
+<section id="main">
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div id="articleToolbar"></div>
+                <div id="articleGrid"></div>
+            </div>
+        </div><!-- .content -->
+    </div>
+</section><!-- #main -->
+<script type="text/x-kendo-template" id="articleToolbarTemplate">
+    <div class="toolbar">
+        <button id="readRss" class="k-button">Read Rss</button>
+    </div>
+</script>
+<script>
+    $(document).ready(function () {
+        var articleUrl = "Article",
+            dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: articleUrl + "/GetArticles",
+                        dataType: "jsonp"
+                    },
+                    update: {
+                        url: articleUrl + "/Update",
+                        dataType: "jsonp"
+                    },
+                    destroy: {
+                        url: articleUrl + "/Destroy",
+                        dataType: "jsonp"
+                    },
+                    create: {
+                        url: articleUrl + "/Create",
+                        dataType: "jsonp"
+                    },
+                    parameterMap: function (options, operation) {
+                        if (operation !== "read" && options.models) {
+                            return { models: kendo.stringify(options.models) };
+                        }
+                    }
+                },
+                batch: true,
+                pageSize: 20,
+                schema: {
+                    model: {
+                        id: "ArticleId",
+                        fields: {
+                            ArticleId: { editable: false, nullable: true },
+                            Title: { validation: { required: true } },
+                            Author: { type: "string" },
+                            Source: { type: "string" },
+                            BoxSize: { type: "number", validation: { min: 0, required: true } },
+                            IsActived: { type: "boolean" }
+                        }
+                    }
+                }
+            });
+
+        $("#articleGrid").kendoGrid({
+            dataSource: dataSource,
+            navigatable: true,
+            pageable: true,
+            height: 550,
+            toolbar: kendo.template($("#articleToolbarTemplate").html()),
+            columns: [
+                { field: "ArticleId", title: "Id", width: 120 },
+                { field: "Title", title: "Title", width: 120 },
+                { field: "Author", title: "Author", width: 120 },
+                { field: "Source", title: "Source", width: 120 },
+                { field: "BoxSize", title: "Box Size", width: 120 },
+                { field: "IsActived", title: "IsActived", width: 120 },
+                { command: "destroy", title: "&nbsp;", width: 120 }],
+            editable: true
+        });
+
+        $("#readRss").click(function() {
+            $.ajax({
+                url: 'Article/ReadRss',
+                type: "POST",
+                data: { url: '' },
+                dataType: "json",
+                success: function (result) {
+                    if (result) {
+                    }
+                }
+            });
+        });
+    });
+</script>
