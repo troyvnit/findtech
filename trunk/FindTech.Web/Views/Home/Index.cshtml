@@ -1,7 +1,8 @@
-﻿@using System.ServiceModel.Syndication
+﻿@using FindTech.Entities.Models.Enums
+@using FindTech.Web.Models
 @{
     ViewBag.Title = "Home Page";
-    var feedItems = (IEnumerable<SyndicationItem>)ViewBag.FeedItems;
+    var articles = (IEnumerable<ArticleViewModel>)ViewBag.Articles;
 }
 <div class="box-filter-menu">
     <div class="container">
@@ -151,25 +152,21 @@
                         </div><!-- .actions -->
                     </div><!-- .product-hover -->
                 </div>
-@if (feedItems != null)
+@if (articles != null)
 {
-    int i = 0;
-    foreach (var feedItem in feedItems)
+    foreach (var article in articles)
     {
-        var doc = new HtmlAgilityPack.HtmlDocument();
-        doc.LoadHtml(feedItem.Summary.Text);
-        i++;
-        var size = i % 5 == 0 ? "box-2" : "box-1";
+        var size = article.BoxSize == BoxSize.Box2 ? "box-2" : "box-1";
         <article class="@size isotope-item item-clone">
             <div class="post">
                 <div class="post-type bg bg-info"><strong>Tin tức</strong></div>
 
                 <div class="preview">
-                    <img style="width: 100%" src="@doc.DocumentNode.Descendants("img").Select(n => n.Attributes["src"].Value).ToArray().FirstOrDefault()">
+                    <img style="width: 100%" src="@article.Avatar">
                 </div>
-                <div class="title"><a href="#">@feedItem.Title.Text</a></div>
+                <div class="title"><a href="#">@article.Title</a></div>
                     <p class="content">
-                        @doc.DocumentNode.InnerText
+                        @article.Description
                     </p>
                 <div class="social-info">20 <i class="livicon" data-n="comments" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
                 <div class="social-info rating-box">
@@ -185,13 +182,13 @@
                 </div>
                 <div class="footer toolbar bg bg-info">
                     <div class="avatar">
-                        <img width="28" height="28" src="http://st.f1.sohoa.vnexpress.net/i/v3/favicon.ico">
+                        <img width="28" height="28" src="@article.SourceLogo">
                     </div>
                     <div class="post-info">
                         <div class="user-name">
-                            <a href="#">Amanda Cerri</a>
+                            <a href="#">@article.SourceName</a>
                         </div>
-                        <time datetime="2014-06-23">3 ngày trước</time>
+                        <time datetime="@article.PublishedDate.ToString("yyyy-MM-dd")">@article.PublishedDate.ToString("HH:mm:ss dd/MM/yyyy")</time>
                     </div>
                 </div>
             </div>

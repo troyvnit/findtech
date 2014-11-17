@@ -33,19 +33,19 @@
                 transport: {
                     read: {
                         url: articleUrl + "/GetArticles",
-                        dataType: "jsonp"
+                        dataType: "json"
                     },
                     update: {
                         url: articleUrl + "/Update",
-                        dataType: "jsonp"
+                        dataType: "json"
                     },
                     destroy: {
                         url: articleUrl + "/Destroy",
-                        dataType: "jsonp"
+                        dataType: "json"
                     },
                     create: {
                         url: articleUrl + "/Create",
-                        dataType: "jsonp"
+                        dataType: "json"
                     },
                     parameterMap: function (options, operation) {
                         if (operation !== "read" && options.models) {

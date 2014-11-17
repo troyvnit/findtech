@@ -1,10 +1,9 @@
 ﻿using System;
 using FindTech.Entities.Models.Enums;
-using Repository.Pattern.Ef6;
 
-namespace FindTech.Entities.Models
+namespace FindTech.Web.Models
 {
-    public class Article : Entity
+    public class ArticleViewModel
     {
         public int ArticleId { get; set; }
         public string Title { get; set; }
@@ -18,8 +17,7 @@ namespace FindTech.Entities.Models
         public BoxSize BoxSize { get; set; }
         public bool? IsActived { get; set; }
         public int ArticleCategoryId { get; set; }
-        public ArticleCategory ArticleCategory { get; set; }
-        public int SourceId { get; set; }
-        public Source Source { get; set; }
+        public string SourceName { get; set; }
+        public string SourceLogo { get; set; }
     }
 }

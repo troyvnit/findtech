@@ -52,6 +52,8 @@ namespace FindTech.Web.App_Start
                     new InjectionConstructor(new object[] {new RepositoryFactories()})
                 )
                 .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
+                .RegisterType<IRepositoryAsync<Source>, Repository<Source>>()
+                .RegisterType<ISourceService, SourceService>()
                 .RegisterType<IRepositoryAsync<Article>, Repository<Article>>()
                 .RegisterType<IArticleService, ArticleService>()
                 .RegisterType<IRepositoryAsync<ArticleCategory>, Repository<ArticleCategory>>()
