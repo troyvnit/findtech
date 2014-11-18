@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FindTech.Entities.Models.Enums;
 using Repository.Pattern.Ef6;
 
@@ -16,10 +17,12 @@ namespace FindTech.Entities.Models
         public DateTime PublishedDate { get; set; }
         public string Author { get; set; }
         public BoxSize BoxSize { get; set; }
+        public ArticleType ArticleType { get; set; }
         public bool? IsActived { get; set; }
         public int ArticleCategoryId { get; set; }
         public ArticleCategory ArticleCategory { get; set; }
         public int SourceId { get; set; }
         public Source Source { get; set; }
+        public ICollection<ContentSection> ContentSections { get; set; } 
     }
 }

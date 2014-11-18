@@ -93,6 +93,7 @@ namespace FindTech.Web.Areas.BO.Controllers
                                 SourceId = rssSource.SourceId,
                                 Source = rssSource,
                                 Content = content,
+                                ArticleType = ArticleType.News
                             };
                             articleService.Insert(article);
                         }
