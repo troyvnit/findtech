@@ -33,5 +33,6 @@ namespace FindTech.Entities
         DbSet<Video> Videos { get; set; }
         DbSet<Source> Sources { get; set; }
         DbSet<Xpath> Xpaths { get; set; }
+        DbSet<ContentSection> ContentSections { get; set; }
     }
 }
