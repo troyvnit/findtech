@@ -232,6 +232,14 @@ a.text-success:hover,
 .bg-success {
   background: #738d00 !important;
 }
+.bg-overlay {
+  background: rgba(0,0,0,.1);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 .border-muted {
   border-color: #555 !important;
 }
@@ -6082,6 +6090,7 @@ blockquote small {
 *******************************************************************************/
 #main {
   padding: 20px 0;
+  background: #e5e5e5
 }
 #main.no-padding {
   padding: 0;
@@ -10512,13 +10521,45 @@ a.big-icon:hover {
 }
 .social-feed .post {
   background: #fff;
-  border: 1px solid #ccc;
+  /*border: 1px solid #ccc;*/
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  border-radius: 3px;
+  border-radius: 0;
   margin: 0;
   padding: 15px;
+  -webkit-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
 }
+    .social-feed .post-info:hover {
+        -webkit-box-shadow: 0px 0px 1px 1px #0098ca;
+        -moz-box-shadow: 0px 0px 1px 1px #0098ca;
+        box-shadow: 0px 0px 1px 1px #0098ca;
+    }
+    .social-feed .post-success:hover {
+        -webkit-box-shadow: 0px 0px 1px 1px #738d00;
+        -moz-box-shadow: 0px 0px 1px 1px #738d00;
+        box-shadow: 0px 0px 1px 1px #738d00;
+    }
+    .social-feed .post-warning:hover {
+        -webkit-box-shadow: 0px 0px 1px 1px #f89406;
+        -moz-box-shadow: 0px 0px 1px 1px #f89406;
+        box-shadow: 0px 0px 1px 1px #f89406;
+    }
+    .social-feed .post .content {
+         overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+    }
+    .social-feed .post .title {
+         overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+    }
 .social-feed .add-post {
   background: none;
   border: 0 none;
@@ -10591,7 +10632,7 @@ a.big-icon:hover {
   color: #7f7f7f;
   font-style: italic;
 }
-.social-feed .toolbar .post-info{
+.social-feed .toolbar .source{
     float: left;
     height: 25px;
     line-height: 20px;
@@ -10615,7 +10656,6 @@ border-radius: 50%;
 .social-feed .toolbar .user-name {
   font-size: 14px;
   line-height: 14px;
-  font-weight: bold;
 }
 .social-feed .toolbar .user-name a{
   color: #1e1e1e;
@@ -10653,6 +10693,7 @@ border-radius: 50%;
   margin: 0 -15px -15px;
   padding: 15px;
   height: 60px;
+    position: relative;
 }
 .social-feed .comments {
   background: rgba(0,0,0,.1);
@@ -11389,6 +11430,27 @@ border-radius: 50%;
     fill: #01a5db !important;
 }
 
+
+.social-success{
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #738d00;
+}
+
+.social-success .rating svg polygon, .social-success i svg path{
+    fill: #738d00 !important;
+}
+
+.social-warning{
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #f89406;
+}
+
+.social-warning .rating svg polygon, .social-warning i svg path{
+    fill: #f89406 !important;
+}
+
 .box-filter-menu{
     text-align: center;
     background: #f2f2f2;
@@ -11406,6 +11468,7 @@ border-radius: 50%;
     margin: -15px -15px 0 -15px;
     color: white;
     padding: 5px 15px;
+  text-transform: uppercase;
 }
 
 .social-feed .title{
@@ -11418,10 +11481,10 @@ border-radius: 50%;
     text-decoration: none;
 }
 
-.social-feed .bg-info .user-name a{
+.social-feed .bg .user-name a{
     color: white;
 }
 
-.social-feed .bg-info time{
+.social-feed .bg time{
     color: rgba(255,255,255,.8);
 }

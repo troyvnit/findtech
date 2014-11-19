@@ -23,7 +23,7 @@ namespace FindTech.Web.Controllers
         }
         public ActionResult Index()
         {
-            var articles = articleService.Queryable().OrderByDescending(a => a.PublishedDate).Include(a => a.Source).Select(Mapper.Map<ArticleViewModel>);
+            var articles = articleService.Queryable().OrderByDescending(a => a.PublishedDate).Include(a => a.Source).Include(a => a.ArticleCategory).Select(Mapper.Map<ArticleViewModel>);
             ViewBag.Articles = articles;
             return View();
         }

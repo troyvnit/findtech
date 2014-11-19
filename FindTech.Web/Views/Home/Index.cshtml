@@ -27,7 +27,7 @@
     <div class="container">
         <div class="content">
             <div class="row social-feed">
-                <div class="box-2 isotope-item product product-info rotation">
+                <div class="box-1 isotope-item product product-info rotation">
                     <div class="default">
                         <span class="sale best"></span>
                         <a href="shop-product-view.html" class="product-image">
@@ -158,18 +158,18 @@
     {
         var size = article.BoxSize == BoxSize.Box2 ? "box-2" : "box-1";
         <article class="@size isotope-item item-clone">
-            <div class="post">
-                <div class="post-type bg bg-info"><strong>Tin tức</strong></div>
+            <div class="post post-@article.ArticleCategoryColor">
+                <div class="post-type bg bg-@article.ArticleCategoryColor"><p>@article.ArticleCategoryName</p></div>
 
                 <div class="preview">
                     <img style="width: 100%" src="@article.Avatar">
                 </div>
                 <div class="title"><a href="#">@article.Title</a></div>
-                    <p class="content">
-                        @article.Description
-                    </p>
-                <div class="social-info">20 <i class="livicon" data-n="comments" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
-                <div class="social-info rating-box">
+                <p class="content">
+                    @Html.Raw(article.Description)
+                </p>
+                <div class="social-@article.ArticleCategoryColor">20 <i class="livicon" data-n="comments" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
+                <div class="social-@article.ArticleCategoryColor rating-box">
                     <div style="width: 80%" class="rating">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="73px" height="12px" viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
                         <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#1e1e1e" points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"></polygon>
@@ -180,16 +180,17 @@
 					</svg>
                     </div>
                 </div>
-                <div class="footer toolbar bg bg-info">
-                    <div class="avatar">
-                        <img width="28" height="28" src="@article.SourceLogo">
-                    </div>
-                    <div class="post-info">
-                        <div class="user-name">
-                            <a href="#">@article.SourceName</a>
+                <div class="footer toolbar bg bg-@article.ArticleCategoryColor">
+                    <div class="bg-overlay"></div>
+                        <div class="avatar">
+                            <img width="28" height="28" src="@article.SourceLogo">
                         </div>
-                        <time datetime="@article.PublishedDate.ToString("yyyy-MM-dd")">@article.PublishedDate.ToString("HH:mm:ss dd/MM/yyyy")</time>
-                    </div>
+                        <div class="source">
+                            <div class="user-name">
+                                <a href="#">@article.SourceName</a>
+                            </div>
+                            <time datetime="@article.PublishedDate.ToString("yyyy-MM-dd")">@article.PublishedDate.ToString("HH:mm:ss dd/MM/yyyy")</time>
+                        </div>
                 </div>
             </div>
         </article><!-- .isotope-item -->
