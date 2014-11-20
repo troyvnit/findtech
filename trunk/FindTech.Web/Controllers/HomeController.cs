@@ -1,8 +1,5 @@
 ﻿using System.Data.Entity;
 using System.Web.Mvc;
-using System.Xml;
-using System.ServiceModel.Syndication;
-using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using FindTech.Services;
@@ -23,7 +20,7 @@ namespace FindTech.Web.Controllers
         }
         public ActionResult Index()
         {
-            var articles = articleService.Queryable().OrderByDescending(a => a.PublishedDate).Include(a => a.Source).Include(a => a.ArticleCategory).Select(Mapper.Map<ArticleViewModel>);
+            var articles = articleService.Queryable().OrderByDescending(a => a.PublishedDate).Include(a => a.Source).Include(a => a.ArticleCategory).Take(20).Select(Mapper.Map<ArticleViewModel>);
             ViewBag.Articles = articles;
             return View();
         }

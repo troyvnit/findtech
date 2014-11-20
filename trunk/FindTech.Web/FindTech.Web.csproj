@@ -202,9 +202,10 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\BO\BOAreaRegistration.cs" />
-    <Compile Include="Areas\BO\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\BO\Controllers\ArticleBOController.cs" />
     <Compile Include="Areas\BO\Models\ArticleBOViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1455,8 +1456,9 @@
     <Content Include="Areas\BO\js\kendo.window.min.js.map" />
     <Content Include="Areas\BO\styles\images\kendoui.ttf" />
     <Content Include="Areas\BO\styles\images\kendoui.woff" />
-    <Content Include="Areas\BO\Views\Article\Index.cshtml" />
+    <Content Include="Areas\BO\Views\ArticleBO\Index.cshtml" />
     <None Include="Project_Readme.html" />
+    <Content Include="Views\Article\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">

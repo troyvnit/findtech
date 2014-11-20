@@ -5,7 +5,7 @@
 <div class="breadcrumb-box">
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="@Url.Action("Index", "Article")">BO</a> </li>
+            <li><a href="@Url.Action("Index", "ArticleBO")">BO</a> </li>
             <li class="active">Article</li>
         </ul>
     </div>
@@ -28,7 +28,7 @@
 </script>
 <script>
     $(document).ready(function () {
-        var articleUrl = "Article",
+        var articleUrl = "ArticleBO",
             dataSource = new kendo.data.DataSource({
                 transport: {
                     read: {
@@ -89,7 +89,7 @@
 
         $("#readRss").click(function() {
             $.ajax({
-                url: 'Article/ReadRss',
+                url: 'ArticleBO/ReadRss',
                 type: "POST",
                 data: { url: '' },
                 dataType: "json",

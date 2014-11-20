@@ -1,0 +1,29 @@
+﻿using System.Data.Entity;
+using System.Linq;
+using System.Web.Mvc;
+using AutoMapper;
+using FindTech.Services;
+using FindTech.Web.Models;
+using Repository.Pattern.UnitOfWork;
+
+namespace FindTech.Web.Controllers
+{
+    public class ArticleController : Controller
+    {
+        private IArticleService articleService { get; set; }
+        private IUnitOfWorkAsync unitOfWork { get; set; }
+
+        public ArticleController(IUnitOfWorkAsync unitOfWork, IArticleService articleService)
+        {
+            this.articleService = articleService;
+            this.unitOfWork = unitOfWork;
+        }
+        // GET: Article
+        public ActionResult Detail(int id)
+        {
+            var article = articleService.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).FirstOrDefault(a => a.ArticleId == id);
+            ViewBag.Article = Mapper.Map<ArticleViewModel>(article);
+            return View();
+        }
+    }
+}
