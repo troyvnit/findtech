@@ -14,14 +14,14 @@ using Repository.Pattern.UnitOfWork;
 
 namespace FindTech.Web.Areas.BO.Controllers
 {
-    public class ArticleController : Controller
+    public class ArticleBOController : Controller
     {
         private ISourceService sourceService { get; set; }
         private IArticleCategoryService articleCategoryService { get; set; }
         private IArticleService articleService { get; set; }
         private IUnitOfWorkAsync unitOfWork { get; set; }
 
-        public ArticleController(IUnitOfWorkAsync unitOfWork, ISourceService sourceService, IArticleService articleService, IArticleCategoryService articleCategoryService)
+        public ArticleBOController(IUnitOfWorkAsync unitOfWork, ISourceService sourceService, IArticleService articleService, IArticleCategoryService articleCategoryService)
         {
             this.sourceService = sourceService;
             this.articleService = articleService;

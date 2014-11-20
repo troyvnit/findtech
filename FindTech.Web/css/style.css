@@ -6095,6 +6095,10 @@ blockquote small {
 #main.no-padding {
   padding: 0;
 }
+#main > .container {
+    padding-left: 7.5px !important;
+    padding-right: 7.5px !important;
+}
 .page-header {
   border-bottom: 1px solid #e1e1e1;
   margin: 0 0 80px;
@@ -6657,7 +6661,7 @@ a.big-icon:hover {
   display: inline-block;
   float: none;
   margin: 0 0 40px;
-  min-width: 240px;
+  min-width: 200px;
   overflow: hidden;
   position: relative;
   text-align: left;
@@ -10502,6 +10506,8 @@ a.big-icon:hover {
   background-repeat: no-repeat;
   background-position: 50% 100px;
   background-size: 40px;
+  margin-left: -7.5px;
+margin-right: -7.5px;
 }
 .social-feed > * {
   opacity: 0;
@@ -10522,8 +10528,8 @@ a.big-icon:hover {
 .social-feed .post {
   background: #fff;
   /*border: 1px solid #ccc;*/
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
   border-radius: 0;
   margin: 0;
   padding: 15px;

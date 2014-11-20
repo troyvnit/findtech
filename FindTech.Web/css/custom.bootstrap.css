@@ -123,3 +123,34 @@
         width: 40%;
     }
 }
+
+.box-3 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 7.5px;
+    padding-left: 7.5px;
+}
+
+.box-3 {
+    width: 100%;
+}
+@media (min-width: 500px) {
+.box-3 {
+        width: 100%;
+    }
+}
+@media (min-width: 768px) {
+.box-3 {
+        width: 100%;
+    }
+}
+@media (min-width: 992px) {
+    .box-3 {
+        width: 75%;
+    }
+}
+@media (min-width: 1200px) {
+    .box-3 {
+        width: 60%;
+    }
+}
