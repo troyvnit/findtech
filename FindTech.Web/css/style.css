@@ -1600,6 +1600,9 @@ div.jp-audio {
   -moz-box-shadow: none;
   box-shadow: none; 
 }
+.btn.btn-noborder {
+    border: none !important;
+}
 .btn.btn-border {
   background: none;
   border: 1px solid #1e1e1e;
@@ -10528,9 +10531,9 @@ margin-right: -7.5px;
 .social-feed .post {
   background: #fff;
   /*border: 1px solid #ccc;*/
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   margin: 0;
   padding: 15px;
   -webkit-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
@@ -10697,9 +10700,14 @@ border-radius: 50%;
 .social-feed .footer {
   background: rgba(0,0,0,.1);
   margin: 0 -15px -15px;
-  padding: 15px;
-  height: 60px;
+  height: 32px;
     position: relative;
+border-radius: 0 0 3px 3px;
+    text-align: center;
+padding: 5px 15px;
+}
+.social-feed .footer div {
+    margin: auto;
 }
 .social-feed .comments {
   background: rgba(0,0,0,.1);
@@ -11457,6 +11465,36 @@ border-radius: 50%;
     fill: #f89406 !important;
 }
 
+.social-primary{
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #428bca;
+}
+
+.social-primary .rating svg polygon, .social-primary i svg path{
+    fill: #428bca !important;
+}
+
+.social-danger{
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #c10841;
+}
+
+.social-danger .rating svg polygon, .social-danger i svg path{
+    fill: #c10841 !important;
+}
+
+.social-white{
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.social-white .rating svg polygon, .social-white i svg path{
+    fill: #fff !important;
+}
+
 .box-filter-menu{
     text-align: center;
     background: #f2f2f2;
@@ -11475,6 +11513,24 @@ border-radius: 50%;
     color: white;
     padding: 5px 15px;
   text-transform: uppercase;
+border-radius: 3px 3px 0 0;
+position: relative;
+}
+
+.post-type .avatar{
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    top: 3px;
+    right: 5px;
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.post-type .avatar img{
+    position: absolute;
 }
 
 .social-feed .title{
