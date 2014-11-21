@@ -154,3 +154,34 @@
         width: 60%;
     }
 }
+
+.bg-info > .tooltip.top .tooltip-inner {
+    background-color:#0098ca;
+}
+.bg-info > .tooltip.top .tooltip-arrow {
+    border-top-color: #0098ca;
+}
+.bg-success > .tooltip.top .tooltip-inner {
+    background-color:#738d00;
+}
+.bg-success > .tooltip.top .tooltip-arrow {
+    border-top-color: #738d00;
+}
+.bg-primary > .tooltip.top .tooltip-inner {
+    background-color:#428bca;
+}
+.bg-primary > .tooltip.top .tooltip-arrow {
+    border-top-color: #428bca;
+}
+.bg-warning > .tooltip.top .tooltip-inner {
+    background-color:#f89406;
+}
+.bg-warning > .tooltip.top .tooltip-arrow {
+    border-top-color: #f89406;
+}
+.bg-danger > .tooltip.top .tooltip-inner {
+    background-color:#c10841;
+}
+.bg-danger > .tooltip.top .tooltip-arrow {
+    border-top-color: #c10841;
+}

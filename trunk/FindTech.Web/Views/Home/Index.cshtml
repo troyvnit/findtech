@@ -140,7 +140,14 @@
         var size = article.BoxSize == BoxSize.Box2 ? "box-2" : "box-1";
         <article class="@size isotope-item item-clone">
             <div class="post post-@article.ArticleCategoryColor">
-                <div class="post-type bg bg-@article.ArticleCategoryColor"><p>@article.ArticleCategoryName</p></div>
+                <div class="post-type bg bg-@article.ArticleCategoryColor">
+                    <span>@article.ArticleCategoryName</span>
+                    <span class="avatar" data-toggle="tooltip" data-placement="top" title="@article.SourceName">
+                        <img width="15" height="15" src="@article.SourceLogo">
+                    </span>
+                </div>
+
+                
                 @if (!string.IsNullOrEmpty(article.Avatar))
                 {
                     <div class="preview">
@@ -151,29 +158,16 @@
                 <p class="content">
                     @Html.Raw(article.Description)
                 </p>
-                <div class="social-@article.ArticleCategoryColor">20 <i class="livicon" data-n="comments" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
-                <div class="social-@article.ArticleCategoryColor rating-box">
-                    <div style="width: 80%" class="rating">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="73px" height="12px" viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
-                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#1e1e1e" points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"></polygon>
-                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#1e1e1e" points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "></polygon>
-                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#1e1e1e" points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "></polygon>
-                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#1e1e1e" points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "></polygon>
-                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#1e1e1e" points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "></polygon>
-					</svg>
-                    </div>
-                </div>
                 <div class="footer toolbar bg bg-@article.ArticleCategoryColor">
-                    <div class="bg-overlay"></div>
-                        <div class="avatar">
-                            <img width="28" height="28" src="@article.SourceLogo">
-                        </div>
-                        <div class="source">
+                    <div class="social-white pull-left">20 <i class="livicon" data-n="comments" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
+                    <div class="social-white">3k <i class="livicon" data-n="heart" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
+                    <div class="social-white pull-right">4.5 <i class="livicon" data-n="star-full" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
+                        @*<div class="source">
                             <div class="user-name">
                                 <a href="#">@article.SourceName</a>
                             </div>
                             <time datetime="@article.PublishedDate.ToString("yyyy-MM-dd")">@article.PublishedDate.ToString("HH:mm:ss dd/MM/yyyy")</time>
-                        </div>
+                        </div>*@
                 </div>
             </div>
         </article><!-- .isotope-item -->
