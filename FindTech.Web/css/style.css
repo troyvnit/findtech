@@ -10555,6 +10555,16 @@ margin-right: -7.5px;
         -moz-box-shadow: 0px 0px 1px 1px #f89406;
         box-shadow: 0px 0px 1px 1px #f89406;
     }
+    .social-feed .post-primary:hover {
+        -webkit-box-shadow: 0px 0px 1px 1px #428bca;
+        -moz-box-shadow: 0px 0px 1px 1px #428bca;
+        box-shadow: 0px 0px 1px 1px #428bca;
+    }
+    .social-feed .post-danger:hover {
+        -webkit-box-shadow: 0px 0px 1px 1px #c10841;
+        -moz-box-shadow: 0px 0px 1px 1px #c10841;
+        box-shadow: 0px 0px 1px 1px #c10841;
+    }
     .social-feed .post .content {
          overflow : hidden;
   text-overflow: ellipsis;
