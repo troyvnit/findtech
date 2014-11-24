@@ -45,6 +45,35 @@
             @RenderBody()
         </div><!-- .page-box-content -->
     </div><!-- .page-box -->
+    <!-- Modal Popup Image Browser-->
+    <!-- Button trigger modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="imgBrowser"></div>
+                <script>
+                    $("#imgBrowser").kendoImageBrowser({
+                        transport: {
+                            read: "/ImageBO/Read",
+                            destroy: {
+                                url: "/ImageBO/Destroy",
+                                type: "POST"
+                            },
+                            create: {
+                                url: "/ImageBO/Create",
+                                type: "POST"
+                            },
+                            thumbnailUrl: "/ImageBO/Thumbnail",
+                            uploadUrl: "/ImageBO/Upload",
+                            imageUrl: "/ImageBO/Image?path={0}"
+                        }
+                    });
+                </script>
+
+            </div>
+        </div>
+    </div>
+
     <footer id="footer">
         <div class="footer-bottom">
             <div class="container">
@@ -95,5 +124,6 @@
     <div class="clearfix"></div>
     @Scripts.Render("~/progressive/js")
     @RenderSection("scripts", required: false)
+    
 </body>
 </html>
