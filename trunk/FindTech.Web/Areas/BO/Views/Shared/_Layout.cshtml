@@ -15,8 +15,9 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <link rel='stylesheet' href="css/ie/ie8.css">
     <![endif]-->
-    <link href="~/Areas/BO/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/Areas/BO/styles/kendo.common-bootstrap.min.css" rel="stylesheet" />
     <link href="~/Areas/BO/styles/kendo.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Areas/BO/styles/kendo.custom.css" rel="stylesheet" />
     <link href="~/Areas/BO/styles/kendo.dataviz.min.css" rel="stylesheet" />
     <link href="~/Areas/BO/styles/kendo.dataviz.default.min.css" rel="stylesheet" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -45,35 +46,27 @@
             @RenderBody()
         </div><!-- .page-box-content -->
     </div><!-- .page-box -->
-    <!-- Modal Popup Image Browser-->
-    <!-- Button trigger modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div id="imgBrowser"></div>
-                <script>
-                    $("#imgBrowser").kendoImageBrowser({
-                        transport: {
-                            read: "/ImageBO/Read",
-                            destroy: {
-                                url: "/ImageBO/Destroy",
-                                type: "POST"
-                            },
-                            create: {
-                                url: "/ImageBO/Create",
-                                type: "POST"
-                            },
-                            thumbnailUrl: "/ImageBO/Thumbnail",
-                            uploadUrl: "/ImageBO/Upload",
-                            imageUrl: "/ImageBO/Image?path={0}"
-                        }
-                    });
-                </script>
-
-            </div>
-        </div>
+    <div id="imgWindow">
+        <div id="imgBrowser"></div>
+        <script>
+            $("#imgBrowser").kendoImageBrowser({
+                transport: {
+                    read: "/ImageBO/Read",
+                    destroy: {
+                        url: "/ImageBO/Destroy",
+                        type: "POST"
+                    },
+                    create: {
+                        url: "/ImageBO/Create",
+                        type: "POST"
+                    },
+                    thumbnailUrl: "/ImageBO/Thumbnail",
+                    uploadUrl: "/ImageBO/Upload",
+                    imageUrl: "/ImageBO/Image?path={0}"
+                }
+            });
+        </script>
     </div>
-
     <footer id="footer">
         <div class="footer-bottom">
             <div class="container">
@@ -124,6 +117,29 @@
     <div class="clearfix"></div>
     @Scripts.Render("~/progressive/js")
     @RenderSection("scripts", required: false)
-    
+    <script>
+        $(document).ready(function () {
+            var window = $("#imgWindow"),
+                        undo = $("#undo");
+
+            undo.bind("click", function () {
+                window.data("kendoWindow").open();
+                window.data("kendoWindow").center();
+                undo.hide();
+            });
+
+            if (!window.data("kendoWindow")) {
+                window.kendoWindow({
+                    width: "800px",
+                    title: "Image Management",
+                    apply: function () {
+                        window.data("kendoWindow").close();
+                    }
+                });
+            }
+
+            window.data("kendoWindow").close();
+        });
+    </script>
 </body>
 </html>
