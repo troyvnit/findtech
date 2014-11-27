@@ -3123,8 +3123,8 @@ blockquote small {
 }
 .header-wrapper {
   background: rgba(255,255,255,.97);
-  min-height: 60px;
-  padding: 2px 0;
+  min-height: 45px !important;
+  padding: 2px 0 !important;
 }
 .header .container {
   position: relative;
@@ -6092,7 +6092,7 @@ blockquote small {
   Main
 *******************************************************************************/
 #main {
-  padding: 20px 0;
+  padding: 70px 0;
   background: #e5e5e5
 }
 #main.no-padding {
@@ -11512,6 +11512,44 @@ padding: 5px 15px;
     position: relative;
 }
 
+.main-menu {
+    background: #f2f2f2 !important;
+    padding: 5px 0 !important;
+    position: relative;
+}
+
+.main-menu .primary{
+    margin: auto;
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+}
+
+.main-menu .primary .navbar .nav > li {
+    padding: 0 3px 0;
+    border-radius: 3px; 
+}
+
+.main-menu .primary .navbar .nav .item-primary > a{
+    color: #428bca !important;
+}
+
+.main-menu .primary .navbar .nav .item-info > a{
+    color: #0098ca !important;
+}
+
+.main-menu .primary .navbar .nav .item-success > a{
+    color: #738d00 !important;
+}
+
+.main-menu .primary .navbar .nav .item-danger > a{
+    color: #c10841 !important;
+}
+
+.main-menu .primary .navbar .nav .item-warning > a{
+    color: #f89406 !important;
+}
+
 .site-menu{
     position: absolute;
     top: 7px;
@@ -11521,7 +11559,7 @@ padding: 5px 15px;
 .post-type{
     margin: -15px -15px 0 -15px;
     color: white;
-    padding: 5px 15px;
+    padding: 5px 35px 5px 15px;
   text-transform: uppercase;
 border-radius: 3px 3px 0 0;
 position: relative;
