@@ -930,6 +930,7 @@
     <Content Include="Areas\BO\styles\Uniform\sprite_2x.png" />
     <Content Include="Content\Site.css" />
     <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap-tagsinput.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\buttons\buttons.css" />
     <Content Include="css\buttons\social-icons-codes.css" />
@@ -1240,9 +1241,11 @@
     <Content Include="img\svg\wishlist-icon.svg" />
     <Content Include="img\up.png" />
     <Content Include="js\bootstrap-datepicker.js" />
+    <Content Include="js\bootstrap-tagsinput.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\bootstrapValidator.min.js" />
     <Content Include="js\country.js" />
+    <Content Include="js\holder.js" />
     <Content Include="js\isotope.pkgd.min.js" />
     <Content Include="js\jplayer\jplayer.playlist.min.js" />
     <Content Include="js\jplayer\Jplayer.swf" />
@@ -1282,6 +1285,7 @@
     <Content Include="js\revolution\jquery.themepunch.revolution.min.js" />
     <Content Include="js\SmoothScroll.js" />
     <Content Include="js\spin.min.js" />
+    <Content Include="js\typeahead.js" />
     <Content Include="js\video.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1465,6 +1469,7 @@
     <Content Include="Areas\BO\styles\images\kendoui.woff" />
     <Content Include="Areas\BO\Views\ArticleBO\Index.cshtml" />
     <Content Include="Areas\BO\styles\kendo.custom.css" />
+    <Content Include="Areas\BO\Views\ArticleBO\Create.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Article\Detail.cshtml" />
   </ItemGroup>

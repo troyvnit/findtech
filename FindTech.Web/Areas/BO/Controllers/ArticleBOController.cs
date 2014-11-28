@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.ServiceModel.Syndication;
@@ -33,6 +34,20 @@ namespace FindTech.Web.Areas.BO.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        public ActionResult GetTags(string tag)
+        {
+            var tags = new List<object>()
+            {
+                new {name = "Troy"}
+            };
+            return Json(tags.Where(a => a.GetType().GetProperty("name").GetValue(a).ToString().Contains(tag)), JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult GetArticles()

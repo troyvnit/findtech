@@ -30,6 +30,7 @@ namespace FindTech.Web
                     "~/css/responsive.css",
                     "~/css/customizer/pages.css",
                     "~/css/customizer/home-pages-customizer.css",
+                    "~/css/bootstrap-tagsinput.css",
                     "~/css/ie/ie.css"));
 
             bundles.Add(new ScriptBundle("~/progressive/js").Include(
@@ -75,11 +76,14 @@ namespace FindTech.Web
                     "~/js/jplayer/jquery.jplayer.min.js",
                     "~/js/jplayer/jplayer.playlist.min.js",
                     "~/js/jquery.scrollbar.min.js",
+                    "~/js/holder.js",
+                    "~/js/bootstrap-tagsinput.js",
+                    "~/js/typeahead.js",
                     "~/js/main.js"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
