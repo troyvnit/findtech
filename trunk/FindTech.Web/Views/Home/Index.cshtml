@@ -140,7 +140,7 @@
         var size = article.BoxSize == BoxSize.Box2 ? "box-2" : "box-1";
         <article class="@size isotope-item item-clone">
             <div class="post post-@article.ArticleCategoryColor">
-                <div class="post-type bg bg-@article.ArticleCategoryColor">
+                <div class="post-type color-@article.ArticleCategoryColor">
                     <span>@article.ArticleCategoryName</span>
                     <span class="avatar" data-toggle="tooltip" data-placement="top" title="@article.SourceName">
                         <img width="15" height="15" src="@article.SourceLogo">
@@ -158,10 +158,10 @@
                 <p class="content">
                     @Html.Raw(article.Description)
                 </p>
-                <div class="footer toolbar bg bg-@article.ArticleCategoryColor">
-                    <div class="social-white pull-left">20 <i class="livicon" data-n="comments" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
-                    <div class="social-white">3k <i class="livicon" data-n="heart" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
-                    <div class="social-white pull-right">4.5 <i class="livicon" data-n="star-full" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
+                <div class="footer toolbar color-@article.ArticleCategoryColor">
+                    <div class="social-@article.ArticleCategoryColor pull-left">20 <i class="livicon" data-n="comments" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
+                    <div class="social-@article.ArticleCategoryColor">3k <i class="livicon" data-n="heart" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
+                    <div class="social-@article.ArticleCategoryColor pull-right">4.5 <i class="livicon" data-n="star-full" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
                         @*<div class="source">
                             <div class="user-name">
                                 <a href="#">@article.SourceName</a>
