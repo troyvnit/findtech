@@ -22,11 +22,21 @@
                                     <img width="15" height="15" src="@article.SourceLogo">
                                 </span>
                             </div>
-                            <div class="title-box">
+                            <div class="title-box text-left">
                                 <h1 class="title">@article.Title</h1>
                             </div>
 
                             @Html.Raw(article.Content)
+                            <br>
+                            @for (var i = 0; i < article.ContentSections.Count; i++)
+                            {
+                                var contentSection = article.ContentSections.ElementAt(i); 
+                                var textAlign = i%2 == 0 ? "text-left" : "text-right";
+                                <div class="title-box @textAlign">
+                                    <h2 class="title">@contentSection.SectionTitle</h2>
+                                </div>
+                                <p>@Html.Raw(contentSection.SectionContent)</p>
+                            }
                             <div class="footer toolbar bg bg-@article.ArticleCategoryColor">
                                 <div class="social-white pull-left">20 <i class="livicon" data-n="comments" data-s="16" data-c="#01a5db" data-hc="0"></i></div>
                                 <div class="social-white">3k <i class="livicon" data-n="heart" data-s="16" data-c="#01a5db" data-hc="0"></i></div>

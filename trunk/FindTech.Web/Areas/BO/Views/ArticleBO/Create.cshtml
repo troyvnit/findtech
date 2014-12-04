@@ -18,8 +18,8 @@
         <div class="content">
             <div class="row">
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img data-src="holder.js/100%x300" alt="100%x300" />
+                    <a href="#" class="thumbnail" id="avatar">
+                        <img data-src="holder.js/100%x300" alt="100%x300" id="imgAvatar"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-9">
@@ -44,6 +44,9 @@
 </section><!-- #main -->
 <script>
     $(document).ready(function () {
+        window.applyImageBrowser('avatar', function(url) {
+            $('#imgAvatar').attr('src', url);
+        });
         var tags = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
             queryTokenizer: Bloodhound.tokenizers.whitespace,
