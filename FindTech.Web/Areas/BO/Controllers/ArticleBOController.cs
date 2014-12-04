@@ -61,7 +61,7 @@ namespace FindTech.Web.Areas.BO.Controllers
         {
             if (!articleCategoryService.Queryable().Any(a => a.ArticleCategoryName == "Tin tổng hợp"))
             {
-                articleCategoryService.Insert(new ArticleCategory{ArticleCategoryName = "Tin tổng hợp", Color = "Info", IsActived = true, Priority = 1});
+                articleCategoryService.Insert(new ArticleCategory{ArticleCategoryName = "Tin tổng hợp", Color = "info", IsActived = true, Priority = 1});
                 unitOfWork.SaveChanges();
             }
             var category = articleCategoryService.Queryable().FirstOrDefault(a => a.ArticleCategoryName == "Tin tổng hợp");
@@ -113,7 +113,7 @@ namespace FindTech.Web.Areas.BO.Controllers
                             articleService.Insert(article);
                         }
                     }
-                    unitOfWork.SaveChangesAsync();
+                    unitOfWork.SaveChanges();
                 }
             }
             
