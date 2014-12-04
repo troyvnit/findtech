@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FindTech.Entities.Models.Enums;
 
 namespace FindTech.Web.Models
@@ -20,5 +21,6 @@ namespace FindTech.Web.Models
         public string ArticleCategoryName { get; set; }
         public string SourceName { get; set; }
         public string SourceLogo { get; set; }
+        public ICollection<ContentSectionViewModel> ContentSections { get; set; } 
     }
 }

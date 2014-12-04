@@ -11604,3 +11604,19 @@ position: relative;
 .color-info{
     color: #0098ca !important;
 }
+
+.color-primary{
+    color: #428bca !important;
+}
+
+.color-success{
+    color: #738d00 !important;
+}
+
+.color-danger{
+    color: #c10841 !important;
+}
+
+.color-warning{
+    color: #f89406 !important;
+}

@@ -44,6 +44,7 @@ namespace FindTech.Web.Mappers
                     .ForMember(a => a.ArticleCategoryName, o => o.MapFrom(x => x.ArticleCategory.ArticleCategoryName))
                     .ForMember(a => a.SourceName, o => o.MapFrom(x => x.Source.SourceName))
                     .ForMember(a => a.SourceLogo, o => o.MapFrom(x => x.Source.Logo));
+                Mapper.CreateMap<ContentSection, ContentSectionViewModel>();
             }
         }
     }

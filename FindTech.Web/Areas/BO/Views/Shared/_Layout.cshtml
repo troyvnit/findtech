@@ -46,7 +46,7 @@
             @RenderBody()
         </div><!-- .page-box-content -->
     </div><!-- .page-box -->
-    <div id="imgWindow">
+    @*<div id="imgWindow">
         <div id="imgBrowser"></div>
         <script>
             $("#imgBrowser").kendoImageBrowser({
@@ -63,10 +63,13 @@
                     thumbnailUrl: "/ImageBO/Thumbnail",
                     uploadUrl: "/ImageBO/Upload",
                     imageUrl: "/ImageBO/Image?path={0}"
+                },
+                apply: function() {
+                    console.log($("#imgBrowser .k-state-selected > .k-thumb > img")[0].src.replace("Thumbnail", "Image"));
                 }
             });
         </script>
-    </div>
+    </div>*@
     <footer id="footer">
         <div class="footer-bottom">
             <div class="container">
@@ -119,13 +122,37 @@
     @RenderSection("scripts", required: false)
     <script>
         $(document).ready(function () {
+            //var window = $("#imgWindow"),
+            //            undo = $("#undo");
+
+            //undo.bind("click", function () {
+            //    window.data("kendoWindow").open();
+            //    window.data("kendoWindow").center();
+            //    undo.hide();
+            //});
+
+            //if (!window.data("kendoWindow")) {
+            //    window.kendoWindow({
+            //        width: "800px",
+            //        title: "Image Management",
+            //        apply: function () {
+            //            window.data("kendoWindow").close();
+            //        }
+            //    });
+            //}
+
+            //window.data("kendoWindow").close();
+        });
+
+        function applyImageBrowser(buttonId, sendSelectedImage) {
+            $('#imgWindow').remove();
+            $('body').append('<div id="imgWindow"><div id="imgBrowser"></div></div>');
             var window = $("#imgWindow"),
-                        undo = $("#undo");
+                        undo = $("#" + buttonId);
 
             undo.bind("click", function () {
                 window.data("kendoWindow").open();
                 window.data("kendoWindow").center();
-                undo.hide();
             });
 
             if (!window.data("kendoWindow")) {
@@ -139,7 +166,28 @@
             }
 
             window.data("kendoWindow").close();
-        });
+
+            $("#imgBrowser").kendoImageBrowser({
+                transport: {
+                    read: "/ImageBO/Read",
+                    destroy: {
+                        url: "/ImageBO/Destroy",
+                        type: "POST"
+                    },
+                    create: {
+                        url: "/ImageBO/Create",
+                        type: "POST"
+                    },
+                    thumbnailUrl: "/ImageBO/Thumbnail",
+                    uploadUrl: "/ImageBO/Upload",
+                    imageUrl: "/ImageBO/Image?path={0}"
+                },
+                apply: function () {
+                    sendSelectedImage($("#imgBrowser .k-state-selected > .k-thumb > img")[0].src.replace("Thumbnail", "Image"));
+                    window.data("kendoWindow").close();
+                }
+            });
+        }
     </script>
 </body>
 </html>
