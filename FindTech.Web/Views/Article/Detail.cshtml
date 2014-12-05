@@ -14,7 +14,7 @@
                 {
                     var size = "box-3";
                     <article class="@size isotope-item item-clone">
-                        <div class="post post-@article.ArticleCategoryColor">
+                        <div class="post post-detail post-@article.ArticleCategoryColor">
                             <div class="post-type bg bg-@article.ArticleCategoryColor">
                                 <span>@article.ArticleCategoryName</span>
                                 <span class="pull-right">@article.SourceName</span>
@@ -24,8 +24,16 @@
                             </div>
                             <div class="title-box text-left">
                                 <h1 class="title">@article.Title</h1>
+                                <div class="entry-meta">
+                                    <span class="autor-name">Mike Example</span>,
+                                    <span class="time">03.11.2012</span>
+                                    <span class="separator">|</span>
+                                    <span class="meta">Posted in <a href="#">Sports</a>, <a href="#">Movies</a></span>
+                                    <span class="comments-link pull-right">
+                                        <a href="#">3 comment(s)</a>
+                                    </span>
+                                </div>
                             </div>
-
                             @Html.Raw(article.Content)
                             <br>
                             @for (var i = 0; i < article.ContentSections.Count; i++)
