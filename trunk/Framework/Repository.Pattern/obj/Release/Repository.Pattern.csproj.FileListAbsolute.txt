@@ -4,3 +4,9 @@ D:\Projects\ForBiz\Framework\Repository.Pattern\bin\Release\Repository.Pattern.p
 D:\Projects\ForBiz\Framework\Repository.Pattern\bin\Release\System.Data.dll
 D:\Projects\ForBiz\Framework\Repository.Pattern\obj\Release\Repository.Pattern.dll
 D:\Projects\ForBiz\Framework\Repository.Pattern\obj\Release\Repository.Pattern.pdb
+D:\Projects\FindTech\Framework\Repository.Pattern\bin\Release\Repository.Pattern.dll.config
+D:\Projects\FindTech\Framework\Repository.Pattern\bin\Release\Repository.Pattern.dll
+D:\Projects\FindTech\Framework\Repository.Pattern\bin\Release\Repository.Pattern.pdb
+D:\Projects\FindTech\Framework\Repository.Pattern\bin\Release\System.Data.dll
+D:\Projects\FindTech\Framework\Repository.Pattern\obj\Release\Repository.Pattern.dll
+D:\Projects\FindTech\Framework\Repository.Pattern\obj\Release\Repository.Pattern.pdb

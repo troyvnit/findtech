@@ -11,6 +11,14 @@
     <div class="container">
         <div class="content">
             <div class="row social-feed">
+                <article class="box-1 isotope-item item-clone">
+                    <div class="post bg bg-success number">
+                        <i class="fa fa-rss post-icon"></i>
+                        <div class="social-data">
+                            <div class="group-name">Bài viết liên quan</div>
+                        </div>
+                    </div>
+                </article><!-- .isotope-item -->
                 @if (article != null)
                 {
                     var size = "box-3";
@@ -26,9 +34,14 @@
                             <div class="title-box text-left">
                                 <h1 class="title">@article.Title</h1>
                                 <div class="entry-meta">
-                                    <span class="autor-name">Mike Example</span>,
-                                    <span class="time">03.11.2012</span>
+                                    <span class="autor-name">Đăng bởi: Troy Lee</span>,
+                                    <span class="time">lúc: 12:30 12/11/2014</span>
                                     <span class="separator">|</span>
+                                    <a href="http://www.addthis.com/bookmark.php?v=250"
+                                       class="addthis_button">
+                                        <img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif"
+                                             width="125" height="16" border="0" alt="Share" />
+                                    </a>
                                     <br>
                                     <span class="meta btn-icon tags">Nhãn: 
                                         <a href="#" class="sbtnf sbtnf-squere sbtnf-icon-white sbtnf-icon-bg-black color">Sports</a>
@@ -96,7 +109,14 @@
                         </div>
                     </article><!-- .isotope-item -->
                 }
-
+                <article class="box-1 isotope-item item-clone">
+                    <div class="post bg bg-info number">
+                        <i class="fa fa-mobile post-icon"></i>
+                        <div class="social-data">
+                            <div class="group-name">Thiết bị liên quan</div> 
+                        </div>
+                    </div>
+                </article><!-- .isotope-item -->
                 <div class="box-1 isotope-item product product-info rotation">
                     <div class="default">
                         <span class="sale best"></span>
