@@ -7,3 +7,12 @@ D:\Projects\ForBiz\Framework\Service.Pattern\bin\Release\Repository.Pattern.pdb
 D:\Projects\ForBiz\Framework\Service.Pattern\obj\Release\Service.Pattern.csprojResolveAssemblyReference.cache
 D:\Projects\ForBiz\Framework\Service.Pattern\obj\Release\Service.Pattern.dll
 D:\Projects\ForBiz\Framework\Service.Pattern\obj\Release\Service.Pattern.pdb
+D:\Projects\FindTech\Framework\Service.Pattern\bin\Release\Service.Pattern.dll.config
+D:\Projects\FindTech\Framework\Service.Pattern\bin\Release\Service.Pattern.dll
+D:\Projects\FindTech\Framework\Service.Pattern\bin\Release\Service.Pattern.pdb
+D:\Projects\FindTech\Framework\Service.Pattern\bin\Release\Repository.Pattern.dll
+D:\Projects\FindTech\Framework\Service.Pattern\bin\Release\System.Net.Http.dll
+D:\Projects\FindTech\Framework\Service.Pattern\bin\Release\Repository.Pattern.pdb
+D:\Projects\FindTech\Framework\Service.Pattern\obj\Release\Service.Pattern.csprojResolveAssemblyReference.cache
+D:\Projects\FindTech\Framework\Service.Pattern\obj\Release\Service.Pattern.dll
+D:\Projects\FindTech\Framework\Service.Pattern\obj\Release\Service.Pattern.pdb

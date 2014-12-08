@@ -1331,8 +1331,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="css\royalslider\.DS_Store" />
-    <Content Include="css\royalslider\skins\.DS_Store" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
@@ -1473,6 +1471,7 @@
     <Content Include="Areas\BO\Views\ArticleBO\Create.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Article\Detail.cshtml" />
+    <None Include="Properties\PublishProfiles\FindTech.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">

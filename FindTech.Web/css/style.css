@@ -7007,7 +7007,7 @@ blockquote {
   Main
 *******************************************************************************/
 #main {
-    padding: 70px 0;
+    padding: 15px 0;
     background: #e5e5e5;
 }
 
@@ -12265,7 +12265,7 @@ a.big-icon:hover {
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
     }
 
@@ -12561,6 +12561,10 @@ a.big-icon:hover {
             .social-feed .post.number .social-data .count {
                 font-size: 60px;
                 font-style: normal;
+            }
+
+            .social-feed .post.number .social-data .group-name {
+                font-size: 18px;
             }
 
     .social-feed .bg .author-info .user-name a,
