@@ -359,7 +359,7 @@ hr {
             left: 5%;
             position: absolute;
             right: 5%;
-            z-index: -1;
+            z-index: 1;
         }
 
     hr.no-line {
@@ -9191,7 +9191,7 @@ a.big-icon:hover {
 
         .commentlist li + li {
             border-top-width: 1px;
-            padding: 25px 0 0;
+            padding: 25px 0;
         }
 
     .commentlist .meta {
@@ -10247,7 +10247,11 @@ a.big-icon:hover {
 .post .entry-meta {
     color: #7f7f7f;
     font-size: 12px;
-    line-height: 1.3;
+    line-height: 2;
+}
+.post .entry-meta .tags a{
+    height: 20px;
+    line-height: 20px;
 }
 
     .post .entry-meta .separator {
@@ -12212,6 +12216,10 @@ a.big-icon:hover {
         -moz-box-shadow: 0px 0px 1px 1px #0098ca;
         box-shadow: 0px 0px 1px 1px #0098ca;
     }
+
+        .social-feed .post-info:hover {
+            background: #0098ca;
+        }
 
     .social-feed .post-success {
         -webkit-box-shadow: 0px 0px 1px 1px #738d00;
