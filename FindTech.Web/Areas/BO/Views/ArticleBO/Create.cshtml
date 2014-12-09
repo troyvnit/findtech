@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Create";
     Layout = "~/Areas/BO/Views/Shared/_Layout.cshtml";
 }
@@ -16,37 +15,115 @@
 <section id="main">
     <div class="container">
         <div class="content">
-            <div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail" id="avatar">
-                        <img data-src="holder.js/100%x300" alt="100%x300" id="imgAvatar"/>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-md-9">
-                    <form role="form">
+            <form role="form" method="POST" action="CreateArticle">
+                <div class="row">
+
+                    <div class="col-xs-6 col-md-3">
+                        <a href="#" class="thumbnail">
+                            <img data-src="holder.js/100%x300" alt="100%x300" />
+                        </a>
+                        <input type="hidden" name="Avatar"/>
+                    </div>
+                    <div class="col-xs-6 col-md-9">
+
                         <div class="form-group">
                             <label for="title">Tiêu đề</label>
-                            <input type="text" class="form-control" id="title" placeholder="Nhập tiêu đề">
+                            <input type="text" class="form-control" id="title" name="Title" placeholder="Nhập tiêu đề">
                         </div>
                         <div class="form-group">
                             <label for="description">Mô tả</label>
-                            <textarea class="form-control" id="description" placeholder="Mô tả ngắn"></textarea>
+                            <textarea class="form-control" id="description" name="Description" placeholder="Mô tả ngắn"></textarea>
                         </div>
+
+                        <div class="form-group">
+                            <label for="tags">Ngày</label>
+                            <input type='text' class="form-control" id="datetimepicker" name="PublishedDate" placeholder="Ngày tạo bài" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="title">Độ ưu tiên</label>
+                            <input type="text" class="form-control" id="priority" name="Priority" placeholder="Độ ưu tiên" />
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="title">Tác giả</label>
+                            <input type="text" class="form-control" id="author" name="Author" placeholder="Tác giả" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="title">Kích thước box</label>
+                            <input type="text" class="form-control" id="boxSize" name="BoxSize" placeholder="Kích thước box" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="title">Loại bài</label>
+                            <input type="text" class="form-control" id="articleType" name="ArticleType" placeholder="Loại bài" />
+                        </div>
+
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="isActive" name="IsActived" value="true"> Kích hoạt
+                                </label>
+                            </div>
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="isDeleted" name="IsDeleted" value="true"> Cho phép xóa
+                                </label>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="category">Danh mục</label>
+                            <input type="text" class="form-control" id="category" name="ArticleCategoryId" value="Phone" placeholder="Danh mục">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="source">Nguồn</label>
+                            <input type="text" class="form-control" id="source" name="SourceId" value="phonearena" placeholder="Nguồn bài viết">
+                        </div>
+
                         <div class="form-group">
                             <label for="tags">Nhãn</label>
-                            <input type="text" class="form-control" id="tags" value="Amsterdam,Washington" data-role="tagsinput" placeholder="Nhãn">
+                            <input type="text" class="form-control" maxlength="100" id="tags" name="Tags" value="Amsterdam,Washington" data-role="tagsinput" placeholder="Nhãn">
                         </div>
-                    </form>
+
+                    </div>
                 </div>
-            </div>
+                <div class="row">
+
+                    <div class="col-xs-12 col-md-12">
+                        <div class="form-group">
+                            <label for="title">Nội dung bài viết</label>
+                            <textarea id="editor" name="Content" rows="10" cols="30" style="width:100%;height:400px"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-3 col-md-3">
+                        <button type="submit" class="btn btn-primary">Click để tạo bài</button>
+                    </div>
+
+                </div>
+
+            </form>
         </div><!-- .content -->
     </div>
 </section><!-- #main -->
+
+@*kendoui edtitor for content html of article*@
 <script>
     $(document).ready(function () {
-        window.applyImageBrowser('avatar', function(url) {
-            $('#imgAvatar').attr('src', url);
-        });
+        //window.applyImageBrowser('avatar', function(url) {
+        //    $('#imgAvatar').attr('src', url);
+        //});
         var tags = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
             queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -60,6 +137,55 @@
                 valueKey: 'name',
                 source: tags.ttAdapter()
             }
+        });
+
+
+        $("#editor").kendoEditor({
+            tools: [
+                "bold",
+                "italic",
+                "underline",
+                "strikethrough",
+                "justifyLeft",
+                "justifyCenter",
+                "justifyRight",
+                "justifyFull",
+                "insertUnorderedList",
+                "insertOrderedList",
+                "indent",
+                "outdent",
+                "createLink",
+                "unlink",
+                "insertImage",
+                "insertFile",
+                "subscript",
+                "superscript",
+                "createTable",
+                "addRowAbove",
+                "addRowBelow",
+                "addColumnLeft",
+                "addColumnRight",
+                "deleteRow",
+                "deleteColumn",
+                "viewHtml",
+                "formatting",
+                "cleanFormatting",
+                "fontName",
+                "fontSize",
+                "foreColor",
+                "backColor"
+            ]
+        });
+
+        
+       
+        $('#datetimepicker').datepicker({
+            language: 'en'
+        });
+
+        $("#avatar").click(function() {
+            window.imgWindow.data("kendoWindow").open();
+            window.imgWindow.data("kendoWindow").center();
         });
     });
 </script>
