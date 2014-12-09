@@ -19,6 +19,7 @@ namespace FindTech.Entities.Models
         public BoxSize BoxSize { get; set; }
         public ArticleType ArticleType { get; set; }
         public bool? IsActived { get; set; }
+        public bool? IsDeleted { get; set; }
         public int ArticleCategoryId { get; set; }
         public ArticleCategory ArticleCategory { get; set; }
         public int SourceId { get; set; }

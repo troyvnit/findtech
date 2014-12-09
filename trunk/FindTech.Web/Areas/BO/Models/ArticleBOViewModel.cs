@@ -14,9 +14,11 @@ namespace FindTech.Web.Areas.BO.Models
         public string Avatar { get; set; }
         public DateTime PublishedDate { get; set; }
         public string Author { get; set; }
-        public string Source { get; set; }
+        public string SourceId { get; set; }
         public BoxSize BoxSize { get; set; }
+        public ArticleType ArticleType { get; set; }
         public bool? IsActived { get; set; }
+        public bool? IsDeleted { get; set; }
         public int ArticleCategoryId { get; set; }
     }
 }

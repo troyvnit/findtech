@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using System.Xml;
 using AutoMapper;
 using FindTech.Entities.Models;
@@ -118,6 +119,36 @@ namespace FindTech.Web.Areas.BO.Controllers
             }
             
             return Json(true);
+        }
+
+
+
+        [HttpPost]
+        public ActionResult CreateArticle(ArticleBOViewModel acBOViewModel)
+        {
+            var article = new Article
+            {
+                 Title = acBOViewModel.Title,
+                 Description = acBOViewModel.Description,
+                 Content = acBOViewModel.Content,
+                 Tags = acBOViewModel.Tags,
+                 Priority = acBOViewModel.Priority,
+                 Avatar = acBOViewModel.Avatar,
+                 PublishedDate = acBOViewModel.PublishedDate,
+                 Author = acBOViewModel.Author,
+                 BoxSize = acBOViewModel.BoxSize,
+                 ArticleType = acBOViewModel.ArticleType,
+                 ArticleCategoryId = Convert.ToInt32(acBOViewModel.ArticleCategoryId),
+                 ArticleCategory = articleCategoryService.Find(Convert.ToInt32(acBOViewModel.ArticleCategoryId)),
+                 SourceId = Convert.ToInt32(acBOViewModel.SourceId),
+                 Source = sourceService.Find(Convert.ToInt32(acBOViewModel.SourceId)),
+                 IsActived = acBOViewModel.IsActived,
+                 IsDeleted = acBOViewModel.IsDeleted
+            };
+            articleService.Insert(article);
+            unitOfWork.SaveChanges();
+
+            return Redirect("Index");
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Repository.Pattern.Ef6;
 
 namespace FindTech.Entities.Models
@@ -10,6 +11,7 @@ namespace FindTech.Entities.Models
         public int Priority { get; set; }
         public string Color { get; set; }
         public bool? IsActived { get; set; }
+        public bool? IsDeleted { get; set; }
         public bool IsMenu { get; set; }
         public ICollection<Article> Articles { get; set; } 
     }
