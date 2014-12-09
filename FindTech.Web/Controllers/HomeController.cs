@@ -38,5 +38,10 @@ namespace FindTech.Web.Controllers
 
             return View();
         }
+
+        public ActionResult UnderConstruction()
+        {
+            return View();
+        }
     }
 }

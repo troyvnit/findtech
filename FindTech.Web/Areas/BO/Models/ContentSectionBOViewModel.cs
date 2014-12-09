@@ -6,7 +6,7 @@ using FindTech.Entities.Models;
 
 namespace FindTech.Web.Areas.BO.Models
 {
-    public class ContentSectionViewModel
+    public class ContentSectionBOViewModel
     {
         public int ContentSectionId { get; set; }
         public string SectionTitle { get; set; }

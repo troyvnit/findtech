@@ -44,6 +44,7 @@
     <Compile Include="SourceService.cs" />
     <Compile Include="ArticleService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XpathService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">
