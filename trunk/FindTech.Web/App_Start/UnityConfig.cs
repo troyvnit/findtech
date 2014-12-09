@@ -54,6 +54,8 @@ namespace FindTech.Web.App_Start
                 .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
                 .RegisterType<IRepositoryAsync<Source>, Repository<Source>>()
                 .RegisterType<ISourceService, SourceService>()
+                .RegisterType<IRepositoryAsync<Xpath>, Repository<Xpath>>()
+                .RegisterType<IXpathService, XpathService>()
                 .RegisterType<IRepositoryAsync<Article>, Repository<Article>>()
                 .RegisterType<IArticleService, ArticleService>()
                 .RegisterType<IRepositoryAsync<ArticleCategory>, Repository<ArticleCategory>>()

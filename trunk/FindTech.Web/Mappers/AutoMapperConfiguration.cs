@@ -26,6 +26,9 @@ namespace FindTech.Web.Mappers
             protected override void Configure()
             {
                 Mapper.CreateMap<ArticleBOViewModel, Article>();
+                Mapper.CreateMap<ArticleCategoryBOViewModel, ArticleCategory>();
+                Mapper.CreateMap<SourceBOViewModel, Source>();
+                Mapper.CreateMap<XpathBOViewModel, Xpath>();
             }
         }
 
@@ -44,7 +47,10 @@ namespace FindTech.Web.Mappers
                     .ForMember(a => a.ArticleCategoryName, o => o.MapFrom(x => x.ArticleCategory.ArticleCategoryName))
                     .ForMember(a => a.SourceName, o => o.MapFrom(x => x.Source.SourceName))
                     .ForMember(a => a.SourceLogo, o => o.MapFrom(x => x.Source.Logo));
-                Mapper.CreateMap<ContentSection, ContentSectionViewModel>();
+                Mapper.CreateMap<ContentSection, ContentSectionBOViewModel>();
+                Mapper.CreateMap<ArticleCategory, ArticleCategoryBOViewModel>();
+                Mapper.CreateMap<Source, SourceBOViewModel>();
+                Mapper.CreateMap<Xpath, XpathBOViewModel>();
             }
         }
     }

@@ -203,8 +203,15 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\BO\BOAreaRegistration.cs" />
     <Compile Include="Areas\BO\Controllers\ArticleBOController.cs" />
+    <Compile Include="Areas\BO\Controllers\SourceBOController.cs" />
+    <Compile Include="Areas\BO\Controllers\ArticleCategoryBOController.cs" />
     <Compile Include="Areas\BO\Controllers\ImageBOController.cs" />
+    <Compile Include="Areas\BO\Controllers\XpathBOController.cs" />
+    <Compile Include="Areas\BO\Models\XpathBOViewModel.cs" />
+    <Compile Include="Areas\BO\Models\SourceBOViewModel.cs" />
+    <Compile Include="Areas\BO\Models\ArticleCategoryBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\ArticleBOViewModel.cs" />
+    <Compile Include="Areas\BO\Models\ContentSectionBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\DirectoryBrowser.cs" />
     <Compile Include="Areas\BO\Models\EntryType.cs" />
     <Compile Include="Areas\BO\Models\FileBrowserEntry.cs" />
@@ -1469,9 +1476,14 @@
     <Content Include="Areas\BO\Views\ArticleBO\Index.cshtml" />
     <Content Include="Areas\BO\styles\kendo.custom.css" />
     <Content Include="Areas\BO\Views\ArticleBO\Create.cshtml" />
+    <Content Include="Areas\BO\Views\ArticleCategoryBO\Create.cshtml" />
+    <Content Include="Areas\BO\Views\XpathBO\Create.cshtml" />
+    <Content Include="Areas\BO\Views\ArticleCategoryBO\Index.cshtml" />
+    <Content Include="Areas\BO\Views\SourceBO\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Article\Detail.cshtml" />
     <None Include="Properties\PublishProfiles\FindTech.pubxml" />
+    <Content Include="Views\Home\UnderConstruction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">
