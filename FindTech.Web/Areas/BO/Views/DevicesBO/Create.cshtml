@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/BO/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+<section id="main">
+    <div class="container">
+        <div class="content">
+            <form role="form" method="POST" action="">
+                <div class="row">
+                    <div class="col-md-3">
+
+                    </div>
+
+                    <div class="col-xs-6 col-md-9">
+
+                        <div class="form-group">
+                            <label for="lbDeviceName">Device Name</label>
+                            <input type="text" class="form-control" id="txtDeviceName" name="deviceName" placeholder="Device Name" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lbBrand">Brand</label>
+                            <input type="text" class="form-control" id="txtBrand" name="Brand" placeholder="Brand" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lbDescription">Description</label>
+                            <textarea class="form-control" id="txtDescription" name="Description" placeholder="Description"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="lbSpecifications">Specifications</label>
+                        <div id="specGrid"></div>
+                    </div>
+                    
+                </div>
+
+                <script>
+    $(document).ready(function () {
+
+        $("#specGrid").kendoGrid({
+            navigatable: true,
+            pageable: true,
+            height: 550,
+            toolbar: ["create", "save", "cancel"],
+            columns: [
+                { field: "SpecId", title: "Id", width: 50 },
+                { field: "SpecName", title: "Spec Name", width: 120 },
+                { field: "Priority", title: "Priority", width: 70 },
+                { field: "CreatedDate", title: "Created Date", width: 70 },
+                { command: "destroy", title: "&nbsp;", width: 100 }],
+            editable: true
+        });
+    });
+                </script>
+
+            </form>
+        </div><!-- .content -->
+    </div>
+</section>
+

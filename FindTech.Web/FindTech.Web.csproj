@@ -204,6 +204,7 @@
     <Compile Include="Areas\BO\BOAreaRegistration.cs" />
     <Compile Include="Areas\BO\Controllers\ArticleBOController.cs" />
     <Compile Include="Areas\BO\Controllers\BrandBOController.cs" />
+    <Compile Include="Areas\BO\Controllers\DevicesBOController.cs" />
     <Compile Include="Areas\BO\Controllers\SourceBOController.cs" />
     <Compile Include="Areas\BO\Controllers\ArticleCategoryBOController.cs" />
     <Compile Include="Areas\BO\Controllers\ImageBOController.cs" />
@@ -1483,6 +1484,7 @@
     <Content Include="Areas\BO\Views\ArticleCategoryBO\Index.cshtml" />
     <Content Include="Areas\BO\Views\SourceBO\Index.cshtml" />
     <Content Include="Areas\BO\Views\BrandBO\Index.cshtml" />
+    <Content Include="Areas\BO\Views\DevicesBO\Create.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Article\Detail.cshtml" />
     <None Include="Properties\PublishProfiles\FindTech.pubxml" />
