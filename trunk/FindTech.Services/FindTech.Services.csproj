@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticleCategoryService.cs" />
+    <Compile Include="BrandService.cs" />
     <Compile Include="SourceService.cs" />
     <Compile Include="ArticleService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

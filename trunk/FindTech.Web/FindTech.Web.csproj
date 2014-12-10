@@ -203,10 +203,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\BO\BOAreaRegistration.cs" />
     <Compile Include="Areas\BO\Controllers\ArticleBOController.cs" />
+    <Compile Include="Areas\BO\Controllers\BrandBOController.cs" />
     <Compile Include="Areas\BO\Controllers\SourceBOController.cs" />
     <Compile Include="Areas\BO\Controllers\ArticleCategoryBOController.cs" />
     <Compile Include="Areas\BO\Controllers\ImageBOController.cs" />
     <Compile Include="Areas\BO\Controllers\XpathBOController.cs" />
+    <Compile Include="Areas\BO\Models\BrandBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\XpathBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\SourceBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\ArticleCategoryBOViewModel.cs" />
@@ -1480,6 +1482,7 @@
     <Content Include="Areas\BO\Views\XpathBO\Create.cshtml" />
     <Content Include="Areas\BO\Views\ArticleCategoryBO\Index.cshtml" />
     <Content Include="Areas\BO\Views\SourceBO\Index.cshtml" />
+    <Content Include="Areas\BO\Views\BrandBO\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Article\Detail.cshtml" />
     <None Include="Properties\PublishProfiles\FindTech.pubxml" />

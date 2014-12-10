@@ -29,6 +29,7 @@ namespace FindTech.Web.Mappers
                 Mapper.CreateMap<ArticleCategoryBOViewModel, ArticleCategory>();
                 Mapper.CreateMap<SourceBOViewModel, Source>();
                 Mapper.CreateMap<XpathBOViewModel, Xpath>();
+                Mapper.CreateMap<BrandBOViewModel, Brand>();
             }
         }
 
@@ -51,6 +52,7 @@ namespace FindTech.Web.Mappers
                 Mapper.CreateMap<ArticleCategory, ArticleCategoryBOViewModel>();
                 Mapper.CreateMap<Source, SourceBOViewModel>();
                 Mapper.CreateMap<Xpath, XpathBOViewModel>();
+                Mapper.CreateMap<Brand, BrandBOViewModel>();
             }
         }
     }

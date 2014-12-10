@@ -56,6 +56,7 @@
     <Compile Include="Models\ArticleCategory.cs" />
     <Compile Include="Models\ContentSection.cs" />
     <Compile Include="Models\Enums\ArticleField.cs" />
+    <Compile Include="Models\Enums\BrandType.cs" />
     <Compile Include="Models\Enums\ArticleType.cs" />
     <Compile Include="Models\Source.cs" />
     <Compile Include="Models\BenchmarkGroup.cs" />
