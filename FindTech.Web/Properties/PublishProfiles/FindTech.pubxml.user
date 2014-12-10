@@ -2063,7 +2063,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/10/2014 16:29:32</publishTime>
     </File>
     <File Include="Areas/BO/styles/kendo.custom.css">
-      <publishTime>11/26/2014 09:20:10</publishTime>
+      <publishTime>12/09/2014 08:51:34</publishTime>
     </File>
     <File Include="Areas/BO/styles/kendo.dataviz.black.min.css">
       <publishTime>11/10/2014 16:29:32</publishTime>
@@ -2453,16 +2453,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/10/2014 16:29:34</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Create.cshtml">
-      <publishTime>12/04/2014 16:22:41</publishTime>
+      <publishTime>12/09/2014 08:51:35</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Index.cshtml">
       <publishTime>11/28/2014 10:11:16</publishTime>
     </File>
+    <File Include="Areas/BO/Views/ArticleCategoryBO/Create.cshtml">
+      <publishTime>12/09/2014 08:51:34</publishTime>
+    </File>
+    <File Include="Areas/BO/Views/ArticleCategoryBO/Index.cshtml">
+      <publishTime>12/09/2014 10:44:21</publishTime>
+    </File>
     <File Include="Areas/BO/Views/Shared/_Layout.cshtml">
-      <publishTime>12/04/2014 16:26:34</publishTime>
+      <publishTime>12/09/2014 08:51:35</publishTime>
+    </File>
+    <File Include="Areas/BO/Views/SourceBO/Index.cshtml">
+      <publishTime>12/09/2014 11:44:38</publishTime>
     </File>
     <File Include="Areas/BO/Views/web.config">
       <publishTime>11/10/2014 16:18:17</publishTime>
+    </File>
+    <File Include="Areas/BO/Views/XpathBO/Create.cshtml">
+      <publishTime>12/09/2014 08:51:35</publishTime>
     </File>
     <File Include="Areas/BO/Views/_ViewStart.cshtml">
       <publishTime>11/10/2014 16:30:26</publishTime>
@@ -2483,13 +2495,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/04/2014 09:19:18</publishTime>
     </File>
     <File Include="bin/FindTech.Entities.dll">
-      <publishTime>12/08/2014 11:02:02</publishTime>
+      <publishTime>12/09/2014 11:54:01</publishTime>
     </File>
     <File Include="bin/FindTech.Services.dll">
-      <publishTime>12/08/2014 11:02:03</publishTime>
+      <publishTime>12/09/2014 11:54:01</publishTime>
     </File>
     <File Include="bin/FindTech.Web.dll">
-      <publishTime>12/08/2014 11:04:30</publishTime>
+      <publishTime>12/09/2014 11:54:02</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
       <publishTime>11/04/2014 10:13:08</publishTime>
@@ -3798,6 +3810,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>12/04/2014 09:24:22</publishTime>
+    </File>
+    <File Include="Views/Home/UnderConstruction.cshtml">
+      <publishTime>12/09/2014 08:59:01</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>11/04/2014 09:18:51</publishTime>

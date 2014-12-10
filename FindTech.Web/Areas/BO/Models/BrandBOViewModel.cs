@@ -1,16 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using FindTech.Entities.Models.Enums;
-using Repository.Pattern.Ef6;
 
-namespace FindTech.Entities.Models
+namespace FindTech.Web.Areas.BO.Models
 {
-    public class Brand : Entity
+    public class BrandBOViewModel
     {
         public int BrandId { get; set; }
         public string BrandName { get; set; }
         public string Logo { get; set; }
         public int Priority { get; set; }
         public BrandType BrandType { get; set; }
-        public ICollection<Device> Devices { get; set; }
     }
 }
