@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace FindTech.Web.Areas.BO.Controllers
 {
-    public class DevicesBOController : Controller
+    public class DeviceBOController : Controller
     {
         // GET: BO/DevicesBO
         public ActionResult Index()
