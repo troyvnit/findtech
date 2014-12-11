@@ -183,7 +183,7 @@
                     imageUrl: "/ImageBO/Image?path={0}"
                 },
                 apply: function () {
-                    sendSelectedImage($("#imgBrowser .k-state-selected > .k-thumb > img")[0].src.replace("Thumbnail", "Image"));
+                    sendSelectedImage("/ImageBO/Image?path=" + $("#imgBrowser input[data-role='breadcrumbs']").val());
                     window.data("kendoWindow").close();
                 }
             });
