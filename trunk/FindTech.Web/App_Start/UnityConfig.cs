@@ -61,7 +61,11 @@ namespace FindTech.Web.App_Start
                 .RegisterType<IRepositoryAsync<ArticleCategory>, Repository<ArticleCategory>>()
                 .RegisterType<IArticleCategoryService, ArticleCategoryService>()
                 .RegisterType<IRepositoryAsync<Brand>, Repository<Brand>>()
-                .RegisterType<IBrandService, BrandService>();
+                .RegisterType<IBrandService, BrandService>()
+                .RegisterType<IRepositoryAsync<SpecGroup>, Repository<SpecGroup>>()
+                .RegisterType<ISpecGroupService, SpecGroupService>()
+                .RegisterType<IRepositoryAsync<Spec>, Repository<Spec>>()
+                .RegisterType<ISpecService, SpecService>();
         }
     }
 }

@@ -30,6 +30,8 @@ namespace FindTech.Web.Mappers
                 Mapper.CreateMap<SourceBOViewModel, Source>();
                 Mapper.CreateMap<XpathBOViewModel, Xpath>();
                 Mapper.CreateMap<BrandBOViewModel, Brand>();
+                Mapper.CreateMap<SpecGroupBOViewModel, SpecGroup>();
+                Mapper.CreateMap<SpecBOViewModel, Spec>();
             }
         }
 
@@ -53,6 +55,8 @@ namespace FindTech.Web.Mappers
                 Mapper.CreateMap<Source, SourceBOViewModel>();
                 Mapper.CreateMap<Xpath, XpathBOViewModel>();
                 Mapper.CreateMap<Brand, BrandBOViewModel>();
+                Mapper.CreateMap<SpecGroup, SpecGroupBOViewModel>();
+                Mapper.CreateMap<Spec, SpecBOViewModel>();
             }
         }
     }
