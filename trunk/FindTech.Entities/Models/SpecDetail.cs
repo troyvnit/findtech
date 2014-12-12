@@ -8,8 +8,8 @@ namespace FindTech.Entities.Models
         public string Value { get; set; }
         public bool HighLight { get; set; }
         public int DeviceId { get; set; }
-        public Device Device { get; set; }
+        public virtual Device Device { get; set; }
         public int SpecId { get; set; }
-        public Spec Spec { get; set; }
+        public virtual Spec Spec { get; set; }
     }
 }

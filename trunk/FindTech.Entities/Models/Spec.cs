@@ -9,6 +9,6 @@ namespace FindTech.Entities.Models
         public int Priority { get; set; }
         public bool? IsMain { get; set; }
         public int SpecGroupId { get; set; }
-        public SpecGroup SpecGroup { get; set; }
+        public virtual SpecGroup SpecGroup { get; set; }
     }
 }

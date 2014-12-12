@@ -17,8 +17,8 @@ namespace FindTech.Entities.Models
         public BoxSize BoxSize { get; set; }
         public int Priority { get; set; }
         public int BrandId { get; set; }
-        public Brand Brand { get; set; }
-        public ICollection<Benchmark> Benchmarks { get; set; }
-        public ICollection<DeviceColor> DeviceColors { get; set; } 
+        public virtual Brand Brand { get; set; }
+        public virtual ICollection<Benchmark> Benchmarks { get; set; }
+        public virtual ICollection<DeviceColor> DeviceColors { get; set; } 
     }
 }

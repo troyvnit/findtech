@@ -13,6 +13,6 @@ namespace FindTech.Entities.Models
         public bool? IsActived { get; set; }
         public bool? IsDeleted { get; set; }
         public bool IsMenu { get; set; }
-        public ICollection<Article> Articles { get; set; } 
+        public virtual ICollection<Article> Articles { get; set; } 
     }
 }
