@@ -9,6 +9,6 @@ namespace FindTech.Entities.Models
         public string XpathString { get; set; }
         public ArticleField ArticleField { get; set; }
         public int SourceId { get; set; }
-        public Source Source { get; set; }
+        public virtual Source Source { get; set; }
     }
 }

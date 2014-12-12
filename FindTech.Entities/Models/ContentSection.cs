@@ -9,8 +9,8 @@ namespace FindTech.Entities.Models
         public string SectionDescription { get; set; }
         public string SectionContent { get; set; }
         public int ArticleId { get; set; }
-        public Article Article { get; set; }
+        public virtual Article Article { get; set; }
         public int BenchmarkId { get; set; }
-        public Benchmark Benchmark { get; set; }
+        public virtual Benchmark Benchmark { get; set; }
     }
 }

@@ -11,6 +11,6 @@ namespace FindTech.Entities.Models
         public string Logo { get; set; }
         public int Priority { get; set; }
         public BrandType BrandType { get; set; }
-        public ICollection<Device> Devices { get; set; }
+        public virtual ICollection<Device> Devices { get; set; }
     }
 }

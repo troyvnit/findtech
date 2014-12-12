@@ -14,8 +14,8 @@ namespace FindTech.Entities.Models
         public string Description { get; set; }
         public BenchmarkDataType BenchmarkDataType { get; set; }
         public int BenchmarkGroupId { get; set; }
-        public BenchmarkGroup BenchmarkGroup { get; set; }
+        public virtual BenchmarkGroup BenchmarkGroup { get; set; }
         public int DeviceId { get; set; }
-        public Device Device { get; set; }
+        public virtual Device Device { get; set; }
     }
 }

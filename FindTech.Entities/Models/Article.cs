@@ -21,9 +21,9 @@ namespace FindTech.Entities.Models
         public bool? IsActived { get; set; }
         public bool? IsDeleted { get; set; }
         public int ArticleCategoryId { get; set; }
-        public ArticleCategory ArticleCategory { get; set; }
+        public virtual ArticleCategory ArticleCategory { get; set; }
         public int SourceId { get; set; }
-        public Source Source { get; set; }
-        public ICollection<ContentSection> ContentSections { get; set; } 
+        public virtual Source Source { get; set; }
+        public virtual ICollection<ContentSection> ContentSections { get; set; } 
     }
 }

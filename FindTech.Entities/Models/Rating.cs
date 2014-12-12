@@ -8,6 +8,6 @@ namespace FindTech.Entities.Models
         public string Email { get; set; }
         public string Opinion { get; set; }
         public int DeviceId { get; set; }
-        public Device Device { get; set; }
+        public virtual Device Device { get; set; }
     }
 }

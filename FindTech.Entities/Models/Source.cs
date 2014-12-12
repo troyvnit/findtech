@@ -9,7 +9,7 @@ namespace FindTech.Entities.Models
         public string SourceName { get; set; }
         public string Logo { get; set; }
         public string Link { get; set; }
-        public ICollection<Xpath> Xpaths { get; set; } 
-        public ICollection<Article> Articles { get; set; } 
+        public virtual ICollection<Xpath> Xpaths { get; set; } 
+        public virtual ICollection<Article> Articles { get; set; } 
     }
 }
