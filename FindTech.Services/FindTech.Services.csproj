@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ArticleCategoryService.cs" />
     <Compile Include="BrandService.cs" />
+    <Compile Include="BenchmarkGroupService.cs" />
     <Compile Include="SpecService.cs" />
     <Compile Include="SpecGroupService.cs" />
     <Compile Include="SourceService.cs" />

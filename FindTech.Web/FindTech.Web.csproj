@@ -206,6 +206,7 @@
     <Compile Include="Areas\BO\Controllers\BrandBOController.cs" />
     <Compile Include="Areas\BO\Controllers\DeviceBOController.cs" />
     <Compile Include="Areas\BO\Controllers\SpecBOController.cs" />
+    <Compile Include="Areas\BO\Controllers\BenchmarkGroupBOController.cs" />
     <Compile Include="Areas\BO\Controllers\SpecGroupBOController.cs" />
     <Compile Include="Areas\BO\Controllers\SourceBOController.cs" />
     <Compile Include="Areas\BO\Controllers\ArticleCategoryBOController.cs" />
@@ -213,6 +214,7 @@
     <Compile Include="Areas\BO\Controllers\XpathBOController.cs" />
     <Compile Include="Areas\BO\Models\BrandBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\SpecBOViewModel.cs" />
+    <Compile Include="Areas\BO\Models\BenchmarkGroupBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\SpecGroupBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\XpathBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\SourceBOViewModel.cs" />
@@ -1491,6 +1493,7 @@
     <Content Include="Areas\BO\Views\DeviceBO\Create.cshtml" />
     <Content Include="Areas\BO\Views\SpecGroupBO\Index.cshtml" />
     <Content Include="Areas\BO\Views\SpecBO\Index.cshtml" />
+    <Content Include="Areas\BO\Views\BenchmarkGroupBO\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Article\Detail.cshtml" />
     <None Include="Properties\PublishProfiles\FindTech.pubxml" />

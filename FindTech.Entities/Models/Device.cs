@@ -18,7 +18,7 @@ namespace FindTech.Entities.Models
         public int Priority { get; set; }
         public int BrandId { get; set; }
         public Brand Brand { get; set; }
-        public ICollection<BenchmarkDetail> BenchmarkDetails { get; set; }
+        public ICollection<Benchmark> Benchmarks { get; set; }
         public ICollection<DeviceColor> DeviceColors { get; set; } 
     }
 }

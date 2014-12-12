@@ -2,6 +2,6 @@
 {
     public enum BenchmarkDataType
     {
-        String, Number, Table
+        String, Number, Table, Image
     }
 }

@@ -58,10 +58,10 @@
     <Compile Include="Models\Enums\ArticleField.cs" />
     <Compile Include="Models\Enums\BrandType.cs" />
     <Compile Include="Models\Enums\ArticleType.cs" />
+    <Compile Include="Models\Mapping\BenchmarkGroupMap.cs" />
     <Compile Include="Models\Source.cs" />
     <Compile Include="Models\BenchmarkGroup.cs" />
     <Compile Include="Models\Benchmark.cs" />
-    <Compile Include="Models\BenchmarkDetail.cs" />
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Device.cs" />
