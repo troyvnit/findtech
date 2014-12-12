@@ -65,7 +65,9 @@ namespace FindTech.Web.App_Start
                 .RegisterType<IRepositoryAsync<SpecGroup>, Repository<SpecGroup>>()
                 .RegisterType<ISpecGroupService, SpecGroupService>()
                 .RegisterType<IRepositoryAsync<Spec>, Repository<Spec>>()
-                .RegisterType<ISpecService, SpecService>();
+                .RegisterType<ISpecService, SpecService>()
+                .RegisterType<IRepositoryAsync<BenchmarkGroup>, Repository<BenchmarkGroup>>()
+                .RegisterType<IBenchmarkGroupService, BenchmarkGroupService>();
         }
     }
 }

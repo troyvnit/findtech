@@ -17,7 +17,6 @@ namespace FindTech.Entities
         DbSet<ArticleCategory> ArticleCategories { get; set; }
         DbSet<Benchmark> Benchmarks { get; set; }
         DbSet<BenchmarkGroup> BenchmarkGroups { get; set; }
-        DbSet<BenchmarkDetail> BenchmarkDetails { get; set; }
         DbSet<Brand> Brands { get; set; }
         DbSet<Comment> Comments { get; set; }
         DbSet<Device> Devices { get; set; }
