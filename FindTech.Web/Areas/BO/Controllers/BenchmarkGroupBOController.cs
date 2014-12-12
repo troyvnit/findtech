@@ -56,6 +56,8 @@ namespace FindTech.Web.Areas.BO.Controllers
                 else
                 {
                     benchmarkGroup.ParentId = benchmarkGroupBOViewModel.Parent.BenchmarkGroupId;
+                    benchmarkGroup.Parent = benchmarkGroupService.Queryable()
+                        .FirstOrDefault(a => a.BenchmarkGroupId == benchmarkGroup.ParentId);
                 }
                 benchmarkGroupService.Insert(benchmarkGroup);
                 unitOfWork.SaveChanges();
@@ -80,6 +82,9 @@ namespace FindTech.Web.Areas.BO.Controllers
                 else
                 {
                     benchmarkGroup.ParentId = benchmarkGroupBOViewModel.Parent.BenchmarkGroupId;
+                    benchmarkGroup.Parent =
+                        benchmarkGroupService.Queryable()
+                            .FirstOrDefault(a => a.BenchmarkGroupId == benchmarkGroup.ParentId);
                 }
                 benchmarkGroupService.Update(benchmarkGroup);
                 unitOfWork.SaveChanges();
