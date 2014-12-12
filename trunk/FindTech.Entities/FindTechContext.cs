@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using FindTech.Entities.Migrations;
 using FindTech.Entities.Models;
+using FindTech.Entities.Models.Mapping;
 using Repository.Pattern.Ef6;
 
 namespace FindTech.Entities
@@ -33,5 +34,9 @@ namespace FindTech.Entities
         DbSet<Source> Sources { get; set; }
         DbSet<Xpath> Xpaths { get; set; }
         DbSet<ContentSection> ContentSections { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new BenchmarkGroupMap());
+        }
     }
 }

@@ -12,7 +12,6 @@ namespace FindTech.Entities.Models
         public string Description { get; set; }
         public int Priority { get; set; }
         public int? ParentId { get; set; }
-        [ForeignKey("ParentId")]
         public virtual BenchmarkGroup Parent { get; set; }
         public virtual ICollection<BenchmarkGroup> Children { get; set; }
         public virtual ICollection<Benchmark> Benchmarks { get; set; }
