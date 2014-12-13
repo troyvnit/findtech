@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using System.Web.UI.WebControls;
 using System.Xml;
 using AutoMapper;
@@ -12,6 +13,7 @@ using FindTech.Entities.Models.Enums;
 using FindTech.Services;
 using FindTech.Web.Areas.BO.Models;
 using HtmlAgilityPack;
+using Newtonsoft.Json;
 using Repository.Pattern.UnitOfWork;
 
 namespace FindTech.Web.Areas.BO.Controllers
@@ -23,7 +25,8 @@ namespace FindTech.Web.Areas.BO.Controllers
         private IArticleService articleService { get; set; }
         private IUnitOfWorkAsync unitOfWork { get; set; }
 
-        public ArticleBOController(IUnitOfWorkAsync unitOfWork, ISourceService sourceService, IArticleService articleService, IArticleCategoryService articleCategoryService)
+        public ArticleBOController(IUnitOfWorkAsync unitOfWork, ISourceService sourceService,
+            IArticleService articleService, IArticleCategoryService articleCategoryService)
         {
             this.sourceService = sourceService;
             this.articleService = articleService;
@@ -48,7 +51,8 @@ namespace FindTech.Web.Areas.BO.Controllers
             {
                 new {name = "Troy"}
             };
-            return Json(tags.Where(a => a.GetType().GetProperty("name").GetValue(a).ToString().Contains(tag)), JsonRequestBehavior.AllowGet);
+            return Json(tags.Where(a => a.GetType().GetProperty("name").GetValue(a).ToString().Contains(tag)),
+                JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult GetArticles()
@@ -57,15 +61,24 @@ namespace FindTech.Web.Areas.BO.Controllers
             return Json(articles.Select(Mapper.Map<ArticleBOViewModel>), JsonRequestBehavior.AllowGet);
         }
 
+
+
         [HttpPost]
         public ActionResult ReadRss(string url)
         {
             if (!articleCategoryService.Queryable().Any(a => a.ArticleCategoryName == "Tin tổng hợp"))
             {
-                articleCategoryService.Insert(new ArticleCategory{ArticleCategoryName = "Tin tổng hợp", Color = "info", IsActived = true, Priority = 1});
+                articleCategoryService.Insert(new ArticleCategory
+                {
+                    ArticleCategoryName = "Tin tổng hợp",
+                    Color = "info",
+                    IsActived = true,
+                    Priority = 1
+                });
                 unitOfWork.SaveChanges();
             }
-            var category = articleCategoryService.Queryable().FirstOrDefault(a => a.ArticleCategoryName == "Tin tổng hợp");
+            var category =
+                articleCategoryService.Queryable().FirstOrDefault(a => a.ArticleCategoryName == "Tin tổng hợp");
             var rssSources = sourceService.Queryable().Include(a => a.Xpaths).ToList();
             foreach (var rssSource in rssSources)
             {
@@ -87,7 +100,12 @@ namespace FindTech.Web.Areas.BO.Controllers
                         }
                         var contentXpaths = rssSource.Xpaths.Where(a => a.ArticleField == ArticleField.Content);
                         var content = "";
-                        foreach (var contentNode in contentXpaths.Select(contentXpath => contentDocument.DocumentNode.SelectSingleNode(contentXpath.XpathString)).Where(contentNode => contentNode != null))
+                        foreach (
+                            var contentNode in
+                                contentXpaths.Select(
+                                    contentXpath =>
+                                        contentDocument.DocumentNode.SelectSingleNode(contentXpath.XpathString))
+                                    .Where(contentNode => contentNode != null))
                         {
                             content = contentNode.InnerHtml;
                             break;
@@ -100,7 +118,11 @@ namespace FindTech.Web.Areas.BO.Controllers
                                 ArticleCategoryId = category.ArticleCategoryId,
                                 ArticleCategory = category,
                                 Title = title,
-                                Avatar = summary.DocumentNode.Descendants("img").Select(n => n.Attributes["src"].Value).ToArray().FirstOrDefault(),
+                                Avatar =
+                                    summary.DocumentNode.Descendants("img")
+                                        .Select(n => n.Attributes["src"].Value)
+                                        .ToArray()
+                                        .FirstOrDefault(),
                                 Description = summary.DocumentNode.InnerText,
                                 IsActived = false,
                                 Priority = 1,
@@ -117,7 +139,7 @@ namespace FindTech.Web.Areas.BO.Controllers
                     unitOfWork.SaveChanges();
                 }
             }
-            
+
             return Json(true);
         }
 
@@ -128,27 +150,27 @@ namespace FindTech.Web.Areas.BO.Controllers
         {
             var article = new Article
             {
-                 Title = acBOViewModel.Title,
-                 Description = acBOViewModel.Description,
-                 Content = acBOViewModel.Content,
-                 Tags = acBOViewModel.Tags,
-                 Priority = acBOViewModel.Priority,
-                 Avatar = acBOViewModel.Avatar,
-                 PublishedDate = acBOViewModel.PublishedDate,
-                 Author = acBOViewModel.Author,
-                 BoxSize = acBOViewModel.BoxSize,
-                 ArticleType = acBOViewModel.ArticleType,
-                 ArticleCategoryId = Convert.ToInt32(acBOViewModel.ArticleCategoryId),
-                 ArticleCategory = articleCategoryService.Find(Convert.ToInt32(acBOViewModel.ArticleCategoryId)),
-                 SourceId = Convert.ToInt32(acBOViewModel.SourceId),
-                 Source = sourceService.Find(Convert.ToInt32(acBOViewModel.SourceId)),
-                 IsActived = acBOViewModel.IsActived,
-                 IsDeleted = acBOViewModel.IsDeleted
+                Title = acBOViewModel.Title,
+                Description = acBOViewModel.Description,
+                Content = acBOViewModel.Content,
+                Tags = acBOViewModel.Tags,
+                Priority = acBOViewModel.Priority,
+                Avatar = acBOViewModel.Avatar,
+                PublishedDate = acBOViewModel.PublishedDate,
+                Author = acBOViewModel.Author,
+                BoxSize = acBOViewModel.BoxSize,
+                ArticleType = acBOViewModel.ArticleType,
+                ArticleCategoryId = Convert.ToInt32(acBOViewModel.ArticleCategoryId),
+                ArticleCategory = articleCategoryService.Find(Convert.ToInt32(acBOViewModel.ArticleCategoryId)),
+                SourceId = Convert.ToInt32(acBOViewModel.SourceId),
+                Source = sourceService.Find(Convert.ToInt32(acBOViewModel.SourceId)),
+                IsActived = acBOViewModel.IsActived,
+                IsDeleted = acBOViewModel.IsDeleted
             };
             articleService.Insert(article);
             unitOfWork.SaveChanges();
 
             return Redirect("Index");
-        }
+        }       
     }
 }

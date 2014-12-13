@@ -2,6 +2,6 @@
 {
     public enum ArticleType
     {
-        News, Reviews
+        News = 0, Reviews = 1
     }
 }
