@@ -211,7 +211,7 @@
     <Compile Include="Areas\BO\Controllers\SourceBOController.cs" />
     <Compile Include="Areas\BO\Controllers\ArticleCategoryBOController.cs" />
     <Compile Include="Areas\BO\Controllers\ImageBOController.cs" />
-    <Compile Include="Areas\BO\Controllers\XpathBOController.cs" />
+	<Compile Include="Areas\BO\Controllers\XpathBOController.cs" />
     <Compile Include="Areas\BO\Models\BrandBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\SpecBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\BenchmarkGroupBOViewModel.cs" />
@@ -219,7 +219,7 @@
     <Compile Include="Areas\BO\Models\XpathBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\SourceBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\ArticleCategoryBOViewModel.cs" />
-    <Compile Include="Areas\BO\Models\ArticleBOViewModel.cs" />
+ 	<Compile Include="Areas\BO\Models\ArticleBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\ContentSectionBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\DirectoryBrowser.cs" />
     <Compile Include="Areas\BO\Models\EntryType.cs" />
@@ -237,7 +237,6 @@
     <Compile Include="Mappers\AutoMapperConfiguration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ArticleViewModel.cs" />
-    <Compile Include="Models\ContentSectionViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -245,6 +244,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\BO\js\angular.min.js" />
+    <Content Include="Areas\BO\js\bootstrap-datetimepicker.min.js" />
     <Content Include="Areas\BO\js\cultures\kendo.culture.af-ZA.min.js" />
     <Content Include="Areas\BO\js\cultures\kendo.culture.af.min.js" />
     <Content Include="Areas\BO\js\cultures\kendo.culture.am-ET.min.js" />
@@ -754,6 +754,8 @@
     <Content Include="Areas\BO\styles\BlueOpal\slider-v.gif" />
     <Content Include="Areas\BO\styles\BlueOpal\sprite.png" />
     <Content Include="Areas\BO\styles\BlueOpal\sprite_2x.png" />
+    <Content Include="Areas\BO\styles\bootstrap-datetimepicker.min.css" />
+    <Content Include="Areas\BO\styles\bootstrap.min.css" />
     <Content Include="Areas\BO\styles\Bootstrap\editor.png" />
     <Content Include="Areas\BO\styles\Bootstrap\imagebrowser.png" />
     <Content Include="Areas\BO\styles\Bootstrap\indeterminate.gif" />
@@ -1304,7 +1306,9 @@
     <Content Include="js\spin.min.js" />
     <Content Include="js\typeahead.js" />
     <Content Include="js\video.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1485,8 +1489,7 @@
     <Content Include="Areas\BO\Views\ArticleBO\Index.cshtml" />
     <Content Include="Areas\BO\styles\kendo.custom.css" />
     <Content Include="Areas\BO\Views\ArticleBO\Create.cshtml" />
-    <Content Include="Areas\BO\Views\ArticleCategoryBO\Create.cshtml" />
-    <Content Include="Areas\BO\Views\XpathBO\Create.cshtml" />
+	<Content Include="Areas\BO\Views\XpathBO\Create.cshtml" />
     <Content Include="Areas\BO\Views\ArticleCategoryBO\Index.cshtml" />
     <Content Include="Areas\BO\Views\SourceBO\Index.cshtml" />
     <Content Include="Areas\BO\Views\BrandBO\Index.cshtml" />

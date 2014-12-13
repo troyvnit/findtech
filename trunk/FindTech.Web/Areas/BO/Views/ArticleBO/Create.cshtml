@@ -1,4 +1,6 @@
-﻿@{
+﻿@using FindTech.Entities.Models.Enums
+@using FindTech.Web.Areas.BO.Controllers
+@{
     ViewBag.Title = "Create";
     Layout = "~/Areas/BO/Views/Shared/_Layout.cshtml";
 }
@@ -180,5 +182,44 @@
         $('#datetimepicker').datepicker({
             language: 'en'
         });
+
+        $("#category").kendoDropDownList({
+            dataTextField: "ArticleCategoryName",
+            dataValueField: "ArticleCategoryId",
+            dataSource: {
+                transport: {
+                    read: {
+                        dataType: "json",
+                        url: "../ArticleCategoryBO/GetArticleCategories",
+                    }
+                }
+            }
+        });
+       
+        
+        $("#source").kendoDropDownList({
+            dataTextField: "SourceName",
+            dataValueField: "SourceId",
+            dataSource: {
+                transport: {
+                    read: {
+                        dataType: "json",
+                        url: "../SourceBO/GetSources",
+                    }
+                }
+            }
+        });
+
+
+        $("#articleType").kendoDropDownList({
+            dataTextField: "text",
+            dataValueField: "value",
+            dataSource: [
+              { text: "Item1", value: "1" },
+              { text: "Item2", value: "2" }
+            ]
+        });
+
+
     });
 </script>
