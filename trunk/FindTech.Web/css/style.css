@@ -945,9 +945,6 @@ label {
 .selectBox,
 .form-control {
     border: 1px solid #e1e1e1;
-    -webkit-box-shadow: 0 1px #fff, inset 0 1px 4px rgba(0,0,0,.15);
-    -moz-box-shadow: 0 1px #fff, inset 0 1px 4px rgba(0,0,0,.15);
-    box-shadow: 0 1px #fff, inset 0 1px 4px rgba(0,0,0,.15);
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
