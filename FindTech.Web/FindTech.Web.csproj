@@ -211,7 +211,7 @@
     <Compile Include="Areas\BO\Controllers\SourceBOController.cs" />
     <Compile Include="Areas\BO\Controllers\ArticleCategoryBOController.cs" />
     <Compile Include="Areas\BO\Controllers\ImageBOController.cs" />
-	<Compile Include="Areas\BO\Controllers\XpathBOController.cs" />
+    <Compile Include="Areas\BO\Controllers\XpathBOController.cs" />
     <Compile Include="Areas\BO\Models\BrandBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\SpecBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\BenchmarkGroupBOViewModel.cs" />
@@ -219,7 +219,7 @@
     <Compile Include="Areas\BO\Models\XpathBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\SourceBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\ArticleCategoryBOViewModel.cs" />
- 	<Compile Include="Areas\BO\Models\ArticleBOViewModel.cs" />
+    <Compile Include="Areas\BO\Models\ArticleBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\ContentSectionBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\DirectoryBrowser.cs" />
     <Compile Include="Areas\BO\Models\EntryType.cs" />
@@ -600,6 +600,7 @@
     <Content Include="Areas\BO\js\cultures\kendo.culture.zu-ZA.min.js" />
     <Content Include="Areas\BO\js\cultures\kendo.culture.zu.min.js" />
     <Content Include="Areas\BO\js\jquery.min.js" />
+    <Content Include="Areas\BO\js\jquery.steps.min.js" />
     <Content Include="Areas\BO\js\kendo.all.min.js" />
     <Content Include="Areas\BO\js\kendo.angular.min.js" />
     <Content Include="Areas\BO\js\kendo.autocomplete.min.js" />
@@ -808,6 +809,7 @@
     <Content Include="Areas\BO\styles\images\kendoui.svg" />
     <Content Include="Areas\BO\styles\images\wp8_icons.png" />
     <Content Include="Areas\BO\styles\images\wp8_inverseicons.png" />
+    <Content Include="Areas\BO\styles\jquery.steps.css" />
     <Content Include="Areas\BO\styles\kendo.black.min.css" />
     <Content Include="Areas\BO\styles\kendo.black.mobile.min.css" />
     <Content Include="Areas\BO\styles\kendo.blueopal.min.css" />
@@ -1489,7 +1491,7 @@
     <Content Include="Areas\BO\Views\ArticleBO\Index.cshtml" />
     <Content Include="Areas\BO\styles\kendo.custom.css" />
     <Content Include="Areas\BO\Views\ArticleBO\Create.cshtml" />
-	<Content Include="Areas\BO\Views\XpathBO\Create.cshtml" />
+    <Content Include="Areas\BO\Views\XpathBO\Create.cshtml" />
     <Content Include="Areas\BO\Views\ArticleCategoryBO\Index.cshtml" />
     <Content Include="Areas\BO\Views\SourceBO\Index.cshtml" />
     <Content Include="Areas\BO\Views\BrandBO\Index.cshtml" />

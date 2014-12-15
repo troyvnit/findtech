@@ -1,3 +1,11 @@
 ﻿.selectBox-dropdown {
     display: none !important;
 }
+.form-control .k-input, .form-control .k-select {
+    line-height: 22px;
+    padding: 8px 12px;
+}
+.form-group .k-dropdown{
+    width: 100%;
+    display: block;
+}
