@@ -598,8 +598,8 @@
     <Content Include="Areas\BO\js\cultures\kendo.culture.zh.min.js" />
     <Content Include="Areas\BO\js\cultures\kendo.culture.zu-ZA.min.js" />
     <Content Include="Areas\BO\js\cultures\kendo.culture.zu.min.js" />
+    <Content Include="Areas\BO\js\jquery.bootstrap.wizard.js" />
     <Content Include="Areas\BO\js\jquery.min.js" />
-    <Content Include="Areas\BO\js\jquery.steps.min.js" />
     <Content Include="Areas\BO\js\kendo.all.min.js" />
     <Content Include="Areas\BO\js\kendo.angular.min.js" />
     <Content Include="Areas\BO\js\kendo.autocomplete.min.js" />
@@ -806,7 +806,6 @@
     <Content Include="Areas\BO\styles\images\kendoui.svg" />
     <Content Include="Areas\BO\styles\images\wp8_icons.png" />
     <Content Include="Areas\BO\styles\images\wp8_inverseicons.png" />
-    <Content Include="Areas\BO\styles\jquery.steps.css" />
     <Content Include="Areas\BO\styles\kendo.black.min.css" />
     <Content Include="Areas\BO\styles\kendo.black.mobile.min.css" />
     <Content Include="Areas\BO\styles\kendo.blueopal.min.css" />
