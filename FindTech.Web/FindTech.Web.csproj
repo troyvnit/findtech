@@ -244,7 +244,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\BO\js\angular.min.js" />
-    <Content Include="Areas\BO\js\bootstrap-datetimepicker.min.js" />
     <Content Include="Areas\BO\js\cultures\kendo.culture.af-ZA.min.js" />
     <Content Include="Areas\BO\js\cultures\kendo.culture.af.min.js" />
     <Content Include="Areas\BO\js\cultures\kendo.culture.am-ET.min.js" />
@@ -755,8 +754,6 @@
     <Content Include="Areas\BO\styles\BlueOpal\slider-v.gif" />
     <Content Include="Areas\BO\styles\BlueOpal\sprite.png" />
     <Content Include="Areas\BO\styles\BlueOpal\sprite_2x.png" />
-    <Content Include="Areas\BO\styles\bootstrap-datetimepicker.min.css" />
-    <Content Include="Areas\BO\styles\bootstrap.min.css" />
     <Content Include="Areas\BO\styles\Bootstrap\editor.png" />
     <Content Include="Areas\BO\styles\Bootstrap\imagebrowser.png" />
     <Content Include="Areas\BO\styles\Bootstrap\indeterminate.gif" />
