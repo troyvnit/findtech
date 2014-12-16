@@ -23,7 +23,7 @@ namespace FindTech.Web.Areas.BO.Models
        
         [JsonConverter(typeof(StringEnumConverter))]
         public ArticleType ArticleType { get; set; }
-        public bool? IsActived { get; set; }
+        public string IsActived { get; set; }
         public bool? IsDeleted { get; set; }
         public int ArticleCategoryId { get; set; }
     }
