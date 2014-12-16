@@ -88,7 +88,7 @@
                 { field: "Source", title: "Source", width: 120 },
                 { field: "BoxSize", title: "Box Size", width: 120 },
                 { field: "IsActived", title: "IsActived", width: 120 },
-                { command: "destroy", title: "&nbsp;", width: 120 }],
+                { command: [{ text: "View Details", click: showDetails },"destroy"], title: "&nbsp;", width: 120 }],
             editable: true
         });
 
@@ -105,4 +105,10 @@
             });
         });
     });
+    function showDetails(e) {
+        e.preventDefault();
+
+        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+        alert(dataItem.ArticleId);
+    }
 </script>

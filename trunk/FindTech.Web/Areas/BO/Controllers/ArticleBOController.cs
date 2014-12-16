@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
+using System.Web.Routing;
 using System.Web.Script.Serialization;
 using System.Web.UI.WebControls;
 using System.Xml;
@@ -40,9 +41,16 @@ namespace FindTech.Web.Areas.BO.Controllers
             return View();
         }
 
-        public ActionResult Create()
+        public ActionResult Create(int? articleId)
         {
-            return View();
+             var articleBOViewModel = new ArticleBOViewModel();
+            if (articleId != null)
+            {
+                var article = articleService.Queryable().FirstOrDefault(a => a.ArticleId == articleId);
+                articleBOViewModel = Mapper.Map<ArticleBOViewModel>(article);
+            }
+            
+            return View(articleBOViewModel);
         }
 
         public ActionResult GetTags(string tag)
@@ -146,31 +154,24 @@ namespace FindTech.Web.Areas.BO.Controllers
 
 
         [HttpPost]
-        public ActionResult CreateArticle(ArticleBOViewModel acBOViewModel)
+        public ActionResult CreateArticle(ArticleBOViewModel articleBOViewModel)
         {
-            var article = new Article
+            if (articleBOViewModel.ArticleId != 0)
             {
-                Title = acBOViewModel.Title,
-                Description = acBOViewModel.Description,
-                Content = acBOViewModel.Content,
-                Tags = acBOViewModel.Tags,
-                Priority = acBOViewModel.Priority,
-                Avatar = acBOViewModel.Avatar,
-                PublishedDate = acBOViewModel.PublishedDate,
-                Author = acBOViewModel.Author,
-                BoxSize = acBOViewModel.BoxSize,
-                ArticleType = acBOViewModel.ArticleType,
-                ArticleCategoryId = Convert.ToInt32(acBOViewModel.ArticleCategoryId),
-                ArticleCategory = articleCategoryService.Find(Convert.ToInt32(acBOViewModel.ArticleCategoryId)),
-                SourceId = Convert.ToInt32(acBOViewModel.SourceId),
-                Source = sourceService.Find(Convert.ToInt32(acBOViewModel.SourceId)),
-                IsActived = acBOViewModel.IsActived,
-                IsDeleted = acBOViewModel.IsDeleted
-            };
-            articleService.Insert(article);
+                var count = articleService.Queryable().Count(a => a.ArticleId == articleBOViewModel.ArticleId);
+                if (count > 0)
+                {
+                    var existedArticle = Mapper.Map<Article>(articleBOViewModel);
+                    articleService.Update(existedArticle);
+                }
+            }
+            else
+            {
+                var newArticle = Mapper.Map<Article>(articleBOViewModel);
+                articleService.Insert(newArticle);
+            }
             unitOfWork.SaveChanges();
-
-            return Redirect("Index");
+            return RedirectToAction("Create",new { articleId = articleBOViewModel.ArticleId });
         }       
     }
 }

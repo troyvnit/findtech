@@ -1,5 +1,6 @@
 ﻿@using FindTech.Entities.Models.Enums
 @using FindTech.Web.Areas.BO.Controllers
+@model FindTech.Web.Areas.BO.Models.ArticleBOViewModel
 @{
     ViewBag.Title = "Create";
     Layout = "~/Areas/BO/Views/Shared/_Layout.cshtml";
@@ -32,34 +33,34 @@
                     <div class="tab-pane" id="tab1">
                         <form role="form" method="POST" action="CreateArticle">
                             <div class="row">
-                                <input type="hidden" id="articleId" name="ArticleId" value="0"/>
+                                <input type="hidden" id="articleId" name="ArticleId" value="@Model.ArticleId"/>
                                 <div class="col-xs-6 col-md-3">
                                     <a href="#" class="thumbnail" id="avatar">
-                                        <img data-src="holder.js/100%x300" alt="100%x300" id="imgAvatar" />
+                                        <img data-src="holder.js/100%x300" alt="100%x300" id="imgAvatar" src="@Model.Avatar" />
                                     </a>
-                                    <input type="hidden" name="Avatar" />
+                                    <input type="hidden" name="Avatar" value="@Model.Avatar" />
                                 </div>
                                 <div class="col-xs-6 col-md-9">
                                     <div class="form-group">
                                         <label for="title">Tiêu đề</label>
-                                        <input type="text" class="form-control" id="title" name="Title" placeholder="Nhập tiêu đề">
+                                        <input type="text" class="form-control" id="title" name="Title" placeholder="Nhập tiêu đề" value="@Model.Title">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="description">Mô tả</label>
-                                        <textarea class="form-control" id="description" name="Description" placeholder="Mô tả ngắn"></textarea>
+                                        <textarea class="form-control" id="description" name="Description" placeholder="Mô tả ngắn">@Model.Description</textarea>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="tags">Nhãn</label>
-                                        <input type="text" class="form-control" maxlength="100" id="tags" name="Tags" data-role="tagsinput" placeholder="Nhãn">
+                                        <input type="text" class="form-control" maxlength="100" id="tags" name="Tags" data-role="tagsinput" placeholder="Nhãn" value="@Model.Tags">
                                     </div>
                                 </div>
 
                                 <div class="col-xs-12 col-md-12">
                                     <div class="form-group">
                                         <label for="title">Nội dung bài viết</label>
-                                        <textarea id="editor" name="Content" rows="10" cols="30" style="width:100%;height:400px"></textarea>
+                                        <textarea id="editor" name="Content" rows="10" cols="30" style="width:100%;height:400px">@Html.Raw(Model.Content)</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -67,38 +68,38 @@
                                 <div class="col-xs-6 col-md-6">
                                     <div class="form-group">
                                         <label for="title">Loại bài</label>
-                                        <input type="text" class="form-control" id="articleType" name="ArticleType" placeholder="Loại bài" />
+                                        <input type="text" class="form-control" id="articleType" name="ArticleType" placeholder="Loại bài"  value="@Model.ArticleType"/>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="category">Danh mục</label>
-                                        <input type="text" class="form-control" id="category" name="ArticleCategoryId" value="Phone" placeholder="Danh mục">
+                                        <input type="text" class="form-control" id="category" name="ArticleCategoryId" value="@Model.ArticleCategoryId" placeholder="Danh mục">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="source">Nguồn</label>
-                                        <input type="text" class="form-control" id="source" name="SourceId" value="phonearena" placeholder="Nguồn bài viết">
+                                        <input type="text" class="form-control" id="source" name="SourceId" value="@Model.SourceId" placeholder="Nguồn bài viết">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="title">Kích thước box</label>
-                                        <input type="text" class="form-control" id="boxSize" name="BoxSize" placeholder="Kích thước box" />
+                                        <input type="text" class="form-control" id="boxSize" name="BoxSize" placeholder="Kích thước box" value="@Model.BoxSize"/>
                                     </div>
                                 </div>
 
                                 <div class="col-xs-6 col-md-6">
                                     <div class="form-group">
                                         <label for="tags">Ngày</label>
-                                        <input type='text' class="form-control" id="datetimepicker" name="PublishedDate" placeholder="Ngày tạo bài" />
+                                        <input type='text' class="form-control" id="datetimepicker" name="PublishedDate" placeholder="Ngày tạo bài" value="@Model.PublishedDate" />
                                     </div>
                                     <div class="form-group">
                                         <label for="title">Độ ưu tiên</label>
-                                        <input type="text" class="form-control" id="priority" name="Priority" placeholder="Độ ưu tiên" />
+                                        <input type="text" class="form-control" id="priority" name="Priority" placeholder="Độ ưu tiên" value="@Model.Priority"/>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="title">Tác giả</label>
-                                        <input type="text" class="form-control" id="author" name="Author" placeholder="Tác giả" />
+                                        <input type="text" class="form-control" id="author" name="Author" placeholder="Tác giả" value="@Model.Author" />
                                     </div>
                                 </div>
                             </div>
@@ -107,10 +108,23 @@
                                 <div class="col-xs-12 col-md-12 text-right">
                                     <span class="checkbox">
                                         <label>
-                                            <input type="checkbox" id="isActive" name="IsActived" value="true"> Kích hoạt
+                                            <input type="checkbox" id="isActive" name="IsActived" @(Model.IsActived =="True" ? "checked":"")> Kích hoạt
                                         </label>
                                     </span>
-                                    <button type="submit" class="btn btn-primary">Click để tạo bài</button>
+                                    @{
+                                        var submitButtonName = "";
+                                             if (Model.ArticleId == 0)
+                                             {
+                                                 submitButtonName = "Click để tạo bài";
+                                             }
+                                             else
+                                             {
+                                                 submitButtonName = "Click để cập nhật bài";
+                                             }
+                                    }
+                                    <button type="submit" class="btn btn-primary">
+                                           @submitButtonName
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -233,8 +247,8 @@
             dataTextField: "text",
             dataValueField: "value",
             dataSource: [
-              { text: "Item1", value: "1" },
-              { text: "Item2", value: "2" }
+              { text: "News", value: "0" },
+              { text: "Review", value: "1" }
             ]
         });
 
