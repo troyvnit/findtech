@@ -24,6 +24,7 @@ namespace FindTech.Entities.Models
         public virtual ArticleCategory ArticleCategory { get; set; }
         public int SourceId { get; set; }
         public virtual Source Source { get; set; }
-        public virtual ICollection<ContentSection> ContentSections { get; set; } 
+        public virtual ICollection<ContentSection> ContentSections { get; set; }
+        public virtual ICollection<Device> RelatedDevices { get; set; }
     }
 }
