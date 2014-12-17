@@ -1,13 +1,17 @@
-﻿using System;
+﻿using AutoMapper;
+using FindTech.Web.Areas.BO.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FindTech.Services;
 
 namespace FindTech.Web.Areas.BO.Controllers
 {
     public class DeviceBOController : Controller
     {
+        private ISpecService specService { get; set; }
         // GET: BO/DevicesBO
         public ActionResult Index()
         {
@@ -84,6 +88,12 @@ namespace FindTech.Web.Areas.BO.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult GetSpecs()
+        {
+            var brands = specService.Query().Select();
+            return Json(brands.Select(Mapper.Map<SpecBOViewModel>), JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -1496,6 +1496,7 @@
     <Content Include="Areas\BO\Views\SpecGroupBO\Index.cshtml" />
     <Content Include="Areas\BO\Views\SpecBO\Index.cshtml" />
     <Content Include="Areas\BO\Views\BenchmarkGroupBO\Index.cshtml" />
+    <Content Include="Areas\BO\Views\DeviceBO\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Article\Detail.cshtml" />
     <None Include="Properties\PublishProfiles\FindTech.pubxml" />

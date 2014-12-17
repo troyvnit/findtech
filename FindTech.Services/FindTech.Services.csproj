@@ -44,6 +44,7 @@
     <Compile Include="ContentSectionService.cs" />
     <Compile Include="BrandService.cs" />
     <Compile Include="BenchmarkGroupService.cs" />
+    <Compile Include="DeviceService.cs" />
     <Compile Include="SpecService.cs" />
     <Compile Include="SpecGroupService.cs" />
     <Compile Include="SourceService.cs" />
