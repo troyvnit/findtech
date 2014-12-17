@@ -13,8 +13,9 @@ namespace FindTech.Web.Areas.BO.Models
         public string SectionDescription { get; set; }
         public string SectionContent { get; set; }
         public int ArticleId { get; set; }
-        public Article Article { get; set; }
-        public int BenchmarkId { get; set; }
-        public Benchmark Benchmark { get; set; }
+        public virtual ArticleBOViewModel Article { get; set; }
+        public int BenchmarkGroupId { get; set; }
+        public virtual BenchmarkGroupBOViewModel BenchmarkGroup { get; set; }
+        public virtual ICollection<Image> Images { get; set; } 
     }
 }

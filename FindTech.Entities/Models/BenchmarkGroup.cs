@@ -14,6 +14,5 @@ namespace FindTech.Entities.Models
         public int? ParentId { get; set; }
         public virtual BenchmarkGroup Parent { get; set; }
         public virtual ICollection<BenchmarkGroup> Children { get; set; }
-        public virtual ICollection<Benchmark> Benchmarks { get; set; }
     }
 }

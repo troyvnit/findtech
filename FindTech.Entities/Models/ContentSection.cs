@@ -1,4 +1,5 @@
-﻿using Repository.Pattern.Ef6;
+﻿using System.Collections.Generic;
+using Repository.Pattern.Ef6;
 
 namespace FindTech.Entities.Models
 {
@@ -10,7 +11,8 @@ namespace FindTech.Entities.Models
         public string SectionContent { get; set; }
         public int ArticleId { get; set; }
         public virtual Article Article { get; set; }
-        public int BenchmarkId { get; set; }
-        public virtual Benchmark Benchmark { get; set; }
+        public int BenchmarkGroupId { get; set; }
+        public virtual BenchmarkGroup BenchmarkGroup { get; set; }
+        public virtual ICollection<Image> Images { get; set; } 
     }
 }

@@ -27,6 +27,7 @@ namespace FindTech.Web.Mappers
             {
                 Mapper.CreateMap<ArticleBOViewModel, Article>().ForMember(a => a.IsActived, o => o.MapFrom(x => x.IsActived == "on"));
                 Mapper.CreateMap<ArticleCategoryBOViewModel, ArticleCategory>();
+                Mapper.CreateMap<ContentSectionBOViewModel, ContentSection>();
                 Mapper.CreateMap<SourceBOViewModel, Source>();
                 Mapper.CreateMap<XpathBOViewModel, Xpath>();
                 Mapper.CreateMap<BrandBOViewModel, Brand>();
