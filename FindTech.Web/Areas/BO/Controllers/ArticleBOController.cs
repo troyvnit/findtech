@@ -43,13 +43,16 @@ namespace FindTech.Web.Areas.BO.Controllers
 
         public ActionResult Create(int? articleId)
         {
-             var articleBOViewModel = new ArticleBOViewModel();
+            var articleBOViewModel = new ArticleBOViewModel();
+            var contentSections = new List<ContentSectionBOViewModel>();
             if (articleId != null)
             {
-                var article = articleService.Queryable().FirstOrDefault(a => a.ArticleId == articleId);
+                var article = articleService.Queryable().Include(a => a.ContentSections).FirstOrDefault(a => a.ArticleId == articleId);
                 articleBOViewModel = Mapper.Map<ArticleBOViewModel>(article);
+                if (article != null)
+                    contentSections = article.ContentSections.Select(Mapper.Map<ContentSectionBOViewModel>).ToList();
             }
-            
+            ViewBag.ContentSections = contentSections;
             return View(articleBOViewModel);
         }
 

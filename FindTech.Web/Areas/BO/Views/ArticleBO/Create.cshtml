@@ -1,9 +1,11 @@
 ﻿@using FindTech.Entities.Models.Enums
 @using FindTech.Web.Areas.BO.Controllers
-@model FindTech.Web.Areas.BO.Models.ArticleBOViewModel
+@using FindTech.Web.Areas.BO.Models
+@model ArticleBOViewModel
 @{
     ViewBag.Title = "Create";
     Layout = "~/Areas/BO/Views/Shared/_Layout.cshtml";
+    var contentSections = (List<ContentSectionBOViewModel>)ViewBag.ContentSections;
 }
 <div class="breadcrumb-box">
     <div class="container">
@@ -59,7 +61,7 @@
                                 <div class="col-xs-12 col-md-12">
                                     <div class="form-group">
                                         <label for="title">Nội dung bài viết</label>
-                                        <textarea id="editor" name="Content" rows="10" cols="30" style="width:100%;height:400px">@Html.Raw(Model.Content)</textarea>
+                                        <textarea class="editor" name="Content" rows="10" cols="30" style="width:100%;height:400px">@Html.Raw(Model.Content)</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -115,72 +117,35 @@
                         </form>
                     </div>
                     <div class="tab-pane" id="tab2">
-                        <button type="submit" class="btn btn-primary k-add-button">Add</button>
-                        <div id="sectionListView"></div>
-                        <div id="sectionPager" class="k-pager-wrap"></div>
+                        <div class="panel-group" id="accordion">
+                            @foreach (var contentSection in contentSections)
+                            {
+                                Html.RenderAction("_ContentSectionForm", "ContentSectionBO", new { articleId = Model.ArticleId, contentSectionId = contentSection.ContentSectionId });
+                            }
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12 text-right">
+                                <button type="button" class="btn btn-primary" id="addNewContentSection">Add New Content Section</button>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="pager wizard">
-                        <li class="previous first" style="display:none;"><a href="#">First</a></li>
-                        <li class="previous"><a href="#">Previous</a></li>
-                        <li class="next last" style="display:none;"><a href="#">Last</a></li>
-                        <li class="next"><a href="#">Next</a></li>
-                    </ul>
                 </div>
             </div>
         </div><!-- .content -->
     </div>
 </section><!-- #main -->
-<script type="text/x-kendo-tmpl" id="sectionTemplate">
-    <div class="col-xs-12 col-md-12">
-        <div class="form-group">
-            <label for="title">Tiêu đề</label>
-            <p class="form-control-static">#:SectionTitle#</p>
-        </div>
-        <div class="form-group">
-            <label for="description">Mô tả</label>
-            <p class="form-control-static">#:SectionDescription#</p>
-        </div>
-        <div class="form-group">
-            <label for="title">Nội dung bài viết</label>
-            <p class="form-control-static">#:SectionContent#</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-12 text-right">
-            <button type="submit" class="btn btn-primary k-edit-button">Edit</button>
-            <button type="submit" class="btn btn-primary k-delete-button">Delete</button>
-        </div>
-    </div>
-</script>
-<script type="text/x-kendo-tmpl" id="editSectionTemplate">
-    <div class="col-xs-12 col-md-12">
-        <div class="form-group">
-            <label for="title">Tiêu đề</label>
-            <input type="text" class="form-control" name="SectionTitle" placeholder="Nhập tiêu đề" data-bind="value:SectionTitle">
-        </div>
-        <div class="form-group">
-            <label for="description">Mô tả</label>
-            <input type="text" class="form-control" name="SectionDescription" placeholder="Nhập tiêu đề" data-bind="value:SectionDescription">
-        </div>
-        <div class="form-group">
-            <label for="title">Nội dung bài viết</label>
-            <textarea name="SectionContent" rows="10" cols="30" style="width:100%;height:400px" data-bind="value:SectionContent"></textarea>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-12 text-right">
-            <button type="submit" class="btn btn-primary k-update-button">Update</button>
-            <button type="submit" class="btn btn-primary k-cancel-button">Cancel</button>
-        </div>
-    </div>
-</script>
 @*kendoui edtitor for content html of article*@
 <script>
     $(document).ready(function () {
         $('#rootwizard').bootstrapWizard({
             onTabShow: function (tab, navigation, index) {
-                
             }
+        });
+        $("#addNewContentSection").click(function() {
+            $.get('@Url.Action("_ContentSectionForm", "ContentSectionBO")?articleId=' + $("#articleId").val(), function (data) {
+                $('#accordion').append(data);
+                accordions();
+            });
         });
         if ($("#articleId").val() == 0) {
             $('#rootwizard').bootstrapWizard('disable', 1);
@@ -204,7 +169,7 @@
         });
 
 
-        $("#editor").kendoEditor({
+        $(".editor").kendoEditor({
             tools: [
                 "bold",
                 "italic",
@@ -288,67 +253,6 @@
               { text: "box-1", value: "box-1" },
               { text: "box-2", value: "box-2" }
             ]
-        });
-
-        var contentSectionUrl = "/ContentSectionBO",
-            dataSource = new kendo.data.DataSource({
-                transport: {
-                    read: {
-                        url: contentSectionUrl + "/GetContentSections",
-                        dataType: "json"
-                    },
-                    update: {
-                        url: contentSectionUrl + "/Update",
-                        dataType: "json",
-                        type: "POST"
-                    },
-                    destroy: {
-                        url: contentSectionUrl + "/Destroy",
-                        dataType: "json",
-                        type: "POST"
-                    },
-                    create: {
-                        url: contentSectionUrl + "/Create",
-                        dataType: "json",
-                        type: "POST"
-                    },
-                    parameterMap: function (options, operation) {
-                        if (operation !== "read" && options.models) {
-                            return { models: kendo.stringify(options.models), articleId: $("#articleId").val() };
-                        } else {
-                            return { articleId: $("#articleId").val() }
-                        }
-                    }
-                },
-                batch: true,
-                pageSize: 20,
-                schema: {
-                    model: {
-                        id: "ContentSectionId",
-                        fields: {
-                            ContentSectionId: { editable: false, defaultValue: 0 },
-                            SectionTitle: { validation: { required: true } },
-                            SectionDescription: { type: "string" },
-                            SectionContent: { type: "string" },
-                            ArticleId: { type: "number" }
-                        }
-                    }
-                }
-            });
-
-        $("#sectionPager").kendoPager({
-            dataSource: dataSource
-        });
-
-        var listView = $("#sectionListView").kendoListView({
-            dataSource: dataSource,
-            template: kendo.template($("#sectionTemplate").html()),
-            editTemplate: kendo.template($("#editSectionTemplate").html())
-        }).data("kendoListView");
-
-        $(".k-add-button").click(function (e) {
-            listView.add();
-            e.preventDefault();
         });
     });
 </script>
