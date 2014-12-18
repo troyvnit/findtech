@@ -1,0 +1,42 @@
+﻿@model FindTech.Web.Areas.BO.Models.ContentSectionBOViewModel
+@{
+    var collapseId = DateTime.Now.Ticks;
+    Layout = null;
+}
+<div class="panel panel-default active">
+    <div class="panel-heading" role="tab" id="heading-@collapseId">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse-@collapseId">
+                @(string.IsNullOrEmpty(Model.SectionTitle) ? "New Content Section" : Model.SectionTitle)
+            </a>
+        </h4>
+    </div>
+    <div id="collapse-@collapseId" class="panel-collapse collapse in">
+        <div class="panel-body">
+            <form role="form" method="POST" action="@Url.Action("Create", "ContentSectionBO")">
+                <input type="hidden" name="ArticleId" value="@Model.ArticleId" />
+                <input type="hidden" name="ContentSectionId" value="@Model.ContentSectionId" />
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <div class="form-group">
+                            <label for="SectionTitle">Tiêu đề</label>
+                            <input type="text" class="form-control" name="SectionTitle" placeholder="Nhập tiêu đề" value="@Model.SectionTitle">
+                        </div>
+                        <div class="form-group">
+                            <label for="SectionDescription">Mô tả</label>
+                            <textarea class="form-control" name="SectionDescription" placeholder="Mô tả ngắn">@Model.SectionDescription</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="SectionContent">Nội dung bài viết</label>
+                            <textarea class="editor" name="SectionContent" rows="10" cols="30" style="width:100%;height:400px">@Html.Raw(Model.SectionContent)</textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-12 text-right">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-danger">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
