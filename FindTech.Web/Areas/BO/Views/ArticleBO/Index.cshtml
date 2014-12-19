@@ -107,8 +107,7 @@
     });
     function showDetails(e) {
         e.preventDefault();
-
         var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-        alert(dataItem.ArticleId);
+        window.open('@Url.Action("Create","ArticleBO")?articleId='+dataItem.ArticleId,'_blank');
     }
 </script>
