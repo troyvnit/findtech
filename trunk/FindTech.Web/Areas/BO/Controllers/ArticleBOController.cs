@@ -157,7 +157,7 @@ namespace FindTech.Web.Areas.BO.Controllers
 
 
         [HttpPost]
-        public ActionResult CreateArticle(ArticleBOViewModel articleBOViewModel)
+        public ActionResult CreateOrUpdate(ArticleBOViewModel articleBOViewModel)
         {
             if (articleBOViewModel.ArticleId != 0)
             {
