@@ -117,6 +117,7 @@
                         </form>
                     </div>
                     <div class="tab-pane" id="tab2">
+                        <div class="alert alert-success" id="contentSectionAlert">Save success!</div>
                         <div class="panel-group" id="accordion">
                             @foreach (var contentSection in contentSections)
                             {
@@ -223,8 +224,8 @@
                 }
             }
         });
-       
-        
+
+
         $("#source").kendoDropDownList({
             optionLabel: "Select Source",
             dataTextField: "SourceName",
@@ -259,4 +260,28 @@
             ]
         });
     });
+
+   function submitContentSection (form) {
+        $.post(form.attr('action'), form.serialize(), function (data) {
+            form.find('input[name="ContentSectionId"]').val(data.ContentSectionId);
+            form.closest('.panel').find('.panel-title a').text(data.SectionTitle);
+            $('#contentSectionAlert').html('<strong>Saved success!</strong>');
+            $('#contentSectionAlert').show(0).delay(3000).hide(0);
+        });
+   };
+
+   function deleteContentSection(form) {
+       if (confirm("Are you sure to delete this content section!")) {
+           var contentSectionId = form.find('input[name="ContentSectionId"]').val();
+           if (contentSectionId > 0) {
+               $.post('@Url.Action("Destroy", "ContentSectionBO")', { contentSectionId: contentSectionId }, function (data) {
+                   form.closest('.panel').remove();
+                   $('#contentSectionAlert').html('<strong>Deleted success!</strong>');
+                   $('#contentSectionAlert').show(0).delay(3000).hide(0);
+               });
+           } else {
+               form.closest('.panel').remove();
+           }
+       }
+   };
 </script>

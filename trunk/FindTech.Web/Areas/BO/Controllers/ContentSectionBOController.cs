@@ -60,7 +60,7 @@ namespace FindTech.Web.Areas.BO.Controllers
                 contentSectionService.Insert(contentSection);
             }
             unitOfWork.SaveChanges();
-            return View();
+            return Json(contentSection);
         }
 
         //[HttpPost]
@@ -98,18 +98,13 @@ namespace FindTech.Web.Areas.BO.Controllers
         }
 
         [HttpPost]
-        public ActionResult Destroy(string models)
+        public ActionResult Destroy(int contentSectionId)
         {
-            var contentSectionBOViewModels = JsonConvert.DeserializeObject<List<ContentSectionBOViewModel>>(models);
-            for (var i = 0; i < contentSectionBOViewModels.Count; i++)
-            {
-                var contentSectionBOViewModel = contentSectionBOViewModels.ElementAt(i);
-                var contentSection = Mapper.Map<ContentSection>(contentSectionBOViewModel);
-                contentSectionService.Delete(contentSection);
-                unitOfWork.SaveChanges();
-                contentSectionBOViewModels.RemoveAt(i);
-            }
-            return Json(contentSectionBOViewModels, JsonRequestBehavior.AllowGet);
+            var contentSection =
+                contentSectionService.Queryable().FirstOrDefault(a => a.ContentSectionId == contentSectionId);
+            contentSectionService.Delete(contentSection);
+            unitOfWork.SaveChanges();
+            return Json(contentSectionId, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult _ContentSectionForm(int? contentSectionId, int articleId)

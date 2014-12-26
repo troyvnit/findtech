@@ -661,11 +661,12 @@ a.edit {
     min-height: 34px;
     margin-bottom: 22px;
     overflow: hidden;
-    padding: 20px;
+    padding: 10px 15px;
     position: relative;
     text-shadow: none;
     -webkit-transition: opacity .3s linear;
     transition: opacity .3s linear;
+    display: none;
 }
 
 .alert-black {
@@ -2202,7 +2203,7 @@ blockquote {
 
 .tab-content > .tab-pane,
 .pill-content > .pill-pane {
-    padding: 36px 0 0;
+    padding: 0;
 }
 
 .tabs-left > .nav-tabs > li,
