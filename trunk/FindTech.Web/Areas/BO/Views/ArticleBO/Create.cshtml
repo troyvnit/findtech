@@ -6,6 +6,7 @@
     ViewBag.Title = "Create";
     Layout = "~/Areas/BO/Views/Shared/_Layout.cshtml";
     var contentSections = (List<ContentSectionBOViewModel>)ViewBag.ContentSections;
+    var boxSize = (int) Model.BoxSize;
 }
 <div class="breadcrumb-box">
     <div class="container">
@@ -84,7 +85,7 @@
 
                                     <div class="form-group">
                                         <label for="title">Box size</label>
-                                        <input type="text" class="form-control" id="boxSize" name="BoxSize" placeholder="Box size" value="@Model.BoxSize" />
+                                        <input type="text" class="form-control" id="boxSize" name="BoxSize" placeholder="Box size" value="@boxSize" />
                                     </div>
                                 </div>
 
@@ -255,8 +256,9 @@
             dataTextField: "text",
             dataValueField: "value",
             dataSource: [
-              { text: "box-1", value: "box-1" },
-              { text: "box-2", value: "box-2" }
+              { text: "Box1", value: "1" },
+              { text: "Box2", value: "2" },
+              { text: "Box3", value: "3" }
             ]
         });
     });

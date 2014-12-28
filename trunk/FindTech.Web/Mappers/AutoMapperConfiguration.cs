@@ -1,5 +1,7 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using FindTech.Entities.Models;
+using FindTech.Entities.Models.Enums;
 using FindTech.Web.Areas.BO.Models;
 using FindTech.Web.Models;
 
@@ -25,7 +27,9 @@ namespace FindTech.Web.Mappers
 
             protected override void Configure()
             {
-                Mapper.CreateMap<ArticleBOViewModel, Article>().ForMember(a => a.IsActived, o => o.MapFrom(x => x.IsActived == "on"));
+                Mapper.CreateMap<Article, ArticleGridBOViewModel>();
+                Mapper.CreateMap<ArticleBOViewModel, Article>()
+                    .ForMember(a => a.IsActived, o => o.MapFrom(x => x.IsActived == "on"));
                 Mapper.CreateMap<ArticleCategoryBOViewModel, ArticleCategory>();
                 Mapper.CreateMap<ContentSectionBOViewModel, ContentSection>();
                 Mapper.CreateMap<SourceBOViewModel, Source>();
@@ -47,6 +51,9 @@ namespace FindTech.Web.Mappers
             protected override void Configure()
             {
                 Mapper.CreateMap<Article, ArticleBOViewModel>();
+                Mapper.CreateMap<Article, ArticleGridBOViewModel>()
+                    .ForMember(a => a.ArticleType, o => o.MapFrom(x => new ArticleTypeDropDown{ArticleTypeId = (int)x.ArticleType, ArticleTypeName = Enum.GetName(typeof(ArticleType), x.ArticleType)}))
+                    .ForMember(a => a.BoxSize, o => o.MapFrom(x => new BoxSizeDropDown { BoxSizeId = (int)x.BoxSize, BoxSizeName = x.BoxSize.ToString()}));
                 Mapper.CreateMap<Article, ArticleViewModel>()
                     .ForMember(a => a.ArticleCategoryColor, o => o.MapFrom(x => x.ArticleCategory.Color))
                     .ForMember(a => a.ArticleCategoryName, o => o.MapFrom(x => x.ArticleCategory.ArticleCategoryName))
