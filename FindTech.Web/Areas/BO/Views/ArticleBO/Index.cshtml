@@ -29,11 +29,13 @@
 <script type="text/x-kendo-template" id="articleToolbarTemplate">
     <div class="toolbar">
         <button id="readRss" class="k-button">Read Rss</button>
+        <button class="k-button k-grid-save-changes">Save</button>
+        <button class="k-button k-grid-cancel-changes">Cancel</button>
     </div>
 </script>
 <script>
     $(document).ready(function () {
-        var articleUrl = "/ArticleBO",
+        var articleUrl = "/BO/ArticleBO",
             dataSource = new kendo.data.DataSource({
                 transport: {
                     read: {
@@ -42,15 +44,18 @@
                     },
                     update: {
                         url: articleUrl + "/Update",
-                        dataType: "json"
+                        dataType: "json",
+                        type: "post"
                     },
                     destroy: {
                         url: articleUrl + "/Destroy",
-                        dataType: "json"
+                        dataType: "json",
+                        type: "post"
                     },
                     create: {
                         url: articleUrl + "/Create",
-                        dataType: "json"
+                        dataType: "json",
+                        type: "post"
                     },
                     parameterMap: function (options, operation) {
                         if (operation !== "read" && options.models) {
@@ -68,7 +73,6 @@
                             Title: { validation: { required: true } },
                             Author: { type: "string" },
                             Source: { type: "string" },
-                            BoxSize: { type: "number", validation: { min: 0, required: true } },
                             IsActived: { type: "boolean" }
                         }
                     }
@@ -82,15 +86,45 @@
             height: 550,
             toolbar: kendo.template($("#articleToolbarTemplate").html()),
             columns: [
-                { field: "ArticleId", title: "Id", width: 120 },
-                { field: "Title", title: "Title", width: 120 },
-                { field: "Author", title: "Author", width: 120 },
-                { field: "Source", title: "Source", width: 120 },
-                { field: "BoxSize", title: "Box Size", width: 120 },
-                { field: "IsActived", title: "IsActived", width: 120 },
-                { command: [{ text: "View Details", click: showDetails },"destroy"], title: "&nbsp;", width: 120 }],
+                { field: "ArticleId", title: "Id", width: 50 },
+                { field: "Title", title: "Title", width: 150 },
+                { field: "Author", title: "Author", width: 80 },
+                { field: "ArticleType", title: "ArticleType", width: 80, editor: articleTypeDropDownEditor, template: "#=ArticleType.ArticleTypeName#" },
+                { field: "BoxSize", title: "Box Size", width: 80, editor: boxSizeDropDownEditor, template: "#=BoxSize.BoxSizeName#" },
+                { field: "IsActived", title: "IsActived", width: 80 },
+                { command: [{ text: "Details", click: showDetails },"destroy"], title: "&nbsp;", width: 100 }],
             editable: true
         });
+
+
+        function articleTypeDropDownEditor(container, options) {
+            $('<input required data-text-field="ArticleTypeName" data-value-field="ArticleTypeId" data-bind="value:' + options.field + '"/>')
+                .appendTo(container)
+                .kendoDropDownList({
+                    autoBind: false,
+                    dataSource: [
+                      { ArticleTypeName: "News", ArticleTypeId: "0" },
+                      { ArticleTypeName: "Review", ArticleTypeId: "1" }
+                    ]
+                });
+        }
+        
+        function boxSizeDropDownEditor(container, options) {
+            $('<input required data-text-field="BoxSizeName" data-value-field="BoxSizeId" data-bind="value:' + options.field + '"/>')
+                .appendTo(container)
+                .kendoDropDownList({
+                    autoBind: false,
+                    dataSource: [
+                      { BoxSizeName: "Box1", BoxSizeId: "1" },
+                      { BoxSizeName: "Box2", BoxSizeId: "2" },
+                      { BoxSizeName: "Box3", BoxSizeId: "3" }
+                    ]
+                });
+        }
+        
+    
+
+
 
         $("#readRss").click(function() {
             $.ajax({

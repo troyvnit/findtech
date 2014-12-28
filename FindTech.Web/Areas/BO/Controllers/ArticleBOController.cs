@@ -69,7 +69,7 @@ namespace FindTech.Web.Areas.BO.Controllers
         public ActionResult GetArticles()
         {
             var articles = articleService.Query().Select();
-            return Json(articles.Select(Mapper.Map<ArticleBOViewModel>), JsonRequestBehavior.AllowGet);
+            return Json(articles.ToList().Select(Mapper.Map<ArticleGridBOViewModel>), JsonRequestBehavior.AllowGet);
         }
 
 

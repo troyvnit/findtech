@@ -213,6 +213,7 @@
     <Compile Include="Areas\BO\Controllers\ImageBOController.cs" />
     <Compile Include="Areas\BO\Controllers\ContentSectionBOController.cs" />
     <Compile Include="Areas\BO\Controllers\XpathBOController.cs" />
+    <Compile Include="Areas\BO\Models\ArticleGridBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\BrandBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\SpecBOViewModel.cs" />
     <Compile Include="Areas\BO\Models\BenchmarkGroupBOViewModel.cs" />

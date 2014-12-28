@@ -17,14 +17,12 @@ namespace FindTech.Web.Areas.BO.Models
         public DateTime PublishedDate { get; set; }
         public string Author { get; set; }
         public string SourceId { get; set; }
-
-        [JsonConverter(typeof(StringEnumConverter))]
         public BoxSize BoxSize { get; set; }
-       
-        [JsonConverter(typeof(StringEnumConverter))]
         public ArticleType ArticleType { get; set; }
         public string IsActived { get; set; }
         public bool? IsDeleted { get; set; }
         public int ArticleCategoryId { get; set; }
     }
+
+   
 }
