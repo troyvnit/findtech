@@ -209,13 +209,12 @@
             //window.data("kendoWindow").close();
         });
 
-        function applyImageBrowser(buttonId, sendSelectedImage) {
+        function applyImageBrowser(button, sendSelectedImage) {
             $('#imgWindow').remove();
             $('body').append('<div id="imgWindow"><div id="imgBrowser"></div></div>');
-            var window = $("#imgWindow"),
-                        undo = $("#" + buttonId);
+            var window = $("#imgWindow");
 
-            undo.bind("click", function () {
+            button.bind("click", function () {
                 window.data("kendoWindow").open();
                 window.data("kendoWindow").center();
             });
@@ -248,7 +247,10 @@
                     imageUrl: "/ImageBO/Image?path={0}"
                 },
                 apply: function () {
-                    sendSelectedImage("/ImageBO/Image?path=" + $("#imgBrowser input[data-role='breadcrumbs']").val());
+                    var imageName = $("#imgBrowser .k-state-selected strong").text();
+                    var imageUrl = "/ImageBO/Image?path=" + $("#imgBrowser input[data-role='breadcrumbs']").val() + $("#imgBrowser .k-state-selected strong").text();
+                    var thumbnailUrl = "/ImageBO/Thumbnail?path=" + $("#imgBrowser input[data-role='breadcrumbs']").val() + $("#imgBrowser .k-state-selected strong").text();
+                    sendSelectedImage(imageName, imageUrl, thumbnailUrl, button);
                     window.data("kendoWindow").close();
                 }
             });

@@ -665,6 +665,7 @@ function carousel() {
 		},
 		auto       : autoplay,
 		width      : '100%',
+        height     : parseInt(carousel.attr('data-carousel-height')),
 		infinite   : false,
 		next       : next,
 		prev       : prev,
