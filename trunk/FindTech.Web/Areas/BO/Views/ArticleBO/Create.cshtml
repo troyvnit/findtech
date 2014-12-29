@@ -7,6 +7,7 @@
     Layout = "~/Areas/BO/Views/Shared/_Layout.cshtml";
     var contentSections = (List<ContentSectionBOViewModel>)ViewBag.ContentSections;
     var boxSize = (int) Model.BoxSize;
+    var contentSectionIds = String.Join(",", contentSections.Select(a => a.ContentSectionId));
 }
 <div class="breadcrumb-box">
     <div class="container">
@@ -143,6 +144,28 @@
             onTabShow: function (tab, navigation, index) {
             }
         });
+        var contentSectionIds = '@contentSectionIds'.split(',');
+        contentSectionIds.forEach(function(contentSectionId) {
+            $.get('@Url.Action("_ContentSectionForm", "ContentSectionBO")?articleId=' + $("#articleId").val() + '&contentSectionId=' + contentSectionId, function (data) {
+                $('#accordion').append(data);
+                accordions();
+                $('img').load(function () {
+                    carousel();
+                });
+                window.applyImageBrowser($('.add-image'), function (imageName, imageUrl, thumbnailUrl, button) {
+                    $.post('@Url.Action("AddImage", "ContentSectionBO")', { ImageName: imageName, Url: imageUrl, Thumbnail: thumbnailUrl, contentSectionId: button.closest('form').find('input[name="ContentSectionId"]').val() }, function (data) {
+                        var imageBox = '<div class="col-sm-4 col-md-2">' +
+                                '<a class="gallery-images" rel="fancybox" href="' + imageUrl + '">' +
+                                    '<img src="' + thumbnailUrl + '" width="270" height="135" alt="">' +
+                                    '<span class="bg-images"><i class="fa fa-search"></i></span>' +
+                                '</a>' +
+                            '</div>';
+                        button.closest('.row').find('.carousel').prepend(imageBox);
+                        carousel();
+                    });
+                });
+            });
+        });
         $("#addNewContentSection").click(function() {
             $.get('@Url.Action("_ContentSectionForm", "ContentSectionBO")?articleId=' + $("#articleId").val(), function (data) {
                 $('#accordion').append(data);
@@ -152,8 +175,8 @@
         if ($("#articleId").val() == 0) {
             $('#rootwizard').bootstrapWizard('disable', 1);
         }
-        window.applyImageBrowser('avatar', function(url) {
-            $('#imgAvatar').attr('src', url);
+        window.applyImageBrowser($('#avatar'), function (imageName, imageUrl, thumbnailUrl, button) {
+            $('#imgAvatar').attr('src', imageUrl);
         });
         var tags = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -263,27 +286,27 @@
         });
     });
 
-   function submitContentSection (form) {
+    function submitContentSection(form) {
         $.post(form.attr('action'), form.serialize(), function (data) {
             form.find('input[name="ContentSectionId"]').val(data.ContentSectionId);
             form.closest('.panel').find('.panel-title a').text(data.SectionTitle);
             $('#contentSectionAlert').html('<strong>Saved success!</strong>');
             $('#contentSectionAlert').show(0).delay(3000).hide(0);
         });
-   };
+    };
 
-   function deleteContentSection(form) {
-       if (confirm("Are you sure to delete this content section!")) {
-           var contentSectionId = form.find('input[name="ContentSectionId"]').val();
-           if (contentSectionId > 0) {
-               $.post('@Url.Action("Destroy", "ContentSectionBO")', { contentSectionId: contentSectionId }, function (data) {
-                   form.closest('.panel').remove();
-                   $('#contentSectionAlert').html('<strong>Deleted success!</strong>');
-                   $('#contentSectionAlert').show(0).delay(3000).hide(0);
-               });
-           } else {
-               form.closest('.panel').remove();
-           }
-       }
-   };
+    function deleteContentSection(form) {
+        if (confirm("Are you sure to delete this content section!")) {
+            var contentSectionId = form.find('input[name="ContentSectionId"]').val();
+            if (contentSectionId > 0) {
+                $.post('@Url.Action("Destroy", "ContentSectionBO")', { contentSectionId: contentSectionId }, function (data) {
+                    form.closest('.panel').remove();
+                    $('#contentSectionAlert').html('<strong>Deleted success!</strong>');
+                    $('#contentSectionAlert').show(0).delay(3000).hide(0);
+                });
+            } else {
+                form.closest('.panel').remove();
+            }
+        }
+    };
 </script>

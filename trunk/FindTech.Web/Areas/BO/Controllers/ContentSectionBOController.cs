@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -112,9 +113,17 @@ namespace FindTech.Web.Areas.BO.Controllers
             var contentSection = new ContentSectionBOViewModel { ArticleId = articleId };
             if (contentSectionId != null)
             {
-                contentSection = Mapper.Map<ContentSectionBOViewModel>(contentSectionService.Queryable().FirstOrDefault(a => a.ContentSectionId == contentSectionId));
+                contentSection = Mapper.Map<ContentSectionBOViewModel>(contentSectionService.Queryable().Include(a => a.Images).FirstOrDefault(a => a.ContentSectionId == contentSectionId));
             }
             return View(contentSection);
+        }
+
+        [HttpPost]
+        public ActionResult AddImage(Image image, int contentSectionId)
+        {
+            var contentSection =
+                contentSectionService.Queryable().FirstOrDefault(a => a.ContentSectionId == contentSectionId);
+            return null;
         }
     }
 }
