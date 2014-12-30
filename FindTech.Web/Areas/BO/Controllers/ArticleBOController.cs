@@ -159,6 +159,7 @@ namespace FindTech.Web.Areas.BO.Controllers
         [HttpPost]
         public ActionResult CreateOrUpdate(ArticleBOViewModel articleBOViewModel)
         {
+            var articleId = 0;
             if (articleBOViewModel.ArticleId != 0)
             {
                 var count = articleService.Queryable().Count(a => a.ArticleId == articleBOViewModel.ArticleId);
@@ -166,15 +167,18 @@ namespace FindTech.Web.Areas.BO.Controllers
                 {
                     var existedArticle = Mapper.Map<Article>(articleBOViewModel);
                     articleService.Update(existedArticle);
+                    unitOfWork.SaveChanges();
+                    articleId = existedArticle.ArticleId;
                 }
             }
             else
             {
                 var newArticle = Mapper.Map<Article>(articleBOViewModel);
                 articleService.Insert(newArticle);
+                unitOfWork.SaveChanges();
+                articleId = newArticle.ArticleId;
             }
-            unitOfWork.SaveChanges();
-            return RedirectToAction("Create",new { articleId = articleBOViewModel.ArticleId });
+            return RedirectToAction("Create",new { articleId });
         }       
     }
 }
