@@ -17,12 +17,14 @@ namespace FindTech.Web.Areas.BO.Controllers
     public class ContentSectionBOController : Controller
     {
         private IContentSectionService contentSectionService { get; set; }
+        private IImageService imageService { get; set; }
         private IUnitOfWorkAsync unitOfWork { get; set; }
         // GET: BO/ContentSection
 
-        public ContentSectionBOController(IContentSectionService contentSectionService, IUnitOfWorkAsync unitOfWork)
+        public ContentSectionBOController(IContentSectionService contentSectionService, IImageService imageService, IUnitOfWorkAsync unitOfWork)
         {
             this.contentSectionService = contentSectionService;
+            this.imageService = imageService;
             this.unitOfWork = unitOfWork;
         }
 
@@ -123,7 +125,30 @@ namespace FindTech.Web.Areas.BO.Controllers
         {
             var contentSection =
                 contentSectionService.Queryable().FirstOrDefault(a => a.ContentSectionId == contentSectionId);
-            return null;
+            if (contentSection != null)
+            {
+                imageService.Insert(image);
+                contentSection.Images.Add(image);
+                contentSectionService.Update(contentSection);
+                unitOfWork.SaveChanges();
+            }
+            return Json(image.ImageId, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteImage(int imageId, int contentSectionId)
+        {
+            var image = imageService.Queryable().FirstOrDefault(a => a.ImageId == imageId);
+            var contentSection =
+                contentSectionService.Queryable().FirstOrDefault(a => a.ContentSectionId == contentSectionId);
+            if (contentSection != null && image != null)
+            {
+                imageService.Delete(image);
+                contentSection.Images.Remove(image);
+                contentSectionService.Update(contentSection);
+                unitOfWork.SaveChanges();
+            }
+            return Json(true, JsonRequestBehavior.AllowGet);
         }
     }
 }

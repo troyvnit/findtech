@@ -121,10 +121,6 @@
                     <div class="tab-pane" id="tab2">
                         <div class="alert alert-success" id="contentSectionAlert">Save success!</div>
                         <div class="panel-group" id="accordion">
-                            @foreach (var contentSection in contentSections)
-                            {
-                                Html.RenderAction("_ContentSectionForm", "ContentSectionBO", new { articleId = Model.ArticleId, contentSectionId = contentSection.ContentSectionId });
-                            }
                         </div>
                         <div class="row">
                             <div class="col-xs-12 col-md-12 text-right">
@@ -142,30 +138,32 @@
     $(document).ready(function () {
         $('#rootwizard').bootstrapWizard({
             onTabShow: function (tab, navigation, index) {
+                if (index == 1) {
+                    var contentSectionIds = '@contentSectionIds'.split(',');
+                    contentSectionIds.forEach(function (contentSectionId) {
+                        $.get('@Url.Action("_ContentSectionForm", "ContentSectionBO")?articleId=' + $("#articleId").val() + '&contentSectionId=' + contentSectionId, function (data) {
+                            $('#accordion').append(data);
+                            accordions();
+                            carousel();
+                            window.applyImageBrowser($('#add-image-' + contentSectionId), function (imageName, imageUrl, thumbnailUrl, button) {
+                                $.post('@Url.Action("AddImage", "ContentSectionBO")', { ImageName: imageName, Url: imageUrl, Thumbnail: thumbnailUrl, contentSectionId: button.closest('form').find('input[name="ContentSectionId"]').val() }, function (imageId) {
+                                    var imageBox = '<div class="col-sm-4 col-md-2" id="image-box-' + imageId + '">' +
+                                            '<a class="gallery-images" rel="fancybox" href="' + imageUrl + '">' +
+                                                '<img src="' + thumbnailUrl + '" width="270" height="135" alt="">' +
+                                                '<span class="bg-images"></span>' +
+                                            '</a>' +
+                                            '<i class="fa fa-times-circle" onclick="deleteImage(' + imageId + ', ' + button.closest('form').find('input[name="ContentSectionId"]').val() + ')"></i>' +
+                                        '</div>';
+                                    button.closest('.row').find('.carousel').prepend(imageBox);
+                                    carousel();
+                                });
+                            });
+                        });
+                    });
+                }
             }
         });
-        var contentSectionIds = '@contentSectionIds'.split(',');
-        contentSectionIds.forEach(function(contentSectionId) {
-            $.get('@Url.Action("_ContentSectionForm", "ContentSectionBO")?articleId=' + $("#articleId").val() + '&contentSectionId=' + contentSectionId, function (data) {
-                $('#accordion').append(data);
-                accordions();
-                $('img').load(function () {
-                    carousel();
-                });
-                window.applyImageBrowser($('.add-image'), function (imageName, imageUrl, thumbnailUrl, button) {
-                    $.post('@Url.Action("AddImage", "ContentSectionBO")', { ImageName: imageName, Url: imageUrl, Thumbnail: thumbnailUrl, contentSectionId: button.closest('form').find('input[name="ContentSectionId"]').val() }, function (data) {
-                        var imageBox = '<div class="col-sm-4 col-md-2">' +
-                                '<a class="gallery-images" rel="fancybox" href="' + imageUrl + '">' +
-                                    '<img src="' + thumbnailUrl + '" width="270" height="135" alt="">' +
-                                    '<span class="bg-images"><i class="fa fa-search"></i></span>' +
-                                '</a>' +
-                            '</div>';
-                        button.closest('.row').find('.carousel').prepend(imageBox);
-                        carousel();
-                    });
-                });
-            });
-        });
+
         $("#addNewContentSection").click(function() {
             $.get('@Url.Action("_ContentSectionForm", "ContentSectionBO")?articleId=' + $("#articleId").val(), function (data) {
                 $('#accordion').append(data);
@@ -309,4 +307,11 @@
             }
         }
     };
+
+    function deleteImage(imageId, contentSectionId) {
+        $.post('@Url.Action("DeleteImage", "ContentSectionBO")', { imageId: imageId, contentSectionId: contentSectionId }, function (data) {
+            $('#image-box-' + imageId).remove();
+            carousel();
+        });
+    }
 </script>
