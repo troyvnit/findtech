@@ -5,6 +5,10 @@ namespace FindTech.Entities.Models
 {
     public class ContentSection : Entity
     {
+        public ContentSection()
+        {
+            Images = new List<Image>();
+        }
         public int ContentSectionId { get; set; }
         public string SectionTitle { get; set; }
         public string SectionDescription { get; set; }

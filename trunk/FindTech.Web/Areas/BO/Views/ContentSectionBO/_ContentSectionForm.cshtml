@@ -53,48 +53,22 @@
 
                             <div class="row">
                                 <div class="carousel gallery">
-                                    <div class="col-sm-4 col-md-2">
-                                        <a class="gallery-images" rel="fancybox" href="http://template.progressive.itembridge.com/2.2.4/img/content/office-1.jpg">
-                                            <img src="http://template.progressive.itembridge.com/2.2.4/img/content/office-1-270.jpg" width="270" height="135" alt="">
-                                            <span class="bg-images"><i class="fa fa-search"></i></span>
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-4 col-md-2">
-                                        <a class="gallery-images" rel="fancybox" href="http://template.progressive.itembridge.com/2.2.4/img/content/office-2.jpg">
-                                            <img src="http://template.progressive.itembridge.com/2.2.4/img/content/office-2-270.jpg" width="270" height="135" alt="">
-                                            <span class="bg-images"><i class="fa fa-search"></i></span>
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-4 col-md-2">
-                                        <a class="gallery-images" rel="fancybox" href="http://template.progressive.itembridge.com/2.2.4/img/content/office-3.jpg">
-                                            <img src="http://template.progressive.itembridge.com/2.2.4/img/content/office-3-270.jpg" width="270" height="135" alt="">
-                                            <span class="bg-images"><i class="fa fa-search"></i></span>
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-4 col-md-2">
-                                        <a class="gallery-images" rel="fancybox" href="http://template.progressive.itembridge.com/2.2.4/img/content/office-4.jpg">
-                                            <img src="http://template.progressive.itembridge.com/2.2.4/img/content/office-4-270.jpg" width="270" height="135" alt="">
-                                            <span class="bg-images"><i class="fa fa-search"></i></span>
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-4 col-md-2">
-                                        <a class="gallery-images" rel="fancybox" href="http://template.progressive.itembridge.com/2.2.4/img/content/office-5.jpg">
-                                            <img src="http://template.progressive.itembridge.com/2.2.4/img/content/office-5-270.jpg" width="270" height="135" alt="">
-                                            <span class="bg-images"><i class="fa fa-search"></i></span>
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-4 col-md-2">
-                                        <a class="gallery-images" rel="fancybox" href="http://template.progressive.itembridge.com/2.2.4/img/content/office-6.jpg">
-                                            <img src="http://template.progressive.itembridge.com/2.2.4/img/content/office-6-270.jpg" width="270" height="135" alt="">
-                                            <span class="bg-images"><i class="fa fa-search"></i></span>
-                                        </a>
-                                    </div>
+                                    @foreach (var image in Model.Images)
+                                    {
+                                        <div class="col-sm-4 col-md-2" id="image-box-@image.ImageId">
+                                            <a class="gallery-images" rel="fancybox" href="@image.Url">
+                                                <img src="@image.Thumbnail" width="270" height="135" alt="">
+                                                <span class="bg-images"></span>
+                                            </a>
+                                            <i class="fa fa-times-circle" onclick="deleteImage(@image.ImageId, @Model.ContentSectionId); return false;"></i>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-12 text-right">
-                        <button type="button" class="btn btn-success add-image">Upload Image</button>
+                        <button type="button" class="btn btn-success" id="add-image-@Model.ContentSectionId">Upload Image</button>
                         <button type="button" class="btn btn-primary" onclick="submitContentSection($(this).closest('form'))">Save</button>
                         <button type="button" class="btn btn-danger" onclick="deleteContentSection($(this).closest('form'))">Delete</button>
                     </div>
@@ -103,8 +77,3 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        
-    });
-</script>

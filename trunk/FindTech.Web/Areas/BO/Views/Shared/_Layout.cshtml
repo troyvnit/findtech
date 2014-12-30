@@ -111,30 +111,9 @@
             @RenderBody()
         </div><!-- .page-box-content -->
     </div><!-- .page-box -->
-    @*<div id="imgWindow">
+    <div id="imgWindow">
         <div id="imgBrowser"></div>
-        <script>
-            $("#imgBrowser").kendoImageBrowser({
-                transport: {
-                    read: "/ImageBO/Read",
-                    destroy: {
-                        url: "/ImageBO/Destroy",
-                        type: "POST"
-                    },
-                    create: {
-                        url: "/ImageBO/Create",
-                        type: "POST"
-                    },
-                    thumbnailUrl: "/ImageBO/Thumbnail",
-                    uploadUrl: "/ImageBO/Upload",
-                    imageUrl: "/ImageBO/Image?path={0}"
-                },
-                apply: function() {
-                    console.log($("#imgBrowser .k-state-selected > .k-thumb > img")[0].src.replace("Thumbnail", "Image"));
-                }
-            });
-        </script>
-    </div>*@
+    </div>
     <footer id="footer">
         <div class="footer-bottom">
             <div class="container">
@@ -187,38 +166,7 @@
     @RenderSection("scripts", required: false)
     <script>
         $(document).ready(function () {
-            //var window = $("#imgWindow"),
-            //            undo = $("#undo");
-
-            //undo.bind("click", function () {
-            //    window.data("kendoWindow").open();
-            //    window.data("kendoWindow").center();
-            //    undo.hide();
-            //});
-
-            //if (!window.data("kendoWindow")) {
-            //    window.kendoWindow({
-            //        width: "800px",
-            //        title: "Image Management",
-            //        apply: function () {
-            //            window.data("kendoWindow").close();
-            //        }
-            //    });
-            //}
-
-            //window.data("kendoWindow").close();
-        });
-
-        function applyImageBrowser(button, sendSelectedImage) {
-            $('#imgWindow').remove();
-            $('body').append('<div id="imgWindow"><div id="imgBrowser"></div></div>');
             var window = $("#imgWindow");
-
-            button.bind("click", function () {
-                window.data("kendoWindow").open();
-                window.data("kendoWindow").center();
-            });
-
             if (!window.data("kendoWindow")) {
                 window.kendoWindow({
                     width: "800px",
@@ -228,31 +176,41 @@
                     }
                 });
             }
-
             window.data("kendoWindow").close();
+        });
 
-            $("#imgBrowser").kendoImageBrowser({
-                transport: {
-                    read: "/ImageBO/Read",
-                    destroy: {
-                        url: "/ImageBO/Destroy",
-                        type: "POST"
+        function applyImageBrowser(button, sendSelectedImage) {
+            var window = $("#imgWindow");
+            button.bind("click", function () {
+                var thisButton = $(this);
+                $('#imgBrowser').remove();
+                window.append('<div id="imgBrowser"></div>');
+                window.data("kendoWindow").open();
+                window.data("kendoWindow").center();
+
+                $("#imgBrowser").kendoImageBrowser({
+                    transport: {
+                        read: "/ImageBO/Read",
+                        destroy: {
+                            url: "/ImageBO/Destroy",
+                            type: "POST"
+                        },
+                        create: {
+                            url: "/ImageBO/Create",
+                            type: "POST"
+                        },
+                        thumbnailUrl: "/ImageBO/Thumbnail",
+                        uploadUrl: "/ImageBO/Upload",
+                        imageUrl: "/ImageBO/Image?path={0}"
                     },
-                    create: {
-                        url: "/ImageBO/Create",
-                        type: "POST"
-                    },
-                    thumbnailUrl: "/ImageBO/Thumbnail",
-                    uploadUrl: "/ImageBO/Upload",
-                    imageUrl: "/ImageBO/Image?path={0}"
-                },
-                apply: function () {
-                    var imageName = $("#imgBrowser .k-state-selected strong").text();
-                    var imageUrl = "/ImageBO/Image?path=" + $("#imgBrowser input[data-role='breadcrumbs']").val() + $("#imgBrowser .k-state-selected strong").text();
-                    var thumbnailUrl = "/ImageBO/Thumbnail?path=" + $("#imgBrowser input[data-role='breadcrumbs']").val() + $("#imgBrowser .k-state-selected strong").text();
-                    sendSelectedImage(imageName, imageUrl, thumbnailUrl, button);
-                    window.data("kendoWindow").close();
-                }
+                    apply: function () {
+                        var imageName = $("#imgBrowser .k-state-selected strong").text();
+                        var imageUrl = "/ImageBO/Image?path=" + $("#imgBrowser input[data-role='breadcrumbs']").val() + $("#imgBrowser .k-state-selected strong").text();
+                        var thumbnailUrl = "/ImageBO/Thumbnail?path=" + $("#imgBrowser input[data-role='breadcrumbs']").val() + $("#imgBrowser .k-state-selected strong").text();
+                        sendSelectedImage(imageName, imageUrl, thumbnailUrl, thisButton);
+                        window.data("kendoWindow").close();
+                    }
+                });
             });
         }
     </script>
