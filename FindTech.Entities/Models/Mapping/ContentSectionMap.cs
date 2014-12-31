@@ -11,7 +11,6 @@ namespace FindTech.Entities.Models.Mapping
     {
         public ContentSectionMap()
         {
-            HasOptional(a => a.BenchmarkGroup);
         }
     }
 }

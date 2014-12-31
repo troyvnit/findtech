@@ -17,13 +17,15 @@ namespace FindTech.Web.Areas.BO.Controllers
     public class ContentSectionBOController : Controller
     {
         private IContentSectionService contentSectionService { get; set; }
+        private IBenchmarkGroupService benchmarkGroupService { get; set; }
         private IImageService imageService { get; set; }
         private IUnitOfWorkAsync unitOfWork { get; set; }
         // GET: BO/ContentSection
 
-        public ContentSectionBOController(IContentSectionService contentSectionService, IImageService imageService, IUnitOfWorkAsync unitOfWork)
+        public ContentSectionBOController(IContentSectionService contentSectionService, IImageService imageService, IBenchmarkGroupService benchmarkGroupService, IUnitOfWorkAsync unitOfWork)
         {
             this.contentSectionService = contentSectionService;
+            this.benchmarkGroupService = benchmarkGroupService;
             this.imageService = imageService;
             this.unitOfWork = unitOfWork;
         }
