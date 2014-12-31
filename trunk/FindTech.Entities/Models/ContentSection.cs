@@ -15,7 +15,7 @@ namespace FindTech.Entities.Models
         public string SectionContent { get; set; }
         public int ArticleId { get; set; }
         public virtual Article Article { get; set; }
-        public virtual BenchmarkGroup BenchmarkGroup { get; set; }
+        public int BenchmarkGroupId { get; set; }
         public virtual ICollection<Image> Images { get; set; } 
     }
 }

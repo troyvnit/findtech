@@ -19,12 +19,16 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-4">
                         <div class="form-group">
-                            <label for="SectionTitle">Tiêu đề</label>
+                            <label for="SectionTitle">Section Title</label>
                             <input type="text" class="form-control" name="SectionTitle" placeholder="Nhập tiêu đề" value="@Model.SectionTitle">
                         </div>
                         <div class="form-group">
-                            <label for="SectionDescription">Mô tả</label>
-                            <textarea class="form-control" name="SectionDescription" style="height:200px" placeholder="Mô tả ngắn">@Model.SectionDescription</textarea>
+                            <label for="SectionDescription">Section Description</label>
+                            <textarea class="form-control" name="SectionDescription" style="height:110px" placeholder="Mô tả ngắn">@Model.SectionDescription</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="BenchmarkGroupId">Benchmark Group</label>
+                            <input type="text" class="form-control" id="benchmark-group-@Model.ContentSectionId" name="BenchmarkGroupId" placeholder="Benchmark Group" value="@Model.BenchmarkGroupId" />
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-8">
@@ -38,13 +42,13 @@
                             <div class="title-box">
                                 <a class="next" href="#">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9px" height="16px" viewBox="0 0 9 16" enable-background="new 0 0 9 16" xml:space="preserve">
-                                    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#fcfcfc" points="1,0.001 0,1.001 7,8 0,14.999 1,15.999 9,8 "></polygon>
-			</svg>
+                                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#fcfcfc" points="1,0.001 0,1.001 7,8 0,14.999 1,15.999 9,8 "></polygon>
+                                    </svg>
                                 </a>
                                 <a class="prev" href="#">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9px" height="16px" viewBox="0 0 9 16" enable-background="new 0 0 9 16" xml:space="preserve">
-                                    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#fcfcfc" points="8,15.999 9,14.999 2,8 9,1.001 8,0.001 0,8 "></polygon>
-			</svg>
+                                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#fcfcfc" points="8,15.999 9,14.999 2,8 9,1.001 8,0.001 0,8 "></polygon>
+                                    </svg>
                                 </a>
                                 <h2 class="title">Images</h2>
                             </div>
@@ -77,3 +81,20 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $("#benchmark-group-@Model.ContentSectionId").kendoDropDownList({
+            optionLabel: "Select Benchmark Group",
+            dataTextField: "BenchmarkGroupName",
+            dataValueField: "BenchmarkGroupId",
+            dataSource: {
+                transport: {
+                    read: {
+                        dataType: "json",
+                        url: "/BO/BenchmarkGroupBO/GetBenchmarkGroups",
+                    }
+                }
+            }
+        });
+    });
+</script>
