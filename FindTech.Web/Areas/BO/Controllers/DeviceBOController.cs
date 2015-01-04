@@ -12,6 +12,7 @@ namespace FindTech.Web.Areas.BO.Controllers
     public class DeviceBOController : Controller
     {
         private ISpecService specService { get; set; }
+        private IBrandService brandService { get; set; }
         // GET: BO/DevicesBO
         public ActionResult Index()
         {
@@ -94,6 +95,18 @@ namespace FindTech.Web.Areas.BO.Controllers
         {
             var brands = specService.Query().Select();
             return Json(brands.Select(Mapper.Map<SpecBOViewModel>), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetSpecDetail(int DeviceId)
+        {
+            var brands = specService.Query().Select();
+            return Json(brands.Select(Mapper.Map<SpecBOViewModel>), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetBrands()
+        {
+            var brands = brandService.Query().Select();
+            return Json(brands.Select(Mapper.Map<BrandBOViewModel>), JsonRequestBehavior.AllowGet);
         }
     }
 }
