@@ -207,6 +207,7 @@
     <Compile Include="Areas\BO\Controllers\DeviceBOController.cs" />
     <Compile Include="Areas\BO\Controllers\SpecBOController.cs" />
     <Compile Include="Areas\BO\Controllers\BenchmarkGroupBOController.cs" />
+    <Compile Include="Areas\BO\Controllers\SpecDetailBOController.cs" />
     <Compile Include="Areas\BO\Controllers\SpecGroupBOController.cs" />
     <Compile Include="Areas\BO\Controllers\SourceBOController.cs" />
     <Compile Include="Areas\BO\Controllers\ArticleCategoryBOController.cs" />
