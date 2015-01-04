@@ -1,11 +1,12 @@
-﻿using System;
+﻿using FindTech.Entities.Models.Enums;
+using System;
 using System.Collections.Generic;
-using FindTech.Entities.Models.Enums;
-using Repository.Pattern.Ef6;
+using System.Linq;
+using System.Web;
 
-namespace FindTech.Entities.Models
+namespace FindTech.Web.Areas.BO.Models
 {
-    public class Device : Entity
+    public class DeviceBOViewModel
     {
         public int DeviceId { get; set; }
         public string DeviceName { get; set; }
@@ -16,10 +17,6 @@ namespace FindTech.Entities.Models
         public int ViewCount { get; set; }
         public BoxSize BoxSize { get; set; }
         public int Priority { get; set; }
-        public int BrandId { get; set; }
-        public virtual Brand Brand { get; set; }
-        public virtual ICollection<Benchmark> Benchmarks { get; set; }
-        public virtual ICollection<DeviceColor> DeviceColors { get; set; }
-        public virtual ICollection<SpecDetail> SpecDetails { get; set; }
+        public virtual BrandBOViewModel Brand { get; set; }
     }
 }

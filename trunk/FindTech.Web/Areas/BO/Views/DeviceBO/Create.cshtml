@@ -103,6 +103,20 @@
                             { command: "destroy", title: "&nbsp;", width: 100 }],
                         editable: true
                     });
+
+                    $("#txtBrand").kendoDropDownList({
+                        optionLabel: "Select Brand",
+                        dataTextField: "text",
+                        dataValueField: "value",
+                        dataSource: {
+                            transport: {
+                                read: {
+                                    dataType: "json",
+                                    url: "../DeviceBO/GetBrands",
+                                }
+                            }
+                        }
+                    });
                 });
                 </script>
 
