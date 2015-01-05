@@ -154,7 +154,7 @@
                         <img style="width: 100%" src="@article.Avatar">
                     </div>
                 }
-                <div class="title"><a href="@Url.Action("Detail", "Article", new { id = article.ArticleId })">@article.Title</a></div>
+                <div class="title"><a href="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle })">@article.Title</a></div>
                 <p class="content">
                     @Html.Raw(article.Description)
                 </p>

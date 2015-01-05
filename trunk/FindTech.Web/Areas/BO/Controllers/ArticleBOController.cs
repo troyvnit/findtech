@@ -12,6 +12,7 @@ using AutoMapper;
 using FindTech.Entities.Models;
 using FindTech.Entities.Models.Enums;
 using FindTech.Services;
+using FindTech.Web.Areas.BO.CommonFunction;
 using FindTech.Web.Areas.BO.Models;
 using HtmlAgilityPack;
 using Newtonsoft.Json;
@@ -159,6 +160,7 @@ namespace FindTech.Web.Areas.BO.Controllers
         [HttpPost]
         public ActionResult CreateOrUpdate(ArticleBOViewModel articleBOViewModel)
         {
+            articleBOViewModel.SeoTitle = articleBOViewModel.Title.GenerateSeoTitle();
             var articleId = 0;
             if (articleBOViewModel.ArticleId != 0)
             {

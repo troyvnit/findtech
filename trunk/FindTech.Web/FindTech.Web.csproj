@@ -202,6 +202,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\BO\BOAreaRegistration.cs" />
+    <Compile Include="Areas\BO\CommonFunction\SeoFactory.cs" />
     <Compile Include="Areas\BO\Controllers\ArticleBOController.cs" />
     <Compile Include="Areas\BO\Controllers\BrandBOController.cs" />
     <Compile Include="Areas\BO\Controllers\DeviceBOController.cs" />

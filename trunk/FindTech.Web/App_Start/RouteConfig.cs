@@ -14,6 +14,12 @@ namespace FindTech.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "SeoTitle",
+                url: "bai-viet/{seoTitle}",
+                defaults: new { controller = "Article", action = "Detail", seoTitle = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "UnderConstruction", id = UrlParameter.Optional }
