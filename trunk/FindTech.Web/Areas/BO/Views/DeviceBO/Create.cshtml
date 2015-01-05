@@ -81,7 +81,6 @@
                     model: {
                         id: "SpecDetailId",
                         fields: {
-                            SpecDetailId: { editable: false, defaultValue: 0 },
                             SpecName: { validation: { required: true } },
                             Value: {validation:{required:true}},
                             Hightlight: { type: "boolean" },
@@ -97,8 +96,7 @@
                         height: 550,
                         toolbar: ["create", "save", "cancel"],
                         columns: [
-                            { field: "SpecDetailId", title: "Id", width: 50 },
-                            { field: "SpecName", title: "Spec Name", width: 120 },
+                            { field: "SpecName", title: "Spec Name", width: 120, editor: specDropDownEditor },
                             { field: "Hightlight", title: "Hightlight", width: 70 },
                             { field: "CreatedDate", title: "Created Date", width: 70 },
                             { command: "destroy", title: "&nbsp;", width: 100 }],
@@ -118,7 +116,24 @@
                             }
                         }
                     });
-                });
+                    });
+
+                    function specDropDownEditor(container, options) {
+                        $('<input required data-text-field="SpecName" data-value-field="SpecId" />')
+                            .appendTo(container)
+                            .kendoDropDownList({
+                                optionLabel: "Select spec...",
+                                autoBind: false,
+                                dataSource: {
+                                    transport: {
+                                        read: {
+                                            url: "/SpecBO/GetSpecs",
+                                            dataType: "json"
+                                        }
+                                    }
+                                }
+                            });
+                    }
                 </script>
 
             </form>
