@@ -19,9 +19,16 @@ namespace FindTech.Web.Controllers
             this.unitOfWork = unitOfWork;
         }
         // GET: Article
-        public ActionResult Detail(int id)
+        //public ActionResult Detail(int id)
+        //{
+        //    var article = articleService.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).Include(a => a.ContentSections).FirstOrDefault(a => a.ArticleId == id);
+        //    ViewBag.Article = Mapper.Map<ArticleViewModel>(article);
+        //    return View();
+        //}
+
+        public ActionResult Detail(string seoTitle)
         {
-            var article = articleService.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).Include(a => a.ContentSections).FirstOrDefault(a => a.ArticleId == id);
+            var article = articleService.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).Include(a => a.ContentSections).FirstOrDefault(a => a.SeoTitle == seoTitle);
             ViewBag.Article = Mapper.Map<ArticleViewModel>(article);
             return View();
         }
