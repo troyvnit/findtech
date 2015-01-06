@@ -40,6 +40,9 @@ namespace FindTech.Web
                     "~/Areas/BO/UIFramework/KendoUI/styles/kendo.dataviz.min.css",
                     "~/Areas/BO/UIFramework/KendoUI/styles/kendo.dataviz.default.min.css"));
 
+            bundles.Add(new StyleBundle("~/bo/validation/css").Include(
+                "~/Areas/BO/UIFramework/Validation/styles/formValidation.css"));
+
             bundles.Add(new ScriptBundle("~/bo/progressive/js").Include(
                     "~/Areas/BO/UIFramework/Progressive/js/bootstrap.min.js",
                     "~/Areas/BO/UIFramework/Progressive/js/price-regulator/jshashtable-2.1_src.js",
@@ -93,6 +96,10 @@ namespace FindTech.Web
                     "~/Areas/BO/UIFramework/KendoUI/js/angular.min.js",
                     "~/Areas/BO/UIFramework/KendoUI/js/kendo.all.min.js",
                     "~/Areas/BO/UIFramework/KendoUI/js/jquery.bootstrap.wizard.js"));
+
+            bundles.Add(new ScriptBundle("~/bo/validation/js").Include(
+                    "~/Areas/BO/UIFramework/Validation/js/formValidation.js",
+                    "~/Areas/BO/UIFramework/Validation/js/formValidation-bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/fo/progressive/css").Include(
                     "~/UIFramework/Progressive/css/buttons/buttons.css",
