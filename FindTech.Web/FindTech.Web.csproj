@@ -951,6 +951,9 @@
     <Content Include="Areas\BO\UIFramework\KendoUI\styles\Uniform\slider-v.gif" />
     <Content Include="Areas\BO\UIFramework\KendoUI\styles\Uniform\sprite.png" />
     <Content Include="Areas\BO\UIFramework\KendoUI\styles\Uniform\sprite_2x.png" />
+    <Content Include="Areas\BO\UIFramework\Validation\js\formValidation-bootstrap.js" />
+    <Content Include="Areas\BO\UIFramework\Validation\js\formValidation.js" />
+    <Content Include="Areas\BO\UIFramework\Validation\style\formValidation.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Areas\BO\UIFramework\Progressive\css\animate.css" />
     <Content Include="Areas\BO\UIFramework\Progressive\css\bootstrap-tagsinput.css" />

@@ -35,14 +35,14 @@
                 </div>
                 <div class="tab-content">
                     <div class="tab-pane" id="tab1">
-                        <form role="form" method="POST" action="CreateOrUpdate">
+                        <form id="articleForm" role="form" method="POST" action="CreateOrUpdate">
                             <div class="row">
                                 <input type="hidden" id="articleId" name="ArticleId" value="@Model.ArticleId" />
                                 <div class="col-xs-6 col-md-3">
                                     <a href="#" class="thumbnail" id="avatar">
                                         <img data-src="holder.js/100%x300" alt="100%x300" id="imgAvatar" src="@Model.Avatar" />
                                     </a>
-                                    <input type="hidden" name="Avatar" value="@Model.Avatar" />
+                                    <input type="hidden" id="avatarHidden" name="Avatar" value="@Model.Avatar" />
                                 </div>
                                 <div class="col-xs-6 col-md-9">
                                     <div class="form-group">
@@ -175,6 +175,7 @@
         }
         window.applyImageBrowser($('#avatar'), function (imageName, imageUrl, thumbnailUrl, button) {
             $('#imgAvatar').attr('src', imageUrl);
+            $('#avatarHidden').val(imageUrl);
         });
         var tags = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -230,6 +231,7 @@
         });
 
         $('#datetimepicker').kendoDateTimePicker({
+            value:new Date(),
             format: "dd-MMM-yy h:mm:ss tt"
         });
 
@@ -282,6 +284,49 @@
               { text: "Box3", value: "3" }
             ]
         });
+        
+        //validate
+
+        $('#articleForm').formValidation({
+            message: 'This value is not valid',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                Title: {
+                    message: 'The title is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The title is required and can\'t be empty'
+                        },
+                        stringLength: {
+                            min: 10,
+                            max: 100,
+                            message: 'The title must be more than 10 and less than 100 characters long'
+                        },
+                    }
+                },
+                Description: {
+                    message: 'The description is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The username is required and can\'t be empty'
+                        }
+                    }
+                },
+                ArticleType: {
+                    message: 'The description is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The Article type is required and can\'t be empty'
+                        }
+                    }
+                }
+            }
+        });
+
     });
 
     function submitContentSection(form) {
@@ -309,9 +354,11 @@
     };
 
     function deleteImage(imageId, contentSectionId) {
-        $.post('@Url.Action("DeleteImage", "ContentSectionBO")', { imageId: imageId, contentSectionId: contentSectionId }, function (data) {
+        $.post('@Url.Action("DeleteImage", "ContentSectionBO")', { imageId: imageId, contentSectionId: contentSectionId }, function(data) {
             $('#image-box-' + imageId).remove();
             carousel();
         });
-    }
+    };
+
+ 
 </script>
