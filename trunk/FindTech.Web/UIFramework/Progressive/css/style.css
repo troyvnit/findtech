@@ -1,4 +1,4 @@
-/*
+﻿/*
 Theme Name: Progressive
 Theme URI: http://template.progressive.itembridge.com/
 Author: InfoStyle
@@ -11316,4 +11316,143 @@ a.big-icon:hover {
     -webkit-transition: opacity .2s linear;
     transition: opacity .2s linear;
   }
+}
+
+/******************************************************************************
+  Custom
+*******************************************************************************/
+
+.header .search-form .search-submit svg path {
+    fill: #00ade0 !important;
+}
+
+.header .right-box .search-form {
+  height: 40px;
+}
+.header .right-box .search-form .search-string {
+  padding-right: 40px;
+}
+.col-xs-6.col-md-10.col-lg-6.right-box {
+    display: table-cell;
+    height: 60px;
+    vertical-align: middle;
+}
+.header .search-form .search-string,
+.header .search-form .search-string:hover {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: #1e1e1e;
+  font-size: 16px;
+  height: 100%;
+  line-height: 30px;
+  margin: 0;
+  padding: 0 135px 0 18px;
+  width: 100%;
+}
+.header .search-form .search-submit {
+  background: none;
+  border-left-width: 1px;
+  height: 30px;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  right: 1px;
+  top: 5px;
+  width: 46px;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+.header-wrapper {
+  background: #f2f2f2;
+  min-height: 100px;
+  padding: 2px 0;
+}
+.header .right-box-wrapper {
+  display: inline-block;
+  height: 100px;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.main-menu {
+    background: #f2f2f2 !important;
+    padding: 5px 12px !important;
+    position: relative;
+}
+
+.main-menu .primary {
+    margin: auto;
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+}
+
+.main-menu .primary .navbar .nav > li {
+    padding: 0 3px 0;
+    border-radius: 3px;
+}
+
+.main-menu .primary .navbar .nav > li > a {
+    font-weight: bold;
+}
+
+.main-menu .primary .navbar .nav .item-primary > a {
+    color: #428bca !important;
+}
+
+.main-menu .primary .navbar .nav .item-primary > a.active {
+    color: white !important;
+    background: #428bca;
+}
+
+.main-menu .primary .navbar .nav .item-info > a {
+    color: #0098ca !important;
+}
+
+.main-menu .primary .navbar .nav .item-info > a.active {
+    color: white !important;
+    background: #0098ca;
+}
+
+.main-menu .primary .navbar .nav .item-success > a {
+    color: #738d00 !important;
+}
+
+.main-menu .primary .navbar .nav .item-success > a.active {
+    color: white !important;
+    background: #738d00;
+}
+
+.main-menu .primary .navbar .nav .item-danger > a {
+    color: #c10841 !important;
+}
+
+.main-menu .primary .navbar .nav .item-danger > a.active {
+    color: white !important;
+    background: #c10841;
+}
+
+.main-menu .primary .navbar .nav .item-warning > a {
+    color: #f89406 !important;
+}
+
+.main-menu .primary .navbar .nav .item-warning > a.active {
+    color: white !important;
+    background: #f89406;
+}
+
+#footer {
+    color: #7f7f7f;
+    margin: -93px 0 0 0;
+    overflow-x: hidden;
+}
+
+.page-box-content {
+  padding-bottom: 93px;
 }
