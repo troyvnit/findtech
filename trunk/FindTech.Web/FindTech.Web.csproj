@@ -1863,8 +1863,6 @@
     <Content Include="Views\Article\Detail.cshtml" />
     <None Include="Properties\PublishProfiles\FindTech.pubxml" />
     <Content Include="Views\Home\UnderConstruction.cshtml" />
-    <Content Include="UIFramework\Progressive\css\royalslider\.DS_Store" />
-    <Content Include="UIFramework\Progressive\css\royalslider\skins\.DS_Store" />
     <Content Include="UIFramework\Progressive\fonts\fontawesome-webfont.eot" />
     <Content Include="UIFramework\Progressive\fonts\fontawesome-webfont.ttf" />
     <Content Include="UIFramework\Progressive\fonts\fontawesome-webfont.woff" />
