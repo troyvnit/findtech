@@ -69,7 +69,7 @@ namespace FindTech.Web.Areas.BO.Controllers
 
         public ActionResult GetArticles()
         {
-            var articles = articleService.Query().Select();
+            var articles = articleService.Query().Select().Take(20);
             return Json(articles.ToList().Select(Mapper.Map<ArticleGridBOViewModel>), JsonRequestBehavior.AllowGet);
         }
 
@@ -181,6 +181,20 @@ namespace FindTech.Web.Areas.BO.Controllers
                 articleId = newArticle.ArticleId;
             }
             return RedirectToAction("Create",new { articleId });
-        }       
+        }
+       
+        [HttpPost]
+        public ActionResult ActiveArticle(string articleIds)
+        {
+            var activeArticleIds = articleIds.Split(',');
+            foreach (var activeArticleId in activeArticleIds.Select(a => int.Parse(a)))
+            {
+                var article = articleService.Queryable().FirstOrDefault(a => a.ArticleId == activeArticleId);
+                article.IsActived = true;
+                articleService.Update(article);
+            }
+            unitOfWork.SaveChanges();
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -28,9 +28,11 @@
 </section><!-- #main -->
 <script type="text/x-kendo-template" id="articleToolbarTemplate">
     <div class="toolbar">
-        <button id="readRss" class="k-button">Read Rss</button>
         <button class="k-button k-grid-save-changes">Save</button>
         <button class="k-button k-grid-cancel-changes">Cancel</button>
+        <button id="active" class="k-button">Active</button>
+        <button id="viewDetail" class="k-button">View Detail</button>
+        <button id="readRss" class="k-button pull-right">Read Rss</button>
     </div>
 </script>
 <script>
@@ -84,6 +86,7 @@
             navigatable: true,
             pageable: true,
             height: 550,
+            selectable: "multiple",
             toolbar: kendo.template($("#articleToolbarTemplate").html()),
             columns: [
                 { field: "ArticleId", title: "Id", width: 50 },
@@ -92,7 +95,7 @@
                 { field: "ArticleType", title: "ArticleType", width: 80, editor: articleTypeDropDownEditor, template: "#=ArticleType.ArticleTypeName#" },
                 { field: "BoxSize", title: "Box Size", width: 80, editor: boxSizeDropDownEditor, template: "#=BoxSize.BoxSizeName#" },
                 { field: "IsActived", title: "IsActived", width: 80 },
-                { command: [{ text: "Details", click: showDetails },"destroy"], title: "&nbsp;", width: 100 }],
+                { command: [{ text: "Details", click: showDetails },"destroy"], title: "&nbsp;", width: "100px" }],
             editable: true
         });
 
@@ -126,7 +129,7 @@
 
 
 
-        $("#readRss").click(function() {
+        $("#readRss").click(function () {
             $.ajax({
                 url: '/ArticleBO/ReadRss',
                 type: "POST",
@@ -138,6 +141,31 @@
                 }
             });
         });
+
+        $("#active").click(function () {
+            var grid = $("#articleGrid").data("kendoGrid");
+            var ids = [];
+            grid.select().each(function () {
+                var dataItem = grid.dataItem($(this));
+                if (dataItem.ArticleId) {
+                    ids.push(dataItem.ArticleId);
+                }
+            });
+
+            $.post('@Url.Action("ActiveArticle", "ArticleBO")', { articleIds: ids.join(',') }, function (data) {
+                grid.dataSource.read();
+            });
+        });
+
+        $("#viewDetail").click(function () {
+            var grid = $("#articleGrid").data("kendoGrid");
+            grid.select().each(function () {
+                var dataItem = grid.dataItem($(this));
+                if (dataItem.ArticleId) {
+                    window.open('@Url.Action("Create","ArticleBO")?articleId=' + dataItem.ArticleId, '_blank');
+                }
+            });
+        })
     });
     function showDetails(e) {
         e.preventDefault();
