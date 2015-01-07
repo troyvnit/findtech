@@ -1536,9 +1536,9 @@
     <Content Include="UIFramework\Progressive\img\fra-flag.png" />
     <Content Include="UIFramework\Progressive\img\ger-flag.png" />
     <Content Include="UIFramework\Progressive\img\jslider.png" />
+    <Content Include="UIFramework\Progressive\img\logo-alpha.png" />
     <Content Include="UIFramework\Progressive\img\logo.png" />
     <Content Include="UIFramework\Progressive\img\logo.svg" />
-    <Content Include="UIFramework\Progressive\img\logo4biz.png" />
     <Content Include="UIFramework\Progressive\img\newsletter\facebook.png" />
     <Content Include="UIFramework\Progressive\img\newsletter\google.png" />
     <Content Include="UIFramework\Progressive\img\newsletter\in.png" />
