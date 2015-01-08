@@ -122,7 +122,7 @@ namespace FindTech.Web
                     "~/UIFramework/Progressive/css/style.css",
                     "~/UIFramework/Progressive/css/responsive.css",
                     "~/UIFramework/Progressive/css/customizer/pages.css",
-                    "~/UIFramework/Progressive/css/customizer/home-pages-customizer.css",
+                    //"~/UIFramework/Progressive/css/customizer/home-pages-customizer.css",
                     "~/UIFramework/Progressive/css/bootstrap-tagsinput.css",
                     "~/UIFramework/Progressive/css/ie/ie.css"));
 
