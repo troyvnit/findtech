@@ -62,11 +62,11 @@
                     parameterMap: function (options, operation) {
                         if (operation !== "read" && options.models) {
                             return { models: kendo.stringify(options.models) };
+                        } else {
+                            return {skip: options.skip, take: options.take};
                         }
                     }
                 },
-                batch: true,
-                pageSize: 20,
                 schema: {
                     model: {
                         id: "ArticleId",
@@ -77,8 +77,14 @@
                             Source: { type: "string" },
                             IsActived: { type: "boolean" }
                         }
-                    }
-                }
+                    },
+                    data: "articles",
+                    total: "totalCount"
+                },
+                pageSize: 10,
+                serverPaging: true,
+                serverFiltering: true,
+                serverSorting: true
             });
 
         $("#articleGrid").kendoGrid({
@@ -90,12 +96,12 @@
             toolbar: kendo.template($("#articleToolbarTemplate").html()),
             columns: [
                 { field: "ArticleId", title: "Id", width: 50 },
-                { field: "Title", title: "Title", width: 150 },
-                { field: "Author", title: "Author", width: 80 },
-                { field: "ArticleType", title: "ArticleType", width: 80, editor: articleTypeDropDownEditor, template: "#=ArticleType.ArticleTypeName#" },
+                { field: "Title", title: "Title" },
+                { field: "Author", title: "Author", width: 120 },
+                { field: "ArticleType", title: "ArticleType", width: 120, editor: articleTypeDropDownEditor, template: "#=ArticleType.ArticleTypeName#" },
                 { field: "BoxSize", title: "Box Size", width: 80, editor: boxSizeDropDownEditor, template: "#=BoxSize.BoxSizeName#" },
                 { field: "IsActived", title: "IsActived", width: 80 },
-                { command: [{ text: "Details", click: showDetails },"destroy"], title: "&nbsp;", width: "100px" }],
+                { command: [{ text: "Details", click: showDetails}, "destroy"], title: "&nbsp;", width: 186 }],
             editable: true
         });
 
@@ -111,7 +117,7 @@
                     ]
                 });
         }
-        
+
         function boxSizeDropDownEditor(container, options) {
             $('<input required data-text-field="BoxSizeName" data-value-field="BoxSizeId" data-bind="value:' + options.field + '"/>')
                 .appendTo(container)
@@ -124,8 +130,8 @@
                     ]
                 });
         }
-        
-    
+
+
 
 
 
@@ -159,17 +165,24 @@
 
         $("#viewDetail").click(function () {
             var grid = $("#articleGrid").data("kendoGrid");
+            var ids = [];
             grid.select().each(function () {
                 var dataItem = grid.dataItem($(this));
                 if (dataItem.ArticleId) {
-                    window.open('@Url.Action("Create","ArticleBO")?articleId=' + dataItem.ArticleId, '_blank');
+                    ids.push(dataItem.ArticleId);
+
                 }
             });
+
+            for(var i=0; i < ids.length; i++)
+            {
+                setTimeout(window.open('@Url.Action("Create","ArticleBO")?articleId=' + dataItem.ArticleId, '_blank'), i*200);
+            }
         })
     });
     function showDetails(e) {
         e.preventDefault();
         var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-        window.open('@Url.Action("Create","ArticleBO")?articleId='+dataItem.ArticleId,'_blank');
+        window.open('@Url.Action("Create","ArticleBO")?articleId=' + dataItem.ArticleId, '_blank');
     }
 </script>

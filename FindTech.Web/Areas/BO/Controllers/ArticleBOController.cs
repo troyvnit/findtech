@@ -67,10 +67,23 @@ namespace FindTech.Web.Areas.BO.Controllers
                 JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult GetArticles()
+        public ActionResult GetArticles(int skip, int take)
         {
-            var articles = articleService.Query().Select().Take(20);
-            return Json(articles.ToList().Select(Mapper.Map<ArticleGridBOViewModel>), JsonRequestBehavior.AllowGet);
+            var articles = articleService.Query().Select();
+            var total = articles.Count();
+            articles = articles.OrderByDescending(a => a.CreatedDate).Skip(skip).Take(take);
+            //var articles = articleService.Query().Select().Skip(skip).Take(take);
+            return Json(new { articles = articles.ToList().Select(Mapper.Map<ArticleGridBOViewModel>) , totalCount = total}, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Destroy(string id)
+        {
+            int articleId = int.Parse(id);
+            var article = articleService.Query().Select().Where(a => a.ArticleId == articleId).FirstOrDefault();
+            article.IsDeleted = true;
+            articleService.Update(article);
+            unitOfWork.SaveChanges();
+            return Json(true);
         }
 
 
