@@ -64,7 +64,7 @@ body {
   height: 100%;
 }
 body {
-  font-family: 'Arimo', sans-serif;
+  font-family: "myriad-pro",sans-serif;
   height: 100%;
   line-height: 1.6;
   -webkit-appearance: none;
@@ -11455,4 +11455,114 @@ a.big-icon:hover {
 
 .page-box-content {
   padding-bottom: 93px;
+}
+
+.banner-set {
+    position: relative;
+}
+
+.banner-set .banner {
+  border-right-width: 1px;
+  color: #7f7f7f;
+  display: block;
+  float: left;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0;
+  width: 292px;
+    height: 315px;
+  padding: 20px;
+  text-align: left;
+  text-decoration: none;
+  -webkit-transition:
+    color .2s linear,
+    box-shadow .2s linear;
+  transition:
+    color .2s linear,
+    box-shadow .2s linear;
+    position: relative;
+}
+
+.banner-set .banner .box {
+  width: 253px;
+    height: 275px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-set .banner img {
+  margin: 0 0 28px 0;
+  max-height: 275px;
+  height: 275px;
+  width: 253px;
+  -webkit-transition: opacity .2s linear;
+  transition: opacity .2s linear;
+  position: absolute;
+}
+
+.banner-set .banner .overlay {
+  position: absolute;
+    width: 253px;
+    background: rgba(0, 0, 0, .7);
+    bottom: -70px;
+    left: 0;
+    color: white;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.banner-set .banner:hover .overlay {
+    bottom: 0;
+    transition: 0.2s;
+}
+
+.banner-set .banner .title {
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0 0 15px;
+  text-decoration: none;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.banner-set .banner:hover .title {
+  color: white;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.banner-set .banner .description {
+  height: 54px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.banner-set .next,
+.banner-set .prev {
+  color: #ccc;
+  font-size: 13px;
+  height: 14px;
+  line-height: 14px;
+  vertical-align: top;
+  -webkit-transition: color .2s linear;
+  transition: color .2s linear;
+  position: absolute;
+  top: 155px;
+}
+.banner-set .next:hover,
+.banner-set .prev:hover {
+  color: #00ade0;
+  -webkit-transition: color .2s linear;
+  transition: color .2s linear;
+}
+
+.banner-set .next {
+    right: 40px;
+}
+
+.banner-set .prev {
+    left: 40px;
 }
