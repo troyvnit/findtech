@@ -1666,6 +1666,22 @@
     <Content Include="UIFramework\Progressive\js\SmoothScroll.js" />
     <Content Include="UIFramework\Progressive\js\spin.min.js" />
     <Content Include="UIFramework\Progressive\js\video.js" />
+    <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\font-awesome.css" />
+    <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="UIFramework\UnderConstruction\css\owlcarousel.css" />
+    <Content Include="UIFramework\UnderConstruction\css\reset.css" />
+    <Content Include="UIFramework\UnderConstruction\css\style.css" />
+    <Content Include="UIFramework\UnderConstruction\css\uikit.scrollspy.css" />
+    <Content Include="UIFramework\UnderConstruction\images\ico\apple-touch-icon-114.png" />
+    <Content Include="UIFramework\UnderConstruction\images\ico\apple-touch-icon-144.png" />
+    <Content Include="UIFramework\UnderConstruction\images\ico\apple-touch-icon-57.png" />
+    <Content Include="UIFramework\UnderConstruction\images\ico\apple-touch-icon-72.png" />
+    <Content Include="UIFramework\UnderConstruction\images\ico\favicon.png" />
+    <Content Include="UIFramework\UnderConstruction\js\countdown.js" />
+    <Content Include="UIFramework\UnderConstruction\js\jquery.js" />
+    <Content Include="UIFramework\UnderConstruction\js\owlcarousel.js" />
+    <Content Include="UIFramework\UnderConstruction\js\scripts.js" />
+    <Content Include="UIFramework\UnderConstruction\js\uikit.scrollspy.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1887,6 +1903,11 @@
     <Content Include="UIFramework\Progressive\img\rs-slider\small_arrows.psd" />
     <Content Include="UIFramework\Progressive\img\rs-slider\Thumbs.db" />
     <Content Include="UIFramework\Progressive\img\Thumbs.db" />
+    <Content Include="UIFramework\UnderConstruction\css\.DS_Store" />
+    <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\fontawesome-webfont.eot" />
+    <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\fontawesome-webfont.ttf" />
+    <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\fontawesome-webfont.woff" />
+    <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\FontAwesome.otf" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">
