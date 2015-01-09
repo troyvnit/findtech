@@ -11552,12 +11552,6 @@ a.big-icon:hover {
   position: absolute;
   top: 155px;
 }
-.banner-set .next:hover,
-.banner-set .prev:hover {
-  color: #00ade0;
-  -webkit-transition: color .2s linear;
-  transition: color .2s linear;
-}
 
 .banner-set .next {
     right: 40px;
@@ -11565,4 +11559,74 @@ a.big-icon:hover {
 
 .banner-set .prev {
     left: 40px;
+}
+
+.title-box:before {
+  background: #00ade0;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  margin: 0 0 -1px;
+  position: absolute;
+  width: 40px;
+}
+
+.title-box .title {
+  color: #7f7f7f;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+  padding: 14px 0 0;
+  text-transform: uppercase;
+}
+
+.carousel .article {
+    margin-top: 40px;
+    background: #f7f7f7;
+}
+
+.carousel .article .article-avatar img{
+    height: 270px;
+}
+
+.carousel .article .article-description{
+    padding: 20px;
+    height: 140px;
+    color: #1e1e1e;
+}
+
+.carousel .article .article-description .title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0;
+  padding: 0 0 5px;
+  text-decoration: none;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+    height: 35px;
+}
+
+.carousel .article .article-description .posted-info {
+    font-size: 12px;
+}
+
+.carousel .article .article-description .description {
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    height: 39px;
+    margin: 0 auto;
+    font-size: 13px;
+    line-height: 1;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+
+.blurry-text {
+    color: #7f7f7f;
 }
