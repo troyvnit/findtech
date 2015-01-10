@@ -60,8 +60,8 @@
                         type: "post"
                     },
                     parameterMap: function (options, operation) {
-                        if (operation !== "read" && options.models) {
-                            return { models: kendo.stringify(options.models) };
+                        if (operation !== "read" && options) {
+                            return { models: kendo.stringify(options) };
                         } else {
                             return {skip: options.skip, take: options.take};
                         }
