@@ -27,7 +27,7 @@ namespace FindTech.Web.Mappers
 
             protected override void Configure()
             {
-                Mapper.CreateMap<Article, ArticleGridBOViewModel>();
+                Mapper.CreateMap<ArticleGridBOViewModel, Article>();
                 Mapper.CreateMap<ArticleBOViewModel, Article>()
                     .ForMember(a => a.IsActived, o => o.MapFrom(x => x.IsActived == "on"));
                 Mapper.CreateMap<ArticleCategoryBOViewModel, ArticleCategory>();

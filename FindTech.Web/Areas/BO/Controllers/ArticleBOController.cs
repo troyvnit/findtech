@@ -69,21 +69,33 @@ namespace FindTech.Web.Areas.BO.Controllers
 
         public ActionResult GetArticles(int skip, int take)
         {
-            var articles = articleService.Query().Select();
-            var total = articles.Count();
-            articles = articles.OrderByDescending(a => a.CreatedDate).Skip(skip).Take(take);
+            var total = articleService.Query().Select().Count(a => a.IsDeleted != true);
+
+            //var total = articleService.Query().Select().Where(a => a.IsDeleted != true).Count();
+            var articles = articleService.Queryable().Where(a => a.IsDeleted != true).OrderByDescending(a => a.CreatedDate).Skip(skip).Take(take).ToList();
             //var articles = articleService.Query().Select().Skip(skip).Take(take);
-            return Json(new { articles = articles.ToList().Select(Mapper.Map<ArticleGridBOViewModel>) , totalCount = total}, JsonRequestBehavior.AllowGet);
+            return Json(new { articles = articles.Select(Mapper.Map<ArticleGridBOViewModel>) , totalCount = total}, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Destroy(string id)
+        public ActionResult Destroy(string models)
         {
-            int articleId = int.Parse(id);
+            var articleBOViewModel = JsonConvert.DeserializeObject<ArticleGridBOViewModel>(models);
+            var articleId = articleBOViewModel.ArticleId;
             var article = articleService.Query().Select().Where(a => a.ArticleId == articleId).FirstOrDefault();
+            //var article = Mapper.Map<Article>(articleBOViewModel);
             article.IsDeleted = true;
             articleService.Update(article);
-            unitOfWork.SaveChanges();
-            return Json(true);
+            var result = unitOfWork.SaveChanges();
+            return Json(result);
+        }
+
+        public ActionResult Update(string models)
+        {
+            var articleBOViewModel = JsonConvert.DeserializeObject<ArticleGridBOViewModel>(models);
+            var article = Mapper.Map<Article>(articleBOViewModel);
+            articleService.Update(article);
+            var result = unitOfWork.SaveChanges();
+            return Json(result);
         }
 
 
