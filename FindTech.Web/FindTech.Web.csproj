@@ -1903,7 +1903,6 @@
     <Content Include="UIFramework\Progressive\img\rs-slider\small_arrows.psd" />
     <Content Include="UIFramework\Progressive\img\rs-slider\Thumbs.db" />
     <Content Include="UIFramework\Progressive\img\Thumbs.db" />
-    <Content Include="UIFramework\UnderConstruction\css\.DS_Store" />
     <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\fontawesome-webfont.eot" />
     <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\fontawesome-webfont.ttf" />
     <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\fontawesome-webfont.woff" />
