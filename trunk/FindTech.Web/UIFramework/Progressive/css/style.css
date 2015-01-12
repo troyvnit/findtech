@@ -11582,22 +11582,27 @@ a.big-icon:hover {
   text-transform: uppercase;
 }
 
-.carousel .article {
+.articles .article {
     margin-top: 40px;
     background: #f7f7f7;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 0px 4px 0 rgba(196, 0, 0, .5);
+    -moz-box-shadow: 0px 0px 4px 0 rgba(196, 0, 0, .5);
+    box-shadow: 0px 0px 4px 0 rgba(196, 0, 0, .5)
 }
 
-.carousel .article .article-avatar img{
+.articles .article .article-avatar img{
     height: 270px;
+    border-radius: 2px 2px 0 0;
 }
 
-.carousel .article .article-description{
+.articles .article .article-description{
     padding: 20px;
     height: 140px;
     color: #1e1e1e;
 }
 
-.carousel .article .article-description .title {
+.articles .article .article-description .title {
   font-size: 16px;
   font-weight: bold;
   line-height: 1;
@@ -11609,11 +11614,11 @@ a.big-icon:hover {
     height: 35px;
 }
 
-.carousel .article .article-description .posted-info {
+.articles .article .article-description .posted-info {
     font-size: 12px;
 }
 
-.carousel .article .article-description .description {
+.articles .article .article-description .description {
     display: block;
     display: -webkit-box;
     max-width: 100%;
@@ -11625,6 +11630,21 @@ a.big-icon:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
+}
+
+.articles .social{
+    display: table;
+    height: 60px;
+    width: 100%;
+    border-top: 2px solid #00ade0;
+    padding: 0 20px;
+}
+
+.articles .social span{
+    display: table-cell;
+    width: 25%;
+    font-size: 16px;
+    vertical-align: middle;
 }
 
 .blurry-text {

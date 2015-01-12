@@ -658,10 +658,12 @@ function carousel() {
 	  }
 	  
 	  $(this).carouFredSel({
-		onCreate : function () {
-		  $(window).on('resize', function(event){
-			event.stopPropagation();
-		  });
+	      onCreate: function () {
+	          $(this).css('height', $(this).height() + 2 + 'px');
+	          $(this).parent().css('height', $(this).height() + 'px');
+		    $(window).on('resize', function (event) {
+			    event.stopPropagation();
+		      });
 		},
 		auto       : autoplay,
 		width      : '100%',
