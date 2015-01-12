@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4N8XDceroUup4T78DK9tyQAAAAACAAAAAAAQZgAAAAEAACAAAACeoFoIE0ddWM3RK4iZa8coZqu0GvrK3G5Ox0hqd18jjQAAAAAOgAAAAAIAACAAAAC5pDr5ouyYQw84GWHlrZtgNXBicv0uuuq1jQw/5fhxPCAAAAD7h7ieZDUz6X96iNkqLEjZzORYHrzzDWPEIjFk6JTvKEAAAABxPGSpnlfvYicmAeh+u4l/ebBZNeUgEtPQuZLHL6zsfs0F1SYXk6QatmRZ1POan2vNQeGYEbxeWdABbiuSw6C7</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIdZ8Yvf1LkeEzvqZ4vYDSQAAAAACAAAAAAAQZgAAAAEAACAAAABYH2Rfb8d8K7ZIcsSTsqJj6z+7oHQcfqTtcvZis7CjGQAAAAAOgAAAAAIAACAAAAAIuGTbmZ5yN/pF9Xvym51jgnjw30hN7XeEwPgVT6/sqiAAAADSAYswxWmnsyIbkPl5jRw778JSORy3hlO+PYiXjF9o4kAAAADA0Dvy9bjI3gm0+RE5XXObXZ/1b5MKwx6pUN0tsJ1ig2hd7uDQpmxhArXLIj6U9X/T+HhyjJbaverJLQpQho7f</EncryptedPassword>
     <_PublishTargetUrl>ftp://ftp.ifind.vn/httpdocs</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
@@ -2462,316 +2462,316 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/10/2014 16:29:34</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/angular.min.js">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.af-ZA.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:20</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.af.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:09</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.am-ET.min.js">
-      <publishTime>11/10/2014 16:29:25</publishTime>
+      <publishTime>01/06/2015 21:32:08</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.am.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:10</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-AE.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:16</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-BH.min.js">
-      <publishTime>11/10/2014 16:29:31</publishTime>
+      <publishTime>01/06/2015 21:32:12</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-DZ.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:11</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-EG.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:13</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-IQ.min.js">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:32:21</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-JO.min.js">
-      <publishTime>11/10/2014 16:29:25</publishTime>
+      <publishTime>01/06/2015 21:32:14</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-KW.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:14</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-LB.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:19</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-LY.min.js">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:32:21</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-MA.min.js">
-      <publishTime>11/10/2014 16:29:27</publishTime>
+      <publishTime>01/06/2015 21:32:20</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-OM.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:08</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-QA.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:20</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-SA.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:20</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-SY.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:13</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-TN.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:08</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar-YE.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:16</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ar.min.js">
-      <publishTime>11/10/2014 16:29:27</publishTime>
+      <publishTime>01/06/2015 21:32:14</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.arn-CL.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:21</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.arn.min.js">
-      <publishTime>11/10/2014 16:29:27</publishTime>
+      <publishTime>01/06/2015 21:32:08</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.as-IN.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:09</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.as.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.az-Cyrl-AZ.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:22</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.az-Cyrl.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:19</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.az-Latn-AZ.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:20</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.az-Latn.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:18</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.az.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:07</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ba-RU.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:09</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ba.min.js">
-      <publishTime>11/10/2014 16:29:29</publishTime>
+      <publishTime>01/06/2015 21:32:14</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.be-BY.min.js">
-      <publishTime>11/10/2014 16:29:27</publishTime>
+      <publishTime>01/06/2015 21:32:13</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.be.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:10</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.bg-BG.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:19</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.bg.min.js">
-      <publishTime>11/10/2014 16:29:29</publishTime>
+      <publishTime>01/06/2015 21:32:09</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.bn-BD.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:20</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.bn-IN.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:18</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.bn.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:09</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.bo-CN.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:12</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.bo.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:17</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.br-FR.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:14</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.br.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:06</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.bs-Cyrl-BA.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:20</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.bs-Cyrl.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:11</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.bs-Latn-BA.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:19</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.bs-Latn.min.js">
-      <publishTime>11/10/2014 16:29:29</publishTime>
+      <publishTime>01/06/2015 21:32:11</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.bs.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:13</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ca-ES.min.js">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:32:13</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.ca.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:07</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.co-FR.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:11</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.co.min.js">
-      <publishTime>11/10/2014 16:29:27</publishTime>
+      <publishTime>01/06/2015 21:32:09</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.cs-CZ.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:20</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.cs.min.js">
-      <publishTime>11/10/2014 16:29:29</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.cy-GB.min.js">
-      <publishTime>11/10/2014 16:29:29</publishTime>
+      <publishTime>01/06/2015 21:32:07</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.cy.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:15</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.da-DK.min.js">
-      <publishTime>11/10/2014 16:29:27</publishTime>
+      <publishTime>01/06/2015 21:32:09</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.da.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:14</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.de-AT.min.js">
-      <publishTime>11/10/2014 16:29:29</publishTime>
+      <publishTime>01/06/2015 21:32:08</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.de-CH.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:20</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.de-DE.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:07</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.de-LI.min.js">
-      <publishTime>11/10/2014 16:29:27</publishTime>
+      <publishTime>01/06/2015 21:32:19</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.de-LU.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:08</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.de.min.js">
-      <publishTime>11/10/2014 16:29:29</publishTime>
+      <publishTime>01/06/2015 21:32:10</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.dsb-DE.min.js">
-      <publishTime>11/10/2014 16:29:24</publishTime>
+      <publishTime>01/06/2015 21:32:18</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.dsb.min.js">
-      <publishTime>11/10/2014 16:29:25</publishTime>
+      <publishTime>01/06/2015 21:32:07</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.dv-MV.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:16</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.dv.min.js">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:32:19</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.el-GR.min.js">
-      <publishTime>11/10/2014 16:29:25</publishTime>
+      <publishTime>01/06/2015 21:32:11</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.el.min.js">
-      <publishTime>11/10/2014 16:29:29</publishTime>
+      <publishTime>01/06/2015 21:32:20</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-029.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:09</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-AU.min.js">
-      <publishTime>11/10/2014 16:29:25</publishTime>
+      <publishTime>01/06/2015 21:32:21</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-BZ.min.js">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:32:15</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-CA.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:08</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-GB.min.js">
-      <publishTime>11/10/2014 16:29:27</publishTime>
+      <publishTime>01/06/2015 21:32:15</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-IE.min.js">
-      <publishTime>11/10/2014 16:29:29</publishTime>
+      <publishTime>01/06/2015 21:32:20</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-IN.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:19</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-JM.min.js">
-      <publishTime>11/10/2014 16:29:25</publishTime>
+      <publishTime>01/06/2015 21:32:21</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-MY.min.js">
-      <publishTime>11/10/2014 16:29:29</publishTime>
+      <publishTime>01/06/2015 21:32:16</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-NZ.min.js">
-      <publishTime>11/10/2014 16:29:25</publishTime>
+      <publishTime>01/06/2015 21:32:16</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-PH.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:17</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-SG.min.js">
-      <publishTime>11/10/2014 16:29:27</publishTime>
+      <publishTime>01/06/2015 21:32:19</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-TT.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:06</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-US.min.js">
-      <publishTime>11/10/2014 16:29:27</publishTime>
+      <publishTime>01/06/2015 21:32:07</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-ZA.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:16</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en-ZW.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:11</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.en.min.js">
-      <publishTime>11/10/2014 16:29:25</publishTime>
+      <publishTime>01/06/2015 21:32:18</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-AR.min.js">
-      <publishTime>11/10/2014 16:29:29</publishTime>
+      <publishTime>01/06/2015 21:32:17</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-BO.min.js">
-      <publishTime>11/10/2014 16:29:27</publishTime>
+      <publishTime>01/06/2015 21:32:21</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-CL.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:07</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-CO.min.js">
-      <publishTime>11/10/2014 16:29:27</publishTime>
+      <publishTime>01/06/2015 21:32:12</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-CR.min.js">
-      <publishTime>11/10/2014 16:29:25</publishTime>
+      <publishTime>01/06/2015 21:32:17</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-DO.min.js">
-      <publishTime>11/10/2014 16:29:25</publishTime>
+      <publishTime>01/06/2015 21:32:21</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-EC.min.js">
-      <publishTime>11/10/2014 16:29:25</publishTime>
+      <publishTime>01/06/2015 21:32:08</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-ES.min.js">
-      <publishTime>11/10/2014 16:29:25</publishTime>
+      <publishTime>01/06/2015 21:32:09</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-GT.min.js">
-      <publishTime>11/10/2014 16:29:25</publishTime>
+      <publishTime>01/06/2015 21:32:16</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-HN.min.js">
-      <publishTime>11/10/2014 16:29:29</publishTime>
+      <publishTime>01/06/2015 21:32:13</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-MX.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:11</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-NI.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:10</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-PA.min.js">
-      <publishTime>11/10/2014 16:29:28</publishTime>
+      <publishTime>01/06/2015 21:32:18</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-PE.min.js">
-      <publishTime>11/10/2014 16:29:26</publishTime>
+      <publishTime>01/06/2015 21:32:14</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-PR.min.js">
-      <publishTime>11/10/2014 16:29:29</publishTime>
+      <publishTime>01/06/2015 21:32:09</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-PY.min.js">
-      <publishTime>11/10/2014 16:29:30</publishTime>
+      <publishTime>01/06/2015 21:32:10</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/cultures/kendo.culture.es-SV.min.js">
       <publishTime>01/06/2015 21:32:13</publishTime>
@@ -3527,670 +3527,670 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2015 21:32:12</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/jquery.bootstrap.wizard.js">
-      <publishTime>12/16/2014 11:22:16</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/jquery.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/jquery.min.map">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.all.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.all.min.js.map">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.angular.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.angular.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.autocomplete.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.autocomplete.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.binder.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.binder.min.js.map">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.button.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:37:00</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.button.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:01</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.calendar.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.calendar.min.js.map">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.colorpicker.min.js">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:34:24</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.colorpicker.min.js.map">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.columnmenu.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.columnmenu.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.columnsorter.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.columnsorter.min.js.map">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.combobox.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.combobox.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.core.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.core.min.js.map">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.data.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:34:27</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.data.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:56</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.data.odata.min.js">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.data.odata.min.js.map">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.data.signalr.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.data.signalr.min.js.map">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:36:56</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.data.xml.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.data.xml.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.barcode.min.js">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.barcode.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:34:24</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.canvas.min.js">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.canvas.min.js.map">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.chart.funnel.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.chart.funnel.min.js.map">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.chart.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.chart.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.chart.polar.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.chart.polar.min.js.map">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.core.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.core.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.diagram.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.diagram.min.js.map">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.drawing.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.drawing.min.js.map">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.gauge.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.gauge.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.map.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.map.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.min.js.map">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:34:24</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.mobile.min.js">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.mobile.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:56</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.qrcode.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.qrcode.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.sparkline.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.sparkline.min.js.map">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.stock.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.stock.min.js.map">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.svg.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.svg.min.js.map">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.themes.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.themes.min.js.map">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.treemap.min.js">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.treemap.min.js.map">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.vml.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dataviz.vml.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.datepicker.min.js">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:36:56</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.datepicker.min.js.map">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.datetimepicker.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.datetimepicker.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dom.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dom.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.draganddrop.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:56</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.draganddrop.min.js.map">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dropdownlist.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.dropdownlist.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.editable.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.editable.min.js.map">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.editor.min.js">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.editor.min.js.map">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.filebrowser.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.filebrowser.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.filtercell.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.filtercell.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.filtermenu.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:34:24</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.filtermenu.min.js.map">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.fx.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.fx.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.gantt.list.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:01</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.gantt.list.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.gantt.min.js">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.gantt.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.gantt.timeline.min.js">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:37:00</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.gantt.timeline.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.grid.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.grid.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.groupable.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.groupable.min.js.map">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:32:01</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.imagebrowser.min.js">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.imagebrowser.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.list.min.js">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:34:24</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.list.min.js.map">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.listview.min.js">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.listview.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.maskedtextbox.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.maskedtextbox.min.js.map">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:32:01</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.menu.min.js">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.menu.min.js.map">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.actionsheet.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.actionsheet.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.application.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.application.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.button.min.js">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:36:56</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.button.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.buttongroup.min.js">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.buttongroup.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:37:00</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.drawer.min.js">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.drawer.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.listview.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.listview.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:01</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.loader.min.js">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:37:00</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.loader.min.js.map">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.min.js">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.min.js.map">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.modalview.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.modalview.min.js.map">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.navbar.min.js">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.navbar.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.pane.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.pane.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.popover.min.js">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.popover.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:34:24</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.scroller.min.js">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:32:01</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.scroller.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.scrollview.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.scrollview.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:37:00</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.shim.min.js">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.shim.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.splitview.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:01</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.splitview.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:34:27</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.switch.min.js">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.switch.min.js.map">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.tabstrip.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:32:01</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.tabstrip.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:34:27</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.view.min.js">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:36:56</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.mobile.view.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.multiselect.min.js">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:32:01</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.multiselect.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.notification.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:56</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.notification.min.js.map">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.numerictextbox.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.numerictextbox.min.js.map">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.pager.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.pager.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:34:24</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.panelbar.min.js">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.panelbar.min.js.map">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.pivot.configurator.min.js">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.pivot.configurator.min.js.map">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:37:00</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.pivot.fieldmenu.min.js">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:34:27</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.pivot.fieldmenu.min.js.map">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.pivotgrid.min.js">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.pivotgrid.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.popup.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.popup.min.js.map">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.progressbar.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.progressbar.min.js.map">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.reorderable.min.js">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.reorderable.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.resizable.min.js">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:36:56</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.resizable.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.router.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.router.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:01</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.scheduler.agendaview.min.js">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.scheduler.agendaview.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.scheduler.dayview.min.js">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.scheduler.dayview.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.scheduler.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.scheduler.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:01</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.scheduler.monthview.min.js">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.scheduler.monthview.min.js.map">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.scheduler.recurrence.min.js">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.scheduler.recurrence.min.js.map">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.scheduler.view.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.scheduler.view.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.selectable.min.js">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.selectable.min.js.map">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.slider.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.slider.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.sortable.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.sortable.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.splitter.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.splitter.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.tabstrip.min.js">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.tabstrip.min.js.map">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.timepicker.min.js">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.timepicker.min.js.map">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.timezones.min.js">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:37:00</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.toolbar.min.js">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.toolbar.min.js.map">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.tooltip.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.tooltip.min.js.map">
-      <publishTime>11/10/2014 16:29:23</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.touch.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:36:59</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.touch.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.treeview.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.treeview.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:36:58</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.upload.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.upload.min.js.map">
-      <publishTime>11/10/2014 16:29:21</publishTime>
+      <publishTime>01/06/2015 21:36:57</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.userevents.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:34:26</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.userevents.min.js.map">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:36:56</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.validator.min.js">
-      <publishTime>11/10/2014 16:29:22</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.validator.min.js.map">
-      <publishTime>11/10/2014 16:29:16</publishTime>
+      <publishTime>01/06/2015 21:32:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.view.min.js">
-      <publishTime>11/10/2014 16:29:17</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.view.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:01</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.web.min.js">
-      <publishTime>11/10/2014 16:29:18</publishTime>
+      <publishTime>01/06/2015 21:37:00</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.web.min.js.map">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:01</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.window.min.js">
-      <publishTime>11/10/2014 16:29:19</publishTime>
+      <publishTime>01/06/2015 21:32:05</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/kendo.window.min.js.map">
-      <publishTime>11/10/2014 16:29:20</publishTime>
+      <publishTime>01/06/2015 21:34:25</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/messages/kendo.messages.bg-BG.min.js">
       <publishTime>01/06/2015 21:34:27</publishTime>
@@ -6047,7 +6047,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:42:31</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Index.cshtml">
-      <publishTime>01/09/2015 17:24:09</publishTime>
+      <publishTime>01/12/2015 20:50:52</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleCategoryBO/Create.cshtml">
       <publishTime>12/09/2014 08:51:34</publishTime>
@@ -6113,7 +6113,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/09/2015 21:31:10</publishTime>
     </File>
     <File Include="bin/FindTech.Web.dll">
-      <publishTime>01/09/2015 21:31:14</publishTime>
+      <publishTime>01/12/2015 21:05:33</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
       <publishTime>11/04/2014 18:18:06</publishTime>
@@ -6590,7 +6590,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/04/2014 09:18:49</publishTime>
     </File>
     <File Include="favicon.ico">
-      <publishTime>11/04/2014 09:18:52</publishTime>
+      <publishTime>10/27/2014 19:44:49</publishTime>
     </File>
     <File Include="fonts/fontawesome-webfont.eot">
       <publishTime>11/04/2014 09:18:51</publishTime>
@@ -6656,7 +6656,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/04/2014 09:18:51</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>11/04/2014 09:18:51</publishTime>
+      <publishTime>10/27/2014 19:44:49</publishTime>
     </File>
     <File Include="img/arrow-down.png">
       <publishTime>11/04/2014 09:18:58</publishTime>
@@ -7364,7 +7364,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/04/2014 09:19:05</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>11/17/2014 08:37:43</publishTime>
+      <publishTime>11/16/2014 12:11:42</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/animate.css">
       <publishTime>01/06/2015 20:33:07</publishTime>
@@ -7676,7 +7676,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2015 20:32:35</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/responsive.css">
-      <publishTime>01/06/2015 20:31:28</publishTime>
+      <publishTime>01/12/2015 20:50:54</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/royalslider/royalslider.css">
       <publishTime>01/06/2015 20:31:28</publishTime>
@@ -7715,7 +7715,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:42:23</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/style.css">
-      <publishTime>01/09/2015 17:24:09</publishTime>
+      <publishTime>01/12/2015 20:50:54</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/video-js.min.css">
       <publishTime>01/06/2015 20:31:44</publishTime>
@@ -8453,7 +8453,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2015 21:38:37</publishTime>
     </File>
     <File Include="UIFramework/Progressive/js/main.js">
-      <publishTime>01/06/2015 21:38:38</publishTime>
+      <publishTime>01/12/2015 20:51:15</publishTime>
     </File>
     <File Include="UIFramework/Progressive/js/masonry.pkgd.min.js">
       <publishTime>01/06/2015 21:38:45</publishTime>
@@ -8528,7 +8528,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/09/2015 21:10:11</publishTime>
     </File>
     <File Include="UIFramework/UnderConstruction/css/style.css">
-      <publishTime>01/09/2015 21:21:09</publishTime>
+      <publishTime>01/12/2015 20:51:16</publishTime>
     </File>
     <File Include="UIFramework/UnderConstruction/css/uikit.scrollspy.css">
       <publishTime>01/09/2015 21:10:11</publishTime>
@@ -8618,10 +8618,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:44:49</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>01/09/2015 17:24:10</publishTime>
+      <publishTime>01/12/2015 20:51:17</publishTime>
     </File>
     <File Include="Views/Home/UnderConstruction.cshtml">
-      <publishTime>01/11/2015 21:50:35</publishTime>
+      <publishTime>01/12/2015 20:51:17</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>10/27/2014 19:45:38</publishTime>
@@ -8660,7 +8660,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:44:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/08/2014 11:02:18</publishTime>
+      <publishTime>12/15/2014 21:31:02</publishTime>
     </File>
   </ItemGroup>
 </Project>
