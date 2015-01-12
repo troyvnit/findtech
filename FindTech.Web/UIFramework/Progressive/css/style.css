@@ -11582,18 +11582,26 @@ a.big-icon:hover {
   text-transform: uppercase;
 }
 
+.social-feed {
+    left: 3px;
+}
+
 .articles .article {
     margin-top: 40px;
     background: #f7f7f7;
     border-radius: 2px;
-    -webkit-box-shadow: 0px 0px 4px 0 rgba(196, 0, 0, .5);
-    -moz-box-shadow: 0px 0px 4px 0 rgba(196, 0, 0, .5);
-    box-shadow: 0px 0px 4px 0 rgba(196, 0, 0, .5)
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(196, 194, 194, .5);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(196, 194, 194, .5);
+    box-shadow: 0px 0px 4px 1px rgba(196, 194, 194, .5)
 }
 
 .articles .article .article-avatar img{
-    height: 270px;
+    height: auto;
     border-radius: 2px 2px 0 0;
+}
+
+.fixed-height-270 img{
+    height: 270px;
 }
 
 .articles .article .article-description{
@@ -11649,4 +11657,12 @@ a.big-icon:hover {
 
 .blurry-text {
     color: #7f7f7f;
+}
+
+.bottom-padding-mid {
+    margin-bottom: 60px;
+}
+
+.social-feed .isotope-item {
+    margin-bottom: 0;
 }
