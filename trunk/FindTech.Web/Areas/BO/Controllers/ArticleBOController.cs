@@ -48,9 +48,9 @@ namespace FindTech.Web.Areas.BO.Controllers
             var contentSections = new List<ContentSectionBOViewModel>();
             if (articleId != null)
             {
-                var article = articleService.Queryable().Include(a => a.ContentSections).FirstOrDefault(a => a.ArticleId == articleId);
+                var article = articleService.Find(articleId);
                 articleBOViewModel = Mapper.Map<ArticleBOViewModel>(article);
-                if (article != null)
+                if (article != null && article.ContentSections != null)
                     contentSections = article.ContentSections.Select(Mapper.Map<ContentSectionBOViewModel>).ToList();
             }
             ViewBag.ContentSections = contentSections;
