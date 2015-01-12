@@ -21,8 +21,8 @@
     max-width: 200px;
   }
   .carousel .col-md-3 {
-    width: 300px;
-    max-width: 300px;
+    width: 298px;
+    max-width: 298px;
   }
   .carousel .col-md-4 {
     max-width: 400px;
@@ -52,6 +52,10 @@
     max-width: 1200px;
   }
   
+  .articles .col-md-3 {
+    width: 298px;
+    max-width: 298px;
+  }
   .boxed.padding-top {
     padding-top: 420px;
   }
