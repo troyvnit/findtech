@@ -1602,7 +1602,7 @@ function locationSocialFeed() {
 	socialFeed.isotope({
 	  itemSelector: '.isotope-item',
 	}).addClass('loaded');
-	
+      socialFeed.css('height', socialFeed.height() + 2 + 'px');
 	$('#load-more').click(function() {
 	  var item1, item2, item3, items, tmp;
 	  
