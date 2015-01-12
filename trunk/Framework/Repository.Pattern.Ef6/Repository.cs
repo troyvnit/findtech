@@ -1,8 +1,11 @@
 ﻿#region
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
@@ -62,7 +65,7 @@ namespace Repository.Pattern.Ef6
 
         public virtual void Insert(TEntity entity)
         {
-            entity.ObjectState = ObjectState.Added;
+            entity.ObjectState = ObjectState.Added;;
             _dbSet.Attach(entity);
             _context.SyncObjectState(entity);
         }
@@ -73,12 +76,6 @@ namespace Repository.Pattern.Ef6
             {
                 Insert(entity);
             }
-        }
-
-        public virtual void InsertOrUpdateGraph(TEntity entity)
-        {
-            SyncObjectGraph(entity);
-            _dbSet.Add(entity);
         }
 
         public virtual void InsertGraphRange(IEnumerable<TEntity> entities)
@@ -190,37 +187,61 @@ namespace Repository.Pattern.Ef6
         }
 
         internal async Task<IEnumerable<TEntity>> SelectAsync(
-            Expression<Func<TEntity, bool>> query = null,
+            Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
             List<Expression<Func<TEntity, object>>> includes = null,
             int? page = null,
             int? pageSize = null)
         {
-            //See: Best Practices in Asynchronous Programming http://msdn.microsoft.com/en-us/magazine/jj991977.aspx
-            return await Task.Run(() => Select(query, orderBy, includes, page, pageSize).AsEnumerable()).ConfigureAwait(false);
+            return await Select(filter, orderBy, includes, page, pageSize).ToListAsync();
         }
 
-        private void SyncObjectGraph(object entity)
+        public virtual void InsertOrUpdateGraph(TEntity entity)
         {
+            SyncObjectGraph(entity);
+            _entitesChecked = null;
+            _dbSet.Attach(entity);
+        }
+
+        HashSet<object> _entitesChecked; // tracking of all process entities in the object graph when calling SyncObjectGraph
+
+        private void SyncObjectGraph(object entity) // scan object graph for all 
+        {
+            if(_entitesChecked == null)
+                _entitesChecked = new HashSet<object>();
+
+            if (_entitesChecked.Contains(entity))
+                return;
+
+            _entitesChecked.Add(entity);
+
+            var objectState = entity as IObjectState;
+
+            if (objectState != null && objectState.ObjectState == ObjectState.Added)
+                _context.SyncObjectState((IObjectState)entity);
+
             // Set tracking state for child collections
             foreach (var prop in entity.GetType().GetProperties())
             {
                 // Apply changes to 1-1 and M-1 properties
                 var trackableRef = prop.GetValue(entity, null) as IObjectState;
-                if (trackableRef != null && trackableRef.ObjectState == ObjectState.Added)
+                if (trackableRef != null)
                 {
-                    _dbSet.Attach((TEntity)entity);
-                    _context.SyncObjectState((IObjectState)entity);
+                    if(trackableRef.ObjectState == ObjectState.Added)
+                        _context.SyncObjectState((IObjectState) entity);
+
+                    SyncObjectGraph(prop.GetValue(entity, null));
                 }
 
                 // Apply changes to 1-M properties
-                var items = prop.GetValue(entity, null) as IList<IObjectState>;
+                var items = prop.GetValue(entity, null) as IEnumerable<IObjectState>;
                 if (items == null) continue;
+
+                Debug.WriteLine("Checking collection: " + prop.Name);
 
                 foreach (var item in items)
                     SyncObjectGraph(item);
             }
         }
-
     }
 }

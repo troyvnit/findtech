@@ -6,7 +6,6 @@ using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using Repository.Pattern.DataContext;
 using Repository.Pattern.Ef6;
-using Repository.Pattern.Ef6.Factories;
 using Repository.Pattern.Repositories;
 using Repository.Pattern.UnitOfWork;
 
@@ -47,10 +46,6 @@ namespace FindTech.Web.App_Start
             // container.RegisterType<IProductRepository, ProductRepository>();
             container
                 .RegisterType<IDataContextAsync, FindTechContext>(new PerRequestLifetimeManager())
-                .RegisterType<IRepositoryProvider, RepositoryProvider>(
-                    new PerRequestLifetimeManager(),
-                    new InjectionConstructor(new object[] {new RepositoryFactories()})
-                )
                 .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
                 .RegisterType<IRepositoryAsync<Source>, Repository<Source>>()
                 .RegisterType<ISourceService, SourceService>()
