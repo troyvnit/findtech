@@ -191,6 +191,23 @@
                 source: tags.ttAdapter()
             }
         });
+        
+        $('#tags').on('itemRemoved', function (event) {
+            if ($('#tags').val() == '') {
+                $('#tags').parent().removeClass('has-success').addClass("has-error-tags");
+                $('#tags').parent().find('.form-control-feedback').removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-remove');
+            }
+        });
+        $('#tags').on('itemAdded', function (event) {
+            if ($('#tags').val() != '') {
+                $('#tags').parent().removeClass('has-error-tags').addClass("has-success");
+                $('#tags').parent().find('.form-control-feedback').removeClass('glyphicon glyphicon-remove').addClass('glyphicon glyphicon-ok');
+            }
+        });
+        
+        $('.tt-input').on("focus", function (e) {
+            $(this).parent().parent().removeClass('focus').addClass('focus');
+        });
 
 
         $(".editor").kendoEditor({
@@ -263,6 +280,23 @@
                 }
             }
         });
+        
+        function onSelectArticleType(e) {
+            var dataItem = this.dataItem(e.item.index());
+            console.log(this);
+            if (dataItem.value == '') {
+                var id = this.element.attr('id');
+                $('#' + id).parent().parent().removeClass('has-feedback').removeClass('has-success').addClass('has-error-dropdown');
+            } else {
+                var id = this.element.attr('id');
+                $('#' + id).parent().parent().removeClass('has-error-dropdown').removeClass('has-feedback').addClass('has-success');
+            }
+        };
+
+        function onChangeArticleType(e) {
+
+        };
+
 
         $("#articleType").kendoDropDownList({
             optionLabel: "Select Article Type",
@@ -271,7 +305,9 @@
             dataSource: [
               { text: "News", value: "0" },
               { text: "Review", value: "1" }
-            ]
+            ],
+            select: onSelectArticleType,
+            change: onChangeArticleType
         });
 
         $("#boxSize").kendoDropDownList({

@@ -1288,6 +1288,46 @@ fieldset[disabled] .selectBox .selectBox-label,
     color: #f89406;
 }
 
+.has-error-tags .help-block {
+    color: #c10841 ;
+    display: block !important;
+    padding-top: 20px;
+}
+
+
+.has-error-tags .glyphicon-remove {
+    color: #c10841;
+    display: block !important;
+}
+
+.has-error-tags .bootstrap-tagsinput {
+    border-color: #c10841;
+}
+
+.has-error-tags .focus {
+     border-color: #c10841;
+    -webkit-box-shadow: 0 0 10px rgba(193,8,65,.3);
+    box-shadow: 0 0 10px rgba(193,8,65,.3);
+}
+
+
+
+.has-error-tags .bootstrap-tagsinput{
+    
+}
+
+.has-error-dropdown .k-dropdown-wrap{
+border-color: #a94442;
+border: 1px solid #a94442 !important;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.has-error-dropdown .help-block {
+    display: block !important;
+    color: #c10841;
+}
+
 .has-error .help-block,
 .has-error .control-label,
 .has-error .radio,
@@ -1298,17 +1338,26 @@ fieldset[disabled] .selectBox .selectBox-label,
     color: #c10841;
 }
 
+.has-error .form-control {
+    border-color: #c10841;
+}
+
 .has-success .form-control {
     border-color: #738d00;
 }
+
+.has-success  .glyphicon-ok {
+    display: block !important;
+}
+.has-success .bootstrap-tagsinput {
+    border-color: #738d00;
+}
+
 
 .has-warning .form-control {
     border-color: #f89406;
 }
 
-.has-error .form-control {
-    border-color: #c10841;
-}
 
 .has-success .form-control:focus {
     border-color: #738d00;
