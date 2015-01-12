@@ -12,7 +12,7 @@
 </div>
 <div class="clearfix"></div>
 <section id="main">
-    <div class="container">
+    <div class="container" id="container">
         <div class="content">
             <div class="row">
                 
@@ -24,6 +24,17 @@
                 </button>
             </div>
         </div><!-- .content -->
+    </div>
+
+    <div class="modal fade" id="waitDialog" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" style="padding-top:15%; overflow-y:visible;">
+        <div class="modal-dialog modal-m">
+            <div class="modal-content">
+                <div class="modal-header"><h3 style="margin:0;">Please wait ...</h3></div>
+                <div class="modal-body">
+                    <div class="progress progress-striped active" style="margin-bottom:0;"><div class="progress-bar" style="width: 100%"></div></div>
+                </div>
+            </div>
+        </div>
     </div>
 </section><!-- #main -->
 <script type="text/x-kendo-template" id="articleToolbarTemplate">
@@ -136,6 +147,7 @@
 
 
         $("#readRss").click(function () {
+            $('.loading').show();
             $.ajax({
                 url: '/ArticleBO/ReadRss',
                 type: "POST",
@@ -143,6 +155,8 @@
                 dataType: "json",
                 success: function (result) {
                     if (result) {
+                        $('.loading').hide();
+                        $('#articleGrid').data("kendoGrid").dataSource.read();
                     }
                 }
             });
@@ -174,11 +188,11 @@
                 }
             });
 
-            for(var i=0; i < ids.length; i++)
-            {
-                setTimeout(window.open('@Url.Action("Create","ArticleBO")?articleId=' + dataItem.ArticleId, '_blank'), i*200);
+            for (var i = 0; i < ids.length; i++) {
+                setTimeout(window.open('@Url.Action("Create","ArticleBO")?articleId=' + dataItem.ArticleId, '_blank'), i * 200);
             }
-        })
+        });
+ 
     });
     function showDetails(e) {
         e.preventDefault();
