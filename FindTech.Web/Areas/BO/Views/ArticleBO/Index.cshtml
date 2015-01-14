@@ -189,7 +189,7 @@
             });
 
             for (var i = 0; i < ids.length; i++) {
-                setTimeout(window.open('@Url.Action("Create","ArticleBO")?articleId=' + dataItem.ArticleId, '_blank'), i * 200);
+                setTimeout(window.open('@Url.Action("Create","ArticleBO")?articleId=' + ids[i], '_blank'), (i + 1) * 200);
             }
         });
  
