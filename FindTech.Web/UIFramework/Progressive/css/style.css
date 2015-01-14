@@ -11321,6 +11321,9 @@ a.big-icon:hover {
 /******************************************************************************
   Custom
 *******************************************************************************/
+#main {
+    padding: 60px 0;
+}
 
 .header .search-form .search-submit svg path {
     fill: #00ade0 !important;
@@ -11459,6 +11462,7 @@ a.big-icon:hover {
 
 .banner-set {
     position: relative;
+    padding-bottom: 0;
 }
 
 .banner-set .banner {
@@ -11601,7 +11605,7 @@ a.big-icon:hover {
 }
 
 .fixed-height-270 img{
-    height: 270px;
+    height: 270px !important;
 }
 
 .articles .article .article-description{
@@ -11613,13 +11617,18 @@ a.big-icon:hover {
 .articles .article .article-description .title {
   font-size: 16px;
   font-weight: bold;
-  line-height: 1;
+  line-height: 1.1;
   margin: 0;
   padding: 0 0 5px;
   text-decoration: none;
   -webkit-transition: all .2s linear;
   transition: all .2s linear;
-    height: 35px;
+  height: 35px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
 }
 
 .articles .article .article-description .posted-info {
@@ -11645,14 +11654,25 @@ a.big-icon:hover {
     height: 60px;
     width: 100%;
     border-top: 2px solid #00ade0;
-    padding: 0 20px;
+    color: #7f7f7f;
 }
 
-.articles .social span{
+.articles .social > span{
     display: table-cell;
     width: 25%;
     font-size: 16px;
     vertical-align: middle;
+    text-align: center;
+}
+
+.articles .social .fa{
+    font-size: 18px !important;
+    padding-bottom: 2px;
+}
+
+.articles .social .fa .count{
+    font-size: 14px;
+    margin-left: 2px;
 }
 
 .blurry-text {
@@ -11665,4 +11685,67 @@ a.big-icon:hover {
 
 .social-feed .isotope-item {
     margin-bottom: 0;
+}
+
+.sidebar .title-box:before {
+    background: #1e1e1e;
+}
+
+.sidebar .title-box .fa {
+    position: absolute;
+    height: 49px;
+    width: 40px;
+    background: #00ade0;
+    text-align: center;
+    line-height: 48px;
+    bottom: 1px;
+    color: white;
+    font-size: 18px;
+}
+
+.sidebar .title-box .title {
+    padding-left: 52px;
+}
+
+.sidebar .articles ul{
+    background: #f2f2f2;
+    padding: 20px 5px 15px 5px;
+}
+
+.sidebar .articles ul li {
+    background: white;
+    margin-bottom: 10px;
+}
+
+.sidebar .articles ul li.action {
+    background: none;
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.sidebar .articles ul li.action .view-all {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.sidebar .articles ul li.action .view-all .fa{
+    color: #00ade0;
+    margin-left: 5px;
+}
+
+.sidebar .articles ul li .title {
+    display: inline-block;
+    width: 185px;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 0 10px;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.sidebar .articles ul li .article-avatar img{
+    width: 72px;
+    height: 72px;
 }
