@@ -11749,3 +11749,37 @@ a.big-icon:hover {
     width: 72px;
     height: 72px;
 }
+
+.load-more {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.load-more .fa{
+    color: white;
+}
+
+.load-more:hover{
+    background-color: #00ade0 !important;
+    color: white;
+}
+
+.load-more-wrapper {
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.clicked{
+    background-color: #00ade0 !important;
+    color: white;
+}
+
+.unclicked{
+    background-color: #cccccc !important;
+    color: #666666;
+}
+
+.load-more .loading{
+    display: none;
+}

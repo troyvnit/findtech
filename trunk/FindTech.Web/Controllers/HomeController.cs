@@ -43,10 +43,5 @@ namespace FindTech.Web.Controllers
         {
             return View();
         }
-
-        public ActionResult _ArticleBox(ArticleViewModel article)
-        {
-            return View(article);
-        }
     }
 }

@@ -242,7 +242,9 @@
     </Compile>
     <Compile Include="Mappers\AutoMapperConfiguration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ArticleListViewModel.cs" />
     <Compile Include="Models\ArticleViewModel.cs" />
+    <Compile Include="Models\ContentSectionViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1907,6 +1909,11 @@
     <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\fontawesome-webfont.ttf" />
     <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\fontawesome-webfont.woff" />
     <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\FontAwesome.otf" />
+    <Content Include="Views\Shared\_ReviewBox.cshtml" />
+    <Content Include="Views\Shared\_NewsBox.cshtml" />
+    <Content Include="Views\Shared\_HotArticleBox.cshtml" />
+    <Content Include="Views\Shared\_ListItemArticleBox.cshtml" />
+    <Content Include="Views\Article\_NewsBoxs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">

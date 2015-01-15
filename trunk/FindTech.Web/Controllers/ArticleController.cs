@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Linq;
+using System.Text;
 using System.Web.Mvc;
 using AutoMapper;
 using FindTech.Services;
@@ -31,6 +32,12 @@ namespace FindTech.Web.Controllers
             var article = articleService.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).Include(a => a.ContentSections).FirstOrDefault(a => a.SeoTitle == seoTitle);
             ViewBag.Article = Mapper.Map<ArticleViewModel>(article);
             return View();
+        }
+
+        public ActionResult _NewsBoxs()
+        {
+            var articles = articleService.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).Include(a => a.ContentSections);
+            return View(new ArticleListViewModel { Articles = articles.Select(Mapper.Map<ArticleViewModel>).ToList() });
         }
     }
 }
