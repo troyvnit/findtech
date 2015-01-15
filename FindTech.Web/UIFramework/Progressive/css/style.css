@@ -11783,3 +11783,35 @@ a.big-icon:hover {
 .load-more .loading{
     display: none;
 }
+
+.manufactures .make-wrapper {
+    float: left;
+    height: 140px;
+    margin: 20px 10px;
+    width: 150px;
+}
+
+.manufactures .make-wrapper .title{
+    font-size: 12px;
+    color: #1e1e1e;
+    text-decoration: none;
+    padding-top: 10px;
+}
+
+.manufactures .make-wrapper a:hover{
+    text-decoration: none;
+}
+
+.manufactures .caroufredsel_wrapper {
+    width: 100%;
+    border: 1px solid #e3e3e3;
+}
+
+.manufactures .title-box {
+    margin-bottom: 0;
+    border-bottom-width: 0;
+}
+
+.manufactures .title-box:before {
+    background: none;
+}
