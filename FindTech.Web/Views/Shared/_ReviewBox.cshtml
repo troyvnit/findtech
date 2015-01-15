@@ -1,0 +1,24 @@
+﻿@model FindTech.Web.Models.ArticleViewModel
+@{
+    var article = Model;
+}
+<div class="col-sm-3 col-md-3">
+    <div class="article">
+        <div class="default">
+            <a href="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle })" class="article-avatar fixed-height-270">
+                <img src="@article.Avatar" alt="" title="" width="270" height="270">
+            </a>
+            <div class="article-description">
+                <h2 class="title">@article.Title</h2>
+                <div class="posted-info"><span class="blurry-text">Posted:</span><strong> 19 thang 12 nam 2014, by Troy</strong></div>
+                <div class="description blurry-text">@article.Description</div>
+            </div>
+            <div class="social">
+                <span class="icon-facebook"><span class="count">25</span></span>
+                <span class="icon-twitter"><span class="count">30</span></span>
+                <span class="icon-gplus"><span class="count">11</span></span>
+                <span class="fa fa-comments"><span class="count">12</span></span>
+            </div>
+        </div>
+    </div><!-- .article -->
+</div>

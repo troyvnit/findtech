@@ -1,0 +1,12 @@
+﻿@model FindTech.Web.Models.ArticleViewModel
+@{
+    var article = Model;
+}
+<li class="clearfix">
+    <a href="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle })" class="article-avatar">
+        <img src="@article.Avatar" width="72" height="72" alt="" title="">
+    </a>
+    <h2 class="title">
+        @article.Title
+    </h2>
+</li>
