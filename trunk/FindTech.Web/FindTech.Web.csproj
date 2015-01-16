@@ -1914,6 +1914,11 @@
     <Content Include="Views\Shared\_HotArticleBox.cshtml" />
     <Content Include="Views\Shared\_ListItemArticleBox.cshtml" />
     <Content Include="Views\Article\_NewsBoxs.cshtml" />
+    <Content Include="UIFramework\Progressive\fonts\myriad-pro.eot" />
+    <Content Include="UIFramework\Progressive\fonts\myriad-pro.ttf" />
+    <Content Include="UIFramework\Progressive\fonts\myriad-pro.woff" />
+    <Content Include="UIFramework\Progressive\fonts\MYRIADPROREGULAR.woff" />
+    <Content Include="Views\Shared\_MiniArticleBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">

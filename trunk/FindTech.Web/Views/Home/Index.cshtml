@@ -114,12 +114,7 @@
                                     <div class="carousel">
                                         @foreach (var article in articles.Take(10))
                                         {
-                                            <div class="make-wrapper">
-                                                <a href="#">
-                                                    <img src="@article.Avatar" width="150" height="100" alt="">
-                                                    <h2 class="title">@article.Title</h2>
-                                                </a>
-                                            </div>
+                                            Html.RenderPartial("_MiniArticleBox", article);
                                         }
                                     </div>
                             </div><!-- .manufactures -->
@@ -141,6 +136,13 @@
                             </li>
                         </ul>
                     </aside><!-- .specials-->
+                    <aside class="widget facebook-widget">
+                        <header>
+                            <h3 class="title">Facebook</h3>
+                        </header>
+                        <div id="fb-root"></div>
+                        <div class="fb-like-box" data-href="https://www.facebook.com/ifind.vn" data-width="270" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"></div>
+                    </aside><!-- .facebook-widget -->
                 </div>
             </div>
             <div class="clearfix"></div>

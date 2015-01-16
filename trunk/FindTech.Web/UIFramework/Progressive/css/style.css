@@ -11322,7 +11322,24 @@ a.big-icon:hover {
   Custom
 *******************************************************************************/
 #main {
-    padding: 60px 0;
+    padding: 46px 0;
+}
+
+.breadcrumb-box {
+    background: white;
+}
+
+.breadcrumb{
+    background: white;
+}
+
+.breadcrumb > li > a {
+    color: #00ade0;
+}
+
+.breadcrumb>li+li:before {
+    content: "\003e";
+    font-size: 8px;
 }
 
 .header .search-form .search-submit svg path {
@@ -11629,6 +11646,11 @@ a.big-icon:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
+    cursor: pointer;
+}
+
+.articles .article .article-description .title:hover {
+    color: #00ade0;
 }
 
 .articles .article .article-description .posted-info {
@@ -11680,7 +11702,7 @@ a.big-icon:hover {
 }
 
 .bottom-padding-mid {
-    margin-bottom: 60px;
+    margin-bottom: 46px;
 }
 
 .social-feed .isotope-item {
@@ -11798,6 +11820,10 @@ a.big-icon:hover {
     padding-top: 10px;
 }
 
+.manufactures .make-wrapper .title:hover{
+    color: #00ade0;
+}
+
 .manufactures .make-wrapper a:hover{
     text-decoration: none;
 }
@@ -11814,4 +11840,44 @@ a.big-icon:hover {
 
 .manufactures .title-box:before {
     background: none;
+}
+
+.page-header {
+    margin: 0 0 20px;
+}
+
+.page-header .title {
+    font-size: 36px;
+    color: #1e1e1e;
+    margin: -4px 0 0;
+}
+
+#article .entry-meta {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+#article .entry-meta .separator {
+    margin: 0 10px;
+    font-weight: normal;
+}
+
+.tags a{
+    background: #cccccc;
+    color: #7f7f7f;
+    padding: 5px 10px;
+    border-radius: 2px;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 13px;
+    margin-top: 5px;
+}
+
+.tags a:hover {
+    background: #00ade0;
+    color: white;
+}
+
+#article .entry-meta .blurry-text {
+    margin-right: 10px;
 }
