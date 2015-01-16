@@ -1,4 +1,5 @@
-﻿@model FindTech.Web.Models.ArticleViewModel
+﻿@using System.Globalization
+@model FindTech.Web.Models.ArticleViewModel
 @{
     var article = Model;
 }
@@ -9,8 +10,8 @@
                 <img src="@article.Avatar" alt="" title="" width="270" height="270">
             </a>
             <div class="article-description">
-                <h2 class="title">@article.Title</h2>
-                <div class="posted-info"><span class="blurry-text">Posted:</span><strong> 19 thang 12 nam 2014, by Troy</strong></div>
+                <a href="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle })"><h2 class="title">@article.Title</h2></a>
+                <div class="posted-info"><span class="blurry-text">Đăng:</span><strong> @article.PublishedDate.ToString("dd MMM yy HH:mm:ss", new CultureInfo("vi-VN")), <span class="blurry-text">bởi</span> @article.SourceName</strong></div>
                 <div class="description blurry-text">@article.Description</div>
             </div>
             <div class="social">

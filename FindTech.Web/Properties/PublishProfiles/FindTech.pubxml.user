@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIdZ8Yvf1LkeEzvqZ4vYDSQAAAAACAAAAAAAQZgAAAAEAACAAAABYH2Rfb8d8K7ZIcsSTsqJj6z+7oHQcfqTtcvZis7CjGQAAAAAOgAAAAAIAACAAAAAIuGTbmZ5yN/pF9Xvym51jgnjw30hN7XeEwPgVT6/sqiAAAADSAYswxWmnsyIbkPl5jRw778JSORy3hlO+PYiXjF9o4kAAAADA0Dvy9bjI3gm0+RE5XXObXZ/1b5MKwx6pUN0tsJ1ig2hd7uDQpmxhArXLIj6U9X/T+HhyjJbaverJLQpQho7f</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4N8XDceroUup4T78DK9tyQAAAAACAAAAAAAQZgAAAAEAACAAAACAD+qi/Cg3dIJYrF63vLPVGbS+0Spg3ge26L7fC2wo7wAAAAAOgAAAAAIAACAAAADe2oQFqe36ubCtfEqmtJc6/LE/oOECK5+OByn1hjpyZCAAAACaKqY+8SUCKVJsTToLtqKz0DdYR/Zbyw6qy3N8cckAyEAAAAAkzpqOcGhxpTQfPYcZJsaK3Mwn2rOyb0UvRlX0A/DkZvc4TFrUaQd1Lo4WS9l+XQ88vSdEbm/mclVshWpUzvkV</EncryptedPassword>
     <_PublishTargetUrl>ftp://ftp.ifind.vn/httpdocs</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
@@ -6047,7 +6047,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/13/2015 08:45:01</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Index.cshtml">
-      <publishTime>01/13/2015 08:45:01</publishTime>
+      <publishTime>01/15/2015 09:21:12</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleCategoryBO/Create.cshtml">
       <publishTime>12/09/2014 08:51:34</publishTime>
@@ -6113,7 +6113,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/13/2015 15:48:42</publishTime>
     </File>
     <File Include="bin/FindTech.Web.dll">
-      <publishTime>01/13/2015 15:48:45</publishTime>
+      <publishTime>01/16/2015 12:10:37</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
       <publishTime>11/04/2014 10:13:08</publishTime>
@@ -7715,7 +7715,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:36:46</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/style.css">
-      <publishTime>01/13/2015 11:29:32</publishTime>
+      <publishTime>01/16/2015 16:28:55</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/video-js.min.css">
       <publishTime>12/31/2014 12:05:24</publishTime>
@@ -7746,6 +7746,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="UIFramework/Progressive/fonts/glyphicons-halflings-regular.woff">
       <publishTime>12/31/2014 12:05:24</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/fonts/myriad-pro.eot">
+      <publishTime>01/08/2015 17:26:58</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/fonts/myriad-pro.ttf">
+      <publishTime>01/08/2015 17:27:02</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/fonts/myriad-pro.woff">
+      <publishTime>01/12/2015 08:55:19</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/fonts/MYRIADPROREGULAR.woff">
+      <publishTime>01/08/2015 17:26:50</publishTime>
     </File>
     <File Include="UIFramework/Progressive/fonts/revicons.eot">
       <publishTime>12/31/2014 12:05:24</publishTime>
@@ -8453,7 +8465,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/31/2014 12:05:29</publishTime>
     </File>
     <File Include="UIFramework/Progressive/js/main.js">
-      <publishTime>01/12/2015 17:20:01</publishTime>
+      <publishTime>01/16/2015 10:35:53</publishTime>
     </File>
     <File Include="UIFramework/Progressive/js/masonry.pkgd.min.js">
       <publishTime>12/31/2014 12:05:29</publishTime>
@@ -8609,7 +8621,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/04/2014 09:18:52</publishTime>
     </File>
     <File Include="Views/Article/Detail.cshtml">
-      <publishTime>12/08/2014 17:14:38</publishTime>
+      <publishTime>01/16/2015 16:05:50</publishTime>
+    </File>
+    <File Include="Views/Article/_NewsBoxs.cshtml">
+      <publishTime>01/15/2015 11:19:43</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>11/04/2014 09:18:52</publishTime>
@@ -8618,10 +8633,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/04/2014 09:18:52</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>01/13/2015 11:31:32</publishTime>
+      <publishTime>01/16/2015 10:40:57</publishTime>
     </File>
     <File Include="Views/Home/UnderConstruction.cshtml">
-      <publishTime>01/13/2015 15:48:18</publishTime>
+      <publishTime>01/15/2015 15:22:22</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>11/04/2014 09:18:51</publishTime>
@@ -8647,11 +8662,26 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Shared/Lockout.cshtml">
       <publishTime>11/04/2014 09:18:51</publishTime>
     </File>
+    <File Include="Views/Shared/_HotArticleBox.cshtml">
+      <publishTime>01/16/2015 12:19:14</publishTime>
+    </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>01/08/2015 17:31:47</publishTime>
+      <publishTime>01/16/2015 13:35:05</publishTime>
+    </File>
+    <File Include="Views/Shared/_ListItemArticleBox.cshtml">
+      <publishTime>01/16/2015 16:20:42</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>11/04/2014 09:18:51</publishTime>
+    </File>
+    <File Include="Views/Shared/_MiniArticleBox.cshtml">
+      <publishTime>01/16/2015 16:20:21</publishTime>
+    </File>
+    <File Include="Views/Shared/_NewsBox.cshtml">
+      <publishTime>01/16/2015 16:20:03</publishTime>
+    </File>
+    <File Include="Views/Shared/_ReviewBox.cshtml">
+      <publishTime>01/16/2015 16:19:22</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>11/04/2014 09:18:51</publishTime>

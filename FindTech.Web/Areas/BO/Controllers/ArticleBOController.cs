@@ -101,8 +101,9 @@ namespace FindTech.Web.Areas.BO.Controllers
 
 
         [HttpPost]
-        public ActionResult ReadRss(string url)
+        public ActionResult ReadRss()
         {
+            var errorArticles = new List<object>();
             if (!articleCategoryService.Queryable().Any(a => a.ArticleCategoryName == "Tin tổng hợp"))
             {
                 articleCategoryService.Insert(new ArticleCategory
@@ -126,58 +127,69 @@ namespace FindTech.Web.Areas.BO.Controllers
                 {
                     foreach (var feedItem in feed.Items)
                     {
-                        var summary = new HtmlAgilityPack.HtmlDocument();
-                        summary.LoadHtml(feedItem.Summary.Text);
-                        var contentDocument = new HtmlAgilityPack.HtmlDocument();
-                        var link = feedItem.Links.FirstOrDefault();
-                        if (link != null)
-                        {
-                            var absoluteUri = link.GetAbsoluteUri();
-                            if (absoluteUri != null) contentDocument = new HtmlWeb().Load(absoluteUri.AbsoluteUri);
-                        }
-                        var contentXpaths = rssSource.Xpaths.Where(a => a.ArticleField == ArticleField.Content);
-                        var content = "";
-                        foreach (
-                            var contentNode in
-                                contentXpaths.Select(
-                                    contentXpath =>
-                                        contentDocument.DocumentNode.SelectSingleNode(contentXpath.XpathString))
-                                    .Where(contentNode => contentNode != null))
-                        {
-                            content = contentNode.InnerHtml;
-                            break;
-                        }
                         var title = feedItem.Title.Text;
                         if (!articleService.Queryable().Any(a => a.Title == title))
                         {
-                            var article = new Article
+                            var summary = new HtmlAgilityPack.HtmlDocument();
+                            summary.LoadHtml(feedItem.Summary != null ? feedItem.Summary.Text : "");
+                            var contentDocument = new HtmlAgilityPack.HtmlDocument();
+                            var link = feedItem.Links.FirstOrDefault();
+                            if (link != null)
                             {
-                                ArticleCategoryId = category.ArticleCategoryId,
-                                ArticleCategory = category,
-                                Title = title,
-                                Avatar =
-                                    summary.DocumentNode.Descendants("img")
-                                        .Select(n => n.Attributes["src"].Value)
-                                        .ToArray()
-                                        .FirstOrDefault(),
-                                Description = summary.DocumentNode.InnerText,
-                                IsActived = false,
-                                Priority = 1,
-                                PublishedDate = feedItem.PublishDate.DateTime,
-                                BoxSize = BoxSize.Box1,
-                                SourceId = rssSource.SourceId,
-                                Source = rssSource,
-                                Content = content,
-                                ArticleType = ArticleType.News
-                            };
-                            articleService.Insert(article);
+                                var absoluteUri = link.GetAbsoluteUri();
+                                if (absoluteUri != null) contentDocument = new HtmlWeb().Load(absoluteUri.AbsoluteUri);
+                            }
+                            var contentXpaths = rssSource.Xpaths.Where(a => a.ArticleField == ArticleField.Content);
+                            var content = "";
+                            foreach (
+                                var contentNode in
+                                    contentXpaths.Select(
+                                        contentXpath =>
+                                            contentDocument.DocumentNode.SelectSingleNode(contentXpath.XpathString))
+                                        .Where(contentNode => contentNode != null))
+                            {
+                                content = contentNode.InnerHtml;
+                                break;
+                            }
+                            if (category != null)
+                            {
+                                try
+                                {
+                                    var article = new Article
+                                    {
+                                        ArticleCategoryId = category.ArticleCategoryId,
+                                        ArticleCategory = category,
+                                        Title = title,
+                                        Avatar =
+                                            summary.DocumentNode.Descendants("img")
+                                                .Select(n => n.Attributes["src"].Value)
+                                                .ToArray()
+                                                .FirstOrDefault(),
+                                        Description = summary.DocumentNode.InnerText,
+                                        IsActived = false,
+                                        Priority = 1,
+                                        PublishedDate = feedItem.PublishDate.DateTime,
+                                        BoxSize = BoxSize.Box1,
+                                        SourceId = rssSource.SourceId,
+                                        Source = rssSource,
+                                        Content = content,
+                                        ArticleType = ArticleType.News,
+                                        SeoTitle = title.GenerateSeoTitle()
+                                    };
+                                    articleService.Insert(article);
+                                    unitOfWork.SaveChanges();
+                                }
+                                catch(Exception e)
+                                {
+                                    errorArticles.Add(new { Title = title, PublishedDate = feedItem.PublishDate.DateTime });
+                                }
+                            }
                         }
                     }
-                    unitOfWork.SaveChanges();
                 }
             }
 
-            return Json(true);
+            return Json(new { Success = errorArticles.Count == 0, ErrorArticles = errorArticles});
         }
 
 
