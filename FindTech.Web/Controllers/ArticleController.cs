@@ -31,6 +31,8 @@ namespace FindTech.Web.Controllers
         {
             var article = articleService.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).Include(a => a.ContentSections).FirstOrDefault(a => a.SeoTitle == seoTitle);
             ViewBag.Article = Mapper.Map<ArticleViewModel>(article);
+            var articles = articleService.Queryable().OrderByDescending(a => a.PublishedDate).Take(10);
+            ViewBag.Articles = articles.Select(Mapper.Map<ArticleViewModel>);
             return View();
         }
 

@@ -11321,6 +11321,9 @@ a.big-icon:hover {
 /******************************************************************************
   Custom
 *******************************************************************************/
+.background-00ade0 {
+    background: #00ade0;
+}
 #main {
     padding: 46px 0;
 }
@@ -11491,8 +11494,8 @@ a.big-icon:hover {
   line-height: 18px;
   margin: 0;
   width: 292px;
-    height: 315px;
-  padding: 20px;
+    height: 292px;
+  padding: 10px;
   text-align: left;
   text-decoration: none;
   -webkit-transition:
@@ -11505,17 +11508,17 @@ a.big-icon:hover {
 }
 
 .banner-set .banner .box {
-  width: 253px;
-    height: 275px;
+    width: 272px;
+    height: 272px;
     position: relative;
     overflow: hidden;
 }
 
 .banner-set .banner img {
   margin: 0 0 28px 0;
-  max-height: 275px;
-  height: 275px;
-  width: 253px;
+  max-height: 272px;
+  height: 272px;
+  width: 272px;
   -webkit-transition: opacity .2s linear;
   transition: opacity .2s linear;
   position: absolute;
@@ -11523,7 +11526,7 @@ a.big-icon:hover {
 
 .banner-set .banner .overlay {
   position: absolute;
-    width: 253px;
+    width: 272px;
     background: rgba(0, 0, 0, .7);
     bottom: -70px;
     left: 0;
@@ -11571,7 +11574,8 @@ a.big-icon:hover {
   -webkit-transition: color .2s linear;
   transition: color .2s linear;
   position: absolute;
-  top: 155px;
+  top: 139px;
+    margin-top: 0;
 }
 
 .banner-set .next {
@@ -11632,14 +11636,13 @@ a.big-icon:hover {
 }
 
 .articles .article .article-description .title {
+    color: #1e1e1e;
   font-size: 16px;
   font-weight: bold;
   line-height: 1.1;
   margin: 0;
   padding: 0 0 5px;
   text-decoration: none;
-  -webkit-transition: all .2s linear;
-  transition: all .2s linear;
   height: 35px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -11757,14 +11760,26 @@ a.big-icon:hover {
     margin-left: 5px;
 }
 
+.sidebar .articles ul li .title:hover {
+    text-decoration: none;
+    color: #00ade0;
+}
+
+.sidebar .articles ul li a {
+    text-decoration: none;
+    color: #1e1e1e;
+}
+
 .sidebar .articles ul li .title {
+    color: #1e1e1e;
     display: inline-block;
     width: 185px;
     font-size: 13px;
-    font-weight: normal;
+    font-weight: bold;
     padding: 0 10px;
     margin: 0;
     vertical-align: middle;
+    text-decoration: none;
 }
 
 .sidebar .articles ul li .article-avatar img{
