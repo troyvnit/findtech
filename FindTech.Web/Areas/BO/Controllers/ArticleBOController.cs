@@ -74,7 +74,8 @@ namespace FindTech.Web.Areas.BO.Controllers
             //var total = articleService.Query().Select().Where(a => a.IsDeleted != true).Count();
             var articles = articleService.Queryable().Where(a => a.IsDeleted != true).OrderByDescending(a => a.CreatedDate).Skip(skip).Take(take).ToList();
             //var articles = articleService.Query().Select().Skip(skip).Take(take);
-            return Json(new { articles = articles.Select(Mapper.Map<ArticleGridBOViewModel>) , totalCount = total}, JsonRequestBehavior.AllowGet);
+            var test = articleService.SelectQuery("Select TOP 1 * From Articles").ToList().Select(Mapper.Map<ArticleGridBOViewModel>);
+            return Json(new { articles = articles.Select(Mapper.Map<ArticleGridBOViewModel>) , totalCount = total, test}, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Destroy(string models)
