@@ -35,7 +35,7 @@
                 </div>
                 <div class="tab-content">
                     <div class="tab-pane" id="tab1">
-                        <form id="articleForm" role="form" method="POST" action="CreateOrUpdate">
+                        <form id="articleForm" role="form" method="POST" action="@Url.Action("CreateOrUpdate", "ArticleBO")">
                             <div class="row">
                                 <input type="hidden" id="articleId" name="ArticleId" value="@Model.ArticleId" />
                                 <div class="col-xs-6 col-md-3">
@@ -92,12 +92,13 @@
 
                                 <div class="col-xs-6 col-md-6">
                                     <div class="form-group">
-                                        <label for="tags">Date create</label>
-                                        <input type='text' id="datetimepicker" name="PublishedDate" placeholder="Date create" value="@Model.PublishedDate" />
+                                        <label for="tags">Published Date</label>
+                                        <input type='text' id="datetimepicker" name="PublishedDate" placeholder="Date create" value="@Model.PublishedDate" disabled="disabled" />
                                     </div>
                                     <div class="form-group">
                                         <label for="title">Priority</label>
-                                        <input type="text" class="form-control" id="priority" name="Priority" placeholder="Input Priority" value="@Model.Priority" />
+                                        <input type="text" class="form-control" id="priority" name="Priority" placeholder="Input Priority" data-fv-integer="true"
+                                               data-fv-integer-message="The value is not an integer" value="@Model.Priority" />
                                     </div>
 
                                     <div class="form-group">
@@ -113,7 +114,7 @@
                                             <input type="checkbox" id="isActive" name="IsActived" @(Model.IsActived == "True" ? "checked" : "")> Actived
                                         </label>
                                     </span>
-                                    <button type="submit" class="btn btn-primary">@(Model.ArticleId == 0 ? "Create" : "Update")</button>
+                                    <button type="button" id="submit" class="btn btn-primary">@(Model.ArticleId == 0 ? "Create" : "Update")</button>
                                 </div>
                             </div>
                         </form>
@@ -191,20 +192,26 @@
                 source: tags.ttAdapter()
             }
         });
-        
+
         $('#tags').on('itemRemoved', function (event) {
+            checkValidateTags();
+        });
+        $('#tags').on('itemAdded', function (event) {
+            checkValidateTags();
+        });
+
+        function checkValidateTags() {
             if ($('#tags').val() == '') {
                 $('#tags').parent().removeClass('has-success').addClass("has-error-tags");
                 $('#tags').parent().find('.form-control-feedback').removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-remove');
-            }
-        });
-        $('#tags').on('itemAdded', function (event) {
-            if ($('#tags').val() != '') {
+                return false;
+            } else {
                 $('#tags').parent().removeClass('has-error-tags').addClass("has-success");
                 $('#tags').parent().find('.form-control-feedback').removeClass('glyphicon glyphicon-remove').addClass('glyphicon glyphicon-ok');
+                return true;
             }
-        });
-        
+        };
+
         $('.tt-input').on("focus", function (e) {
             $(this).parent().parent().removeClass('focus').addClass('focus');
         });
@@ -248,9 +255,10 @@
         });
 
         $('#datetimepicker').kendoDateTimePicker({
-            value:new Date(),
             format: "dd-MMM-yy h:mm:ss tt"
         });
+        var newDate = $("#datetimepicker").data("kendoDateTimePicker").value().getYear() == 101 ? new Date() : new Date($("#datetimepicker").data("kendoDateTimePicker").value());
+        $("#datetimepicker").data("kendoDateTimePicker").value(newDate);
 
         $("#category").kendoDropDownList({
             optionLabel: "Select Category",
@@ -263,7 +271,8 @@
                         url: "../ArticleCategoryBO/GetArticleCategories",
                     }
                 }
-            }
+            },
+            change: onChangeCategory
         });
 
 
@@ -278,26 +287,10 @@
                         url: "../SourceBO/GetSources",
                     }
                 }
-            }
+            },
+            change: onChangeSource
         });
         
-        function onSelectArticleType(e) {
-            var dataItem = this.dataItem(e.item.index());
-            console.log(this);
-            if (dataItem.value == '') {
-                var id = this.element.attr('id');
-                $('#' + id).parent().parent().removeClass('has-feedback').removeClass('has-success').addClass('has-error-dropdown');
-            } else {
-                var id = this.element.attr('id');
-                $('#' + id).parent().parent().removeClass('has-error-dropdown').removeClass('has-feedback').addClass('has-success');
-            }
-        };
-
-        function onChangeArticleType(e) {
-
-        };
-
-
         $("#articleType").kendoDropDownList({
             optionLabel: "Select Article Type",
             dataTextField: "text",
@@ -306,7 +299,6 @@
               { text: "News", value: "0" },
               { text: "Review", value: "1" }
             ],
-            select: onSelectArticleType,
             change: onChangeArticleType
         });
 
@@ -318,10 +310,72 @@
               { text: "Box1", value: "1" },
               { text: "Box2", value: "2" },
               { text: "Box3", value: "3" }
-            ]
+            ],
+            change: onChangeBoxSize
         });
+
         
-        //validate
+        // Validate valid of DropDownlist
+        function onChangeArticleType() {
+            if ($('#articleType').val() == '') {
+                $('#articleType').parent().parent().removeClass('has-feedback').removeClass('has-success').addClass('has-error-dropdown');
+                return false;
+            } else {
+                $('#articleType').parent().parent().removeClass('has-error-dropdown').removeClass('has-feedback').addClass('has-success');
+                return true;
+            }
+        };
+
+        function onChangeCategory() {
+            if ($('#category').val() == '') {
+                $('#category').parent().parent().removeClass('has-feedback').removeClass('has-success').addClass('has-error-dropdown');
+                return false;
+            } else {
+                $('#category').parent().parent().removeClass('has-error-dropdown').removeClass('has-feedback').addClass('has-success');
+                return true;
+            }
+            
+        };
+
+        function onChangeBoxSize() {
+            if ($('#boxSize').val() == '') {
+                $('#boxSize').parent().parent().removeClass('has-feedback').removeClass('has-success').addClass('has-error-dropdown');
+                return false;
+            } else {
+                $('#boxSize').parent().parent().removeClass('has-error-dropdown').removeClass('has-feedback').addClass('has-success');
+                return true;
+            }
+            
+        };
+        
+        function onChangeSource() {
+            if ($('#source').val() == '') {
+                $('#source').parent().parent().removeClass('has-feedback').removeClass('has-success').addClass('has-error-dropdown');
+                return false;
+            } else {
+                $('#source').parent().parent().removeClass('has-error-dropdown').removeClass('has-feedback').addClass('has-success');
+                return true;
+            }
+        };
+        
+
+        $('#submit').click(function () {
+            $('#articleForm').data('formValidation').validate();
+            var checkTextField = $('#articleForm').data('formValidation').isValid();
+            var checkTags = checkValidateTags();
+            var checkArticleType = onChangeArticleType();
+            var checkCategory = onChangeCategory();
+            var checkSource = onChangeSource();
+            var checkBoxSize = onChangeBoxSize();
+            var final = checkTextField && checkTags && checkArticleType && checkCategory && checkSource && checkBoxSize;
+            if (final == true) {
+                $.post($('#articleForm').attr('action'), $("#articleForm").serialize(), function (url) {
+                    window.open(url, '_blank');
+                });
+            }
+        });
+     
+        //validate plugin
 
         $('#articleForm').formValidation({
             message: 'This value is not valid',
@@ -353,10 +407,53 @@
                     }
                 },
                 ArticleType: {
-                    message: 'The description is not valid',
+                    message: 'The Article Type is not valid',
                     validators: {
                         notEmpty: {
                             message: 'The Article type is required and can\'t be empty'
+                        }
+                    }
+                },
+                ArticleCategoryId: {
+                    message: 'The Article category is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The Article Category is required and can\'t be empty'
+                        }
+                    }
+                },
+                SourceId: {
+                    message: 'The Source is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The Source is required and can\'t be empty'
+                        }
+                    }
+                },
+                BoxSize: {
+                    message: 'The BoxSize is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The BoxSize is required and can\'t be empty'
+                        }
+                    }
+                },
+                Priority: {
+                    message: 'The Priority is not valid, this is a number greater 0',
+                    validators: {
+                        notEmpty: {
+                            message: 'The Priority is required and can\'t be empty'
+                        },
+                        integer: {
+                            message: 'The value is not an integer'
+                        }
+                    }
+                },
+                Author: {
+                    message: 'The Author is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The Author is required and can\'t be empty'
                         }
                     }
                 }
@@ -396,5 +493,5 @@
         });
     };
 
- 
+
 </script>
