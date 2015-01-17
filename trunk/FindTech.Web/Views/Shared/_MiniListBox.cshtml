@@ -1,0 +1,22 @@
+﻿@model FindTech.Web.Models.ArticleListViewModel
+@{
+    var articles = Model.Articles;
+}
+
+<aside class="widget articles">
+    <div class="title-box">
+        <span class="@Model.TitleStyleClass"></span><h2 class="title">@Model.Title</h2>
+    </div>
+    <ul>
+        @foreach (var article in articles.Take(4))
+        {
+            Html.RenderPartial("_ListItemArticleBox", article);
+        }
+        <li class="action">
+            <a href="#" class="view-all ">View all<span class="fa fa-arrow-right"></span></a>
+        </li>
+    </ul>
+</aside><!-- .specials-->
+
+
+

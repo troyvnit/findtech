@@ -7,53 +7,54 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var article = (ArticleViewModel) ViewBag.Article;
+    var articles = (IEnumerable<ArticleViewModel>) ViewBag.Articles;
 }
 <div class="container">
     <div class="breadcrumb-box">
-            <ul class="breadcrumb">
-                <li><a href="index.html">Home</a> </li>
-                <li><a href="/blog-view.html">Our Blog</a> </li>
-                <li class="active">Excepteur Sint Occaecat</li>
-            </ul>
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a> </li>
+            <li><a href="/blog-view.html">Our Blog</a> </li>
+            <li class="active">Excepteur Sint Occaecat</li>
+        </ul>
     </div><!-- .breadcrumb-box -->
 </div>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51a2fc0f2f4412f7" async="async"></script>
 <section id="article">
     <header class="page-header">
         <div class="container">
-            <div class=" col-sm-9 col-md-9">
-                <div class ="row">
-                @if (article != null)
-                {
+            <div class="col-sm-9 col-md-9">
+                <div class="row">
+                    @if (article != null)
+                    {
                     <h1 class="title">@article.Title</h1>
                     <div class="entry-meta">
                         <div class="posted-info"><span class="blurry-text">Đăng:</span><strong> @article.PublishedDate.ToString("dd MMM yy HH:mm:ss", new CultureInfo("vi-VN"))<span class="separator">|</span><span class="blurry-text">Bởi:</span> @article.SourceName</strong></div>
                         <span class="meta btn-icon tags">
                             <span class="blurry-text">Nhãn:</span>
                             @if (article.Tags != null)
-                            {
-                                foreach (var tag in article.Tags.Split(','))
                                 {
-                                    <a href="#">@tag</a>
+                                    foreach (var tag in article.Tags.Split(','))
+                                    {
+                                <a href="#">@tag</a>
+                                    }
                                 }
-                            }
-                            else
-                            {
-                                foreach (var tag in article.SeoTitle.Split('-'))
+                                else
                                 {
-                                    <a href="#">@tag</a>
+                                    foreach (var tag in article.SeoTitle.Split('-'))
+                                    {
+                                <a href="#">@tag</a>
+                                    }
                                 }
-                            }
                         </span>
                     </div>
-                }
-                else
-                {
+                    }
+                    else
+                    {
                     <h1 class="title">Không tìm thấy bài viết</h1>
-                }
-                    </div>
-            </div>
+                    }
                 </div>
+            </div>
+        </div>
     </header>
     @if (article != null)
     {
@@ -65,7 +66,7 @@
                             @Html.Raw(article.Content)
                         </div>
                     </article><!-- .post -->
-
+                    @{Html.RenderPartial("_MiniSliderBox", new ArticleListViewModel { Articles = articles, Title = "Thủ thuật" });}
                     <h3 class="title slim">Comments</h3>
                     <ul class="commentlist">
                         <li>
@@ -130,9 +131,11 @@
                         </div>
                     </form>
                 </div><!-- .content -->
+                <div class="sidebar col-sm-3 col-md-3">
+                    @{Html.RenderPartial("_MiniListBox", new ArticleListViewModel { Articles = articles, Title = "Bài viết mới nhất", TitleStyleClass = "fa fa-eye background-00ade0" });}
+                </div>
                 <div class="clearfix"></div>
             </div><!-- .content -->
         </div>
     }
 </section><!-- #main -->
-

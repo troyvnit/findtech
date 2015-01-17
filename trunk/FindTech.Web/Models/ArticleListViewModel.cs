@@ -7,6 +7,8 @@ namespace FindTech.Web.Models
 {
     public class ArticleListViewModel
     {
-        public List<ArticleViewModel> Articles { get; set; } 
+        public string Title { get; set; }
+        public string TitleStyleClass { get; set; }
+        public IEnumerable<ArticleViewModel> Articles { get; set; } 
     }
 }

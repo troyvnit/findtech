@@ -1904,7 +1904,6 @@
     <Content Include="UIFramework\Progressive\img\rs-slider\bullets.psd" />
     <Content Include="UIFramework\Progressive\img\rs-slider\small_arrows.psd" />
     <Content Include="UIFramework\Progressive\img\rs-slider\Thumbs.db" />
-    <Content Include="UIFramework\Progressive\img\Thumbs.db" />
     <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\fontawesome-webfont.eot" />
     <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\fontawesome-webfont.ttf" />
     <Content Include="UIFramework\UnderConstruction\css\fonts\fontawesome\fontawesome-webfont.woff" />
@@ -1919,6 +1918,9 @@
     <Content Include="UIFramework\Progressive\fonts\myriad-pro.woff" />
     <Content Include="UIFramework\Progressive\fonts\MYRIADPROREGULAR.woff" />
     <Content Include="Views\Shared\_MiniArticleBox.cshtml" />
+    <Content Include="Views\Shared\_LargeSliderBox.cshtml" />
+    <Content Include="Views\Shared\_MiniSliderBox.cshtml" />
+    <Content Include="Views\Shared\_MiniListBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">
