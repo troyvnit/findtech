@@ -217,7 +217,8 @@ namespace FindTech.Web.Areas.BO.Controllers
                 unitOfWork.SaveChanges();
                 articleId = newArticle.ArticleId;
             }
-            return RedirectToAction("Create",new { articleId });
+            var url = Url.Action("Create", "ArticleBO", new { articleId }, Request.Url.Scheme);
+            return Json(url, JsonRequestBehavior.AllowGet);
         }
        
         [HttpPost]
