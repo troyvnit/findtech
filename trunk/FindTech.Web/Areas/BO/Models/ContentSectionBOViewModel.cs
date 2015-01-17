@@ -8,6 +8,10 @@ namespace FindTech.Web.Areas.BO.Models
 {
     public class ContentSectionBOViewModel
     {
+        public ContentSectionBOViewModel()
+        {
+            Images = new List<Image>();
+        }
         public int ContentSectionId { get; set; }
         public string SectionTitle { get; set; }
         public string SectionDescription { get; set; }
