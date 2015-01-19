@@ -251,6 +251,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\BO\UIFramework\ImageCropbox\css\style.css" />
+    <Content Include="Areas\BO\UIFramework\ImageCropbox\js\cropbox.js" />
     <Content Include="Areas\BO\UIFramework\KendoUI\js\angular.min.js" />
     <Content Include="Areas\BO\UIFramework\KendoUI\js\cultures\kendo.culture.af-ZA.min.js" />
     <Content Include="Areas\BO\UIFramework\KendoUI\js\cultures\kendo.culture.af.min.js" />
