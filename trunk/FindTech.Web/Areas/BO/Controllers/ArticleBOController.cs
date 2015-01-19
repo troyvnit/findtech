@@ -17,6 +17,10 @@ using FindTech.Web.Areas.BO.Models;
 using HtmlAgilityPack;
 using Newtonsoft.Json;
 using Repository.Pattern.UnitOfWork;
+using TestImageCrop;
+using System.IO;
+using System.Configuration;
+using System.Net;
 
 namespace FindTech.Web.Areas.BO.Controllers
 {
@@ -234,6 +238,42 @@ namespace FindTech.Web.Areas.BO.Controllers
             }
             unitOfWork.SaveChanges();
             return Json(true, JsonRequestBehavior.AllowGet);
+        }
+
+        public virtual ActionResult CropImage(
+            string imagePath,
+            int? cropPointX,
+            int? cropPointY,
+            int? imageCropWidth,
+            int? imageCropHeight)
+        {
+            if (string.IsNullOrEmpty(imagePath)
+                || !cropPointX.HasValue
+                || !cropPointY.HasValue
+                || !imageCropWidth.HasValue
+                || !imageCropHeight.HasValue)
+            {
+                return new HttpStatusCodeResult((int)HttpStatusCode.BadRequest);
+            }
+
+            byte[] imageBytes = System.IO.File.ReadAllBytes(Server.MapPath(imagePath));
+            byte[] croppedImage = ImageHelper.CropImage(imageBytes, cropPointX.Value, cropPointY.Value, imageCropWidth.Value, imageCropHeight.Value);
+
+            string tempFolderName = Server.MapPath("~/" + ConfigurationManager.AppSettings["Image.TempFolderName"]);
+            string fileName = Path.GetFileName(imagePath);
+
+            try
+            {
+                FileHelper.SaveFile(croppedImage, Path.Combine(tempFolderName, fileName));
+            }
+            catch (Exception ex)
+            {
+                //Log an error     
+                return new HttpStatusCodeResult((int)HttpStatusCode.InternalServerError);
+            }
+
+            string photoPath = string.Concat("/", ConfigurationManager.AppSettings["Image.TempFolderName"], "/", fileName);
+            return Json(new { photoPath = photoPath }, JsonRequestBehavior.AllowGet);
         }
     }
 }

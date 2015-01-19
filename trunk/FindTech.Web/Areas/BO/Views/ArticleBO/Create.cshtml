@@ -39,10 +39,20 @@
                             <div class="row">
                                 <input type="hidden" id="articleId" name="ArticleId" value="@Model.ArticleId" />
                                 <div class="col-xs-6 col-md-3">
-                                    <a href="#" class="thumbnail" id="avatar">
-                                        <img data-src="holder.js/100%x300" alt="100%x300" id="imgAvatar" src="@Model.Avatar" />
-                                    </a>
-                                    <input type="hidden" id="avatarHidden" name="Avatar" value="@Model.Avatar" />
+                                    <div class="row">
+                                        <a href="#" class="thumbnail" id="avatar">
+                                            <img data-src="holder.js/100%x300" alt="100%x300" id="imgAvatar" src="@Model.Avatar" />
+                                        </a>
+                                        <input type="hidden" id="avatarHidden" name="Avatar" value="@Model.Avatar" />
+                                    </div>
+                                    <div class="row">
+                                        <a class="thumbnail" style="float:left;">
+                                            <img id="avatarSquare" data-src="holder.js/50x50" />
+                                        </a>
+                                        <a class="thumbnail" style="float:left; margin-left:10px">
+                                            <img id="avatarRectangle" data-src="holder.js/70x50" />
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-md-9">
                                     <div class="form-group">
@@ -133,6 +143,36 @@
             </div>
         </div><!-- .content -->
     </div>
+    <div class="modal fade" id="imgCroper" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Image Croper</h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="imageBox">
+                            <div class="thumbBox"></div>
+                            <div class="spinner" style="display: none">Loading...</div>
+                        </div>
+                        <div style="width: 400px; height: 30px; margin: 10px 0;">
+                            <input type="button" id="btnCrop" value="Crop" style="float: right">
+                            <input type="button" id="btnZoomIn" value="+" style="float: right">
+                            <input type="button" id="btnZoomOut" value="-" style="float: right">
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                       
+                    </script>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </section><!-- #main -->
 @*kendoui edtitor for content html of article*@
 <script>
@@ -175,8 +215,29 @@
             $('#rootwizard').bootstrapWizard('disable', 1);
         }
         window.applyImageBrowser($('#avatar'), function (imageName, imageUrl, thumbnailUrl, button) {
-            $('#imgAvatar').attr('src', imageUrl);
-            $('#avatarHidden').val(imageUrl);
+            $('#imgCroper').modal({ backdrop: 'static' });
+            var options =
+                            {
+                                imageBox: '.imageBox',
+                                thumbBox: '.thumbBox',
+                                spinner: '.spinner',
+                                imgSrc: imageUrl
+                            }
+            var cropper = new cropbox(options);
+            document.querySelector('#btnCrop').addEventListener('click', function () {
+                var img = cropper.getDataURL();
+                var cropInfo = cropper.getCropInfo();
+                $('#imgAvatar').attr('src', img);
+                $('#avatarHidden').val(img);
+                //document.querySelector('.cropped').innerHTML += '<img src="' + img + '">';
+            })
+            document.querySelector('#btnZoomIn').addEventListener('click', function () {
+                cropper.zoomIn();
+            })
+            document.querySelector('#btnZoomOut').addEventListener('click', function () {
+                cropper.zoomOut();
+            })
+            
         });
         var tags = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -495,3 +556,6 @@
 
 
 </script>
+
+<script src="~/Areas/BO/UIFramework/ImageCropbox/js/cropbox.js"></script>
+<link rel="stylesheet" href="~/Areas/BO/UIFramework/ImageCropbox/css/style.css" type="text/css" />

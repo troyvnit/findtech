@@ -34,6 +34,22 @@ var cropbox = function(options){
             var imageData = canvas.toDataURL('image/png');
             return imageData;
         },
+        getCropInfo: function()
+        {
+            var width = this.thumbBox.clientWidth,
+                height = this.thumbBox.clientHeight,
+                dim = el.style.backgroundPosition.split(' '),
+                size = el.style.backgroundSize.split(' '),
+                dx = parseInt(dim[0]) - el.clientWidth / 2 + width / 2,
+                dy = parseInt(dim[1]) - el.clientHeight / 2 + height / 2,
+                dw = parseInt(size[0]),
+                dh = parseInt(size[1]),
+                sh = parseInt(this.image.height),
+                sw = parseInt(this.image.width);
+               
+            var cropInfo = { dx: dx, dy: dy, dw: dw, dh: dh, sh:sh, sw:sw };
+            return cropInfo;
+        },
         getBlob: function()
         {
             var imageData = this.getDataURL();
