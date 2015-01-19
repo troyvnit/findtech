@@ -13699,3 +13699,9 @@ transform:scale(1)}
 transform:scale(.3)}
 
 }
+
+#contentSectionAlert {
+    position: fixed;
+    top: 85px;
+    right: 10px;
+}

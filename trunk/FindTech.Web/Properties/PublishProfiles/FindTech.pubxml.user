@@ -5261,7 +5261,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2015 21:22:30</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/Progressive/css/style.css">
-      <publishTime>01/14/2015 22:18:40</publishTime>
+      <publishTime>01/18/2015 21:07:03</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/Progressive/css/video-js.min.css">
       <publishTime>01/06/2015 21:22:34</publishTime>
@@ -6044,7 +6044,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:42:30</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Create.cshtml">
-      <publishTime>01/12/2015 22:01:47</publishTime>
+      <publishTime>01/18/2015 21:22:31</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Index.cshtml">
       <publishTime>01/14/2015 22:18:41</publishTime>
@@ -6062,7 +6062,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/15/2014 21:23:20</publishTime>
     </File>
     <File Include="Areas/BO/Views/ContentSectionBO/_ContentSectionForm.cshtml">
-      <publishTime>01/06/2015 21:37:00</publishTime>
+      <publishTime>01/19/2015 22:05:08</publishTime>
     </File>
     <File Include="Areas/BO/Views/DeviceBO/Create.cshtml">
       <publishTime>01/06/2015 21:37:00</publishTime>
@@ -6071,7 +6071,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/19/2014 21:37:36</publishTime>
     </File>
     <File Include="Areas/BO/Views/Shared/_Layout.cshtml">
-      <publishTime>01/12/2015 23:04:15</publishTime>
+      <publishTime>01/18/2015 21:34:09</publishTime>
     </File>
     <File Include="Areas/BO/Views/SourceBO/Index.cshtml">
       <publishTime>12/15/2014 21:23:19</publishTime>
@@ -6107,13 +6107,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:40</publishTime>
     </File>
     <File Include="bin/FindTech.Entities.dll">
-      <publishTime>01/17/2015 14:29:04</publishTime>
+      <publishTime>01/19/2015 22:30:17</publishTime>
     </File>
     <File Include="bin/FindTech.Services.dll">
-      <publishTime>01/17/2015 14:29:04</publishTime>
+      <publishTime>01/19/2015 22:30:18</publishTime>
     </File>
     <File Include="bin/FindTech.Web.dll">
-      <publishTime>01/17/2015 14:29:09</publishTime>
+      <publishTime>01/19/2015 22:34:22</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
       <publishTime>11/04/2014 18:18:06</publishTime>
@@ -6182,13 +6182,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:48</publishTime>
     </File>
     <File Include="bin/Repository.Pattern.dll">
-      <publishTime>01/17/2015 14:28:58</publishTime>
+      <publishTime>01/19/2015 22:30:13</publishTime>
     </File>
     <File Include="bin/Repository.Pattern.Ef6.dll">
-      <publishTime>01/17/2015 14:29:00</publishTime>
+      <publishTime>01/19/2015 22:30:15</publishTime>
     </File>
     <File Include="bin/Service.Pattern.dll">
-      <publishTime>01/17/2015 14:29:02</publishTime>
+      <publishTime>01/19/2015 22:30:15</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>10/27/2014 19:45:33</publishTime>

@@ -17,14 +17,16 @@ namespace FindTech.Web.Areas.BO.Controllers
     public class ContentSectionBOController : Controller
     {
         private IContentSectionService contentSectionService { get; set; }
+        private IArticleService articleService { get; set; }
         private IBenchmarkGroupService benchmarkGroupService { get; set; }
         private IImageService imageService { get; set; }
         private IUnitOfWorkAsync unitOfWork { get; set; }
         // GET: BO/ContentSection
 
-        public ContentSectionBOController(IContentSectionService contentSectionService, IImageService imageService, IBenchmarkGroupService benchmarkGroupService, IUnitOfWorkAsync unitOfWork)
+        public ContentSectionBOController(IContentSectionService contentSectionService, IArticleService articleService, IImageService imageService, IBenchmarkGroupService benchmarkGroupService, IUnitOfWorkAsync unitOfWork)
         {
             this.contentSectionService = contentSectionService;
+            this.articleService = articleService;
             this.benchmarkGroupService = benchmarkGroupService;
             this.imageService = imageService;
             this.unitOfWork = unitOfWork;
@@ -62,10 +64,11 @@ namespace FindTech.Web.Areas.BO.Controllers
             }
             else
             {
+                contentSection.Article = articleService.Find(contentSection.ArticleId);
                 contentSectionService.Insert(contentSection);
             }
             unitOfWork.SaveChanges();
-            return Json(contentSection);
+            return View("_ContentSectionForm", Mapper.Map<ContentSectionBOViewModel>(contentSection));
         }
 
         //[HttpPost]
@@ -106,9 +109,16 @@ namespace FindTech.Web.Areas.BO.Controllers
         public ActionResult Destroy(int contentSectionId)
         {
             var contentSection =
-                contentSectionService.Queryable().FirstOrDefault(a => a.ContentSectionId == contentSectionId);
-            contentSectionService.Delete(contentSection);
-            unitOfWork.SaveChanges();
+                contentSectionService.Queryable().Include(a => a.Images).FirstOrDefault();
+            if (contentSection != null)
+            {
+                foreach (var image in contentSection.Images)
+                {
+                    imageService.Delete(image);
+                }
+                contentSectionService.Delete(contentSection);
+                unitOfWork.SaveChanges();
+            }
             return Json(contentSectionId, JsonRequestBehavior.AllowGet);
         }
 
