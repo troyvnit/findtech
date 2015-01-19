@@ -52,7 +52,7 @@ namespace FindTech.Web.Areas.BO.Controllers
             var contentSections = new List<ContentSectionBOViewModel>();
             if (articleId != null)
             {
-                var article = articleService.Find(articleId);
+                var article = articleService.Queryable().Include(a => a.ContentSections).FirstOrDefault(a =>a.ArticleId == articleId);
                 articleBOViewModel = Mapper.Map<ArticleBOViewModel>(article);
                 if (article != null && article.ContentSections != null)
                     contentSections = article.ContentSections.Select(Mapper.Map<ContentSectionBOViewModel>).ToList();
@@ -86,7 +86,7 @@ namespace FindTech.Web.Areas.BO.Controllers
         {
             var articleBOViewModel = JsonConvert.DeserializeObject<ArticleGridBOViewModel>(models);
             var articleId = articleBOViewModel.ArticleId;
-            var article = articleService.Query().Select().Where(a => a.ArticleId == articleId).FirstOrDefault();
+            var article = articleService.Query().Select().FirstOrDefault(a => a.ArticleId == articleId);
             //var article = Mapper.Map<Article>(articleBOViewModel);
             article.IsDeleted = true;
             articleService.Update(article);
