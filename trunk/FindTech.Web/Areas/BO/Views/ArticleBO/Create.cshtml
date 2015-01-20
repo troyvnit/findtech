@@ -7,6 +7,7 @@
     Layout = "~/Areas/BO/Views/Shared/_Layout.cshtml";
     var contentSections = (List<ContentSectionBOViewModel>)ViewBag.ContentSections;
     var boxSize = (int) Model.BoxSize;
+    var articleType = (int) Model.ArticleType;
     var contentSectionIds = String.Join(",", contentSections.Select(a => a.ContentSectionId));
 }
 <div class="breadcrumb-box">
@@ -73,7 +74,7 @@
                                 <div class="col-xs-6 col-md-6">
                                     <div class="form-group">
                                         <label for="title">Article Type</label>
-                                        <input type="text" class="form-control" id="articleType" name="ArticleType" placeholder="Article Type" value="@Model.ArticleType" />
+                                        <input type="text" class="form-control" id="articleType" name="ArticleType" placeholder="Article Type" value="@articleType" />
                                     </div>
 
                                     <div class="form-group">
@@ -95,7 +96,7 @@
                                 <div class="col-xs-6 col-md-6">
                                     <div class="form-group">
                                         <label for="tags">Published Date</label>
-                                        <input type='text' id="datetimepicker" name="PublishedDate" placeholder="Date create" value="@Model.PublishedDate" disabled="disabled" />
+                                        <input type='text' id="datetimepicker" name="PublishedDate" placeholder="Date create" value="@Model.PublishedDate" readonly="readonly" />
                                     </div>
                                     <div class="form-group">
                                         <label for="title">Priority</label>
@@ -354,8 +355,8 @@
             dataTextField: "text",
             dataValueField: "value",
             dataSource: [
-              { text: "News", value: "0" },
-              { text: "Review", value: "1" }
+              { text: "News", value: "1" },
+              { text: "Review", value: "2" }
             ],
             change: onChangeArticleType
         });
