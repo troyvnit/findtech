@@ -11679,15 +11679,16 @@ a.big-icon:hover {
     height: 60px;
     width: 100%;
     border-top: 2px solid #00ade0;
-    color: #7f7f7f;
 }
 
-.articles .social > span{
+.articles .social > span, .articles .social > a{
     display: table-cell;
     width: 25%;
     font-size: 16px;
     vertical-align: middle;
     text-align: center;
+    color: #7f7f7f;
+    text-decoration: none;
 }
 
 .articles .social .fa{
@@ -11700,19 +11701,19 @@ a.big-icon:hover {
     margin-left: 2px;
 }
 
-.articles .social .icon-facebook{
+.articles .social .icon-facebook:hover{
     color: #3b5998;
 }
 
-.articles .social .icon-twitter{
+.articles .social .icon-twitter:hover{
     color: #4099FF;
 }
 
-.articles .social .icon-gplus{
+.articles .social .icon-gplus:hover{
     color: #d34836;
 }
 
-.articles .social .fa .fa-comments{
+.articles .social .fa:hover{
     color: #00ade0;
 }
 

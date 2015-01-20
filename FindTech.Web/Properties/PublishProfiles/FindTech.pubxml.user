@@ -2461,6 +2461,33 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/BO/styles/Uniform/sprite_2x.png">
       <publishTime>11/10/2014 16:29:34</publishTime>
     </File>
+    <File Include="Areas/BO/UIFramework/ImageCropbox/css/style.css">
+      <publishTime>01/15/2015 22:39:02</publishTime>
+    </File>
+    <File Include="Areas/BO/UIFramework/ImageCropbox/js/cropbox.js">
+      <publishTime>01/19/2015 22:43:20</publishTime>
+    </File>
+    <File Include="Areas/BO/UIFramework/Jcrop/css/Jcrop.gif">
+      <publishTime>01/20/2015 20:11:13</publishTime>
+    </File>
+    <File Include="Areas/BO/UIFramework/Jcrop/css/jquery.Jcrop.css">
+      <publishTime>01/20/2015 20:11:13</publishTime>
+    </File>
+    <File Include="Areas/BO/UIFramework/Jcrop/css/jquery.Jcrop.min.css">
+      <publishTime>01/20/2015 20:11:13</publishTime>
+    </File>
+    <File Include="Areas/BO/UIFramework/Jcrop/js/jquery.color.js">
+      <publishTime>01/20/2015 20:11:30</publishTime>
+    </File>
+    <File Include="Areas/BO/UIFramework/Jcrop/js/jquery.Jcrop.js">
+      <publishTime>01/20/2015 20:11:30</publishTime>
+    </File>
+    <File Include="Areas/BO/UIFramework/Jcrop/js/jquery.Jcrop.min.js">
+      <publishTime>01/20/2015 20:11:30</publishTime>
+    </File>
+    <File Include="Areas/BO/UIFramework/Jcrop/js/jquery.min.js">
+      <publishTime>01/20/2015 20:11:30</publishTime>
+    </File>
     <File Include="Areas/BO/UIFramework/KendoUI/js/angular.min.js">
       <publishTime>01/06/2015 21:32:04</publishTime>
     </File>
@@ -6044,7 +6071,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:42:30</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Create.cshtml">
-      <publishTime>01/18/2015 21:22:31</publishTime>
+      <publishTime>01/20/2015 20:48:02</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Index.cshtml">
       <publishTime>01/14/2015 22:18:41</publishTime>
@@ -6107,13 +6134,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:40</publishTime>
     </File>
     <File Include="bin/FindTech.Entities.dll">
-      <publishTime>01/19/2015 22:30:17</publishTime>
+      <publishTime>01/20/2015 20:55:13</publishTime>
     </File>
     <File Include="bin/FindTech.Services.dll">
-      <publishTime>01/19/2015 22:30:18</publishTime>
+      <publishTime>01/20/2015 20:55:13</publishTime>
     </File>
     <File Include="bin/FindTech.Web.dll">
-      <publishTime>01/19/2015 22:34:22</publishTime>
+      <publishTime>01/20/2015 21:07:02</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
       <publishTime>11/04/2014 18:18:06</publishTime>
@@ -7715,7 +7742,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:42:23</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/style.css">
-      <publishTime>01/17/2015 13:45:05</publishTime>
+      <publishTime>01/20/2015 21:09:07</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/video-js.min.css">
       <publishTime>01/06/2015 20:31:44</publishTime>
