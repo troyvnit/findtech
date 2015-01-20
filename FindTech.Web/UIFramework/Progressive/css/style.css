@@ -11700,6 +11700,22 @@ a.big-icon:hover {
     margin-left: 2px;
 }
 
+.articles .social .icon-facebook{
+    color: #3b5998;
+}
+
+.articles .social .icon-twitter{
+    color: #4099FF;
+}
+
+.articles .social .icon-gplus{
+    color: #d34836;
+}
+
+.articles .social .fa .fa-comments{
+    color: #00ade0;
+}
+
 .blurry-text {
     color: #7f7f7f;
 }
@@ -11896,3 +11912,4 @@ a.big-icon:hover {
 #article .entry-meta .blurry-text {
     margin-right: 10px;
 }
+
