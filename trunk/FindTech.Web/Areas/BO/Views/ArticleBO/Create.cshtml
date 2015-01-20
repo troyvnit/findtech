@@ -429,7 +429,7 @@
             var final = checkTextField && checkTags && checkArticleType && checkCategory && checkSource && checkBoxSize;
             if (final == true) {
                 $.post($('#articleForm').attr('action'), $("#articleForm").serialize(), function (url) {
-                    window.open(url, '_blank');
+                    window.location.href = url;
                 });
             }
         });
