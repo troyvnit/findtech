@@ -1,7 +1,11 @@
 using System;
+using System.Data.Entity;
 using FindTech.Entities;
 using FindTech.Entities.Models;
 using FindTech.Services;
+using FindTech.Web.Controllers;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using Repository.Pattern.DataContext;
@@ -45,6 +49,12 @@ namespace FindTech.Web.App_Start
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
             container
+                .RegisterType(typeof(UserManager<>), new InjectionConstructor(typeof(IUserStore<>)))
+                .RegisterType<IUser>(new InjectionFactory(c => c.Resolve<IUser>()))
+                .RegisterType(typeof(IUserStore<>), typeof(UserStore<>))
+                .RegisterType<IdentityUser, FindTechUser>(new ContainerControlledLifetimeManager())
+                .RegisterType<AccountController>(new InjectionConstructor())
+                .RegisterType<DbContext, AuthenticationDbContext>(new ContainerControlledLifetimeManager())
                 .RegisterType<IDataContextAsync, FindTechContext>(new PerRequestLifetimeManager())
                 .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
                 .RegisterType<IRepositoryAsync<Source>, Repository<Source>>()

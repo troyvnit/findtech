@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using FindTech.Entities.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -15,23 +16,23 @@ namespace FindTech.Web.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private ApplicationUserManager _userManager;
+        private FindTechUserManager _userManager;
 
         public AccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(FindTechUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;
             SignInManager = signInManager;
         }
 
-        public ApplicationUserManager UserManager
+        public FindTechUserManager UserManager
         {
             get
             {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<FindTechUserManager>();
             }
             private set
             {
@@ -154,7 +155,7 @@ namespace FindTech.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new FindTechUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -370,7 +371,7 @@ namespace FindTech.Web.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new FindTechUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

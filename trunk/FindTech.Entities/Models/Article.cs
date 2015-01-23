@@ -21,6 +21,8 @@ namespace FindTech.Entities.Models
         public ArticleType ArticleType { get; set; }
         public bool? IsActived { get; set; }
         public bool? IsDeleted { get; set; }
+        public int CreatedUserId { get; set; }
+        public int UpdatedUserId { get; set; }
         public int ArticleCategoryId { get; set; }
         public virtual ArticleCategory ArticleCategory { get; set; }
         public int SourceId { get; set; }
