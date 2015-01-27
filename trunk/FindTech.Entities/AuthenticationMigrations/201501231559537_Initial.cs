@@ -23,21 +23,20 @@ namespace FindTech.Entities.AuthenticationMigrations
                     {
                         UserId = c.String(nullable: false, maxLength: 128),
                         RoleId = c.String(nullable: false, maxLength: 128),
+                        IdentityUser_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.UserId, t.RoleId })
                 .ForeignKey("dbo.FindTechRoles", t => t.RoleId, cascadeDelete: true)
-                .ForeignKey("dbo.FindTechUsers", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId)
-                .Index(t => t.RoleId);
+                .ForeignKey("dbo.FindTechUsers", t => t.IdentityUser_Id)
+                .Index(t => t.RoleId)
+                .Index(t => t.IdentityUser_Id);
             
             CreateTable(
                 "dbo.FindTechUsers",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        FirstName = c.String(),
-                        LastName = c.String(),
-                        Email = c.String(maxLength: 256),
+                        Email = c.String(),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
                         SecurityStamp = c.String(),
@@ -47,23 +46,30 @@ namespace FindTech.Entities.AuthenticationMigrations
                         LockoutEndDateUtc = c.DateTime(),
                         LockoutEnabled = c.Boolean(nullable: false),
                         AccessFailedCount = c.Int(nullable: false),
-                        UserName = c.String(nullable: false, maxLength: 256),
+                        UserName = c.String(),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        DisplayName = c.String(),
+                        DayOfBirth = c.DateTime(),
+                        Gender = c.Int(),
+                        Level = c.Int(),
+                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
-                .PrimaryKey(t => t.Id)
-                .Index(t => t.UserName, unique: true, name: "UserNameIndex");
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.FindTechUserClaims",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        UserId = c.String(nullable: false, maxLength: 128),
+                        UserId = c.String(),
                         ClaimType = c.String(),
                         ClaimValue = c.String(),
+                        IdentityUser_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.FindTechUsers", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId);
+                .ForeignKey("dbo.FindTechUsers", t => t.IdentityUser_Id)
+                .Index(t => t.IdentityUser_Id);
             
             CreateTable(
                 "dbo.FindTechUserLogins",
@@ -72,24 +78,24 @@ namespace FindTech.Entities.AuthenticationMigrations
                         LoginProvider = c.String(nullable: false, maxLength: 128),
                         ProviderKey = c.String(nullable: false, maxLength: 128),
                         UserId = c.String(nullable: false, maxLength: 128),
+                        IdentityUser_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
-                .ForeignKey("dbo.FindTechUsers", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId);
+                .ForeignKey("dbo.FindTechUsers", t => t.IdentityUser_Id)
+                .Index(t => t.IdentityUser_Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.FindTechUserRoles", "UserId", "dbo.FindTechUsers");
-            DropForeignKey("dbo.FindTechUserLogins", "UserId", "dbo.FindTechUsers");
-            DropForeignKey("dbo.FindTechUserClaims", "UserId", "dbo.FindTechUsers");
+            DropForeignKey("dbo.FindTechUserRoles", "IdentityUser_Id", "dbo.FindTechUsers");
+            DropForeignKey("dbo.FindTechUserLogins", "IdentityUser_Id", "dbo.FindTechUsers");
+            DropForeignKey("dbo.FindTechUserClaims", "IdentityUser_Id", "dbo.FindTechUsers");
             DropForeignKey("dbo.FindTechUserRoles", "RoleId", "dbo.FindTechRoles");
-            DropIndex("dbo.FindTechUserLogins", new[] { "UserId" });
-            DropIndex("dbo.FindTechUserClaims", new[] { "UserId" });
-            DropIndex("dbo.FindTechUsers", "UserNameIndex");
+            DropIndex("dbo.FindTechUserLogins", new[] { "IdentityUser_Id" });
+            DropIndex("dbo.FindTechUserClaims", new[] { "IdentityUser_Id" });
+            DropIndex("dbo.FindTechUserRoles", new[] { "IdentityUser_Id" });
             DropIndex("dbo.FindTechUserRoles", new[] { "RoleId" });
-            DropIndex("dbo.FindTechUserRoles", new[] { "UserId" });
             DropIndex("dbo.FindTechRoles", "RoleNameIndex");
             DropTable("dbo.FindTechUserLogins");
             DropTable("dbo.FindTechUserClaims");

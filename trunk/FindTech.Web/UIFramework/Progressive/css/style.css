@@ -11321,8 +11321,20 @@ a.big-icon:hover {
 /******************************************************************************
   Custom
 *******************************************************************************/
-.background-00ade0 {
+.background-primary {
     background: #00ade0;
+}
+.background-info {
+    background: #0098ca;
+}
+.background-success {
+    background: #738d00;
+}
+.background-danger {
+    background: #c10841;
+}
+.background-warning {
+    background: #f89406;
 }
 #main {
     padding: 46px 0;
@@ -11691,8 +11703,17 @@ a.big-icon:hover {
     text-decoration: none;
 }
 
+.articles .social .opinion > span {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+
 .articles .social .fa{
-    font-size: 18px !important;
+    font-size: 18px;
     padding-bottom: 2px;
 }
 
@@ -11715,6 +11736,11 @@ a.big-icon:hover {
 
 .articles .social .fa:hover{
     color: #00ade0;
+}
+
+.articles .social .fa-thumb-tack:hover, .fa-thumb-tack .active{
+    color: #f89406;
+    font-size: 22px;
 }
 
 .blurry-text {

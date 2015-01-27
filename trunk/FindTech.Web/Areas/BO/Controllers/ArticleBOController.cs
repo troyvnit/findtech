@@ -24,6 +24,7 @@ using System.Net;
 
 namespace FindTech.Web.Areas.BO.Controllers
 {
+    [Authorize]
     public class ArticleBOController : Controller
     {
         private ISourceService sourceService { get; set; }

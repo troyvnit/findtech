@@ -19,6 +19,7 @@ namespace FindTech.Entities.Models
         public string Author { get; set; }
         public BoxSize BoxSize { get; set; }
         public ArticleType ArticleType { get; set; }
+        public bool? IsHot { get; set; }
         public bool? IsActived { get; set; }
         public bool? IsDeleted { get; set; }
         public int CreatedUserId { get; set; }
@@ -29,5 +30,6 @@ namespace FindTech.Entities.Models
         public virtual Source Source { get; set; }
         public virtual ICollection<ContentSection> ContentSections { get; set; }
         public virtual ICollection<Device> RelatedDevices { get; set; }
+        public virtual ICollection<Opinion> Opinions { get; set; }
     }
 }
