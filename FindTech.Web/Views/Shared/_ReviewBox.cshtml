@@ -12,13 +12,13 @@
             <div class="article-description">
                 <a href="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle })" class="title">@article.Title</a>
                 <div class="posted-info"><span class="blurry-text">Đăng:</span><strong> @article.PublishedDate.ToString("dd MMM yy HH:mm:ss", new CultureInfo("vi-VN")), <span class="blurry-text">bởi</span> @article.SourceName</strong></div>
-                <div class="description">@article.Description</div>
+                <div class="description">@Html.Raw(article.Description)</div>
             </div>
             <div class="social">
-                <span class="icon-facebook"><span class="count">25</span></span>
-                <span class="icon-twitter"><span class="count">30</span></span>
-                <span class="icon-gplus"><span class="count">11</span></span>
+                <span class="opinion"><span class="background-danger">Hay</span></span>
+                <a class="fa fa-eye" href="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle })"><span class="count">11</span></a>
                 <a class="fa fa-comments" href="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle })"><span class="count">12</span></a>
+                <a class="fa fa-thumb-tack" href="#"></a>
             </div>
         </div>
     </div><!-- .article -->

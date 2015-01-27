@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using FindTech.Entities.Models;
+using FindTech.Entities.Models.Enums;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -143,7 +144,14 @@ namespace FindTech.Web.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            var registerViewModel = new RegisterViewModel();
+            var genders = Enum.GetValues(typeof (Gender)).Cast<Gender>();
+            registerViewModel.GenderList = genders.Select(a => new SelectListItem
+            {
+                Text = a.ToString(),
+                Value = ((int)a).ToString()
+            });
+            return View(registerViewModel);
         }
 
         //
@@ -155,7 +163,13 @@ namespace FindTech.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new FindTechUser { UserName = model.Email, Email = model.Email };
+                var user = new FindTechUser { UserName = model.Email, Email = model.Email, Gender = model.Gender, DayOfBirth = model.DateOfBirth, DisplayName = model.DisplayName, FirstName = model.FirstName, LastName = model.LastName};
+                var genders = Enum.GetValues(typeof(Gender)).Cast<Gender>();
+                model.GenderList = genders.Select(a => new SelectListItem
+                {
+                    Text = a.ToString(),
+                    Value = ((int)a).ToString()
+                });
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

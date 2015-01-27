@@ -14,6 +14,11 @@ jQuery(window).load(function() {
 	  }
 	}
   });
+
+  $('.datetimepicker').datepicker({
+      format: 'yyyy/mm/dd',
+      startDate: '-3d'
+  });
 });
 
 //Calculating The Browser Scrollbar Width
