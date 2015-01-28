@@ -21,6 +21,7 @@ using TestImageCrop;
 using System.IO;
 using System.Configuration;
 using System.Net;
+using System.Drawing;
 
 namespace FindTech.Web.Areas.BO.Controllers
 {
@@ -241,17 +242,16 @@ namespace FindTech.Web.Areas.BO.Controllers
             return Json(true, JsonRequestBehavior.AllowGet);
         }
 
-        public virtual ActionResult CropImage(string imagePath, int cropPointX, int cropPointY, int imageCropWidth, int imageCropHeight)
+        public virtual ActionResult CropImage(string imagePath, float scale, int w, int h, int x, int y)
         {
-            byte[] imageBytes = System.IO.File.ReadAllBytes(Server.MapPath(imagePath));
-            byte[] croppedImage = ImageHelper.CropImage(imageBytes, cropPointX, cropPointY, imageCropWidth, imageCropHeight);
-
-            string tempFolderName = Server.MapPath("~/" + ConfigurationManager.AppSettings["Image.TempFolderName"]);
-            string fileName = Path.GetFileName(imagePath);
-            FileHelper.SaveFile(croppedImage, Path.Combine(tempFolderName, fileName));
-
-            string photoPath = string.Concat("/", ConfigurationManager.AppSettings["Image.TempFolderName"], "/", fileName);
-            return Json(new { photoPath = photoPath }, JsonRequestBehavior.AllowGet);
+            Rectangle cropRect = new Rectangle((int)(x / scale), (int)(y / scale), (int)(w / scale), (int)(h / scale));
+            Bitmap source = System.Drawing.Image.FromFile(imagePath) as Bitmap;
+            Bitmap target = new Bitmap(cropRect.Width, cropRect.Height);
+            using (Graphics g = Graphics.FromImage(target))
+            {
+                g.DrawImage(source, new Rectangle(0, 0, cropRect.Width, cropRect.Height), cropRect, GraphicsUnit.Pixel);
+            }
+            return Json(true);
         }
     }
 }
