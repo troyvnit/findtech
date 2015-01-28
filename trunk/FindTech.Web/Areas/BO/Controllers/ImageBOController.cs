@@ -1,10 +1,13 @@
 ﻿using KendoEditorImageBrowser.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TestImageCrop;
 
 namespace FindTech.Web.Areas.BO.Controllers
 {
@@ -117,12 +120,12 @@ namespace FindTech.Web.Areas.BO.Controllers
                 }
                 else
                 {
-                    throw new HttpException(404, "File Not Found");
+                    return Json(false);
                 }
             }
             else
             {
-                throw new HttpException(403, "Forbidden");
+                return Json(false);
             }
         }
 
@@ -226,8 +229,7 @@ namespace FindTech.Web.Areas.BO.Controllers
 
                 return Json(null);
             }
-
-            throw new HttpException(403, "Forbidden");
+            return Json(false);
         }
 
 
@@ -262,7 +264,7 @@ namespace FindTech.Web.Areas.BO.Controllers
                 }, "text/plain");
             }
 
-            throw new HttpException(403, "Forbidden");
+            return Json(false);
         }
 
         [OutputCache(Duration = 360, VaryByParam = "path")]
@@ -280,13 +282,75 @@ namespace FindTech.Web.Areas.BO.Controllers
                     return File(System.IO.File.OpenRead(physicalPath), contentType);
                 }
             }
-
-            throw new HttpException(403, "Forbidden");
+            return Json(false);
         }
 
         public virtual bool AuthorizeImage(string path)
         {
             return CanAccess(path) && IsValidFile(Path.GetExtension(path));
+        }
+
+        public virtual ActionResult CropImage(string imagePath, float scale, int w, int h, int x, int y)
+        {
+            string imgPath = NormalizePath(imagePath);
+            var physicalPath = Server.MapPath(imgPath);
+            Rectangle cropRect = new Rectangle((int)(x / scale), (int)(y / scale), (int)(w / scale), (int)(h / scale));
+            Bitmap source = System.Drawing.Image.FromFile(physicalPath) as Bitmap;
+            Bitmap target = new Bitmap(cropRect.Width, cropRect.Height);
+            string cropPath = Path.GetDirectoryName(physicalPath) + @"\croped";
+
+            using (Graphics g = Graphics.FromImage(target))
+            {
+                g.DrawImage(source, new Rectangle(0, 0, cropRect.Width, cropRect.Height), cropRect, GraphicsUnit.Pixel);
+                MemoryStream ms = new MemoryStream();
+                if(!Directory.Exists(cropPath))
+                {
+                    Directory.CreateDirectory(cropPath);
+                }
+                FileStream fs = new FileStream(cropPath + @"\" + Path.GetFileName(physicalPath), FileMode.Create, FileAccess.ReadWrite);
+                target.Save(ms, ImageFormat.Jpeg);
+                if (w == h)
+                {
+                    resizeImage(ms, 272, 272, physicalPath);
+                    resizeImage(ms, 72, 72, physicalPath);
+                }
+                else
+                {
+                    resizeImage(ms, 150, 100, physicalPath);
+                }
+                //byte[] matriz = ms.ToArray();
+                //fs.Write(matriz, 0, matriz.Length);
+                //ms.Close();
+                //fs.Close();
+            }
+            return Json(true);
+        }
+
+        private void resizeImage(MemoryStream image, int width, int heigth, string path)
+        {
+            string savePath = Path.GetDirectoryName(path) + @"\" + width.ToString() + "x" + heigth.ToString();
+            if(!Directory.Exists(savePath))
+            {
+                Directory.CreateDirectory(savePath);
+            }
+            using (Image fromStream = System.Drawing.Image.FromStream(image))
+            {
+                // calculate height based on the width parameter
+
+                using (Bitmap resizedImg = new Bitmap(fromStream, width, heigth))
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        resizedImg.Save(ms, fromStream.RawFormat);
+                        FileStream fs = new FileStream(savePath + @"\" + Path.GetFileName(path), FileMode.Create, FileAccess.ReadWrite);
+                        byte[] matriz = ms.ToArray();
+                        fs.Write(matriz, 0, matriz.Length);
+                        ms.Close();
+                        fs.Close();
+                        
+                    }
+                }
+            }
         }
     }
 }

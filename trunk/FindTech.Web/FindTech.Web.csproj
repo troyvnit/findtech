@@ -252,6 +252,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\BO\UIFramework\Guillotine\css\jquery.guillotine.css" />
+    <Content Include="Areas\BO\UIFramework\Guillotine\js\jquery.guillotine.js" />
+    <Content Include="Areas\BO\UIFramework\Guillotine\js\jquery.guillotine.min.js" />
     <Content Include="Areas\BO\UIFramework\ImageCropbox\css\style.css" />
     <Content Include="Areas\BO\UIFramework\ImageCropbox\js\cropbox.js" />
     <Content Include="Areas\BO\UIFramework\Jcrop\css\Jcrop.gif" />
