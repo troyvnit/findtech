@@ -11336,6 +11336,21 @@ a.big-icon:hover {
 .background-warning {
     background: #f89406;
 }
+.background-primary-hover:hover {
+    background: #00ade0;
+}
+.background-info-hover:hover {
+    background: #0098ca;
+}
+.background-success-hover:hover {
+    background: #738d00;
+}
+.background-danger-hover:hover {
+    background: #c10841;
+}
+.background-warning-hover:hover {
+    background: #f89406;
+}
 #main {
     padding: 46px 0;
 }
@@ -11710,6 +11725,29 @@ a.big-icon:hover {
     color: white;
     padding: 3px 10px;
     border-radius: 2px;
+}
+
+.opinion > a,  .opinion > .title{
+    font-weight: bold;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.opinion > a {
+    font-size: 12px;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 2px;
+    text-decoration: none;
+    background: #cccccc;
+}
+
+.opinion > .title {
+    color: #1e1e1e;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 0;
 }
 
 .articles .social .fa{

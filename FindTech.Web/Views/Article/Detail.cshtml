@@ -65,6 +65,13 @@
                         <div class="entry-content">
                             @Html.Raw(article.Content)
                         </div>
+                        <div class="opinion">
+                            <span class="title">Đánh giá bài viết: </span>
+                            <a href="#" class="background-success-hover">Tuyệt</a>
+                            <a href="#" class="background-primary-hover">Hay</a>
+                            <a href="#" class="background-warning-hover">Tạm</a>
+                            <a href="#" class="background-danger-hover">Dở</a>
+                        </div>
                     </article><!-- .post -->
                     @{Html.RenderPartial("_MiniSliderBox", new ArticleListViewModel { Articles = articles, Title = "Thủ thuật" });}
                     <h3 class="title slim">Comments</h3>
