@@ -2461,6 +2461,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/BO/styles/Uniform/sprite_2x.png">
       <publishTime>11/10/2014 16:29:34</publishTime>
     </File>
+    <File Include="Areas/BO/UIFramework/Guillotine/css/jquery.guillotine.css">
+      <publishTime>01/29/2015 21:34:43</publishTime>
+    </File>
+    <File Include="Areas/BO/UIFramework/Guillotine/js/jquery.guillotine.js">
+      <publishTime>01/29/2015 21:34:43</publishTime>
+    </File>
+    <File Include="Areas/BO/UIFramework/Guillotine/js/jquery.guillotine.min.js">
+      <publishTime>01/29/2015 21:34:43</publishTime>
+    </File>
     <File Include="Areas/BO/UIFramework/ImageCropbox/css/style.css">
       <publishTime>01/15/2015 22:39:02</publishTime>
     </File>
@@ -6071,10 +6080,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:42:30</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Create.cshtml">
-      <publishTime>01/20/2015 21:24:53</publishTime>
+      <publishTime>01/31/2015 12:52:59</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Index.cshtml">
-      <publishTime>01/14/2015 22:18:41</publishTime>
+      <publishTime>01/31/2015 12:52:59</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleCategoryBO/Create.cshtml">
       <publishTime>12/09/2014 08:51:34</publishTime>
@@ -6134,13 +6143,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:40</publishTime>
     </File>
     <File Include="bin/FindTech.Entities.dll">
-      <publishTime>01/20/2015 20:55:13</publishTime>
+      <publishTime>01/31/2015 12:56:37</publishTime>
     </File>
     <File Include="bin/FindTech.Services.dll">
-      <publishTime>01/20/2015 20:55:13</publishTime>
+      <publishTime>01/31/2015 12:56:38</publishTime>
     </File>
     <File Include="bin/FindTech.Web.dll">
-      <publishTime>01/20/2015 21:07:02</publishTime>
+      <publishTime>01/31/2015 12:56:41</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
       <publishTime>11/04/2014 18:18:06</publishTime>
@@ -7742,7 +7751,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:42:23</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/style.css">
-      <publishTime>01/20/2015 21:27:26</publishTime>
+      <publishTime>01/31/2015 12:27:39</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/video-js.min.css">
       <publishTime>01/06/2015 20:31:44</publishTime>
@@ -8476,6 +8485,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="UIFramework/Progressive/js/jquery.tubular.1.0.js">
       <publishTime>01/06/2015 21:38:45</publishTime>
     </File>
+    <File Include="UIFramework/Progressive/js/jquery.zclip.min.js">
+      <publishTime>01/31/2015 11:20:13</publishTime>
+    </File>
     <File Include="UIFramework/Progressive/js/ladda.min.js">
       <publishTime>01/06/2015 21:38:46</publishTime>
     </File>
@@ -8492,7 +8504,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2015 21:38:37</publishTime>
     </File>
     <File Include="UIFramework/Progressive/js/main.js">
-      <publishTime>01/17/2015 11:00:56</publishTime>
+      <publishTime>01/31/2015 12:35:35</publishTime>
     </File>
     <File Include="UIFramework/Progressive/js/masonry.pkgd.min.js">
       <publishTime>01/06/2015 21:38:45</publishTime>
@@ -8621,7 +8633,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:37</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>10/27/2014 19:45:37</publishTime>
+      <publishTime>01/27/2015 21:19:16</publishTime>
     </File>
     <File Include="Views/Account/ResetPassword.cshtml">
       <publishTime>10/27/2014 19:45:37</publishTime>
@@ -8648,7 +8660,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:37</publishTime>
     </File>
     <File Include="Views/Article/Detail.cshtml">
-      <publishTime>01/17/2015 14:26:18</publishTime>
+      <publishTime>01/31/2015 12:32:29</publishTime>
     </File>
     <File Include="Views/Article/_NewsBoxs.cshtml">
       <publishTime>01/15/2015 15:48:55</publishTime>
@@ -8705,7 +8717,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:38</publishTime>
     </File>
     <File Include="Views/Shared/_MiniArticleBox.cshtml">
-      <publishTime>01/17/2015 11:00:59</publishTime>
+      <publishTime>01/31/2015 09:29:28</publishTime>
     </File>
     <File Include="Views/Shared/_MiniListBox.cshtml">
       <publishTime>01/17/2015 13:59:07</publishTime>
@@ -8714,10 +8726,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/17/2015 13:51:52</publishTime>
     </File>
     <File Include="Views/Shared/_NewsBox.cshtml">
-      <publishTime>01/20/2015 21:31:18</publishTime>
+      <publishTime>01/27/2015 22:33:55</publishTime>
     </File>
     <File Include="Views/Shared/_ReviewBox.cshtml">
-      <publishTime>01/20/2015 21:31:26</publishTime>
+      <publishTime>01/27/2015 22:33:47</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>10/27/2014 19:44:49</publishTime>
@@ -8726,7 +8738,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:44:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/15/2014 21:31:02</publishTime>
+      <publishTime>01/31/2015 12:56:52</publishTime>
     </File>
   </ItemGroup>
 </Project>

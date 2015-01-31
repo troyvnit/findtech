@@ -72,6 +72,20 @@
                             <a href="#" class="background-warning-hover">Tạm</a>
                             <a href="#" class="background-danger-hover">Dở</a>
                         </div>
+                        <div class="article-footer">
+                            <div class="addthis_sharing_toolbox"></div>
+                            <div class="social">
+                                <a class="fa fa-share-alt" id="zclip" href="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle }, this.Request.Url.Scheme)"></a>
+                            </div>
+                            <div class="link">
+                                <input type="text" readonly="readonly" placeholder="Link" onclick="$(this).select();" value="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle }, this.Request.Url.Scheme)">
+                            </div>
+                            <div class="addthis_native_toolbox"></div>
+                            <div class="source">
+                                <span class="blurry-text">Tac gia: </span><strong>Troy</strong><br/>
+                                <span class="blurry-text">Nguon: </span><strong>iFInd.vn</strong>
+                            </div>
+                        </div>
                     </article><!-- .post -->
                     @{Html.RenderPartial("_MiniSliderBox", new ArticleListViewModel { Articles = articles, Title = "Thủ thuật" });}
                     <h3 class="title slim">Comments</h3>

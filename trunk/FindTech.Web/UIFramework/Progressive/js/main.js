@@ -18,6 +18,16 @@ jQuery(window).load(function() {
   $('.datetimepicker').datepicker({
       format: 'yyyy/mm/dd'
   });
+
+  $("#zclip").zclip({
+      path: "../UIFramework/Progressive/js/ZeroClipboard.swf",
+      copy: function () {
+          return $(this).attr('href');
+      },
+      afterCopy:function() {
+          alert('You copied link of this article!');
+      }
+  });
 });
 
 //Calculating The Browser Scrollbar Width
