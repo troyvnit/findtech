@@ -82,15 +82,12 @@ namespace FindTech.Web.Areas.BO.Controllers
 
             var total = articleService.Query().Select().Count(a => a.IsDeleted != true);
             var articles = new List<Article>();
-            //articleService.Queryable().Where(a => a.IsDeleted != true).OrderByDescending(a => a.CreatedDate).Skip(skip).Take(take).ToList();
-            //var articles = articleService.Query().Select().Skip(skip).Take(take);
             
             if (filter != null)
             {
                 var articleGridListFiltersBOViewModel = JsonConvert.DeserializeObject<ArticleGridListFiltersBOViewModel>(filter);
                 var listParame = new List<string>();
-                var query = appendFilter(articleGridListFiltersBOViewModel, listParame);
-
+                var query = buildingWhereClause(articleGridListFiltersBOViewModel, listParame);
 
                 int from = skip + 1;
                 int to =  skip + take;
@@ -118,17 +115,12 @@ namespace FindTech.Web.Areas.BO.Controllers
             }
             else
             {  
-               // articles = articleService.SelectQuery("Select * From Articles").ToList();
                articles  = articleService.Queryable().Where(a => a.IsDeleted != true).OrderByDescending(a => a.CreatedDate).Skip(skip).Take(take).ToList();
-            }
-
-
-        
-            
+            }            
             return Json(new { articles = articles.Select(Mapper.Map<ArticleGridBOViewModel>) , totalCount = total}, JsonRequestBehavior.AllowGet);
         }
 
-        private StringBuilder appendFilter(ArticleGridListFiltersBOViewModel articleGridListFiltersBOViewModel, List<String> Params )
+        private StringBuilder buildingWhereClause(ArticleGridListFiltersBOViewModel articleGridListFiltersBOViewModel, List<String> Params )
         {
             var query = new StringBuilder();
             query.Append(" ( ");
@@ -167,9 +159,7 @@ namespace FindTech.Web.Areas.BO.Controllers
             }
            
             query.Append(" ) ");
-
             return query;
-
         }
 
 
