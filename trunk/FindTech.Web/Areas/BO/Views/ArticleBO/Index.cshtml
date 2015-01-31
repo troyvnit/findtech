@@ -74,7 +74,7 @@
                         if (operation !== "read" && options) {
                             return { models: kendo.stringify(options) };
                         } else {
-                            return {skip: options.skip, take: options.take};
+                            return {skip: options.skip, take: options.take, filter: kendo.stringify(options.filter)};
                         }
                     }
                 },
@@ -102,6 +102,7 @@
             dataSource: dataSource,
             navigatable: true,
             pageable: true,
+            filterable: true,
             height: 550,
             selectable: "multiple",
             toolbar: kendo.template($("#articleToolbarTemplate").html()),
@@ -123,8 +124,8 @@
                 .kendoDropDownList({
                     autoBind: false,
                     dataSource: [
-                      { ArticleTypeName: "News", ArticleTypeId: "0" },
-                      { ArticleTypeName: "Review", ArticleTypeId: "1" }
+                      { ArticleTypeName: "News", ArticleTypeId: "1" },
+                      { ArticleTypeName: "Review", ArticleTypeId: "2" }
                     ]
                 });
         }

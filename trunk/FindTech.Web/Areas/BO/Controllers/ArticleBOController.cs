@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.ServiceModel.Syndication;
+using System.Text;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Script.Serialization;
@@ -14,6 +17,7 @@ using FindTech.Entities.Models.Enums;
 using FindTech.Services;
 using FindTech.Web.Areas.BO.CommonFunction;
 using FindTech.Web.Areas.BO.Models;
+using FindTech.Web.Models;
 using HtmlAgilityPack;
 using Newtonsoft.Json;
 using Repository.Pattern.UnitOfWork;
@@ -73,16 +77,101 @@ namespace FindTech.Web.Areas.BO.Controllers
                 JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult GetArticles(int skip, int take)
+        public ActionResult GetArticles(int skip, int take, String filter)
         {
-            var total = articleService.Query().Select().Count(a => a.IsDeleted != true);
 
-            //var total = articleService.Query().Select().Where(a => a.IsDeleted != true).Count();
-            var articles = articleService.Queryable().Where(a => a.IsDeleted != true).OrderByDescending(a => a.CreatedDate).Skip(skip).Take(take).ToList();
+            var total = articleService.Query().Select().Count(a => a.IsDeleted != true);
+            var articles = new List<Article>();
+            //articleService.Queryable().Where(a => a.IsDeleted != true).OrderByDescending(a => a.CreatedDate).Skip(skip).Take(take).ToList();
             //var articles = articleService.Query().Select().Skip(skip).Take(take);
-            var test = articleService.SelectQuery("Select TOP 1 * From Articles").ToList().Select(Mapper.Map<ArticleGridBOViewModel>);
-            return Json(new { articles = articles.Select(Mapper.Map<ArticleGridBOViewModel>) , totalCount = total, test}, JsonRequestBehavior.AllowGet);
+            
+            if (filter != null)
+            {
+                var articleGridListFiltersBOViewModel = JsonConvert.DeserializeObject<ArticleGridListFiltersBOViewModel>(filter);
+                var listParame = new List<string>();
+                var query = appendFilter(articleGridListFiltersBOViewModel, listParame);
+
+
+                int from = skip + 1;
+                int to =  skip + take;
+
+                var whereClause =  new SqlParameter
+                {
+                    ParameterName = "whereClause",
+                    Value = query.ToString(),
+                    
+                };
+
+                var paramFrom = new SqlParameter
+                {
+                    ParameterName = "from",
+                    Value = from.ToString(CultureInfo.InvariantCulture)
+                };
+
+                var paramTo = new SqlParameter
+                {
+                    ParameterName = "to",
+                    Value = to.ToString(CultureInfo.InvariantCulture)
+                };
+
+                articles = articleService.SelectQuery("exec ifadmin.getArticlesByFiltersPaging @whereClause, @from, @to", whereClause, paramFrom, paramTo).ToList();
+            }
+            else
+            {  
+               // articles = articleService.SelectQuery("Select * From Articles").ToList();
+               articles  = articleService.Queryable().Where(a => a.IsDeleted != true).OrderByDescending(a => a.CreatedDate).Skip(skip).Take(take).ToList();
+            }
+
+
+        
+            
+            return Json(new { articles = articles.Select(Mapper.Map<ArticleGridBOViewModel>) , totalCount = total}, JsonRequestBehavior.AllowGet);
         }
+
+        private StringBuilder appendFilter(ArticleGridListFiltersBOViewModel articleGridListFiltersBOViewModel, List<String> Params )
+        {
+            var query = new StringBuilder();
+            query.Append(" ( ");
+         
+            for (int i = 0; i < articleGridListFiltersBOViewModel.Filters.Count; i++)
+            {
+                var filter = articleGridListFiltersBOViewModel.Filters[i];
+                if (i > 0)
+                {
+                    query.Append(" ");
+                    query.Append(articleGridListFiltersBOViewModel.Logic);
+                    query.Append(" ");
+                }
+                query.Append(filter.Field);
+                query.Append(" ");
+                if (filter.Operator.Equals("eq"))
+                {
+                    query.Append(" = '" + filter.Value + "'");
+                }
+                else if (filter.Operator.Equals("ne"))
+                {
+                    query.Append(" <>'" + filter.Value + "'" );
+                }
+                else if (filter.Operator.Equals("contains"))
+                {
+                    query.Append("Like N'%" + filter.Value + "%' ");
+                }
+                else if (filter.Operator.Equals("startswith"))
+                {
+                    query.Append("Like N'%" + filter.Value + "'");
+                }
+                else if (filter.Operator.Equals("endswith"))
+                {
+                    query.Append("Like N'" + filter.Value + "%' ");
+                }
+            }
+           
+            query.Append(" ) ");
+
+            return query;
+
+        }
+
 
         public ActionResult Destroy(string models)
         {
