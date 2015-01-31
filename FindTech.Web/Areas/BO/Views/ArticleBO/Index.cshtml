@@ -86,7 +86,8 @@
                             Title: { validation: { required: true } },
                             Author: { type: "string" },
                             Source: { type: "string" },
-                            IsActived: { type: "boolean" }
+                            IsActived: { type: "boolean" },
+                            IsHot: {type: "boolean"}
                         }
                     },
                     data: "articles",
@@ -113,6 +114,7 @@
                 { field: "ArticleType", title: "ArticleType", width: 120, editor: articleTypeDropDownEditor, template: "#=ArticleType.ArticleTypeName#" },
                 { field: "BoxSize", title: "Box Size", width: 80, editor: boxSizeDropDownEditor, template: "#=BoxSize.BoxSizeName#" },
                 { field: "IsActived", title: "IsActived", width: 80 },
+                { field: "IsHot", title: "IsHot", width: 80 },
                 { command: [{ text: "Details", click: showDetails}, "destroy"], title: "&nbsp;", width: 186 }],
             editable: true
         });

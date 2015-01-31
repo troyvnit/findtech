@@ -21,6 +21,7 @@ namespace FindTech.Web.Areas.BO.Models
         public BoxSize BoxSize { get; set; }
         public ArticleType ArticleType { get; set; }
         public string IsActived { get; set; }
+        public string IsHot { get; set; }
         public bool? IsDeleted { get; set; }
         public int ArticleCategoryId { get; set; }
     }
