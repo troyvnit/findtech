@@ -19,6 +19,7 @@ using FindTech.Web.Areas.BO.CommonFunction;
 using FindTech.Web.Areas.BO.Models;
 using FindTech.Web.Models;
 using HtmlAgilityPack;
+using Microsoft.AspNet.Identity;
 using Newtonsoft.Json;
 using Repository.Pattern.UnitOfWork;
 using TestImageCrop;
@@ -299,6 +300,7 @@ namespace FindTech.Web.Areas.BO.Controllers
             else
             {
                 var newArticle = Mapper.Map<Article>(articleBOViewModel);
+                newArticle.CreatedUserId = User.Identity.GetUserId();
                 articleService.Insert(newArticle);
                 unitOfWork.SaveChanges();
                 articleId = newArticle.ArticleId;
