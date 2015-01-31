@@ -140,20 +140,44 @@
             <div class="modal-content">
                 
                 <div class="modal-body" style="padding-top:20px">
-                    <div class='frame'>
-                        <img id='imgCrop'/>
-                    </div>
+                    
+                    <div id="tabcropimg">
+                        <div class="tab-content">
+                            <div class="tab-pane" id="tabsquare">
+                                <div class='frame'>
+                                    <img id='imgCrop_sq' />
+                                </div>
 
-                    <div id='controls'>
-                        <button id='zoom_out' type='button' title='Zoom out'> - </button>
-                        
-                        <button id='zoom_in' type='button' title='Zoom in'> + </button>
-                        <button id='cropimg' type='button' title='Crop' style="float:right" onclick="getcropimgdata()"> Crop </button>
+                                <div id='controls'>
+                                    <button id='zoom_out_sq' type='button' title='Zoom out'> - </button>
+
+                                    <button id='zoom_in_sq' type='button' title='Zoom in'> + </button>
+                                    @*<button id='cropimg' type='button' title='Crop' style="float:right" onclick="getcropimgdata()"> Crop </button>*@
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabrectangle">
+                                <div class='frame'>
+                                    <img id='imgCrop_rec' />
+                                </div>
+
+                                <div id='controls'>
+                                    <button id='zoom_out_rec' type='button' title='Zoom out'> - </button>
+
+                                    <button id='zoom_in_rec' type='button' title='Zoom in'> + </button>
+                                    @*<button id='cropimg' type='button' title='Crop' style="float:right" onclick="getcropimgdata()"> Crop </button>*@
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="nav nav-pills">
+                            <li><a href="#tabsquare" data-toggle="tab"><img id="thumbnail_square" style="width:30px; height:30px"/></a></li>
+                            <li><a href="#tabrectangle" data-toggle="tab"><img id="thumbnail_rectangle" style="width:45px; height:30px" /></a></li>
+                        </ul>
                     </div>
                 </div>
+                
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" id="btn_cropimg" onclick="getcropimgdata()">Save changes</button>
                 </div>
             </div>
         </div>
@@ -163,10 +187,11 @@
 @*kendoui edtitor for content html of article*@
 <script>
     jQuery(function () {
-        var picture = $('#imgCrop');
+        var picture = $('#imgCrop_sq');
+        var picture2 = $('#imgCrop_rec');
         picture.on('load', function () {
             // Initialize plugin (with custom event)
-            picture.guillotine({ eventOnChange: 'guillotinechange', width: 556, height: 556, });
+            picture.guillotine({ eventOnChange: 'guillotinechange', width: 576, height: 576, });
             picture.guillotine('fit');
 
             // Display inital data
@@ -175,8 +200,8 @@
 
             // Bind button actions
             
-            $('#zoom_in').click(function () { picture.guillotine('zoomIn'); });
-            $('#zoom_out').click(function () { picture.guillotine('zoomOut'); });
+            $('#zoom_in_sq').click(function () { picture.guillotine('zoomIn'); });
+            $('#zoom_out_sq').click(function () { picture.guillotine('zoomOut'); });
             
 
             // Update data on change
@@ -185,8 +210,31 @@
                 for (var k in data) { $('#' + k).html(data[k]); }
             });
         });
+
+        picture2.on('load', function () {
+            // Initialize plugin (with custom event)
+            picture2.guillotine({ eventOnChange: 'guillotinechange', width: 600, height: 400, });
+            picture2.guillotine('fit');
+
+            // Display inital data
+            var data = picture2.guillotine('getData');
+            for (var key in data) { $('#' + key).html(data[key]); }
+
+            // Bind button actions
+
+            $('#zoom_in_rec').click(function () { picture2.guillotine('zoomIn'); });
+            $('#zoom_out_rec').click(function () { picture2.guillotine('zoomOut'); });
+
+
+            // Update data on change
+            picture2.on('guillotinechange', function (ev, data, action) {
+                data.scale = parseFloat(data.scale.toFixed(4));
+                for (var k in data) { $('#' + k).html(data[k]); }
+            });
+        });
     });
     $(document).ready(function () {
+        $('#tabcropimg').bootstrapWizard({ 'tabClass': 'nav nav-pills' });
         $('#rootwizard').bootstrapWizard({
             onTabShow: function (tab, navigation, index) {
                 if (index == 1) {
@@ -246,7 +294,10 @@
         }
         window.applyImageBrowser($('#avatar'), function (imageName, imageUrl, thumbnailUrl, button) {
             $('#imgCroper').modal({ backdrop: 'static' });
-            document.getElementById("imgCrop").src = imageUrl;
+            document.getElementById("imgCrop_sq").src = imageUrl;
+            document.getElementById("imgCrop_rec").src = imageUrl;
+            document.getElementById("thumbnail_square").src = imageUrl;
+            document.getElementById("thumbnail_rectangle").src = imageUrl;
         });
         var tags = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -538,8 +589,11 @@
             //form.closest('.panel').find('.panel-title a').text(data.SectionTitle);
             $('#contentSectionAlert').html('<strong>Saved success!</strong>');
             $('#contentSectionAlert').show(0).delay(3000).hide(0);
-            $('#panel-0').remove();
-            $('#accordion').append(data);
+            var contentSectionId = form.find('input[name=ContentSectionId]').val();
+            if ($('#panel-' + contentSectionId).length > 0) {
+                $('#panel-' + contentSectionId).remove();
+                $('#accordion').append(data);
+            }
         });
     };
 
@@ -566,8 +620,23 @@
     };
 
     function getcropimgdata() {
-        var data = $('#imgCrop').guillotine('getData');
-        var imagePath = $("#imgCrop").attr("src");
+        var datas = $('#imgCrop_sq').guillotine('getData');
+        var datar = $('#imgCrop_rec').guillotine('getData');
+        var data = {};
+        //square data
+        data.scales = datas.scale;
+        data.ws = datas.w;
+        data.hs = datas.h;
+        data.xs = datas.x;
+        data.ys = datas.y;
+        //rectangle data
+        data.scaler = datar.scale;
+        data.wr = datar.w;
+        data.hr = datar.h;
+        data.xr = datar.x;
+        data.yr = datar.y;
+
+        var imagePath = $("#imgCrop_sq").attr("src");
         imagePath = imagePath.split('/ImageBO/Image?path=')[1];
         data.imagePath = imagePath;
 
@@ -576,7 +645,9 @@
             type: 'POST',
             data: data,
             success: function (data) {
-
+                $('#imgCroper').modal('hide');
+                document.getElementById("imgAvatar").src = '/ImageBO/Image?path=' + data;
+                document.getElementById("avatarHidden").value = '/ImageBO/Image?path=' + data;
             },
             error: function (data) { }
         });

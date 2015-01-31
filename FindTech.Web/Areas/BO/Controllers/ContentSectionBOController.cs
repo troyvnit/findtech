@@ -68,6 +68,7 @@ namespace FindTech.Web.Areas.BO.Controllers
                 contentSectionService.Insert(contentSection);
             }
             unitOfWork.SaveChanges();
+            contentSection.Images = contentSectionService.Queryable().Include(a => a.Images).FirstOrDefault(a => a.ContentSectionId == contentSection.ContentSectionId).Images;
             return View("_ContentSectionForm", Mapper.Map<ContentSectionBOViewModel>(contentSection));
         }
 

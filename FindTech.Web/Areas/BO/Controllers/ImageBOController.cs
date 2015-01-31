@@ -290,7 +290,26 @@ namespace FindTech.Web.Areas.BO.Controllers
             return CanAccess(path) && IsValidFile(Path.GetExtension(path));
         }
 
-        public virtual ActionResult CropImage(string imagePath, float scale, int w, int h, int x, int y)
+        public virtual ActionResult CropImage(string imagePath, float scales, int ws, int hs, int xs, int ys, float scaler, int wr, int hr, int xr, int yr)
+        {
+            crop(imagePath, scales, ws, hs, xs, ys);
+            crop(imagePath, scaler, wr, hr, xr, yr);
+            string resizedPath = "";
+            if(Path.GetDirectoryName(imagePath).ToString() != "")
+            {
+                resizedPath = Path.GetDirectoryName(imagePath) + @"\272x272\" + Path.GetFileName(imagePath);
+            }
+            else
+            {
+                resizedPath = Path.GetDirectoryName(imagePath) + @"272x272\" + Path.GetFileName(imagePath);
+            }
+            
+            resizedPath = NormalizePath(resizedPath);
+            //resizedPath = Path.Combine(resizedPath, Path.GetFileName(imagePath));
+            return Json(resizedPath);
+        }
+
+        private void crop(string imagePath, float scale, int w, int h, int x, int y)
         {
             string imgPath = NormalizePath(imagePath);
             var physicalPath = Server.MapPath(imgPath);
@@ -303,11 +322,11 @@ namespace FindTech.Web.Areas.BO.Controllers
             {
                 g.DrawImage(source, new Rectangle(0, 0, cropRect.Width, cropRect.Height), cropRect, GraphicsUnit.Pixel);
                 MemoryStream ms = new MemoryStream();
-                if(!Directory.Exists(cropPath))
-                {
-                    Directory.CreateDirectory(cropPath);
-                }
-                FileStream fs = new FileStream(cropPath + @"\" + Path.GetFileName(physicalPath), FileMode.Create, FileAccess.ReadWrite);
+                //if (!Directory.Exists(cropPath))
+                //{
+                //    Directory.CreateDirectory(cropPath);
+                //}
+                //FileStream fs = new FileStream(cropPath + @"\" + Path.GetFileName(physicalPath), FileMode.Create, FileAccess.ReadWrite);
                 target.Save(ms, ImageFormat.Jpeg);
                 if (w == h)
                 {
@@ -323,7 +342,6 @@ namespace FindTech.Web.Areas.BO.Controllers
                 //ms.Close();
                 //fs.Close();
             }
-            return Json(true);
         }
 
         private void resizeImage(MemoryStream image, int width, int heigth, string path)
