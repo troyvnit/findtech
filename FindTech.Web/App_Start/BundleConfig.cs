@@ -172,6 +172,7 @@ namespace FindTech.Web
                     "~/UIFramework/Progressive/js/holder.js",
                     "~/UIFramework/Progressive/js/bootstrap-tagsinput.js",
                     "~/UIFramework/Progressive/js/typeahead.js",
+                    "~/UIFramework/Progressive/js/jquery.zclip.min.js",
                     "~/UIFramework/Progressive/js/main.js"));
 
             // Set EnableOptimizations to false for debugging. For more information,

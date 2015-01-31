@@ -11978,3 +11978,53 @@ a.big-icon:hover {
     margin-right: 10px;
 }
 
+.article-footer {
+    margin-top: 20px;
+    height: 50px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.article-footer > div {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+
+.addthis_native_toolbox {
+    padding: 10px 0;
+}
+
+.addthis_native_toolbox a {
+    height: 20px;
+}
+
+.article-footer .social .fa {
+    font-size: 28px;
+    color: #7f7f7f;
+}
+
+.article-footer .social {
+    padding-top: 8px;
+    position: relative;
+}
+
+.addthis_sharing_toolbox {
+    padding-top: 5px;
+}
+
+.article-footer .link {
+    padding-top: 5px;
+}
+
+.article-footer .link input{
+    min-height: 32px;
+    height: 32px;
+    background-color: rgb(235, 235, 228);
+    padding: 0 10px;
+    width: 200px;
+}
+
+.article-footer .source {
+    float: right;
+    margin-right: 0;
+}
