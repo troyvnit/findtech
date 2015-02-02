@@ -4,10 +4,11 @@
 @using FindTech.Web.Models
 
 @{
-    ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var article = (ArticleViewModel) ViewBag.Article;
-    var articles = (IEnumerable<ArticleViewModel>) ViewBag.Articles;
+    var articles = (IEnumerable<ArticleViewModel>)ViewBag.Articles;
+    ViewBag.Title = article.Title;
+    ViewBag.Discription = article.Description;
 }
 <div class="container">
     <div class="breadcrumb-box">
