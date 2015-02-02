@@ -11658,7 +11658,7 @@ a.big-icon:hover {
 
 .articles .article .article-description{
     padding: 20px;
-    height: 140px;
+    height: auto;
     color: #1e1e1e;
 }
 
@@ -11666,17 +11666,24 @@ a.big-icon:hover {
     color: #1e1e1e;
   font-size: 16px;
   font-weight: bold;
-  line-height: 1.1;
+  line-height: 20px;
   margin: 0;
   padding: 0 0 5px;
   text-decoration: none;
-  height: 35px;
+    cursor: pointer;
+}
+
+.article-description-wrap{
+  height: auto;
+}
+
+.article-description-wrap .title{
+  height: 43px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
-    cursor: pointer;
 }
 
 .articles .article .article-description .title:hover {

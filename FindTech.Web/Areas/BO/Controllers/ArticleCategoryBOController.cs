@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using AutoMapper;
 using FindTech.Entities.Models;
 using FindTech.Services;
+using FindTech.Web.Areas.BO.CommonFunction;
 using FindTech.Web.Areas.BO.Models;
 using Newtonsoft.Json;
 using Repository.Pattern.UnitOfWork;
@@ -48,6 +49,7 @@ namespace FindTech.Web.Areas.BO.Controllers
             {
                 var articleCategoryBOViewModel = articleCategoryBOViewModels.ElementAt(i);
                 var articleCategory = Mapper.Map<ArticleCategory>(articleCategoryBOViewModel);
+                articleCategory.SeoName = articleCategory.ArticleCategoryName.GenerateSeoTitle();
                 articleCategoryService.Insert(articleCategory);
                 unitOfWork.SaveChanges();
                 articleCategoryBOViewModels.RemoveAt(i);
@@ -64,6 +66,7 @@ namespace FindTech.Web.Areas.BO.Controllers
             {
                 var articleCategoryBOViewModel = articleCategoryBOViewModels.ElementAt(i);
                 var articleCategory = Mapper.Map<ArticleCategory>(articleCategoryBOViewModel);
+                articleCategory.SeoName = articleCategory.ArticleCategoryName.GenerateSeoTitle();
                 articleCategoryService.Update(articleCategory);
                 unitOfWork.SaveChanges();
                 articleCategoryBOViewModels.RemoveAt(i);
