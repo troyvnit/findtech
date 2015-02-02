@@ -32,6 +32,12 @@ namespace FindTech.Web.Areas.BO.CommonFunction
                         case " ":
                             stringBuilder.Append("-");
                             break;
+                        case "/":
+                            stringBuilder.Append("-");
+                            break;
+                        case "\\":
+                            stringBuilder.Append("-");
+                            break;
                         default:
                             stringBuilder.Append(c);
                             break;
