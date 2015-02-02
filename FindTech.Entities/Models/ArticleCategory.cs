@@ -8,6 +8,7 @@ namespace FindTech.Entities.Models
     {
         public int ArticleCategoryId { get; set; }
         public string ArticleCategoryName { get; set; }
+        public string SeoName { get; set; }
         public int Priority { get; set; }
         public string Color { get; set; }
         public bool? IsActived { get; set; }

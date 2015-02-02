@@ -59,6 +59,7 @@ namespace FindTech.Web.Mappers
                 Mapper.CreateMap<Article, ArticleViewModel>()
                     .ForMember(a => a.ArticleCategoryColor, o => o.MapFrom(x => x.ArticleCategory.Color))
                     .ForMember(a => a.ArticleCategoryName, o => o.MapFrom(x => x.ArticleCategory.ArticleCategoryName))
+                    .ForMember(a => a.ArticleSeoCategoryName, o => o.MapFrom(x => x.ArticleCategory.SeoName))
                     .ForMember(a => a.SourceName, o => o.MapFrom(x => x.Source.SourceName))
                     .ForMember(a => a.SourceLogo, o => o.MapFrom(x => x.Source.Logo));
                 Mapper.CreateMap<ContentSection, ContentSectionBOViewModel>();

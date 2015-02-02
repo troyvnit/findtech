@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Text;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Script.Serialization;
@@ -20,6 +21,7 @@ using FindTech.Web.Areas.BO.Models;
 using FindTech.Web.Models;
 using HtmlAgilityPack;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using Newtonsoft.Json;
 using Repository.Pattern.UnitOfWork;
 using TestImageCrop;
@@ -38,13 +40,27 @@ namespace FindTech.Web.Areas.BO.Controllers
         private IArticleService articleService { get; set; }
         private IUnitOfWorkAsync unitOfWork { get; set; }
 
+        private FindTechUserManager _userManager;
+        public FindTechUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<FindTechUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
+
         public ArticleBOController(IUnitOfWorkAsync unitOfWork, ISourceService sourceService,
-            IArticleService articleService, IArticleCategoryService articleCategoryService)
+            IArticleService articleService, IArticleCategoryService articleCategoryService, FindTechUserManager userManager)
         {
             this.sourceService = sourceService;
             this.articleService = articleService;
             this.articleCategoryService = articleCategoryService;
             this.unitOfWork = unitOfWork;
+            UserManager = userManager;
         }
 
         // GET: BO/Article
@@ -180,6 +196,9 @@ namespace FindTech.Web.Areas.BO.Controllers
         {
             var articleBOViewModel = JsonConvert.DeserializeObject<ArticleGridBOViewModel>(models);
             var article = Mapper.Map<Article>(articleBOViewModel);
+            var user = UserManager.FindById(User.Identity.GetUserId());
+            article.CreatedUserId = user.Id;
+            article.CreatedUserDisplayName = user.DisplayName;
             articleService.Update(article);
             var result = unitOfWork.SaveChanges();
             return Json(result);
@@ -198,7 +217,8 @@ namespace FindTech.Web.Areas.BO.Controllers
                     ArticleCategoryName = "Tin tổng hợp",
                     Color = "info",
                     IsActived = true,
-                    Priority = 1
+                    Priority = 1,
+                    SeoName = "Tin tổng hợp".GenerateSeoTitle()
                 });
                 unitOfWork.SaveChanges();
             }
@@ -242,6 +262,7 @@ namespace FindTech.Web.Areas.BO.Controllers
                             {
                                 try
                                 {
+                                    var user = UserManager.FindById(User.Identity.GetUserId());
                                     var article = new Article
                                     {
                                         ArticleCategoryId = category.ArticleCategoryId,
@@ -261,7 +282,10 @@ namespace FindTech.Web.Areas.BO.Controllers
                                         Source = rssSource,
                                         Content = content,
                                         ArticleType = ArticleType.News,
-                                        SeoTitle = title.GenerateSeoTitle()
+                                        SeoTitle = title.GenerateSeoTitle(),
+                                        IsHot = false,
+                                        CreatedUserId = user.Id,
+                                        CreatedUserDisplayName = user.DisplayName
                                     };
                                     articleService.Insert(article);
                                     unitOfWork.SaveChanges();
@@ -284,6 +308,7 @@ namespace FindTech.Web.Areas.BO.Controllers
         [HttpPost]
         public ActionResult CreateOrUpdate(ArticleBOViewModel articleBOViewModel)
         {
+            var user = UserManager.FindById(User.Identity.GetUserId());
             articleBOViewModel.SeoTitle = articleBOViewModel.Title.GenerateSeoTitle();
             var articleId = 0;
             if (articleBOViewModel.ArticleId != 0)
@@ -292,6 +317,8 @@ namespace FindTech.Web.Areas.BO.Controllers
                 if (count > 0)
                 {
                     var existedArticle = Mapper.Map<Article>(articleBOViewModel);
+                    existedArticle.CreatedUserId = user.Id;
+                    existedArticle.CreatedUserDisplayName = user.DisplayName;
                     articleService.Update(existedArticle);
                     unitOfWork.SaveChanges();
                     articleId = existedArticle.ArticleId;
@@ -300,7 +327,8 @@ namespace FindTech.Web.Areas.BO.Controllers
             else
             {
                 var newArticle = Mapper.Map<Article>(articleBOViewModel);
-                newArticle.CreatedUserId = User.Identity.GetUserId();
+                newArticle.CreatedUserId = user.Id;
+                newArticle.CreatedUserDisplayName = user.DisplayName;
                 articleService.Insert(newArticle);
                 unitOfWork.SaveChanges();
                 articleId = newArticle.ArticleId;

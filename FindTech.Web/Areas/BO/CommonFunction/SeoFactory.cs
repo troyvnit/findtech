@@ -12,25 +12,33 @@ namespace FindTech.Web.Areas.BO.CommonFunction
     {
         public static string GenerateSeoTitle(this string title)
         {
-            var dictionary = new Dictionary<string, string> { { "&", "va" }, { "$", "dola" }, { "%", "phan-tram" }, {"*", "sao"}, { "#", "thang" } };
-            var seoTitle = title.RemoveDiacritics().ToLower();
-            seoTitle = dictionary.Aggregate(seoTitle, (current, d) => new StringBuilder(current).Replace(d.Key, d.Value).ToString());
-            seoTitle = Regex.Replace(seoTitle, @"[^a-z0-9\s-]", "");
-            seoTitle = Regex.Replace(seoTitle, @"\s+", " ").Trim();
-            //str = str.Substring(0, str.Length <= 45 ? str.Length : 45).Trim();
-            seoTitle = Regex.Replace(seoTitle, @"\s", "-");
-            return seoTitle;
-        }
-
-        public static string RemoveDiacritics(this string title)
-        {
             var normalizedString = title.Normalize(NormalizationForm.FormD);
-            var stringBuilder = new StringBuilder();
-            foreach (var c in normalizedString.Where(c => CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark))
+            var stringBuilder = new StringBuilder(title.Length);
+            foreach (var c in normalizedString.ToCharArray())
             {
-                stringBuilder.Append(c);
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                {
+                    switch (c.ToString())
+                    {
+                        case "&":
+                            stringBuilder.Append("va");
+                            break;
+                        case "$":
+                            stringBuilder.Append("dola");
+                            break;
+                        case "%":
+                            stringBuilder.Append("phan-tram");
+                            break;
+                        case " ":
+                            stringBuilder.Append("-");
+                            break;
+                        default:
+                            stringBuilder.Append(c);
+                            break;
+                    }
+                }
             }
-            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+            return stringBuilder.ToString();
         }
     }
 }

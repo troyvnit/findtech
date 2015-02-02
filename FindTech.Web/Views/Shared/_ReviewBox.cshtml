@@ -6,18 +6,18 @@
 <div class="col-sm-3 col-md-3">
     <div class="article">
         <div class="default">
-            <a href="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle })" class="article-avatar fixed-height-270">
+            <a href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })" class="article-avatar fixed-height-270">
                 <img src="@article.Avatar" alt="" title="" width="270" height="270">
             </a>
             <div class="article-description">
-                <a href="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle })" class="title">@article.Title</a>
-                <div class="posted-info"><span class="blurry-text">Đăng:</span><strong> @article.PublishedDate.ToString("dd MMM yy HH:mm:ss", new CultureInfo("vi-VN")), <span class="blurry-text">bởi</span> @article.SourceName</strong></div>
+                <a href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })" class="title">@article.Title</a>
+                <div class="posted-info"><span class="blurry-text">Đăng:</span><strong> @article.PublishedDate.ToString("dd MMM yy HH:mm:ss", new CultureInfo("vi-VN")), <span class="blurry-text">bởi</span> @article.CreatedUserDisplayName</strong></div>
                 <div class="description">@Html.Raw(article.Description)</div>
             </div>
             <div class="social">
                 <span class="opinion"><span class="background-danger">Hay</span></span>
-                <a class="fa fa-eye" href="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle })"><span class="count">11</span></a>
-                <a class="fa fa-comments" href="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle })"><span class="count">12</span></a>
+                <a class="fa fa-eye" href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })"><span class="count">11</span></a>
+                <a class="fa fa-comments" href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })"><span class="count">12</span></a>
                 <a class="fa fa-thumb-tack" href="#"></a>
             </div>
         </div>
