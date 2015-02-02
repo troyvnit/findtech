@@ -19,8 +19,11 @@ namespace FindTech.Web.Models
         public string Author { get; set; }
         public BoxSize BoxSize { get; set; }
         public bool? IsActived { get; set; }
+        public bool? IsHot { get; set; }
         public string ArticleCategoryColor { get; set; }
         public string ArticleCategoryName { get; set; }
+        public string ArticleSeoCategoryName { get; set; }
+        public string CreatedUserDisplayName { get; set; }
         public string SourceName { get; set; }
         public string SourceLogo { get; set; }
         public ICollection<ContentSectionBOViewModel> ContentSections { get; set; } 

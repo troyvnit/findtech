@@ -28,7 +28,7 @@
                     {
                     <h1 class="title">@article.Title</h1>
                     <div class="entry-meta">
-                        <div class="posted-info"><span class="blurry-text">Đăng:</span><strong> @article.PublishedDate.ToString("dd MMM yy HH:mm:ss", new CultureInfo("vi-VN"))<span class="separator">|</span><span class="blurry-text">Bởi:</span> @article.SourceName</strong></div>
+                        <div class="posted-info"><span class="blurry-text">Đăng:</span><strong> @article.PublishedDate.ToString("dd MMM yy HH:mm:ss", new CultureInfo("vi-VN"))<span class="separator">|</span><span class="blurry-text">Bởi:</span> @article.CreatedUserDisplayName</strong></div>
                         <span class="meta btn-icon tags">
                             <span class="blurry-text">Nhãn:</span>
                             @if (article.Tags != null)
@@ -75,15 +75,15 @@
                         <div class="article-footer">
                             <div class="addthis_sharing_toolbox"></div>
                             <div class="social">
-                                <a class="fa fa-share-alt" id="zclip" href="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle }, this.Request.Url.Scheme)"></a>
+                                <a class="fa fa-share-alt" id="zclip" href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle }, this.Request.Url.Scheme)"></a>
                             </div>
                             <div class="link">
-                                <input type="text" readonly="readonly" placeholder="Link" onclick="$(this).select();" value="@Url.Action("Detail", "Article", new { seoTitle = article.SeoTitle }, this.Request.Url.Scheme)">
+                                <input type="text" readonly="readonly" placeholder="Link" onclick="$(this).select();" value="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle }, this.Request.Url.Scheme)">
                             </div>
                             <div class="addthis_native_toolbox"></div>
                             <div class="source">
-                                <span class="blurry-text">Tac gia: </span><strong>Troy</strong><br/>
-                                <span class="blurry-text">Nguon: </span><strong>iFInd.vn</strong>
+                                <span class="blurry-text">Tac gia: </span><strong>@article.Author</strong><br/>
+                                <span class="blurry-text">Nguon: </span><strong>@article.SourceName</strong>
                             </div>
                         </div>
                     </article><!-- .post -->
