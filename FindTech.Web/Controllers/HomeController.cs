@@ -20,6 +20,9 @@ namespace FindTech.Web.Controllers
         }
         public ActionResult Index()
         {
+            ViewBag.Title =
+                "Tìm là thấy";
+            ViewBag.Description = "Cổng thông tin công nghệ, thiết bị di động, so sánh sản phẩm công nghệ, đánh giá smart phone, tablet,...";
             var articles = articleService.Queryable().OrderByDescending(a => a.PublishedDate).Include(a => a.Source).Include(a => a.ArticleCategory).Take(20).Select(Mapper.Map<ArticleViewModel>);
             ViewBag.Articles = articles;
             return View();
