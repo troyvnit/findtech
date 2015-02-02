@@ -9,7 +9,7 @@
             <a href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })" class="article-avatar fixed-height-270">
                 <img src="@article.Avatar" alt="" title="" width="270" height="270">
             </a>
-            <div class="article-description">
+            <div class="article-description article-description-wrap">
                 <a href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })" class="title">@article.Title</a>
                 <div class="posted-info"><span class="blurry-text">Đăng:</span><strong> @article.PublishedDate.ToString("dd MMM yy HH:mm:ss", new CultureInfo("vi-VN")), <span class="blurry-text">bởi</span> @article.CreatedUserDisplayName</strong></div>
                 <div class="description">@Html.Raw(article.Description)</div>
