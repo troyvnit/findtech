@@ -33,20 +33,27 @@
                         <span class="meta btn-icon tags">
                             <span class="blurry-text">Nhãn:</span>
                             @if (article.Tags != null)
+                            {
+                                foreach (var tag in article.Tags.Split(','))
                                 {
-                                    foreach (var tag in article.Tags.Split(','))
-                                    {
-                                <a href="#">@tag</a>
-                                    }
+                                    <a href="#">@tag</a>
                                 }
-                                else
+                            }
+                            else
+                            {
+                                foreach (var tag in article.SeoTitle.Split('-'))
                                 {
-                                    foreach (var tag in article.SeoTitle.Split('-'))
-                                    {
-                                <a href="#">@tag</a>
-                                    }
+                                    <a href="#">@tag</a>
                                 }
+                            }
                         </span>
+
+                        <div class="list-group">
+                            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                            <a href="#" class="list-group-item">Cras sit amet nibh libero</a>
+                            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item">Vestibulum at eros</a>
+                        </div>
                     </div>
                     }
                     else

@@ -14,7 +14,7 @@ namespace FindTech.Web.Areas.BO.CommonFunction
         {
             var normalizedString = title.Normalize(NormalizationForm.FormD);
             var stringBuilder = new StringBuilder(title.Length);
-            foreach (var c in normalizedString.ToCharArray())
+            foreach (var c in normalizedString.ToLower().ToCharArray())
             {
                 if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
                 {
@@ -28,6 +28,9 @@ namespace FindTech.Web.Areas.BO.CommonFunction
                             break;
                         case "%":
                             stringBuilder.Append("phan-tram");
+                            break;
+                        case ".":
+                            stringBuilder.Append("-");
                             break;
                         case " ":
                             stringBuilder.Append("-");

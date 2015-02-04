@@ -11,6 +11,7 @@ namespace FindTech.Web.Models
         public string SectionTitle { get; set; }
         public string SectionDescription { get; set; }
         public string SectionContent { get; set; }
+        public int PageNumber { get; set; }
         public int BenchmarkId { get; set; }
     }
 }
