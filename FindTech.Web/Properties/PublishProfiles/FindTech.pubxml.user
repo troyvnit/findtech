@@ -6080,7 +6080,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:42:30</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Create.cshtml">
-      <publishTime>01/31/2015 12:52:59</publishTime>
+      <publishTime>02/04/2015 10:14:44</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Index.cshtml">
       <publishTime>01/31/2015 13:30:32</publishTime>
@@ -6098,7 +6098,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/15/2014 21:23:20</publishTime>
     </File>
     <File Include="Areas/BO/Views/ContentSectionBO/_ContentSectionForm.cshtml">
-      <publishTime>01/19/2015 22:05:08</publishTime>
+      <publishTime>02/04/2015 21:56:02</publishTime>
     </File>
     <File Include="Areas/BO/Views/DeviceBO/Create.cshtml">
       <publishTime>01/06/2015 21:37:00</publishTime>
@@ -6143,13 +6143,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:40</publishTime>
     </File>
     <File Include="bin/FindTech.Entities.dll">
-      <publishTime>02/02/2015 10:59:59</publishTime>
+      <publishTime>02/04/2015 22:21:25</publishTime>
     </File>
     <File Include="bin/FindTech.Services.dll">
-      <publishTime>02/02/2015 11:00:00</publishTime>
+      <publishTime>02/04/2015 22:21:26</publishTime>
     </File>
     <File Include="bin/FindTech.Web.dll">
-      <publishTime>02/02/2015 15:16:28</publishTime>
+      <publishTime>02/04/2015 22:21:31</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
       <publishTime>11/04/2014 18:18:06</publishTime>
@@ -7751,7 +7751,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:42:23</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/style.css">
-      <publishTime>01/31/2015 12:27:39</publishTime>
+      <publishTime>02/04/2015 22:14:02</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/video-js.min.css">
       <publishTime>01/06/2015 20:31:44</publishTime>
@@ -8729,7 +8729,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2015 10:56:26</publishTime>
     </File>
     <File Include="Views/Shared/_ReviewBox.cshtml">
-      <publishTime>02/02/2015 10:56:26</publishTime>
+      <publishTime>02/02/2015 17:11:16</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>10/27/2014 19:44:49</publishTime>
