@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using FindTech.Web.Models.Enums;
 
 namespace FindTech.Web.Models
 {
@@ -9,6 +10,7 @@ namespace FindTech.Web.Models
     {
         public string Title { get; set; }
         public string TitleStyleClass { get; set; }
+        public WidgetType WidgetType { get; set; }
         public IEnumerable<ArticleViewModel> Articles { get; set; } 
     }
 }

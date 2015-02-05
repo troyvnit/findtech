@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Linq;
 using AutoMapper;
+using FindTech.Entities.Models.Enums;
 using FindTech.Services;
 using FindTech.Web.Models;
 using Repository.Pattern.UnitOfWork;
@@ -23,8 +24,10 @@ namespace FindTech.Web.Controllers
             ViewBag.Title =
                 "Tìm là thấy";
             ViewBag.Description = "Cổng thông tin công nghệ, thiết bị di động, so sánh sản phẩm công nghệ, đánh giá smart phone, tablet,...";
-            var articles = articleService.Queryable().OrderByDescending(a => a.PublishedDate).Include(a => a.Source).Include(a => a.ArticleCategory).Take(20).Select(Mapper.Map<ArticleViewModel>);
-            ViewBag.Articles = articles;
+            var hotArticles = articleService.Queryable().Where(a => a.IsHot == true).OrderByDescending(a => a.Priority).ThenByDescending(a => a.PublishedDate).Include(a => a.Source).Include(a => a.ArticleCategory).Select(Mapper.Map<ArticleViewModel>);
+            ViewBag.HotArticles = hotArticles;
+            var latestReviews = articleService.Queryable().Where(a => a.ArticleType == ArticleType.Reviews && a.IsHot != true).OrderByDescending(a => a.Priority).ThenByDescending(a => a.PublishedDate).Include(a => a.Source).Include(a => a.ArticleCategory).Select(Mapper.Map<ArticleViewModel>);
+            ViewBag.LatestReviews = latestReviews;
             return View();
         }
 
