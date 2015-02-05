@@ -249,6 +249,8 @@
     <Compile Include="Models\ArticleListViewModel.cs" />
     <Compile Include="Models\ArticleViewModel.cs" />
     <Compile Include="Models\ContentSectionViewModel.cs" />
+    <Compile Include="Models\Enums\WidgetType.cs" />
+    <Compile Include="Models\Enums\SearchType.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -1933,6 +1935,7 @@
     <Content Include="Views\Shared\_LargeSliderBox.cshtml" />
     <Content Include="Views\Shared\_MiniSliderBox.cshtml" />
     <Content Include="Views\Shared\_MiniListBox.cshtml" />
+    <Content Include="Views\Article\_Widget.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">

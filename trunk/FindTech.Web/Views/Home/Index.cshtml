@@ -1,17 +1,19 @@
 ﻿@using FindTech.Entities.Models
 @using FindTech.Entities.Models.Enums
 @using FindTech.Web.Models
+@using FindTech.Web.Models.Enums
 @{
     ViewBag.Title = "Home Page";
-    var articles = (IEnumerable<ArticleViewModel>)ViewBag.Articles;
+    var hotArticles = (IEnumerable<ArticleViewModel>)ViewBag.HotArticles;
+    var latestReviews = (IEnumerable<ArticleViewModel>)ViewBag.LatestReviews;
 }
 
 <div class="banner-set load">
     <div class="container">
         <div class="banners">
-            @foreach (var article in articles.Skip(11))
+            @foreach (var hotArticle in hotArticles.Skip(11))
             {
-                Html.RenderPartial("_HotArticleBox", article);
+                Html.RenderPartial("_HotArticleBox", hotArticle);
             }
         </div><!-- .banners -->
         <div class="clearfix"></div>
@@ -28,7 +30,7 @@
         <div class="content">
             <div class="row">
                 <div class="col-sm-9 col-md-9">
-                    @{Html.RenderPartial("_LargeSliderBox", new ArticleListViewModel { Articles = articles, Title = "Đánh giá & So sánh" });}
+                    @{Html.RenderPartial("_LargeSliderBox", new ArticleListViewModel { Articles = latestReviews, Title = "Đánh giá & So sánh" });}
                     <article class="content">
                         <div class="bottom-padding bottom-padding-mid load overflow">
                             <div class="title-box no-margin">
@@ -38,10 +40,10 @@
                             <div class="clearfix"></div>
 
                             <div class="row social-feed articles">
-                                @foreach (var article in articles)
+                                @*@foreach (var article in articles)
                                 {
                                     Html.RenderPartial("_NewsBox", article);
-                                }
+                                }*@
                             </div>
 
                             <div class="clearfix"></div>
@@ -65,10 +67,10 @@
                             </div>
                         </div>
                     </article>
-                    @{Html.RenderPartial("_MiniSliderBox", new ArticleListViewModel { Articles = articles, Title = "Thủ thuật" });}
+                    @{Html.RenderAction("_Widget", "Article", new { articleListViewModel = new ArticleListViewModel { WidgetType = WidgetType.MiniSlider, Title = "Thủ thuật" }, searchType = SearchType.Category, keyword = "tin-tong-hop" });}
                 </div>
                 <div class="sidebar col-sm-3 col-md-3">
-                    @{Html.RenderPartial("_MiniListBox", new ArticleListViewModel { Articles = articles, Title = "Hấp dẫn nhất", TitleStyleClass = "fa fa-eye background-00ade0" });}
+                    @{Html.RenderAction("_Widget", "Article", new { articleListViewModel = new ArticleListViewModel { WidgetType = WidgetType.MiniList, Title = "Hấp dẫn nhất", TitleStyleClass = "fa fa-eye background-00ade0" }, searchType = SearchType.Category, keyword = "tin-tong-hop" });}
                     <aside class="widget facebook-widget">
                         <header>
                             <h3 class="title">Facebook</h3>
