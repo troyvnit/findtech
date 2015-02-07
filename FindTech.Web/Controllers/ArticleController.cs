@@ -31,10 +31,14 @@ namespace FindTech.Web.Controllers
 
         public ActionResult Detail(string seoTitle)
         {
-            var article = articleService.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).Include(a => a.ContentSections).FirstOrDefault(a => a.SeoTitle == seoTitle);
+            var article = articleService.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).Include(a => a.ContentSections).Include(a => a.Opinions).FirstOrDefault(a => a.SeoTitle == seoTitle);
+            if (article == null) return null;
             ViewBag.Article = Mapper.Map<ArticleViewModel>(article);
             var articles = articleService.Queryable().OrderByDescending(a => a.PublishedDate).Take(10);
             ViewBag.Articles = articles.Select(Mapper.Map<ArticleViewModel>);
+            article.ViewCount++;
+            articleService.Update(article);
+            unitOfWork.SaveChangesAsync();
             return View();
         }
 

@@ -7,6 +7,10 @@ namespace FindTech.Entities.Models
 {
     public class Article : Entity
     {
+        public Article()
+        {
+            LatestInteraction = DateTime.Now;
+        }
         public int ArticleId { get; set; }
         public string Title { get; set; }
         public string SeoTitle { get; set; }
@@ -27,10 +31,13 @@ namespace FindTech.Entities.Models
         public int UpdatedUserId { get; set; }
         public int ArticleCategoryId { get; set; }
         public virtual ArticleCategory ArticleCategory { get; set; }
+        public int ViewCount { get; set; }
+        public DateTime LatestInteraction { get; set; }
         public int SourceId { get; set; }
         public virtual Source Source { get; set; }
         public virtual ICollection<ContentSection> ContentSections { get; set; }
         public virtual ICollection<Device> RelatedDevices { get; set; }
         public virtual ICollection<Opinion> Opinions { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }
