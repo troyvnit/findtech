@@ -22,7 +22,7 @@
             <div class="clearfix"></div>
 
             <div class="carousel">
-                @foreach (var article in articles.Take(10))
+                @foreach (var article in articles)
                 {
                     Html.RenderPartial("_MiniArticleBox", article);
                 }

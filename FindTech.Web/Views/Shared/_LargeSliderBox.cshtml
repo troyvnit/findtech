@@ -22,7 +22,7 @@
 
         <div class="row">
             <div class="carousel articles">
-                @foreach (var article in articles.Skip(15))
+                @foreach (var article in articles)
                 {
                     Html.RenderPartial("_ReviewBox", article);
                 }
