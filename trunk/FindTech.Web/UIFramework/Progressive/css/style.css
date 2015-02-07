@@ -11649,6 +11649,7 @@ a.big-icon:hover {
 
 .articles .article .article-avatar img{
     height: auto;
+    width: 100%;
     border-radius: 2px 2px 0 0;
 }
 
@@ -11861,18 +11862,20 @@ a.big-icon:hover {
 .sidebar .articles ul li .title {
     color: #1e1e1e;
     display: inline-block;
-    width: 185px;
+    width: 100%;
     font-size: 13px;
     font-weight: bold;
-    padding: 0 10px;
+    padding: 10px 10px 10px 82px;
     margin: 0;
     vertical-align: middle;
     text-decoration: none;
+    height: 72px;
 }
 
 .sidebar .articles ul li .article-avatar img{
     width: 72px;
     height: 72px;
+    position: absolute;
 }
 
 .load-more {

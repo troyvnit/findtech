@@ -206,6 +206,7 @@
     <Compile Include="Areas\BO\CommonFunction\ImageHelper.cs" />
     <Compile Include="Areas\BO\CommonFunction\SeoFactory.cs" />
     <Compile Include="Areas\BO\Controllers\ArticleBOController.cs" />
+    <Compile Include="Areas\BO\Controllers\BaseController.cs" />
     <Compile Include="Areas\BO\Controllers\BrandBOController.cs" />
     <Compile Include="Areas\BO\Controllers\DeviceBOController.cs" />
     <Compile Include="Areas\BO\Controllers\SpecBOController.cs" />
@@ -1745,6 +1746,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\BO\Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

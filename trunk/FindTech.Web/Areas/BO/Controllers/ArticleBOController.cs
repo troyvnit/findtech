@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -33,34 +34,20 @@ using System.Drawing;
 namespace FindTech.Web.Areas.BO.Controllers
 {
     [Authorize]
-    public class ArticleBOController : Controller
+    public class ArticleBOController : BaseController
     {
         private ISourceService sourceService { get; set; }
         private IArticleCategoryService articleCategoryService { get; set; }
         private IArticleService articleService { get; set; }
         private IUnitOfWorkAsync unitOfWork { get; set; }
 
-        private FindTechUserManager _userManager;
-        public FindTechUserManager UserManager
-        {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<FindTechUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
-        }
-
         public ArticleBOController(IUnitOfWorkAsync unitOfWork, ISourceService sourceService,
-            IArticleService articleService, IArticleCategoryService articleCategoryService, FindTechUserManager userManager)
+            IArticleService articleService, IArticleCategoryService articleCategoryService)
         {
             this.sourceService = sourceService;
             this.articleService = articleService;
             this.articleCategoryService = articleCategoryService;
             this.unitOfWork = unitOfWork;
-            UserManager = userManager;
         }
 
         // GET: BO/Article
@@ -192,13 +179,13 @@ namespace FindTech.Web.Areas.BO.Controllers
             return Json(result);
         }
 
-        public ActionResult Update(string models)
+        [ValidateInput(false)]
+        public async Task<ActionResult> Update(string models)
         {
             var articleBOViewModel = JsonConvert.DeserializeObject<ArticleGridBOViewModel>(models);
             var article = Mapper.Map<Article>(articleBOViewModel);
-            var user = UserManager.FindById(User.Identity.GetUserId());
-            article.CreatedUserId = user.Id;
-            article.CreatedUserDisplayName = user.DisplayName;
+            article.CreatedUserId = CurrentUser.Id;
+            article.CreatedUserDisplayName = CurrentUser.DisplayName;
             articleService.Update(article);
             var result = unitOfWork.SaveChanges();
             return Json(result);
@@ -262,7 +249,6 @@ namespace FindTech.Web.Areas.BO.Controllers
                             {
                                 try
                                 {
-                                    var user = UserManager.FindById(User.Identity.GetUserId());
                                     var article = new Article
                                     {
                                         ArticleCategoryId = category.ArticleCategoryId,
@@ -284,8 +270,8 @@ namespace FindTech.Web.Areas.BO.Controllers
                                         ArticleType = ArticleType.News,
                                         SeoTitle = title.GenerateSeoTitle(),
                                         IsHot = false,
-                                        CreatedUserId = user.Id,
-                                        CreatedUserDisplayName = user.DisplayName
+                                        CreatedUserId = CurrentUser.Id,
+                                        CreatedUserDisplayName = CurrentUser.DisplayName
                                     };
                                     articleService.Insert(article);
                                     unitOfWork.SaveChanges();
@@ -308,7 +294,6 @@ namespace FindTech.Web.Areas.BO.Controllers
         [HttpPost]
         public ActionResult CreateOrUpdate(ArticleBOViewModel articleBOViewModel)
         {
-            var user = UserManager.FindById(User.Identity.GetUserId());
             articleBOViewModel.SeoTitle = articleBOViewModel.Title.GenerateSeoTitle();
             var articleId = 0;
             if (articleBOViewModel.ArticleId != 0)
@@ -317,8 +302,8 @@ namespace FindTech.Web.Areas.BO.Controllers
                 if (count > 0)
                 {
                     var existedArticle = Mapper.Map<Article>(articleBOViewModel);
-                    existedArticle.CreatedUserId = user.Id;
-                    existedArticle.CreatedUserDisplayName = user.DisplayName;
+                    existedArticle.CreatedUserId = CurrentUser.Id;
+                    existedArticle.CreatedUserDisplayName = CurrentUser.DisplayName;
                     articleService.Update(existedArticle);
                     unitOfWork.SaveChanges();
                     articleId = existedArticle.ArticleId;
@@ -327,8 +312,8 @@ namespace FindTech.Web.Areas.BO.Controllers
             else
             {
                 var newArticle = Mapper.Map<Article>(articleBOViewModel);
-                newArticle.CreatedUserId = user.Id;
-                newArticle.CreatedUserDisplayName = user.DisplayName;
+                newArticle.CreatedUserId = CurrentUser.Id;
+                newArticle.CreatedUserDisplayName = CurrentUser.DisplayName;
                 articleService.Insert(newArticle);
                 unitOfWork.SaveChanges();
                 articleId = newArticle.ArticleId;
