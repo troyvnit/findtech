@@ -61,7 +61,9 @@ namespace FindTech.Web.Mappers
                     .ForMember(a => a.ArticleCategoryName, o => o.MapFrom(x => x.ArticleCategory.ArticleCategoryName))
                     .ForMember(a => a.ArticleSeoCategoryName, o => o.MapFrom(x => x.ArticleCategory.SeoName))
                     .ForMember(a => a.SourceName, o => o.MapFrom(x => x.Source.SourceName))
-                    .ForMember(a => a.SourceLogo, o => o.MapFrom(x => x.Source.Logo));
+                    .ForMember(a => a.SourceLogo, o => o.MapFrom(x => x.Source.Logo))
+                    .ForMember(a => a.CommentCount, o => o.MapFrom(x => x.Comments.Count));
+                Mapper.CreateMap<Opinion, OpinionViewModel>();
                 Mapper.CreateMap<ContentSection, ContentSectionBOViewModel>();
                 Mapper.CreateMap<ArticleCategory, ArticleCategoryBOViewModel>();
                 Mapper.CreateMap<Source, SourceBOViewModel>();

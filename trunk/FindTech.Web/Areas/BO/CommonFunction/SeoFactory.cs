@@ -32,9 +32,6 @@ namespace FindTech.Web.Areas.BO.CommonFunction
                         case ".":
                             stringBuilder.Append("-");
                             break;
-                        case " ":
-                            stringBuilder.Append("-");
-                            break;
                         case "/":
                             stringBuilder.Append("-");
                             break;
@@ -47,7 +44,11 @@ namespace FindTech.Web.Areas.BO.CommonFunction
                     }
                 }
             }
-            return stringBuilder.ToString();
+            var seoTitle = stringBuilder.ToString();
+            seoTitle = Regex.Replace(seoTitle, @"[^a-z0-9\s-]", "");
+            seoTitle = Regex.Replace(seoTitle, @"\s+", " ").Trim();
+            seoTitle = Regex.Replace(seoTitle, @"\s", "-");
+            return seoTitle;
         }
     }
 }

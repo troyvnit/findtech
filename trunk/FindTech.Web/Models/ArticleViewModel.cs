@@ -26,6 +26,9 @@ namespace FindTech.Web.Models
         public string CreatedUserDisplayName { get; set; }
         public string SourceName { get; set; }
         public string SourceLogo { get; set; }
+        public int ViewCount { get; set; }
+        public int CommentCount { get; set; }
+        public ICollection<OpinionViewModel> Opinions { get; set; } 
         public ICollection<ContentSectionBOViewModel> ContentSections { get; set; } 
     }
 }

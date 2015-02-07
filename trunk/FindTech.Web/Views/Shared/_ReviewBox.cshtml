@@ -1,7 +1,33 @@
 ﻿@using System.Globalization
+@using FindTech.Entities.Models.Enums
 @model FindTech.Web.Models.ArticleViewModel
 @{
     var article = Model;
+    var highestOpinion = article.Opinions.OrderByDescending(a => a.OpinionCount).ThenByDescending(a => a.OpinionLevel).FirstOrDefault();
+    var opinionBackground = "primary";
+    var opinionLevel = "???";
+    if (highestOpinion != null)
+    {
+        switch (highestOpinion.OpinionLevel)
+        {
+            case OpinionLevel.Bad:
+                opinionBackground = "warning";
+                opinionLevel = "Tệ";
+                break;
+            case OpinionLevel.Average:
+                opinionBackground = "info";
+                opinionLevel = "Tạm";
+                break;
+            case OpinionLevel.Good:
+                opinionBackground = "success";
+                opinionLevel = "Hay";
+                break;
+            case OpinionLevel.Excellent:
+                opinionBackground = "danger";
+                opinionLevel = "Tuyệt";
+                break;
+        }
+    }
 }
 <div class="col-sm-3 col-md-3">
     <div class="article">
@@ -15,9 +41,9 @@
                 <div class="description">@Html.Raw(article.Description)</div>
             </div>
             <div class="social">
-                <span class="opinion"><span class="background-danger">Hay</span></span>
-                <a class="fa fa-eye" href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })"><span class="count">11</span></a>
-                <a class="fa fa-comments" href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })"><span class="count">12</span></a>
+                <span class="opinion"><span class="background-@opinionBackground">@opinionLevel</span></span>
+                <a class="fa fa-eye" href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })"><span class="count">@article.ViewCount</span></a>
+                <a class="fa fa-comments" href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })"><span class="count">@article.CommentCount</span></a>
                 <a class="fa fa-thumb-tack" href="#"></a>
             </div>
         </div>
