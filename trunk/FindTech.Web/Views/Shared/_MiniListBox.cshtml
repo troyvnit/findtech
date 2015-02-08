@@ -1,18 +1,21 @@
-﻿@model FindTech.Web.Models.ArticleListViewModel
+﻿@using FindTech.Web.Models
+@model FindTech.Web.Models.ArticleListViewModel
 @{
     var articles = Model.Articles;
+    var articleViewModels = articles as IList<ArticleViewModel> ?? articles.ToList();
+    var viewAllDisplay = articleViewModels.Count() > 4 || Model.ClientId != "pinnedArticles" ? "display: block" : "display: none";
 }
 
-<aside class="widget articles col-sm-6 col-md-12">
+<aside class="widget articles col-sm-6 col-md-12" id="@Model.ClientId">
     <div class="title-box">
         <span class="@Model.TitleStyleClass"></span><h2 class="title">@Model.Title</h2>
     </div>
     <ul>
-        @foreach (var article in articles.Take(4))
+        @foreach (var article in articleViewModels)
         {
             Html.RenderPartial("_ListItemArticleBox", article);
         }
-        <li class="action">
+        <li class="action" style="@viewAllDisplay">
             <a href="#" class="view-all ">View all<span class="fa fa-arrow-right"></span></a>
         </li>
     </ul>

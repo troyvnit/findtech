@@ -1,5 +1,6 @@
 ﻿@using System.Globalization
 @using FindTech.Entities.Models.Enums;
+@using FindTech.Web.Models
 @model FindTech.Web.Models.ArticleViewModel
 @{
     var article = Model;
@@ -28,6 +29,8 @@
                 break;   
         }
     }
+    var pinnedArticles = Session["Pinned"] != null ? (List<ArticleViewModel>)Session["Pinned"] : new List<ArticleViewModel>();
+    var pinnedClass = pinnedArticles.Count(a => a.ArticleId == article.ArticleId) > 0 ? "active" : "";
 }
 <div class="col-sm-6 col-md-3 isotope-item item-clone">
     <div class="article">
@@ -44,7 +47,7 @@
                 <span class="opinion"><span class="background-@opinionBackground">@opinionLevel</span></span>
                 <a class="fa fa-eye" href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })"><span class="count">@article.ViewCount</span></a>
                 <a class="fa fa-comments" href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })"><span class="count">@article.CommentCount</span></a>
-                <a class="fa fa-thumb-tack" href="#"></a>
+                <a class="fa fa-thumb-tack @pinnedClass" href="#" data-article-id="@article.ArticleId" onclick="pinArticle($(this)); return false;"></a>
             </div>
         </div>
     </div><!-- .article -->   

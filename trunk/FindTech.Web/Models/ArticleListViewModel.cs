@@ -11,6 +11,7 @@ namespace FindTech.Web.Models
         public string Title { get; set; }
         public string TitleStyleClass { get; set; }
         public WidgetType WidgetType { get; set; }
-        public IEnumerable<ArticleViewModel> Articles { get; set; } 
+        public IEnumerable<ArticleViewModel> Articles { get; set; }
+        public string ClientId { get; set; }
     }
 }

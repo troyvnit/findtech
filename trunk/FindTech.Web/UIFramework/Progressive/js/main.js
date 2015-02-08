@@ -28,7 +28,29 @@ jQuery(window).load(function() {
           alert('You copied link of this article!');
       }
   });
+  $('#pinnedArticles ul li:gt(3)').hide();
+  $('#pinnedArticles ul li:lt(4)').show();
 });
+
+var pinArticle = function (thisObject) {
+    var articleId = thisObject.attr('data-article-id');
+    $.post("/Article/Pin", { articleId: articleId }, function(data) {
+        if (thisObject.hasClass('active')) {
+            thisObject.removeClass('active');
+            $('#list-item-article-' + articleId).remove();
+        } else {
+            thisObject.addClass('active');
+            $('#pinnedArticles ul').prepend(data);
+        }
+        $('#pinnedArticles ul li:gt(3)').hide();
+        $('#pinnedArticles ul li:lt(4)').show();
+        if ($('#pinnedArticles ul li').length > 5) {
+            $('#pinnedArticles .view-all').parent().show();
+        } else {
+            $('#pinnedArticles .view-all').parent().hide();
+        }
+    });
+};
 
 //Calculating The Browser Scrollbar Width
 var parent, child, scrollWidth, bodyWidth;
