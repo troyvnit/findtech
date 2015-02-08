@@ -6146,10 +6146,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/07/2015 09:02:39</publishTime>
     </File>
     <File Include="bin/FindTech.Services.dll">
-      <publishTime>02/07/2015 09:02:40</publishTime>
+      <publishTime>02/08/2015 23:09:13</publishTime>
     </File>
     <File Include="bin/FindTech.Web.dll">
-      <publishTime>02/07/2015 23:29:19</publishTime>
+      <publishTime>02/08/2015 23:09:18</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
       <publishTime>11/04/2014 18:18:06</publishTime>
@@ -7751,7 +7751,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:42:23</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/style.css">
-      <publishTime>02/07/2015 23:19:28</publishTime>
+      <publishTime>02/08/2015 22:27:43</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/video-js.min.css">
       <publishTime>01/06/2015 20:31:44</publishTime>
@@ -8504,7 +8504,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2015 21:38:37</publishTime>
     </File>
     <File Include="UIFramework/Progressive/js/main.js">
-      <publishTime>02/05/2015 21:30:55</publishTime>
+      <publishTime>02/08/2015 21:53:20</publishTime>
     </File>
     <File Include="UIFramework/Progressive/js/masonry.pkgd.min.js">
       <publishTime>01/06/2015 21:38:45</publishTime>
@@ -8665,6 +8665,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Article/_NewsBoxs.cshtml">
       <publishTime>01/15/2015 15:48:55</publishTime>
     </File>
+    <File Include="Views/Article/_Pinned.cshtml">
+      <publishTime>02/08/2015 12:31:17</publishTime>
+    </File>
     <File Include="Views/Article/_Widget.cshtml">
       <publishTime>02/05/2015 22:32:52</publishTime>
     </File>
@@ -8675,7 +8678,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:44:49</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>02/07/2015 23:05:33</publishTime>
+      <publishTime>02/08/2015 13:01:36</publishTime>
     </File>
     <File Include="Views/Home/UnderConstruction.cshtml">
       <publishTime>01/17/2015 11:00:59</publishTime>
@@ -8714,7 +8717,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2015 14:59:54</publishTime>
     </File>
     <File Include="Views/Shared/_ListItemArticleBox.cshtml">
-      <publishTime>02/02/2015 10:31:51</publishTime>
+      <publishTime>02/08/2015 13:29:20</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>10/27/2014 19:45:38</publishTime>
@@ -8723,16 +8726,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2015 10:31:51</publishTime>
     </File>
     <File Include="Views/Shared/_MiniListBox.cshtml">
-      <publishTime>02/07/2015 21:42:53</publishTime>
+      <publishTime>02/08/2015 21:50:01</publishTime>
     </File>
     <File Include="Views/Shared/_MiniSliderBox.cshtml">
       <publishTime>02/07/2015 23:06:43</publishTime>
     </File>
     <File Include="Views/Shared/_NewsBox.cshtml">
-      <publishTime>02/07/2015 21:38:57</publishTime>
+      <publishTime>02/08/2015 14:30:20</publishTime>
     </File>
     <File Include="Views/Shared/_ReviewBox.cshtml">
-      <publishTime>02/07/2015 23:09:22</publishTime>
+      <publishTime>02/08/2015 14:30:10</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>10/27/2014 19:44:49</publishTime>
@@ -8741,7 +8744,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:44:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/07/2015 23:29:25</publishTime>
+      <publishTime>02/08/2015 23:09:24</publishTime>
     </File>
   </ItemGroup>
 </Project>

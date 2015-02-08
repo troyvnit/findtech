@@ -28,8 +28,11 @@ jQuery(window).load(function() {
           alert('You copied link of this article!');
       }
   });
-  $('#pinnedArticles ul li:gt(3)').hide();
-  $('#pinnedArticles ul li:lt(4)').show();
+});
+
+
+jQuery(document).ready(function () {
+    showHideViewAll();
 });
 
 var pinArticle = function (thisObject) {
@@ -42,15 +45,24 @@ var pinArticle = function (thisObject) {
             thisObject.addClass('active');
             $('#pinnedArticles ul').prepend(data);
         }
-        $('#pinnedArticles ul li:gt(3)').hide();
-        $('#pinnedArticles ul li:lt(4)').show();
-        if ($('#pinnedArticles ul li').length > 5) {
-            $('#pinnedArticles .view-all').parent().show();
-        } else {
-            $('#pinnedArticles .view-all').parent().hide();
-        }
+        showHideViewAll();
     });
 };
+
+var showHideViewAll = function () {
+    $('#pinnedArticles ul li:gt(3)').hide();
+    $('#pinnedArticles ul li:lt(4)').show();
+    if ($('#pinnedArticles ul li').length > 6) {
+        $('#pinnedArticles .view-all').parent().show();
+    } else {
+        $('#pinnedArticles .view-all').parent().hide();
+    }
+    if ($('#pinnedArticles ul li').length < 3) {
+        $('#pinnedArticles .pinTips').show();
+    } else {
+        $('#pinnedArticles .pinTips').hide();
+    }
+}
 
 //Calculating The Browser Scrollbar Width
 var parent, child, scrollWidth, bodyWidth;

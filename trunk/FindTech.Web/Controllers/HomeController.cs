@@ -24,11 +24,11 @@ namespace FindTech.Web.Controllers
             ViewBag.Title =
                 "Tìm là thấy";
             ViewBag.Description = "Cổng thông tin công nghệ, thiết bị di động, so sánh sản phẩm công nghệ, đánh giá smart phone, tablet,...";
-            var hotArticles = articleService.Queryable().Where(a => a.IsHot == true).OrderByDescending(a => a.Priority).ThenByDescending(a => a.PublishedDate).Include(a => a.Source).Include(a => a.ArticleCategory).Select(Mapper.Map<ArticleViewModel>);
+            var hotArticles = articleService.GetHotArticles().Select(Mapper.Map<ArticleViewModel>);
             ViewBag.HotArticles = hotArticles;
-            var latestReviews = articleService.Queryable().Where(a => a.ArticleType == ArticleType.Reviews && a.IsHot != true).OrderByDescending(a => a.Priority).ThenByDescending(a => a.PublishedDate).Take(20).Include(a => a.Source).Include(a => a.ArticleCategory).Select(Mapper.Map<ArticleViewModel>);
+            var latestReviews = articleService.GetLatestReviews().Select(Mapper.Map<ArticleViewModel>);
             ViewBag.LatestReviews = latestReviews;
-            var popularReviews = articleService.Queryable().Where(a => a.ArticleType == ArticleType.Reviews && a.IsHot != true).OrderByDescending(a => a.ViewCount).ThenByDescending(a => a.Priority).ThenByDescending(a => a.PublishedDate).Take(4).Include(a => a.Source).Include(a => a.ArticleCategory).Select(Mapper.Map<ArticleViewModel>);
+            var popularReviews = articleService.GetPopularReviews(0, 4).Select(Mapper.Map<ArticleViewModel>);
             ViewBag.PopularReviews = popularReviews;
             return View();
         }
