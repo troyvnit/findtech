@@ -11322,34 +11322,34 @@ a.big-icon:hover {
   Custom
 *******************************************************************************/
 .background-primary {
-    background: #00ade0;
+    background: #00ade0 !important;
 }
 .background-info {
-    background: #0098ca;
+    background: #0098ca !important;
 }
 .background-success {
-    background: #738d00;
+    background: #738d00 !important;
 }
 .background-danger {
-    background: #c10841;
+    background: #c10841 !important;
 }
 .background-warning {
-    background: #f89406;
+    background: #f89406 !important;
 }
 .background-primary-hover:hover {
-    background: #00ade0;
+    background: #00ade0 !important;
 }
 .background-info-hover:hover {
-    background: #0098ca;
+    background: #0098ca !important;
 }
 .background-success-hover:hover {
-    background: #738d00;
+    background: #738d00 !important;
 }
 .background-danger-hover:hover {
-    background: #c10841;
+    background: #c10841 !important;
 }
 .background-warning-hover:hover {
-    background: #f89406;
+    background: #f89406 !important;
 }
 #main {
     padding: 46px 0;
@@ -11784,7 +11784,7 @@ a.big-icon:hover {
     color: #00ade0;
 }
 
-.articles .social .fa-thumb-tack:hover, .fa-thumb-tack .active{
+.articles .social .fa-thumb-tack:hover, .social a.fa.fa-thumb-tack.active{
     color: #f89406;
     font-size: 22px;
 }

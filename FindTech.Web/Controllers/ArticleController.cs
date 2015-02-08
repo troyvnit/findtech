@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
@@ -64,6 +65,32 @@ namespace FindTech.Web.Controllers
             var articles = query.OrderByDescending(a => a.Priority).ThenByDescending(a => a.PublishedDate).Skip(0).Take(20);
             articleListViewModel.Articles = articles.Select(Mapper.Map<ArticleViewModel>).ToList();
             return View(articleListViewModel);
+        }
+
+        public ActionResult _Pinned(ArticleListViewModel articleListViewModel)
+        {
+            if (Session["Pinned"] == null)
+            {
+                Session["Pinned"] = new List<ArticleViewModel>();
+            }
+            articleListViewModel.Articles = (List<ArticleViewModel>) Session["Pinned"];
+            return View(articleListViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Pin(int articleId)
+        {
+            var article = Mapper.Map<ArticleViewModel>(articleService.Find(articleId));
+            var pinnedArticles = (List<ArticleViewModel>)Session["Pinned"];
+            if (pinnedArticles.Select(a => a.ArticleId).Contains(articleId))
+            {
+                pinnedArticles.Remove(article);
+            }
+            else
+            {
+                pinnedArticles.Add(article);
+            }
+            return PartialView("_ListItemArticleBox", article);
         }
     }
 }

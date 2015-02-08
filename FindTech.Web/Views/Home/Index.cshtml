@@ -71,7 +71,8 @@
                 </div>
                 <div class="sidebar col-sm-12 col-md-3">
                     <div class="row">
-                        @{Html.RenderPartial("_MiniListBox", new ArticleListViewModel { Articles = popularReviews, Title = "Đánh giá phổ biến", TitleStyleClass = "fa fa-eye background-00ade0" });}
+                        @{Html.RenderAction("_Pinned", "Article", new { articleListViewModel = new ArticleListViewModel { WidgetType = WidgetType.MiniList, Title = "Đã ghim", TitleStyleClass = "fa fa-thumb-tack background-warning", ClientId = "pinnedArticles"} });}
+                        @{Html.RenderPartial("_MiniListBox", new ArticleListViewModel { Articles = popularReviews, Title = "Đánh giá phổ biến", TitleStyleClass = "fa fa-eye background-primary" });}
                         <aside class="widget facebook-widget col-sm-6 col-md-12">
                             <header>
                                 <h3 class="title">Facebook</h3>

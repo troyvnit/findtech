@@ -2,7 +2,7 @@
 @{
     var article = Model;
 }
-<li class="clearfix">
+<li class="clearfix" id="list-item-article-@article.ArticleId">
     <a href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })" class="article-avatar">
         <img src="@article.Avatar" width="72" height="72" alt="" title="">
         <h2 class="title">

@@ -1939,6 +1939,7 @@
     <Content Include="Views\Shared\_MiniSliderBox.cshtml" />
     <Content Include="Views\Shared\_MiniListBox.cshtml" />
     <Content Include="Views\Article\_Widget.cshtml" />
+    <Content Include="Views\Article\_Pinned.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">
