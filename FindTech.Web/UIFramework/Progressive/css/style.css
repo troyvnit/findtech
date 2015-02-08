@@ -11878,6 +11878,10 @@ a.big-icon:hover {
     position: absolute;
 }
 
+.sidebar .widget {
+    margin: 0px 0px 60px;
+}
+
 .load-more {
     font-weight: bold;
     text-transform: uppercase;
@@ -12045,4 +12049,16 @@ a.big-icon:hover {
 .article-footer .source {
     float: right;
     margin-right: 0;
+}
+
+.pinTips {
+    font-size: 20px;
+    text-align: center;
+    background: none !important;
+}
+
+.pinTips span {
+    font-size: 22px;
+    color: #f89406;
+    margin: 0 10px;
 }

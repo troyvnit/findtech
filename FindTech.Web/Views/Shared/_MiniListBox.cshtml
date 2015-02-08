@@ -1,9 +1,6 @@
-﻿@using FindTech.Web.Models
-@model FindTech.Web.Models.ArticleListViewModel
+﻿@model FindTech.Web.Models.ArticleListViewModel
 @{
     var articles = Model.Articles;
-    var articleViewModels = articles as IList<ArticleViewModel> ?? articles.ToList();
-    var viewAllDisplay = articleViewModels.Count() > 4 || Model.ClientId != "pinnedArticles" ? "display: block" : "display: none";
 }
 
 <aside class="widget articles col-sm-6 col-md-12" id="@Model.ClientId">
@@ -11,11 +8,15 @@
         <span class="@Model.TitleStyleClass"></span><h2 class="title">@Model.Title</h2>
     </div>
     <ul>
-        @foreach (var article in articleViewModels)
+        @foreach (var article in articles)
         {
             Html.RenderPartial("_ListItemArticleBox", article);
         }
-        <li class="action" style="@viewAllDisplay">
+        @if (Model.ClientId == "pinnedArticles")
+        {
+            <li class="pinTips">Bấm <span class="fa fa-thumb-tack"></span> để ghim bài viết</li>
+        }
+        <li class="action" >
             <a href="#" class="view-all ">View all<span class="fa fa-arrow-right"></span></a>
         </li>
     </ul>
