@@ -166,13 +166,11 @@ namespace FindTech.Web.Areas.BO.Controllers
             return query;
         }
 
-
+        [ValidateInput(false)]
         public ActionResult Destroy(string models)
         {
             var articleBOViewModel = JsonConvert.DeserializeObject<ArticleGridBOViewModel>(models);
-            var articleId = articleBOViewModel.ArticleId;
-            var article = articleService.Query().Select().FirstOrDefault(a => a.ArticleId == articleId);
-            //var article = Mapper.Map<Article>(articleBOViewModel);
+            var article = Mapper.Map<Article>(articleBOViewModel);
             article.IsDeleted = true;
             articleService.Update(article);
             var result = unitOfWork.SaveChanges();
@@ -180,7 +178,7 @@ namespace FindTech.Web.Areas.BO.Controllers
         }
 
         [ValidateInput(false)]
-        public async Task<ActionResult> Update(string models)
+        public ActionResult Update(string models)
         {
             var articleBOViewModel = JsonConvert.DeserializeObject<ArticleGridBOViewModel>(models);
             var article = Mapper.Map<Article>(articleBOViewModel);
