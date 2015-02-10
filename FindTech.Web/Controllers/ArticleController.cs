@@ -36,7 +36,7 @@ namespace FindTech.Web.Controllers
             if (article == null) return null;
             ViewBag.Article = Mapper.Map<ArticleViewModel>(article);
             var articles = articleService.Queryable().OrderByDescending(a => a.PublishedDate).Take(10);
-            ViewBag.Articles = articles.Select(Mapper.Map<ArticleViewModel>);
+            ViewBag.Articles = articles.Select(Mapper.Map<ArticleViewModel>).ToList();
             article.ViewCount++;
             articleService.Update(article);
             unitOfWork.SaveChangesAsync();

@@ -21,150 +21,171 @@
 </div>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51a2fc0f2f4412f7" async="async"></script>
 <section id="article">
-    <header class="page-header">
-        <div class="container">
-            <div class="col-sm-9 col-md-9">
-                <div class="row">
-                    @if (article != null)
-                    {
-                    <h1 class="title">@article.Title</h1>
-                    <div class="entry-meta">
-                        <div class="posted-info"><span class="blurry-text">Đăng:</span><strong> @article.PublishedDate.ToString("dd MMM yy HH:mm:ss", new CultureInfo("vi-VN"))<span class="separator">|</span><span class="blurry-text">Bởi:</span> @article.CreatedUserDisplayName</strong></div>
-                        <span class="meta btn-icon tags">
-                            <span class="blurry-text">Nhãn:</span>
-                            @if (article.Tags != null)
-                            {
-                                foreach (var tag in article.Tags.Split(','))
-                                {
-                                    <a href="#">@tag</a>
-                                }
-                            }
-                            else
-                            {
-                                foreach (var tag in article.SeoTitle.Split('-'))
-                                {
-                                    <a href="#">@tag</a>
-                                }
-                            }
-                        </span>
-
-                        <div class="list-group">
-                            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                            <a href="#" class="list-group-item">Cras sit amet nibh libero</a>
-                            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        </div>
-                    </div>
-                    }
-                    else
-                    {
-                    <h1 class="title">Không tìm thấy bài viết</h1>
-                    }
-                </div>
-            </div>
-        </div>
-    </header>
-    @if (article != null)
-    {
-        <div class="container">
+    <div class="container">
+        <div class="content">
             <div class="row">
-                <div class="content blog blog-post col-sm-9 col-md-9">
-                    <article class="post">
-                        <div class="entry-content">
-                            @Html.Raw(article.Content)
+                <div class="col-sm-12 col-md-9">
+                    <header class="page-header">
+                        <div class="container-fluid">
+                                <div class="row">
+                                    @if (article != null)
+                                    {
+                                        <h1 class="title">@article.Title</h1>
+                                        <div class="entry-meta">
+                                            <div class="posted-info"><span class="blurry-text">Đăng:</span><strong> @article.PublishedDate.ToString("dd MMM yy HH:mm:ss", new CultureInfo("vi-VN"))<span class="separator">|</span><span class="blurry-text">Bởi:</span> @article.CreatedUserDisplayName</strong></div>
+                                            <span class="meta btn-icon tags">
+                                                <span class="blurry-text">Nhãn:</span>
+                                                @if (article.Tags != null)
+                                                {
+                                                    foreach (var tag in article.Tags.Split(','))
+                                                    {
+                                                        <a href="#">@tag</a>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    foreach (var tag in article.SeoTitle.Split('-'))
+                                                    {
+                                                        <a href="#">@tag</a>
+                                                    }
+                                                }
+                                            </span>
+                                            <span class="go-to-page pull-right"><i class="fa fa-bars"></i>Đi đến trang</span>
+                                            <div class="list-group">
+                                                <a href="#" class="list-group-item"><i class="fa fa-chevron-circle-right"></i>Giới thiệu</a>
+                                                <a href="#" class="list-group-item"><i class="fa fa-chevron-circle-right"></i>Màn hình và camera</a>
+                                                <a href="#" class="list-group-item"><i class="fa fa-chevron-circle-right"></i>Tính năng</a>
+                                                <a href="#" class="list-group-item"><i class="fa fa-chevron-circle-right"></i>Pin và bộ nhớ</a>
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <h1 class="title">Không tìm thấy bài viết</h1>
+                                    }
+                                </div>
                         </div>
-                        <div class="opinion">
-                            <span class="title">Đánh giá bài viết: </span>
-                            <a href="#" class="background-success-hover">Tuyệt</a>
-                            <a href="#" class="background-primary-hover">Hay</a>
-                            <a href="#" class="background-warning-hover">Tạm</a>
-                            <a href="#" class="background-danger-hover">Dở</a>
-                        </div>
-                        <div class="article-footer">
-                            <div class="addthis_sharing_toolbox"></div>
-                            <div class="social">
-                                <a class="fa fa-share-alt" id="zclip" href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle }, this.Request.Url.Scheme)"></a>
+                    </header>
+                    <div class="content blog blog-post">
+                        <article class="post">
+                            <div class="entry-content">
+                                @Html.Raw(article.Content)
+                                @foreach (var contentSection in article.ContentSections)
+                                {
+                                    <section class="content-section">
+                                        <h4 class="title">@contentSection.SectionTitle</h4>
+                                        <i class="description">@Html.Raw(contentSection.SectionDescription)</i>
+                                        <span class="content">@Html.Raw(contentSection.SectionContent)</span>
+                                    </section>
+                                }
                             </div>
-                            <div class="link">
-                                <input type="text" readonly="readonly" placeholder="Link" onclick="$(this).select();" value="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle }, this.Request.Url.Scheme)">
+                            <div class="opinion">
+                                <span class="title">Đánh giá bài viết: </span>
+                                <a href="#" class="background-success-hover">Tuyệt</a>
+                                <a href="#" class="background-primary-hover">Hay</a>
+                                <a href="#" class="background-warning-hover">Tạm</a>
+                                <a href="#" class="background-danger-hover">Dở</a>
                             </div>
-                            <div class="addthis_native_toolbox"></div>
-                            <div class="source">
-                                <span class="blurry-text">Tac gia: </span><strong>@article.Author</strong><br/>
-                                <span class="blurry-text">Nguon: </span><strong>@article.SourceName</strong>
+                            <div class="article-footer">
+                                <div class="addthis_sharing_toolbox"></div>
+                                <div class="social">
+                                    <a class="fa fa-share-alt" id="zclip" href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle }, this.Request.Url.Scheme)"></a>
+                                </div>
+                                <div class="link">
+                                    <input type="text" readonly="readonly" placeholder="Link" onclick="$(this).select();" value="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle }, this.Request.Url.Scheme)">
+                                </div>
+                                <div class="addthis_native_toolbox"></div>
+                                <div class="source">
+                                    <span class="blurry-text">Tác giả: </span><strong>@article.Author</strong><br />
+                                    <span class="blurry-text">Nguồn: </span><strong>@article.SourceName</strong>
+                                </div>
                             </div>
-                        </div>
-                    </article><!-- .post -->
-                    @{Html.RenderPartial("_MiniSliderBox", new ArticleListViewModel { Articles = articles, Title = "Thủ thuật" });}
-                    <h3 class="title slim">Comments</h3>
-                    <ul class="commentlist">
-                        <li>
-                            <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
-                            <div class="meta">
-                                <span>Mike Example</span>,
-                                <span class="time">03.11.2013, 10:45:</span>
+                            <div class="article-paging">
+                                <a href="#" class="next-page"><strong>Trang kế</strong> <i class="fa fa-chevron-right"></i> Màn hình và camera</a>
+                                <div class="pagination-box pull-right">
+                                    <ul class="pagination">
+                                        <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                        <li class="active"><span>1</span></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li class="disabled"><a href="#">...</a></li>
+                                        <li><a href="#">9</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <p class="description">
-                                Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </p>
-                        </li>
-                        <li>
-                            <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
-                            <div class="meta">
-                                <span>Mike Example</span>,
-                                <span class="time">03.11.2013, 10:45:</span>
-                            </div>
-                            <p class="description">
-                                Etiam mollis volutpat odio, id euismod justo gravida a. Aliquam erat volutpat. Phasellus faucibus venenatis lorem, vitae commodo elit pretium et. Duis rhoncus lobortis congue. Vestibulum et purus dui, vel porta lectus. Sed vulputate pulvinar adipiscing. It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </p>
-                        </li>
-                        <li>
-                            <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
-                            <div class="meta">
-                                <span>Mike Example</span>,
-                                <span class="time">03.11.2013, 10:45:</span>
-                            </div>
-                            <p class="description">
-                                Etiam mollis volutpat odio, id euismod justo gravida a. Aliquam erat volutpat. Phasellus faucibus venenatis lorem, vitae commodo elit pretium et. Duis rhoncus lobortis congue. Vestibulum et purus dui, vel porta lectus. Sed vulputate pulvinar adipiscing. It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </p>
-                        </li>
-                    </ul>
+                        </article><!-- .post -->
+                        @{Html.RenderPartial("_MiniSliderBox", new ArticleListViewModel { Articles = articles, Title = "Thủ thuật" });}
+                        <h3 class="title slim">Comments</h3>
+                        <ul class="commentlist">
+                            <li>
+                                <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
+                                <div class="meta">
+                                    <span>Mike Example</span>,
+                                    <span class="time">03.11.2013, 10:45:</span>
+                                </div>
+                                <p class="description">
+                                    Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                            </li>
+                            <li>
+                                <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
+                                <div class="meta">
+                                    <span>Mike Example</span>,
+                                    <span class="time">03.11.2013, 10:45:</span>
+                                </div>
+                                <p class="description">
+                                    Etiam mollis volutpat odio, id euismod justo gravida a. Aliquam erat volutpat. Phasellus faucibus venenatis lorem, vitae commodo elit pretium et. Duis rhoncus lobortis congue. Vestibulum et purus dui, vel porta lectus. Sed vulputate pulvinar adipiscing. It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                            </li>
+                            <li>
+                                <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
+                                <div class="meta">
+                                    <span>Mike Example</span>,
+                                    <span class="time">03.11.2013, 10:45:</span>
+                                </div>
+                                <p class="description">
+                                    Etiam mollis volutpat odio, id euismod justo gravida a. Aliquam erat volutpat. Phasellus faucibus venenatis lorem, vitae commodo elit pretium et. Duis rhoncus lobortis congue. Vestibulum et purus dui, vel porta lectus. Sed vulputate pulvinar adipiscing. It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                            </li>
+                        </ul>
 
-                    <h3 class="title slim">Leave a Reaply</h3>
+                        <h3 class="title slim">Leave a Reaply</h3>
 
-                    <form class="comments-form">
-                        <label>Name: <span class="required">*</span></label>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <input class="form-control" type="text">
+                        <form class="comments-form">
+                            <label>Name: <span class="required">*</span></label>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <input class="form-control" type="text">
+                                </div>
                             </div>
-                        </div>
 
-                        <label>Email Adress: <span class="required">*</span></label>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <input class="form-control" type="email">
+                            <label>Email Adress: <span class="required">*</span></label>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <input class="form-control" type="email">
+                                </div>
                             </div>
-                        </div>
-                        <label>Comment: </label>
-                        <div class="row">
-                            <div class="comment-box col-sm-10 col-md-10">
-                                <textarea class="form-control"></textarea>
-                                <i>Note: HTML is not translated!</i>
+                            <label>Comment: </label>
+                            <div class="row">
+                                <div class="comment-box col-sm-10 col-md-10">
+                                    <textarea class="form-control"></textarea>
+                                    <i>Note: HTML is not translated!</i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="button-set">
-                            <span class="required pull-right"><b>*</b> Required Field</span>
-                            <button class="btn btn-default">Submit</button>
-                        </div>
-                    </form>
-                </div><!-- .content -->
+                            <div class="clearfix"></div>
+                            <div class="button-set">
+                                <span class="required pull-right"><b>*</b> Required Field</span>
+                                <button class="btn btn-default">Submit</button>
+                            </div>
+                        </form>
+                    </div><!-- .content -->
+                </div>
                 <div class="sidebar col-sm-3 col-md-3">
                     @{Html.RenderPartial("_MiniListBox", new ArticleListViewModel { Articles = articles, Title = "Bài viết mới nhất", TitleStyleClass = "fa fa-eye background-00ade0" });}
                 </div>
                 <div class="clearfix"></div>
-            </div><!-- .content -->
+            </div>
         </div>
-    }
+    </div>
 </section><!-- #main -->

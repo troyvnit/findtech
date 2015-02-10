@@ -12000,6 +12000,38 @@ a.big-icon:hover {
     z-index: 10;
 }
 
+#article .entry-meta .list-group .list-group-item:first-child {
+    border-radius: 0;
+}
+
+#article .entry-meta .list-group .list-group-item {
+    background: #f2f2f2;
+    color: #7f7f7f;
+}
+
+#article .entry-meta .list-group .list-group-item:hover {
+    transition: none;
+    color: #00ade0;
+}
+
+#article .entry-meta .list-group .list-group-item i{
+    margin-right: 10px;
+}
+
+#article .entry-meta .go-to-page {
+    background: #00ade0;
+    color: white;
+    text-transform: uppercase;
+    padding: 9px 20px;
+    font-size: 13px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+#article .entry-meta .go-to-page i {
+    margin-right: 10px;
+}
+
 .article-footer {
     margin-top: 20px;
     height: 50px;
@@ -12010,6 +12042,37 @@ a.big-icon:hover {
     display: inline-block;
     float: left;
     margin-right: 10px;
+}
+
+.article-paging .next-page {
+    display: inline-block;
+    background: #00ade0;
+    color: white;
+    padding: 5px 20px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.article-paging .next-page strong{
+    text-transform: uppercase;
+}
+
+.article-paging .pagination-box {
+    display: inline-block;
+    margin: 14px 0 0;
+}
+
+.article-paging .pagination-box .pagination {
+    margin: 0;
+}
+
+.article-paging .pagination-box .pagination > li > a, .article-paging .pagination-box .pagination > li > span{
+    margin: 0 0 0 5px;
+}
+
+.article-paging .next-page i {
+    font-size: 14px;
+    padding: 0 10px;
 }
 
 .addthis_native_toolbox {
@@ -12061,4 +12124,21 @@ a.big-icon:hover {
     font-size: 22px;
     color: #f89406;
     margin: 0 10px;
+}
+
+.entry-content .content-section .title{
+    font-weight: normal;
+    margin: 30px 0 5px 0;
+}
+
+.entry-content .content-section .description{
+    font-size: 16px;
+    border-left: 1px solid #e1e1e1;
+    display: inline-block;
+    padding-left: 15px;
+    font-family: Georgia;
+    margin-bottom: 10px;
+}
+
+.entry-content .content-section .content{
 }

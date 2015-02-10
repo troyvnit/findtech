@@ -38,6 +38,9 @@ namespace FindTech.Web.Areas.BO.CommonFunction
                         case "\\":
                             stringBuilder.Append("-");
                             break;
+                        case "đ":
+                            stringBuilder.Append("d");
+                            break;
                         default:
                             stringBuilder.Append(c);
                             break;
