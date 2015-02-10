@@ -302,6 +302,10 @@ namespace FindTech.Web.Areas.BO.Controllers
                     var existedArticle = Mapper.Map<Article>(articleBOViewModel);
                     existedArticle.CreatedUserId = CurrentUser.Id;
                     existedArticle.CreatedUserDisplayName = CurrentUser.DisplayName;
+
+                    existedArticle.Content = WebUtility.HtmlDecode(existedArticle.Content);
+                    existedArticle.Description = WebUtility.HtmlDecode(existedArticle.Description);
+
                     articleService.Update(existedArticle);
                     unitOfWork.SaveChanges();
                     articleId = existedArticle.ArticleId;
@@ -312,6 +316,10 @@ namespace FindTech.Web.Areas.BO.Controllers
                 var newArticle = Mapper.Map<Article>(articleBOViewModel);
                 newArticle.CreatedUserId = CurrentUser.Id;
                 newArticle.CreatedUserDisplayName = CurrentUser.DisplayName;
+
+                newArticle.Content = WebUtility.HtmlDecode(newArticle.Content);
+                newArticle.Description = WebUtility.HtmlDecode(newArticle.Description);
+
                 articleService.Insert(newArticle);
                 unitOfWork.SaveChanges();
                 articleId = newArticle.ArticleId;

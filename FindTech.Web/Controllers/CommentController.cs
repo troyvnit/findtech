@@ -25,5 +25,13 @@ namespace FindTech.Web.Controllers
         {
             return Json(false);
         }
+        public ActionResult Update(string comment)
+        {
+            return Json(false);
+        }
+        public ActionResult Delete(string comment)
+        {
+            return Json(false);
+        }
     }
 }
