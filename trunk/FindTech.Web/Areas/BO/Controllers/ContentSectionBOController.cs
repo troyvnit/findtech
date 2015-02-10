@@ -11,6 +11,7 @@ using FindTech.Services;
 using FindTech.Web.Areas.BO.Models;
 using Newtonsoft.Json;
 using Repository.Pattern.UnitOfWork;
+using System.Net;
 
 namespace FindTech.Web.Areas.BO.Controllers
 {
@@ -53,6 +54,10 @@ namespace FindTech.Web.Areas.BO.Controllers
         public ActionResult Create(ContentSectionBOViewModel contentSectionBOViewModel)
         {
             var contentSection = Mapper.Map<ContentSection>(contentSectionBOViewModel);
+
+            contentSection.SectionContent = WebUtility.HtmlDecode(contentSection.SectionContent);
+            contentSection.SectionDescription = WebUtility.HtmlDecode(contentSection.SectionDescription);
+
             if (contentSection.ContentSectionId != 0)
             {
                 var count =
@@ -96,6 +101,10 @@ namespace FindTech.Web.Areas.BO.Controllers
             for (var i = 0; i < contentSectionBOViewModels.Count; i++)
             {
                 var contentSectionBOViewModel = contentSectionBOViewModels.ElementAt(i);
+
+                contentSectionBOViewModel.SectionContent = WebUtility.HtmlDecode(contentSectionBOViewModel.SectionContent);
+                contentSectionBOViewModel.SectionDescription = WebUtility.HtmlDecode(contentSectionBOViewModel.SectionDescription);
+
                 var contentSection = Mapper.Map<ContentSection>(contentSectionBOViewModel);
                 contentSection.ArticleId = articleId;
                 contentSectionService.Update(contentSection);
