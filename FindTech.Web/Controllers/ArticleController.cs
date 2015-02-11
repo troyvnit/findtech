@@ -15,11 +15,13 @@ namespace FindTech.Web.Controllers
     public class ArticleController : Controller
     {
         private IArticleService articleService { get; set; }
+        private IContentSectionService contentSectionService { get; set; }
         private IUnitOfWorkAsync unitOfWork { get; set; }
 
-        public ArticleController(IUnitOfWorkAsync unitOfWork, IArticleService articleService)
+        public ArticleController(IUnitOfWorkAsync unitOfWork, IArticleService articleService, IContentSectionService contentSectionService)
         {
             this.articleService = articleService;
+            this.contentSectionService = contentSectionService;
             this.unitOfWork = unitOfWork;
         }
         // GET: Article
@@ -30,17 +32,19 @@ namespace FindTech.Web.Controllers
         //    return View();
         //}
 
-        public ActionResult Detail(string seoTitle)
+        public ActionResult Detail(string seoTitle, int page = 1)
         {
-            var article = articleService.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).Include(a => a.ContentSections).Include(a => a.Opinions).FirstOrDefault(a => a.SeoTitle == seoTitle);
+            var article = articleService.GetArticleDetail(seoTitle, page);
             if (article == null) return null;
-            ViewBag.Article = Mapper.Map<ArticleViewModel>(article);
-            var articles = articleService.Queryable().OrderByDescending(a => a.PublishedDate).Take(10);
+            article.ContentSections = contentSectionService.GetContentSections(article.ArticleId, page).ToList();
+            var contentSectionPages = contentSectionService.GetContentSectionPages(article.ArticleId, page);
+            ViewBag.ContentSectionPages = contentSectionPages.Select(a => new ContentSectionPageViewModel { IsCurrentPage = (bool)a.GetType().GetProperty("IsCurrentPage").GetValue(a), PageName = (string)a.GetType().GetProperty("PageName").GetValue(a), PageNumber = (int)a.GetType().GetProperty("PageNumber").GetValue(a) }).ToList();
+            var articles = articleService.GetLatestReviews(0, 4);
             ViewBag.Articles = articles.Select(Mapper.Map<ArticleViewModel>).ToList();
             article.ViewCount++;
             articleService.Update(article);
             unitOfWork.SaveChangesAsync();
-            return View();
+            return View(Mapper.Map<ArticleViewModel>(article));
         }
 
         public ActionResult _NewsBoxs(int skip = 0, int take = 20)

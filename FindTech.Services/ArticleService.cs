@@ -13,7 +13,7 @@ namespace FindTech.Services
         IEnumerable<Article> GetHotArticles();
         IEnumerable<Article> GetLatestReviews(int skip = 0, int take = 20);
         IEnumerable<Article> GetPopularReviews(int skip = 0, int take = 20);
-
+        Article GetArticleDetail(string seoTitle, int page);
     }
 
     public class ArticleService : Service<Article>, IArticleService
@@ -61,6 +61,12 @@ namespace FindTech.Services
                     .Take(take)
                     .Include(a => a.Source)
                     .Include(a => a.ArticleCategory);
-        } 
+        }
+
+        public Article GetArticleDetail(string seoTitle, int page)
+        {
+            return _articleRepository.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).Include(a => a.Opinions).FirstOrDefault(a => a.SeoTitle == seoTitle);
+        }
+
     }
 }
