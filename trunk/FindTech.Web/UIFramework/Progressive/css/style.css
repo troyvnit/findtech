@@ -12138,6 +12138,7 @@ a.big-icon:hover {
     padding-left: 15px;
     font-family: Georgia;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .entry-content .content-section .content{

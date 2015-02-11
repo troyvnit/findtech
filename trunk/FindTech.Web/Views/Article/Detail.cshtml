@@ -2,10 +2,13 @@
 @using System.Globalization
 @using FindTech.Entities.Models.Enums
 @using FindTech.Web.Models
-
+@model ArticleViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var article = (ArticleViewModel) ViewBag.Article;
+    var article = Model;
+    var contentSectionPages = (List<ContentSectionPageViewModel>) ViewBag.ContentSectionPages;
+    var currentPage = contentSectionPages.FirstOrDefault(p => p.IsCurrentPage);
+    var nextPage = currentPage != null ? contentSectionPages.FirstOrDefault(a => a.PageNumber == currentPage.PageNumber + 1) : null;
     var articles = (IEnumerable<ArticleViewModel>)ViewBag.Articles;
     ViewBag.Title = article.Title;
     ViewBag.Discription = article.Description;
@@ -13,9 +16,9 @@
 <div class="container">
     <div class="breadcrumb-box">
         <ul class="breadcrumb">
-            <li><a href="index.html">Home</a> </li>
-            <li><a href="/blog-view.html">Our Blog</a> </li>
-            <li class="active">Excepteur Sint Occaecat</li>
+            <li><a href="/">Home</a> </li>
+            <li><a href="/@article.ArticleSeoCategoryName">@article.ArticleCategoryName</a> </li>
+            <li class="active">@article.Title</li>
         </ul>
     </div><!-- .breadcrumb-box -->
 </div>
@@ -50,13 +53,23 @@
                                                     }
                                                 }
                                             </span>
-                                            <span class="go-to-page pull-right"><i class="fa fa-bars"></i>Đi đến trang</span>
-                                            <div class="list-group">
-                                                <a href="#" class="list-group-item"><i class="fa fa-chevron-circle-right"></i>Giới thiệu</a>
-                                                <a href="#" class="list-group-item"><i class="fa fa-chevron-circle-right"></i>Màn hình và camera</a>
-                                                <a href="#" class="list-group-item"><i class="fa fa-chevron-circle-right"></i>Tính năng</a>
-                                                <a href="#" class="list-group-item"><i class="fa fa-chevron-circle-right"></i>Pin và bộ nhớ</a>
-                                            </div>
+                                            @if (contentSectionPages.Count > 0)
+                                            {
+                                                <span class="go-to-page pull-right"><i class="fa fa-bars"></i>Đi đến trang</span>
+                                                <div class="list-group">
+                                                    @foreach (var contentSectionPage in contentSectionPages)
+                                                    {
+                                                        if (contentSectionPage.IsCurrentPage)
+                                                        {
+                                                            <span class="list-group-item"><i class="fa fa-chevron-circle-right"></i>@contentSectionPage.PageName</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <a href="#" class="list-group-item"><i class="fa fa-chevron-circle-right"></i>@contentSectionPage.PageName</a>
+                                                        }
+                                                    }
+                                                </div>
+                                            }
                                         </div>
                                     }
                                     else
@@ -100,20 +113,26 @@
                                     <span class="blurry-text">Nguồn: </span><strong>@article.SourceName</strong>
                                 </div>
                             </div>
+                        @if (contentSectionPages.Count > 0)
+                        {
                             <div class="article-paging">
-                                <a href="#" class="next-page"><strong>Trang kế</strong> <i class="fa fa-chevron-right"></i> Màn hình và camera</a>
+                                @if (nextPage != null)
+                                {
+                                    <a href="#" class="next-page"><strong>Trang kế</strong> <i class="fa fa-chevron-right"></i> @nextPage.PageName</a>
+                                }
                                 <div class="pagination-box pull-right">
                                     <ul class="pagination">
-                                        <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                                        <li class="active"><span>1</span></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li class="disabled"><a href="#">...</a></li>
-                                        <li><a href="#">9</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                        @*<li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>*@
+                                        @foreach (var contentSectionPage in contentSectionPages)
+                                        {
+                                            var activeClass = contentSectionPage.IsCurrentPage ? "active" : "";
+                                            <li class="@activeClass"><span>@contentSectionPage.PageNumber</span></li>
+                                        }
+                                        @*<li><a href="#"><i class="fa fa-angle-right"></i></a></li>*@
                                     </ul>
                                 </div>
                             </div>
+                        }
                         </article><!-- .post -->
                         @{Html.RenderPartial("_MiniSliderBox", new ArticleListViewModel { Articles = articles, Title = "Thủ thuật" });}
                         <h3 class="title slim">Comments</h3>

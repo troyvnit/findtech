@@ -251,6 +251,7 @@
     <Compile Include="Models\ArticleListViewModel.cs" />
     <Compile Include="Models\ArticleViewModel.cs" />
     <Compile Include="Models\CommentModel.cs" />
+    <Compile Include="Models\ContentSectionPageViewModel.cs" />
     <Compile Include="Models\OpinionViewModel.cs" />
     <Compile Include="Models\ContentSectionViewModel.cs" />
     <Compile Include="Models\Enums\WidgetType.cs" />
