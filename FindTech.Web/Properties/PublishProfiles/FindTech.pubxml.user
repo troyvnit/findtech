@@ -6146,10 +6146,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/07/2015 09:02:39</publishTime>
     </File>
     <File Include="bin/FindTech.Services.dll">
-      <publishTime>02/10/2015 23:35:17</publishTime>
+      <publishTime>02/12/2015 23:11:34</publishTime>
     </File>
     <File Include="bin/FindTech.Web.dll">
-      <publishTime>02/10/2015 23:35:21</publishTime>
+      <publishTime>02/12/2015 23:11:41</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
       <publishTime>11/04/2014 18:18:06</publishTime>
@@ -7751,7 +7751,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:42:23</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/style.css">
-      <publishTime>02/10/2015 23:01:13</publishTime>
+      <publishTime>02/12/2015 22:35:10</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/video-js.min.css">
       <publishTime>01/06/2015 20:31:44</publishTime>
@@ -8660,7 +8660,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:37</publishTime>
     </File>
     <File Include="Views/Article/Detail.cshtml">
-      <publishTime>02/10/2015 22:59:07</publishTime>
+      <publishTime>02/12/2015 23:08:29</publishTime>
     </File>
     <File Include="Views/Article/_NewsBoxs.cshtml">
       <publishTime>01/15/2015 15:48:55</publishTime>
