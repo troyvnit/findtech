@@ -24,7 +24,7 @@ namespace FindTech.Services
         public IEnumerable<object> GetContentSectionPages(int articleId, int currentPage)
         {
             var contentSections = _contentSectionRepository.Queryable().Include(a => a.Article)
-                .Where(a => a.ArticleId == articleId)
+                .Where(a => a.ArticleId == articleId).OrderBy(a => a.PageNumber)
                 .AsEnumerable();
             return
                 contentSections.GroupBy(a => a.PageNumber, a => a.SectionTitle,

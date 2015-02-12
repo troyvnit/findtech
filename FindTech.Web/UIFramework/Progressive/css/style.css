@@ -11993,11 +11993,16 @@ a.big-icon:hover {
     margin-right: 10px;
 }
 
-#article .entry-meta .list-group {
+#article .entry-meta .go-to-page .list-group {
     position: absolute;
     top: 58px;
     right: 0;
     z-index: 10;
+    display: none;
+}
+
+#article .entry-meta .go-to-page:hover .list-group{
+    display: block;
 }
 
 #article .entry-meta .list-group .list-group-item:first-child {
@@ -12009,9 +12014,14 @@ a.big-icon:hover {
     color: #7f7f7f;
 }
 
-#article .entry-meta .list-group .list-group-item:hover {
+#article .entry-meta .list-group .list-group-item:hover, #article .entry-meta .list-group span.list-group-item {
     transition: none;
     color: #00ade0;
+    font-weight: bold;
+}
+
+#article .entry-meta .list-group span.list-group-item {
+    font-style: italic;
 }
 
 #article .entry-meta .list-group .list-group-item i{
@@ -12026,6 +12036,7 @@ a.big-icon:hover {
     font-size: 13px;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
+    cursor: pointer;
 }
 
 #article .entry-meta .go-to-page i {

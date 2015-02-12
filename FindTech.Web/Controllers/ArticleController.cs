@@ -37,6 +37,7 @@ namespace FindTech.Web.Controllers
             var article = articleService.GetArticleDetail(seoTitle, page);
             if (article == null) return null;
             article.ContentSections = contentSectionService.GetContentSections(article.ArticleId, page).ToList();
+            var articleViewModel = Mapper.Map<ArticleViewModel>(article);
             var contentSectionPages = contentSectionService.GetContentSectionPages(article.ArticleId, page);
             ViewBag.ContentSectionPages = contentSectionPages.Select(a => new ContentSectionPageViewModel { IsCurrentPage = (bool)a.GetType().GetProperty("IsCurrentPage").GetValue(a), PageName = (string)a.GetType().GetProperty("PageName").GetValue(a), PageNumber = (int)a.GetType().GetProperty("PageNumber").GetValue(a) }).ToList();
             var articles = articleService.GetLatestReviews(0, 4);
@@ -44,7 +45,7 @@ namespace FindTech.Web.Controllers
             article.ViewCount++;
             articleService.Update(article);
             unitOfWork.SaveChangesAsync();
-            return View(Mapper.Map<ArticleViewModel>(article));
+            return View(articleViewModel);
         }
 
         public ActionResult _NewsBoxs(int skip = 0, int take = 20)
