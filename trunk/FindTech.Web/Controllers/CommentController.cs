@@ -41,9 +41,7 @@ namespace FindTech.Web.Controllers
                 var comment = Mapper.Map<Comment>(commentViewModel);
                 commentService.Insert(comment);
                 unitOfWork.SaveChanges();
-                //commentViewModel.Add(Mapper.Map<BrandBOViewModel>(brand));
-            //return Json(brandBOViewModels, JsonRequestBehavior.AllowGet);
-                return Json(false);
+                return Json(commentViewModel, JsonRequestBehavior.AllowGet);
         }
         public ActionResult Update(string comment)
         {
