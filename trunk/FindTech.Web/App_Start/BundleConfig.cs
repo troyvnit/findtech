@@ -116,6 +116,7 @@ namespace FindTech.Web
                     "~/UIFramework/Progressive/css/royalslider/royalslider.css",
                     "~/UIFramework/Progressive/css/royalslider/skins/minimal-white/rs-minimal-white.css",
                     "~/UIFramework/Progressive/css/layerslider/layerslider.css",
+                    "~/UIFramework/Progressive/css/jssorslider/jssorslider.css",
                     "~/UIFramework/Progressive/css/ladda.min.css",
                     "~/UIFramework/Progressive/css/datepicker.css",
                     "~/UIFramework/Progressive/css/jquery.scrollbar.css",
@@ -125,6 +126,9 @@ namespace FindTech.Web
                     "~/UIFramework/Progressive/css/customizer/home-pages-customizer.css",
                     "~/UIFramework/Progressive/css/bootstrap-tagsinput.css",
                     "~/UIFramework/Progressive/css/ie/ie.css"));
+
+            bundles.Add(new StyleBundle("~/fo/article/detail/css").Include(
+                    "~/UIFramework/Progressive/css/jssorslider/jssorslider.css"));
 
             bundles.Add(new ScriptBundle("~/fo/progressive/js").Include(
                     "~/UIFramework/Progressive/js/bootstrap.min.js",
@@ -162,6 +166,8 @@ namespace FindTech.Web
                     "~/UIFramework/Progressive/js/layerslider/greensock.js",
                     "~/UIFramework/Progressive/js/layerslider/layerslider.transitions.js",
                     "~/UIFramework/Progressive/js/layerslider/layerslider.kreaturamedia.jquery.js",
+                    "~/UIFramework/Progressive/js/jssorslider/jssor.js",
+                    "~/UIFramework/Progressive/js/jssorslider/jssor.slider.js",
                     "~/UIFramework/Progressive/js/revolution/jquery.themepunch.plugins.min.js",
                     "~/UIFramework/Progressive/js/revolution/jquery.themepunch.revolution.min.js",
                     "~/UIFramework/Progressive/js/bootstrapValidator.min.js",
@@ -174,6 +180,11 @@ namespace FindTech.Web
                     "~/UIFramework/Progressive/js/typeahead.js",
                     "~/UIFramework/Progressive/js/jquery.zclip.min.js",
                     "~/UIFramework/Progressive/js/main.js"));
+
+            bundles.Add(new ScriptBundle("~/fo/article/detail/js").Include(
+                   "~/UIFramework/Progressive/js/jssorslider/jssor.js",
+                   "~/UIFramework/Progressive/js/jssorslider/jssor.slider.js",
+                   "~/Content/Article/js/Detail.js"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

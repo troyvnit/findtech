@@ -9,11 +9,12 @@
     var contentSectionPages = (List<ContentSectionPageViewModel>) ViewBag.ContentSectionPages;
     var currentPage = contentSectionPages.FirstOrDefault(p => p.IsCurrentPage);
     var nextPage = currentPage != null ? contentSectionPages.FirstOrDefault(a => a.PageNumber == currentPage.PageNumber + 1) : null;
-    var minPageNumber = contentSectionPages.Min(a => a.PageNumber);
+    var minPageNumber = contentSectionPages.Count > 0 ? contentSectionPages.Min(a => a.PageNumber) : 0;
     var articles = (IEnumerable<ArticleViewModel>)ViewBag.Articles;
     ViewBag.Title = article.Title;
     ViewBag.Discription = article.Description;
 }
+@Styles.Render("~/fo/article/detail/css")
 <div class="container">
     <div class="breadcrumb-box">
         <ul class="breadcrumb">
@@ -85,7 +86,7 @@
                     <div class="content blog blog-post">
                         <article class="post">
                             <div class="entry-content">
-                                @if (currentPage.PageNumber == minPageNumber)
+                                @if (currentPage == null || currentPage.PageNumber == minPageNumber)
                                 {
                                     @Html.Raw(article.Content);
                                 }
@@ -95,6 +96,10 @@
                                         <h4 class="title">@contentSection.SectionTitle</h4>
                                         <i class="description">@Html.Raw(contentSection.SectionDescription)</i>
                                         <span class="content">@Html.Raw(contentSection.SectionContent)</span>
+                                        @if (contentSection.Images.Count > 0)
+                                        {
+                                            Html.RenderPartial("_ImageGallerySlider", new ImageListViewModel{ Images = contentSection.Images }); 
+                                        }
                                     </section>
                                 }
                             </div>
@@ -223,3 +228,4 @@
         </div>
     </div>
 </section><!-- #main -->
+@Scripts.Render("~/fo/article/detail/js")

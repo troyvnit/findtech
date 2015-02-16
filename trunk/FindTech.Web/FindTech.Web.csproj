@@ -252,6 +252,7 @@
     <Compile Include="Models\ArticleViewModel.cs" />
     <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\ContentSectionPageViewModel.cs" />
+    <Compile Include="Models\ImageListViewModel.cs" />
     <Compile Include="Models\OpinionViewModel.cs" />
     <Compile Include="Models\ContentSectionViewModel.cs" />
     <Compile Include="Models\Enums\WidgetType.cs" />
@@ -978,6 +979,7 @@
     <Content Include="Areas\BO\UIFramework\Validation\js\formValidation-bootstrap.js" />
     <Content Include="Areas\BO\UIFramework\Validation\js\formValidation.js" />
     <Content Include="Areas\BO\UIFramework\Validation\style\formValidation.css" />
+    <Content Include="Content\Article\js\Detail.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Areas\BO\UIFramework\Progressive\css\animate.css" />
     <Content Include="Areas\BO\UIFramework\Progressive\css\bootstrap-tagsinput.css" />
@@ -1375,6 +1377,7 @@
     <Content Include="UIFramework\Progressive\css\jquery.fancybox.css" />
     <Content Include="UIFramework\Progressive\css\jquery.scrollbar.css" />
     <Content Include="UIFramework\Progressive\css\jslider.css" />
+    <Content Include="UIFramework\Progressive\css\jssorslider\jssorslider.css" />
     <Content Include="UIFramework\Progressive\css\ladda.min.css" />
     <Content Include="UIFramework\Progressive\css\layerslider\css\blank.gif" />
     <Content Include="UIFramework\Progressive\css\layerslider\layerslider.css" />
@@ -1560,6 +1563,26 @@
     <Content Include="UIFramework\Progressive\img\fra-flag.png" />
     <Content Include="UIFramework\Progressive\img\ger-flag.png" />
     <Content Include="UIFramework\Progressive\img\jslider.png" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\find-out-more-bt.png" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\loading.gif" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\main_bg.jpg" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\main_bg.png" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s1.jpg" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s1t.jpg" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s2.png" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s2t.jpg" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s3.png" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s3t.jpg" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s4.png" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s4t.jpg" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s5.png" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s5t.jpg" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s6.png" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s6t.jpg" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s7.png" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s7t.jpg" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s8.png" />
+    <Content Include="UIFramework\Progressive\img\jssorslider\s8t.jpg" />
     <Content Include="UIFramework\Progressive\img\logo-alpha.png" />
     <Content Include="UIFramework\Progressive\img\logo.png" />
     <Content Include="UIFramework\Progressive\img\logo.svg" />
@@ -1670,6 +1693,13 @@
     <Content Include="UIFramework\Progressive\js\jquery.touchSwipe.min.js" />
     <Content Include="UIFramework\Progressive\js\jquery.tubular.1.0.js" />
     <Content Include="UIFramework\Progressive\js\jquery.zclip.min.js" />
+    <Content Include="UIFramework\Progressive\js\jssorslider\jssor.js" />
+    <Content Include="UIFramework\Progressive\js\jssorslider\jssor.player.ytiframe.js" />
+    <Content Include="UIFramework\Progressive\js\jssorslider\jssor.player.ytiframe.min.js" />
+    <Content Include="UIFramework\Progressive\js\jssorslider\jssor.slider.debug.min.js" />
+    <Content Include="UIFramework\Progressive\js\jssorslider\jssor.slider.js" />
+    <Content Include="UIFramework\Progressive\js\jssorslider\jssor.slider.min.js" />
+    <Content Include="UIFramework\Progressive\js\jssorslider\jssor.slider.mini.js" />
     <Content Include="UIFramework\Progressive\js\ladda.min.js" />
     <Content Include="UIFramework\Progressive\js\layerslider\greensock.js" />
     <Content Include="UIFramework\Progressive\js\layerslider\layerslider.kreaturamedia.jquery.js" />
@@ -1944,6 +1974,7 @@
     <Content Include="Views\Shared\_MiniListBox.cshtml" />
     <Content Include="Views\Article\_Widget.cshtml" />
     <Content Include="Views\Article\_Pinned.cshtml" />
+    <Content Include="Views\Shared\_ImageGallerySlider.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">

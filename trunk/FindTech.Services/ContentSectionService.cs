@@ -34,7 +34,7 @@ namespace FindTech.Services
 
         public IEnumerable<ContentSection> GetContentSections(int articleId, int page)
         {
-            return _contentSectionRepository.Queryable().Where(a => a.ArticleId == articleId && a.PageNumber == page);
+            return _contentSectionRepository.Queryable().Include(a => a.Images).Where(a => a.ArticleId == articleId && a.PageNumber == page);
         }
     }
 }
