@@ -12,7 +12,7 @@
         switch (highestOpinion.OpinionLevel)
         {
             case OpinionLevel.Bad:
-                opinionBackground = "warning";
+                opinionBackground = "success";
                 opinionLevel = "Tệ";
                 break;
             case OpinionLevel.Average:
@@ -20,7 +20,7 @@
                 opinionLevel = "Tạm";
                 break;
             case OpinionLevel.Good:
-                opinionBackground = "success";
+                opinionBackground = "warning";
                 opinionLevel = "Hay";
                 break;
             case OpinionLevel.Excellent:
@@ -28,6 +28,7 @@
                 opinionLevel = "Tuyệt";
                 break;
         }
+    }
     }
     var pinnedArticles = Session["Pinned"] != null ? (List<ArticleViewModel>)Session["Pinned"] : new List<ArticleViewModel>();
     var pinnedClass = pinnedArticles.Count(a => a.ArticleId == article.ArticleId) > 0 ? "active" : "";

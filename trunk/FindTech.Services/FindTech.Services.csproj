@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="ArticleCategoryService.cs" />
     <Compile Include="CommentService.cs" />
+    <Compile Include="OpinionService.cs" />
     <Compile Include="ContentSectionService.cs" />
     <Compile Include="BrandService.cs" />
     <Compile Include="BenchmarkGroupService.cs" />
