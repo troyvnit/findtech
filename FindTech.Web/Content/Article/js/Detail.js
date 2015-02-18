@@ -84,15 +84,21 @@
         }
     };
 
-    var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
     //responsive code begin
     //you can remove responsive code if you don't want the slider scales while window resizes
     function ScaleSlider() {
-        var parentWidth = $('section.content-section').width();
-        if (parentWidth)
-            jssor_slider1.$ScaleWidth(parentWidth);
-        else
-            window.setTimeout(ScaleSlider, 30);
+        $.each($('.content-section > .jssor_slider_containers'), function (index, jssor_slider) {
+            var jssor_slider_id = $(jssor_slider).attr('id');
+            if (!jssor_sliders[jssor_slider_id]) {
+                jssor_sliders[jssor_slider_id] = new $JssorSlider$(jssor_slider_id, options);
+            }
+            var parentWidth = $('section.content-section').width();
+            if (parentWidth)
+                jssor_sliders[jssor_slider_id].$ScaleWidth(parentWidth);
+            else
+                window.setTimeout(ScaleSlider, 30);
+        });
     }
     ScaleSlider();
 
@@ -101,3 +107,12 @@
     $(window).bind("orientationchange", ScaleSlider);
     //responsive code end
 });
+
+var jssor_sliders = {};
+
+var rateOpinion = function (articleId, opinionLevel) {
+    $.post("/Article/RateOpinion", { articleId: articleId, opinionLevel: opinionLevel }, function (data) {
+        $('article.post .opinion a').hide();
+        $('article.post .opinion').append(data);
+    });
+};

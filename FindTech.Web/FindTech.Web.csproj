@@ -1975,6 +1975,7 @@
     <Content Include="Views\Article\_Widget.cshtml" />
     <Content Include="Views\Article\_Pinned.cshtml" />
     <Content Include="Views\Shared\_ImageGallerySlider.cshtml" />
+    <Content Include="Views\Shared\_OpinionPanel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">

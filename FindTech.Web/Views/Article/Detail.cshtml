@@ -1,5 +1,6 @@
 ﻿@using System.Activities.Statements
 @using System.Globalization
+@using AutoMapper
 @using FindTech.Entities.Models.Enums
 @using FindTech.Web.Models
 @model ArticleViewModel
@@ -85,7 +86,7 @@
                     </header>
                     <div class="content blog blog-post">
                         <article class="post">
-                            <div class="entry-content">
+                            <div class="entry-content frame-shadow-lifted">
                                 @if (currentPage == null || currentPage.PageNumber == minPageNumber)
                                 {
                                     @Html.Raw(article.Content);
@@ -98,17 +99,24 @@
                                         <span class="content">@Html.Raw(contentSection.SectionContent)</span>
                                         @if (contentSection.Images.Count > 0)
                                         {
-                                            Html.RenderPartial("_ImageGallerySlider", new ImageListViewModel{ Images = contentSection.Images }); 
+                                            Html.RenderPartial("_ImageGallerySlider", new ImageListViewModel { Images = contentSection.Images, ContentSectionId = contentSection.ContentSectionId });
                                         }
                                     </section>
                                 }
                             </div>
                             <div class="opinion">
                                 <span class="title">Đánh giá bài viết: </span>
-                                <a href="#" class="background-danger-hover">Tuyệt</a>
-                                <a href="#" class="background-primary-hover">Hay</a>
-                                <a href="#" class="background-success-hover">Tạm</a>
-                                <a href="#" class="background-warning-hover">Dở</a>
+                                @if (Session["RatedOpinion"] != null)
+                                {
+                                    Html.RenderPartial("_OpinionPanel", article.Opinions.Select(Mapper.Map<OpinionViewModel>));
+                                }
+                                else
+                                {
+                                    <a href="#" onclick="rateOpinion(@article.ArticleId, 4); return false;" class="background-danger-hover">Tuyệt</a>
+                                    <a href="#" onclick="rateOpinion(@article.ArticleId, 3); return false;" class="background-warning-hover">Hay</a>
+                                    <a href="#" onclick="rateOpinion(@article.ArticleId, 2); return false;" class="background-info-hover">Tạm</a>
+                                    <a href="#" onclick="rateOpinion(@article.ArticleId, 1); return false;" class="background-success-hover">Dở</a>
+                                }
                             </div>
                             <div class="article-footer">
                                 <div class="addthis_sharing_toolbox"></div>
@@ -155,7 +163,7 @@
                         }
                         </article><!-- .post -->
                         @{Html.RenderPartial("_MiniSliderBox", new ArticleListViewModel { Articles = articles, Title = "Thủ thuật" });}
-                        <h3 class="title slim">Comments</h3>
+                        @*<h3 class="title slim">Comments</h3>
                         <ul class="commentlist">
                             <li>
                                 <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
@@ -217,7 +225,7 @@
                                 <span class="required pull-right"><b>*</b> Required Field</span>
                                 <button class="btn btn-default">Submit</button>
                             </div>
-                        </form>
+                        </form>*@
                     </div><!-- .content -->
                 </div>
                 <div class="sidebar col-sm-3 col-md-3">

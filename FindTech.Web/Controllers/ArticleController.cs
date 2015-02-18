@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using AutoMapper;
+using FindTech.Entities.Models;
 using FindTech.Entities.Models.Enums;
 using FindTech.Services;
 using FindTech.Web.Models;
@@ -16,12 +17,14 @@ namespace FindTech.Web.Controllers
     {
         private IArticleService articleService { get; set; }
         private IContentSectionService contentSectionService { get; set; }
+        private IOpinionService opinionService { get; set; }
         private IUnitOfWorkAsync unitOfWork { get; set; }
 
-        public ArticleController(IUnitOfWorkAsync unitOfWork, IArticleService articleService, IContentSectionService contentSectionService)
+        public ArticleController(IUnitOfWorkAsync unitOfWork, IArticleService articleService, IContentSectionService contentSectionService, IOpinionService opinionService)
         {
             this.articleService = articleService;
             this.contentSectionService = contentSectionService;
+            this.opinionService = opinionService;
             this.unitOfWork = unitOfWork;
         }
         // GET: Article
@@ -34,7 +37,7 @@ namespace FindTech.Web.Controllers
 
         public ActionResult Detail(string seoTitle, int page = 1)
         {
-            var article = articleService.GetArticleDetail(seoTitle, page);
+            var article = articleService.GetArticleDetail(seoTitle);
             if (article == null) return null;
             article.ContentSections = contentSectionService.GetContentSections(article.ArticleId, page).ToList();
             var articleViewModel = Mapper.Map<ArticleViewModel>(article);
@@ -96,6 +99,24 @@ namespace FindTech.Web.Controllers
                 pinnedArticles.Add(article);
             }
             return PartialView("_ListItemArticleBox", article);
+        }
+
+        [HttpPost]
+        public ActionResult RateOpinion(int articleId, OpinionLevel opinionLevel)
+        {
+            var opinion = opinionService.GetOpinion(articleId, opinionLevel);
+            if (opinion == null)
+            {
+                opinionService.Insert(new Opinion { OpinionCount = 1, OpinionLevel = opinionLevel, ArticleId = articleId });
+            }
+            else
+            {
+                opinion.OpinionCount++;
+                opinionService.Update(opinion);
+            }
+            unitOfWork.SaveChanges();
+            Session["RatedOpinion"] = true;
+            return PartialView("_OpinionPanel", opinionService.GetOpinions(articleId).ToList().Select(Mapper.Map<OpinionViewModel>));
         }
     }
 }
