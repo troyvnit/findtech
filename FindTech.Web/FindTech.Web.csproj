@@ -251,9 +251,10 @@
     <Compile Include="Models\ArticleListViewModel.cs" />
     <Compile Include="Models\ArticleViewModel.cs" />
     <Compile Include="Models\CommentModel.cs" />
-<Compile Include="Models\ContentSectionPageViewModel.cs" />
+    <Compile Include="Models\ContentSectionPageViewModel.cs" />
     <Compile Include="Models\ImageListViewModel.cs" />
-<Compile Include="Models\Enums\CommentObjectType.cs" />    <Compile Include="Models\OpinionViewModel.cs" />
+    <Compile Include="Models\Enums\CommentObjectType.cs" />
+    <Compile Include="Models\OpinionViewModel.cs" />
     <Compile Include="Models\ContentSectionViewModel.cs" />
     <Compile Include="Models\Enums\WidgetType.cs" />
     <Compile Include="Models\Enums\SearchType.cs" />
@@ -1979,7 +1980,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindTech.Entities\FindTech.Entities.csproj">
-      <Project>{2C673343-C3AE-47F7-8ADB-1A739108B305}</Project>
+      <Project>{2c673343-c3ae-47f7-8adb-1a739108b305}</Project>
       <Name>FindTech.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\FindTech.Services\FindTech.Services.csproj">
