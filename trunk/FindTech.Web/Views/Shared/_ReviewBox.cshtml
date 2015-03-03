@@ -29,7 +29,6 @@
                 break;
         }
     }
-    }
     var pinnedArticles = Session["Pinned"] != null ? (List<ArticleViewModel>)Session["Pinned"] : new List<ArticleViewModel>();
     var pinnedClass = pinnedArticles.Count(a => a.ArticleId == article.ArticleId) > 0 ? "active" : "";
 }

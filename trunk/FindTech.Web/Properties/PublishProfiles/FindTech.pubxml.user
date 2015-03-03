@@ -6143,13 +6143,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:40</publishTime>
     </File>
     <File Include="bin/FindTech.Entities.dll">
-      <publishTime>02/07/2015 09:02:39</publishTime>
+      <publishTime>03/03/2015 10:36:19</publishTime>
     </File>
     <File Include="bin/FindTech.Services.dll">
-      <publishTime>02/12/2015 23:11:34</publishTime>
+      <publishTime>03/03/2015 10:36:20</publishTime>
     </File>
     <File Include="bin/FindTech.Web.dll">
-      <publishTime>02/12/2015 23:11:41</publishTime>
+      <publishTime>03/03/2015 10:36:25</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
       <publishTime>11/04/2014 18:18:06</publishTime>
@@ -6261,6 +6261,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>10/27/2014 19:45:26</publishTime>
+    </File>
+    <File Include="Content/Article/js/Detail.js">
+      <publishTime>02/18/2015 15:44:22</publishTime>
     </File>
     <File Include="Content/Site.css">
       <publishTime>11/10/2014 17:04:02</publishTime>
@@ -7516,6 +7519,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="UIFramework/Progressive/css/jslider.css">
       <publishTime>01/06/2015 20:31:28</publishTime>
     </File>
+    <File Include="UIFramework/Progressive/css/jssorslider/jssorslider.css">
+      <publishTime>02/18/2015 08:24:43</publishTime>
+    </File>
     <File Include="UIFramework/Progressive/css/ladda.min.css">
       <publishTime>01/06/2015 20:34:46</publishTime>
     </File>
@@ -7751,7 +7757,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:42:23</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/style.css">
-      <publishTime>02/12/2015 22:35:10</publishTime>
+      <publishTime>02/18/2015 15:11:04</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/video-js.min.css">
       <publishTime>01/06/2015 20:31:44</publishTime>
@@ -8134,6 +8140,66 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="UIFramework/Progressive/img/jslider.png">
       <publishTime>01/06/2015 20:43:41</publishTime>
     </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/find-out-more-bt.png">
+      <publishTime>02/20/2014 17:23:21</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/loading.gif">
+      <publishTime>02/20/2014 17:23:21</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/main_bg.jpg">
+      <publishTime>02/20/2014 17:23:21</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/main_bg.png">
+      <publishTime>02/20/2014 17:23:21</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s1.jpg">
+      <publishTime>02/20/2014 17:23:21</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s1t.jpg">
+      <publishTime>02/20/2014 17:23:21</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s2.png">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s2t.jpg">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s3.png">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s3t.jpg">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s4.png">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s4t.jpg">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s5.png">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s5t.jpg">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s6.png">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s6t.jpg">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s7.png">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s7t.jpg">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s8.png">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/img/jssorslider/s8t.jpg">
+      <publishTime>02/20/2014 17:23:22</publishTime>
+    </File>
     <File Include="UIFramework/Progressive/img/logo-alpha.png">
       <publishTime>01/08/2015 17:42:24</publishTime>
     </File>
@@ -8488,6 +8554,27 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="UIFramework/Progressive/js/jquery.zclip.min.js">
       <publishTime>01/31/2015 11:20:13</publishTime>
     </File>
+    <File Include="UIFramework/Progressive/js/jssorslider/jssor.js">
+      <publishTime>02/07/2015 16:00:39</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/js/jssorslider/jssor.player.ytiframe.js">
+      <publishTime>10/12/2014 18:24:00</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/js/jssorslider/jssor.player.ytiframe.min.js">
+      <publishTime>02/10/2015 09:54:05</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/js/jssorslider/jssor.slider.debug.min.js">
+      <publishTime>04/16/2014 06:35:04</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/js/jssorslider/jssor.slider.js">
+      <publishTime>02/10/2015 09:39:06</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/js/jssorslider/jssor.slider.min.js">
+      <publishTime>02/10/2015 09:53:55</publishTime>
+    </File>
+    <File Include="UIFramework/Progressive/js/jssorslider/jssor.slider.mini.js">
+      <publishTime>02/10/2015 09:53:58</publishTime>
+    </File>
     <File Include="UIFramework/Progressive/js/ladda.min.js">
       <publishTime>01/06/2015 21:38:46</publishTime>
     </File>
@@ -8504,7 +8591,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2015 21:38:37</publishTime>
     </File>
     <File Include="UIFramework/Progressive/js/main.js">
-      <publishTime>02/08/2015 21:53:20</publishTime>
+      <publishTime>02/16/2015 15:08:58</publishTime>
     </File>
     <File Include="UIFramework/Progressive/js/masonry.pkgd.min.js">
       <publishTime>01/06/2015 21:38:45</publishTime>
@@ -8660,7 +8747,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:37</publishTime>
     </File>
     <File Include="Views/Article/Detail.cshtml">
-      <publishTime>02/12/2015 23:08:29</publishTime>
+      <publishTime>02/18/2015 16:38:05</publishTime>
     </File>
     <File Include="Views/Article/_NewsBoxs.cshtml">
       <publishTime>01/15/2015 15:48:55</publishTime>
@@ -8710,6 +8797,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Shared/_HotArticleBox.cshtml">
       <publishTime>02/02/2015 10:31:51</publishTime>
     </File>
+    <File Include="Views/Shared/_ImageGallerySlider.cshtml">
+      <publishTime>02/18/2015 08:54:38</publishTime>
+    </File>
     <File Include="Views/Shared/_LargeSliderBox.cshtml">
       <publishTime>02/07/2015 23:05:06</publishTime>
     </File>
@@ -8732,10 +8822,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/07/2015 23:06:43</publishTime>
     </File>
     <File Include="Views/Shared/_NewsBox.cshtml">
-      <publishTime>02/08/2015 14:30:20</publishTime>
+      <publishTime>02/18/2015 09:02:39</publishTime>
+    </File>
+    <File Include="Views/Shared/_OpinionPanel.cshtml">
+      <publishTime>02/18/2015 15:53:39</publishTime>
     </File>
     <File Include="Views/Shared/_ReviewBox.cshtml">
-      <publishTime>02/08/2015 14:30:10</publishTime>
+      <publishTime>03/03/2015 10:34:07</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>10/27/2014 19:44:49</publishTime>
