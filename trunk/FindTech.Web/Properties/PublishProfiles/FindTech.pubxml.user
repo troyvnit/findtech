@@ -4469,40 +4469,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2015 21:29:30</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/HighContrast/editor.png">
-      <publishTime>11/10/2014 16:29:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/HighContrast/imagebrowser.png">
-      <publishTime>11/10/2014 16:29:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/HighContrast/indeterminate.gif">
-      <publishTime>11/10/2014 16:29:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/HighContrast/loading-image.gif">
-      <publishTime>11/10/2014 16:29:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/HighContrast/loading.gif">
-      <publishTime>11/10/2014 16:29:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/HighContrast/loading_2x.gif">
-      <publishTime>11/10/2014 16:29:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/HighContrast/markers.png">
-      <publishTime>11/10/2014 16:29:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/HighContrast/markers_2x.png">
-      <publishTime>11/10/2014 16:29:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/HighContrast/slider-h.gif">
-      <publishTime>11/10/2014 16:29:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/HighContrast/slider-v.gif">
-      <publishTime>11/10/2014 16:29:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/HighContrast/sprite.png">
-      <publishTime>11/10/2014 16:29:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/HighContrast/sprite_2x.png">
-      <publishTime>11/10/2014 16:29:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/images/back.png">
       <publishTime>01/06/2015 21:29:19</publishTime>
@@ -4526,7 +4526,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2015 21:28:39</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/kendo.black.mobile.min.css">
-      <publishTime>01/01/2015 15:09:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/kendo.blueopal.min.css">
       <publishTime>01/06/2015 21:28:33</publishTime>
@@ -4595,7 +4595,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2015 21:28:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/kendo.default.min.css">
-      <publishTime>01/01/2015 15:09:33</publishTime>
+      <publishTime>01/06/2015 21:29:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/kendo.default.mobile.min.css">
       <publishTime>01/06/2015 21:28:47</publishTime>
@@ -4625,7 +4625,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2015 21:28:33</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/kendo.mobile.all.min.css">
-      <publishTime>11/10/2014 16:29:32</publishTime>
+      <publishTime>01/06/2015 21:29:32</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/kendo.mobile.android.dark.min.css">
       <publishTime>01/06/2015 21:29:46</publishTime>
@@ -4907,40 +4907,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2015 21:29:02</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/Uniform/editor.png">
-      <publishTime>11/10/2014 16:29:34</publishTime>
+      <publishTime>01/06/2015 21:28:34</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/Uniform/imagebrowser.png">
-      <publishTime>11/10/2014 16:29:34</publishTime>
+      <publishTime>01/06/2015 21:28:34</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/Uniform/indeterminate.gif">
-      <publishTime>11/10/2014 16:29:34</publishTime>
+      <publishTime>01/06/2015 21:28:34</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/Uniform/loading-image.gif">
-      <publishTime>11/10/2014 16:29:34</publishTime>
+      <publishTime>01/06/2015 21:28:34</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/Uniform/loading.gif">
-      <publishTime>11/10/2014 16:29:34</publishTime>
+      <publishTime>01/06/2015 21:28:34</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/Uniform/loading_2x.gif">
-      <publishTime>11/10/2014 16:29:34</publishTime>
+      <publishTime>01/06/2015 21:28:34</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/Uniform/markers.png">
-      <publishTime>11/10/2014 16:29:34</publishTime>
+      <publishTime>01/06/2015 21:28:34</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/Uniform/markers_2x.png">
-      <publishTime>11/10/2014 16:29:34</publishTime>
+      <publishTime>01/06/2015 21:28:34</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/Uniform/slider-h.gif">
-      <publishTime>11/10/2014 16:29:34</publishTime>
+      <publishTime>01/06/2015 21:28:34</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/Uniform/slider-v.gif">
-      <publishTime>11/10/2014 16:29:34</publishTime>
+      <publishTime>01/06/2015 21:28:34</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/Uniform/sprite.png">
-      <publishTime>11/10/2014 16:29:34</publishTime>
+      <publishTime>01/06/2015 21:28:34</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/KendoUI/styles/Uniform/sprite_2x.png">
-      <publishTime>11/10/2014 16:29:34</publishTime>
+      <publishTime>01/06/2015 21:28:34</publishTime>
     </File>
     <File Include="Areas/BO/UIFramework/Progressive/css/animate.css">
       <publishTime>01/06/2015 21:22:43</publishTime>
@@ -8804,7 +8804,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/07/2015 23:05:06</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>02/02/2015 14:59:54</publishTime>
+      <publishTime>02/16/2015 15:24:54</publishTime>
     </File>
     <File Include="Views/Shared/_ListItemArticleBox.cshtml">
       <publishTime>02/08/2015 13:29:20</publishTime>
