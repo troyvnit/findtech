@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using FindTech.Entities.Models;
 using FindTech.Entities.Models.Enums;
+using FindTech.Repository.Repositories;
 using Repository.Pattern.Repositories;
 using Service.Pattern;
 
@@ -29,48 +30,29 @@ namespace FindTech.Services
         public IEnumerable<Article> GetHotArticles()
         {
             return
-                _articleRepository.Queryable()
-                    .Where(a => a.IsHot == true)
-                    .OrderByDescending(a => a.Priority)
-                    .ThenByDescending(a => a.PublishedDate)
-                    .Include(a => a.Source)
-                    .Include(a => a.ArticleCategory);
+                _articleRepository.GetHotArticles();
         }
 
         public IEnumerable<Article> GetLatestReviews(int skip = 0, int take = 20)
         {
             return
-                _articleRepository.Queryable()
-                    .Where(a => a.ArticleType == ArticleType.Reviews && a.IsHot != true)
-                    .OrderByDescending(a => a.Priority)
-                    .ThenByDescending(a => a.PublishedDate)
-                    .Skip(skip)
-                    .Take(take)
-                    .Include(a => a.Source)
-                    .Include(a => a.ArticleCategory);
+                _articleRepository.GetLatestReviews(skip, take);
         }
 
         public IEnumerable<Article> GetPopularReviews(int skip = 0, int take = 20)
         {
             return
-                _articleRepository.Queryable()
-                    .Where(a => a.ArticleType == ArticleType.Reviews && a.IsHot != true)
-                    .OrderByDescending(a => a.ViewCount)
-                    .ThenByDescending(a => a.Priority)
-                    .ThenByDescending(a => a.PublishedDate)
-                    .Skip(skip)
-                    .Take(take)
-                    .Include(a => a.Source)
-                    .Include(a => a.ArticleCategory);
+                _articleRepository.GetPopularReviews(skip, take);
         }
+
         public Article GetArticle(int articleId)
         {
-            return _articleRepository.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).Include(a => a.Opinions).FirstOrDefault(a => a.ArticleId == articleId);
+            return _articleRepository.GetArticle(articleId);
         }
 
         public Article GetArticleDetail(string seoTitle)
         {
-            return _articleRepository.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).Include(a => a.Opinions).FirstOrDefault(a => a.SeoTitle == seoTitle);
+            return _articleRepository.GetArticleDetail(seoTitle);
         }
 
     }
