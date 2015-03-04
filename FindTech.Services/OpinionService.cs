@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using FindTech.Entities.Models;
 using FindTech.Entities.Models.Enums;
+using FindTech.Repository.Repositories;
 using Repository.Pattern.Repositories;
 using Service.Pattern;
 
@@ -25,11 +26,11 @@ namespace FindTech.Services
 
         public Opinion GetOpinion(int articleId, OpinionLevel opinionLevel)
         {
-            return _opinionRepository.Queryable().FirstOrDefault(a => a.ArticleId == articleId && a.OpinionLevel == opinionLevel);
+            return _opinionRepository.GetOpinion(articleId, opinionLevel);
         }
         public IEnumerable<Opinion> GetOpinions(int articleId)
         {
-            return _opinionRepository.Queryable().Where(a => a.ArticleId == articleId);
+            return _opinionRepository.GetOpinions(articleId);
         }
     }
 }

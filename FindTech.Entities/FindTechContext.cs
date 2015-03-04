@@ -6,7 +6,7 @@ using Repository.Pattern.Ef6;
 
 namespace FindTech.Entities
 {
-    public class FindTechContext : DataContext
+    public partial class FindTechContext : DataContext
     {
         public FindTechContext()
             : base("Name=FindTechContext")

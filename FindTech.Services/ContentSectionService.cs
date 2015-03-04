@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 using FindTech.Entities.Models;
+using FindTech.Repository.Repositories;
 using Repository.Pattern.Repositories;
 using Service.Pattern;
 
@@ -23,9 +24,7 @@ namespace FindTech.Services
         }
         public IEnumerable<object> GetContentSectionPages(int articleId, int currentPage)
         {
-            var contentSections = _contentSectionRepository.Queryable().Include(a => a.Article)
-                .Where(a => a.ArticleId == articleId).OrderBy(a => a.PageNumber)
-                .AsEnumerable();
+            var contentSections = _contentSectionRepository.GetContentSectionPages(articleId, currentPage);
             return
                 contentSections.GroupBy(a => a.PageNumber, a => a.SectionTitle,
                     (key, p) =>
@@ -34,7 +33,7 @@ namespace FindTech.Services
 
         public IEnumerable<ContentSection> GetContentSections(int articleId, int page)
         {
-            return _contentSectionRepository.Queryable().Include(a => a.Images).Where(a => a.ArticleId == articleId && a.PageNumber == page);
+            return _contentSectionRepository.GetContentSections(articleId, page);
         }
     }
 }
