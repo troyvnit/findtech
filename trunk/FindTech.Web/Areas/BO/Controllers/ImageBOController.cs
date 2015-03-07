@@ -356,7 +356,9 @@ namespace FindTech.Web.Areas.BO.Controllers
 
         public virtual ActionResult CropImage(string imagePath, float scales, int ws, int hs, int xs, int ys, float scaler, int wr, int hr, int xr, int yr)
         {
-            string url = cloudinary.Api.UrlImgUp.Transform(new Transformation().Width((int)ws / scales).Height((int)hs / scales).Crop("crop").X((int)xs/scales).Y((int)ys/scales)).BuildUrl(imagePath);
+            string url = cloudinary.Api.UrlImgUp.Transform(new Transformation().Width((int)(ws/scales)).Height((int)(hs / scales)).Crop("crop").X((int)(xs/scales)).Y((int)(ys/scales))
+                .Chain().Width(275).Height(275).Crop("fill"))
+                .BuildUrl(imagePath);
             return Json(url);
 
             //crop(imagePath, scales, ws, hs, xs, ys);
