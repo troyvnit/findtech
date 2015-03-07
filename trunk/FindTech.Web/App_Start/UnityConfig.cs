@@ -2,6 +2,7 @@ using System;
 using System.Data.Entity;
 using FindTech.Entities;
 using FindTech.Entities.Models;
+using FindTech.Entities.StoredProcedures;
 using FindTech.Services;
 using FindTech.Web.Controllers;
 using Microsoft.AspNet.Identity;
@@ -78,7 +79,9 @@ namespace FindTech.Web.App_Start
                 .RegisterType<IRepositoryAsync<BenchmarkGroup>, Repository<BenchmarkGroup>>()
                 .RegisterType<IBenchmarkGroupService, BenchmarkGroupService>()
                 .RegisterType<IRepositoryAsync<Image>, Repository<Image>>()
-                .RegisterType<IImageService, ImageService>();
+                .RegisterType<IImageService, ImageService>()
+                .RegisterType<IFindTechStoredProcedures, FindTechContext>(new PerRequestLifetimeManager())
+                .RegisterType<IStoredProcedureService, StoredProcedureService>(); ;
         }
     }
 }

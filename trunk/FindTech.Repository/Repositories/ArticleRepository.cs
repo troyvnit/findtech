@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using FindTech.Entities.Models;
 using FindTech.Entities.Models.Enums;
@@ -59,6 +61,5 @@ namespace FindTech.Repository.Repositories
         {
             return articleRepository.Queryable().Include(a => a.Source).Include(a => a.ArticleCategory).Include(a => a.Opinions).FirstOrDefault(a => a.SeoTitle == seoTitle);
         }
-
     }
 }

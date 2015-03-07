@@ -100,6 +100,9 @@
     <Compile Include="Models\Video.cs" />
     <Compile Include="Models\Xpath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoredProcedures\FindTechStoredProcudures.cs" />
+    <Compile Include="StoredProcedures\IFindTechStoredProcedures.cs" />
+    <Compile Include="StoredProcedures\Models\SearchArticlesResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">

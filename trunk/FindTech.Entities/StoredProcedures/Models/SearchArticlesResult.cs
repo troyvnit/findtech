@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using FindTech.Entities.Models.Enums;
-using FindTech.Web.Areas.BO.Models;
 
-namespace FindTech.Web.Models
+namespace FindTech.Entities.StoredProcedures.Models
 {
-    public class ArticleViewModel
+    public class SearchArticlesResult
     {
         public int ArticleId { get; set; }
         public string Title { get; set; }
@@ -28,7 +30,5 @@ namespace FindTech.Web.Models
         public string SourceLogo { get; set; }
         public int ViewCount { get; set; }
         public int CommentCount { get; set; }
-        public ICollection<OpinionViewModel> Opinions { get; set; } 
-        public ICollection<ContentSectionBOViewModel> ContentSections { get; set; } 
     }
 }

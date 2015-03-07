@@ -2,7 +2,7 @@
 @{
     var article = Model;
 }
-<a href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })" class="banner">
+<a href="@Url.Action("Detail", "Article", new { categorySeoName = article.ArticleCategorySeoName, seoTitle = article.SeoTitle })" class="banner">
     <div class="box">
         <img src="@article.Avatar" width="275" height="275" alt="">
         <div class="overlay">

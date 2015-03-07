@@ -54,6 +54,5 @@ namespace FindTech.Services
         {
             return _articleRepository.GetArticleDetail(seoTitle);
         }
-
     }
 }

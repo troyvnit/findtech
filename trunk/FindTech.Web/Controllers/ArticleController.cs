@@ -18,13 +18,15 @@ namespace FindTech.Web.Controllers
         private IArticleService articleService { get; set; }
         private IContentSectionService contentSectionService { get; set; }
         private IOpinionService opinionService { get; set; }
+        private IStoredProcedureService storedProcedureService { get; set; }
         private IUnitOfWorkAsync unitOfWork { get; set; }
 
-        public ArticleController(IUnitOfWorkAsync unitOfWork, IArticleService articleService, IContentSectionService contentSectionService, IOpinionService opinionService)
+        public ArticleController(IUnitOfWorkAsync unitOfWork, IArticleService articleService, IContentSectionService contentSectionService, IOpinionService opinionService, IStoredProcedureService storedProcedureService)
         {
             this.articleService = articleService;
             this.contentSectionService = contentSectionService;
             this.opinionService = opinionService;
+            this.storedProcedureService = storedProcedureService;
             this.unitOfWork = unitOfWork;
         }
         // GET: Article
@@ -117,6 +119,12 @@ namespace FindTech.Web.Controllers
             unitOfWork.SaveChanges();
             Session["RatedOpinion"] = true;
             return PartialView("_OpinionPanel", opinionService.GetOpinions(articleId).ToList().Select(Mapper.Map<OpinionViewModel>));
+        }
+
+        public ActionResult SearchArticles(string keyword)
+        {
+            var articles = storedProcedureService.SearchArticles(keyword);
+            return Json(articles.ToList(), JsonRequestBehavior.AllowGet);
         }
     }
 }

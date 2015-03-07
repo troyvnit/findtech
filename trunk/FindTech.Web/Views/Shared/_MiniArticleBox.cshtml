@@ -3,7 +3,7 @@
     var article = Model;
 }
 <div class="make-wrapper">
-    <a href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle })">
+    <a href="@Url.Action("Detail", "Article", new { categorySeoName = article.ArticleCategorySeoName, seoTitle = article.SeoTitle })">
         <img src="@article.Avatar" width="150" height="100" alt="">
         <h2 class="title">@article.Title</h2>
     </a>
