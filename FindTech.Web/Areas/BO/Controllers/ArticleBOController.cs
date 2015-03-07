@@ -30,6 +30,8 @@ using System.IO;
 using System.Configuration;
 using System.Net;
 using System.Drawing;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 
 namespace FindTech.Web.Areas.BO.Controllers
 {
@@ -41,6 +43,8 @@ namespace FindTech.Web.Areas.BO.Controllers
         private IArticleService articleService { get; set; }
         private IUnitOfWorkAsync unitOfWork { get; set; }
 
+        private Cloudinary cloudinary;
+
         public ArticleBOController(IUnitOfWorkAsync unitOfWork, ISourceService sourceService,
             IArticleService articleService, IArticleCategoryService articleCategoryService)
         {
@@ -48,6 +52,13 @@ namespace FindTech.Web.Areas.BO.Controllers
             this.articleService = articleService;
             this.articleCategoryService = articleCategoryService;
             this.unitOfWork = unitOfWork;
+
+            Account account = new Account(
+              "ifind-vn",
+              "527894251963919",
+              "JxLoCiFSj4Rh5Wvfyek9JzUPetg");
+
+            cloudinary = new Cloudinary(account);
         }
 
         // GET: BO/Article
@@ -247,16 +258,35 @@ namespace FindTech.Web.Areas.BO.Controllers
                             {
                                 try
                                 {
+                                    var seoTitle = title.GenerateSeoTitle();
+                                    var avatar = "";
+                                    var imageUrl = summary.DocumentNode.Descendants("img")
+                                                .Select(n => n.Attributes["src"].Value)
+                                                .ToArray()
+                                                .FirstOrDefault();
+                                    if (imageUrl != null)
+                                    {
+                                        HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(imageUrl);
+                                        // Sends the HttpWebRequest and waits for the response.			
+                                        HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
+                                        // Gets the stream associated with the response.
+                                        Stream receiveStream = myHttpWebResponse.GetResponseStream();
+
+                                        var imageUploadParams = new ImageUploadParams()
+                                        {
+                                            File = new FileDescription(seoTitle + "-avatar", receiveStream),
+                                            PublicId = Path.GetFileNameWithoutExtension(seoTitle + "-avatar")
+                                        };
+                                        var result = cloudinary.Upload(imageUploadParams);
+                                        avatar = Url.Action("Image", "ImageBO", new { path = seoTitle + "-avatar" });
+                                        //return new FileStreamResult(receiveStream, "image/jpg");
+                                    }
                                     var article = new Article
                                     {
                                         ArticleCategoryId = category.ArticleCategoryId,
                                         ArticleCategory = category,
                                         Title = title,
-                                        Avatar =
-                                            summary.DocumentNode.Descendants("img")
-                                                .Select(n => n.Attributes["src"].Value)
-                                                .ToArray()
-                                                .FirstOrDefault(),
+                                        Avatar = avatar,
                                         Description = summary.DocumentNode.InnerText,
                                         IsActived = false,
                                         Priority = 1,
@@ -266,7 +296,7 @@ namespace FindTech.Web.Areas.BO.Controllers
                                         Source = rssSource,
                                         Content = content,
                                         ArticleType = ArticleType.News,
-                                        SeoTitle = title.GenerateSeoTitle(),
+                                        SeoTitle = seoTitle,
                                         IsHot = false,
                                         CreatedUserId = CurrentUser.Id,
                                         CreatedUserDisplayName = CurrentUser.DisplayName
