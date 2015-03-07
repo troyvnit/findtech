@@ -8,6 +8,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TestImageCrop;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using System.Net;
 
 namespace FindTech.Web.Areas.BO.Controllers
 {
@@ -22,11 +25,20 @@ namespace FindTech.Web.Areas.BO.Controllers
 
         private readonly DirectoryBrowser directoryBrowser;        
         private readonly ThumbnailCreator thumbnailCreator;
-
+        private readonly Cloudinary cloudinary;
         public ImageBOController()
         {
             directoryBrowser = new DirectoryBrowser();       
             thumbnailCreator = new ThumbnailCreator();
+
+            Account account = new Account(
+              "ifind-vn",
+              "527894251963919",
+              "JxLoCiFSj4Rh5Wvfyek9JzUPetg");
+
+            cloudinary = new Cloudinary(account);
+
+
         }
 
         public string ContentPath
@@ -69,32 +81,52 @@ namespace FindTech.Web.Areas.BO.Controllers
 
         public virtual JsonResult Read(string path)
         {
-            path = NormalizePath(path);
-
-            if (AuthorizeRead(path))
+            var listResourceParams = new ListResourcesParams()
             {
-                try
-                {
-                    directoryBrowser.Server = Server;
 
-                    var result = directoryBrowser
-                        .GetContent(path, DefaultFilter)
-                        .Select(f => new
-                        {
-                            name = f.Name,
-                            type = f.Type == EntryType.File ? "f" : "d",
-                            size = f.Size
-                        });
+                NextCursor = null,
+                Tags = true,
+                Context = true,
+                Moderations = true,
+                Type = "upload"
+            };
+            var listResource = cloudinary.ListResources(listResourceParams).Resources;
 
-                    return Json(result, JsonRequestBehavior.AllowGet);
-                }
-                catch (DirectoryNotFoundException)
-                {
-                    throw new HttpException(404, "File Not Found");
-                }
-            }
+            var result = listResource.Select(f => new
+            {
+                name = f.PublicId,
+                type = "f",
+                size = f.Length
+            });
 
-            throw new HttpException(403, "Forbidden");
+            return Json(result, JsonRequestBehavior.AllowGet);
+
+            //path = NormalizePath(path);
+
+            //if (AuthorizeRead(path))
+            //{
+            //    try
+            //    {
+            //        directoryBrowser.Server = Server;
+
+            //        var result = directoryBrowser
+            //            .GetContent(path, DefaultFilter)
+            //            .Select(f => new
+            //            {
+            //                name = f.Name,
+            //                type = f.Type == EntryType.File ? "f" : "d",
+            //                size = f.Size
+            //            });
+
+            //        return Json(result, JsonRequestBehavior.AllowGet);
+            //    }
+            //    catch (DirectoryNotFoundException)
+            //    {
+            //        throw new HttpException(404, "File Not Found");
+            //    }
+            //}
+
+            //throw new HttpException(403, "Forbidden");
         }
 
 
@@ -106,27 +138,38 @@ namespace FindTech.Web.Areas.BO.Controllers
         [OutputCache(Duration = 3600, VaryByParam = "path")]
         public virtual ActionResult Thumbnail(string path)
         {
-            path = NormalizePath(path);
+            //var resource = cloudinary.GetResource(path);
 
-            if (AuthorizeThumbnail(path))
-            {
-                var physicalPath = Server.MapPath(path);
+            string url = cloudinary.Api.UrlImgUp.Transform(new Transformation().Width(80).Height(80).Crop("pad")).BuildUrl(path);
 
-                if (System.IO.File.Exists(physicalPath))
-                {
-                    Response.AddFileDependency(physicalPath);
+            HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+            // Sends the HttpWebRequest and waits for the response.			
+            HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
+            // Gets the stream associated with the response.
+            Stream receiveStream = myHttpWebResponse.GetResponseStream();
+            return new FileStreamResult(receiveStream, "image/jpg");
+            //return new File("http://res.cloudinary.com/ifind-vn/image/upload/c_pad,h_80,w_80/v1425529303/el05mkztm6ztgrwl0mne.jpg");
+            //path = NormalizePath(path);
 
-                    return CreateThumbnail(physicalPath);
-                }
-                else
-                {
-                    return Json(false);
-                }
-            }
-            else
-            {
-                return Json(false);
-            }
+            //if (AuthorizeThumbnail(path))
+            //{
+            //    var physicalPath = Server.MapPath(path);
+
+            //    if (System.IO.File.Exists(physicalPath))
+            //    {
+            //        Response.AddFileDependency(physicalPath);
+
+            //        return CreateThumbnail(physicalPath);
+            //    }
+            //    else
+            //    {
+            //        return Json(false);
+            //    }
+            //}
+            //else
+            //{
+            //    return Json(false);
+            //}
         }
 
         private FileContentResult CreateThumbnail(string physicalPath)
@@ -254,7 +297,15 @@ namespace FindTech.Web.Areas.BO.Controllers
 
             if (AuthorizeUpload(path, file))
             {
-                file.SaveAs(Path.Combine(Server.MapPath(path), fileName));
+                var imageUploadParams = new ImageUploadParams()
+                {
+                    File = new FileDescription(file.FileName, file.InputStream),
+                    PublicId = Path.GetFileNameWithoutExtension(file.FileName)
+                };
+                var result = cloudinary.Upload(imageUploadParams);
+
+                //cloudinary.Upload(new ImageUploadParams { File = new FileDescription (file.FileName, file.InputStream) });
+                //file.SaveAs(Path.Combine(Server.MapPath(path), fileName));
 
                 return Json(new
                 {
@@ -270,19 +321,32 @@ namespace FindTech.Web.Areas.BO.Controllers
         [OutputCache(Duration = 360, VaryByParam = "path")]
         public ActionResult Image(string path)
         {
-            path = NormalizePath(path);
+            var resource = cloudinary.GetResource(path);
+            string url = resource.Url;
 
-            if (AuthorizeImage(path))
-            {
-                var physicalPath = Server.MapPath(path);
+            //string url = cloudinary.Api.UrlImgUp.Transform(new Transformation().Width(80).Height(80).Crop("pad")).BuildUrl(path);
 
-                if (System.IO.File.Exists(physicalPath))
-                {
-                    const string contentType = "image/png";
-                    return File(System.IO.File.OpenRead(physicalPath), contentType);
-                }
-            }
-            return Json(false);
+            HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+            // Sends the HttpWebRequest and waits for the response.			
+            HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
+            // Gets the stream associated with the response.
+            Stream receiveStream = myHttpWebResponse.GetResponseStream();
+            return new FileStreamResult(receiveStream, "image/jpg");
+
+
+            //path = NormalizePath(path);
+
+            //if (AuthorizeImage(path))
+            //{
+            //    var physicalPath = Server.MapPath(path);
+
+            //    if (System.IO.File.Exists(physicalPath))
+            //    {
+            //        const string contentType = "image/png";
+            //        return File(System.IO.File.OpenRead(physicalPath), contentType);
+            //    }
+            //}
+            //return Json(false);
         }
 
         public virtual bool AuthorizeImage(string path)
@@ -292,21 +356,24 @@ namespace FindTech.Web.Areas.BO.Controllers
 
         public virtual ActionResult CropImage(string imagePath, float scales, int ws, int hs, int xs, int ys, float scaler, int wr, int hr, int xr, int yr)
         {
-            crop(imagePath, scales, ws, hs, xs, ys);
-            crop(imagePath, scaler, wr, hr, xr, yr);
-            string resizedPath = "";
-            if(Path.GetDirectoryName(imagePath).ToString() != "")
-            {
-                resizedPath = Path.GetDirectoryName(imagePath) + @"\272x272\" + Path.GetFileName(imagePath);
-            }
-            else
-            {
-                resizedPath = Path.GetDirectoryName(imagePath) + @"272x272\" + Path.GetFileName(imagePath);
-            }
+            string url = cloudinary.Api.UrlImgUp.Transform(new Transformation().Width((int)ws / scales).Height((int)hs / scales).Crop("crop").X((int)xs/scales).Y((int)ys/scales)).BuildUrl(imagePath);
+            return Json(url);
+
+            //crop(imagePath, scales, ws, hs, xs, ys);
+            //crop(imagePath, scaler, wr, hr, xr, yr);
+            //string resizedPath = "";
+            //if(Path.GetDirectoryName(imagePath).ToString() != "")
+            //{
+            //    resizedPath = Path.GetDirectoryName(imagePath) + @"\272x272\" + Path.GetFileName(imagePath);
+            //}
+            //else
+            //{
+            //    resizedPath = Path.GetDirectoryName(imagePath) + @"272x272\" + Path.GetFileName(imagePath);
+            //}
             
-            resizedPath = NormalizePath(resizedPath);
-            //resizedPath = Path.Combine(resizedPath, Path.GetFileName(imagePath));
-            return Json(resizedPath);
+            //resizedPath = NormalizePath(resizedPath);
+            ////resizedPath = Path.Combine(resizedPath, Path.GetFileName(imagePath));
+            //return Json(resizedPath);
         }
 
         private void crop(string imagePath, float scale, int w, int h, int x, int y)
