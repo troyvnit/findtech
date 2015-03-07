@@ -20,7 +20,7 @@
     <div class="breadcrumb-box">
         <ul class="breadcrumb">
             <li><a href="/">Home</a> </li>
-            <li><a href="/@article.ArticleSeoCategoryName">@article.ArticleCategoryName</a> </li>
+            <li><a href="/@article.ArticleCategorySeoName">@article.ArticleCategoryName</a> </li>
             <li class="active">@article.Title</li>
         </ul>
     </div><!-- .breadcrumb-box -->
@@ -69,7 +69,7 @@
                                                             }
                                                             else
                                                             {
-                                                                <a href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle, page = contentSectionPage.PageNumber }, this.Request.Url.Scheme)" class="list-group-item"><i class="fa fa-chevron-circle-right"></i>@contentSectionPage.PageName</a>
+                                                                <a href="@Url.Action("Detail", "Article", new { categorySeoName = article.ArticleCategorySeoName, seoTitle = article.SeoTitle, page = contentSectionPage.PageNumber }, this.Request.Url.Scheme)" class="list-group-item"><i class="fa fa-chevron-circle-right"></i>@contentSectionPage.PageName</a>
                                                             }
                                                         }
                                                     </div>
@@ -121,10 +121,10 @@
                             <div class="article-footer">
                                 <div class="addthis_sharing_toolbox"></div>
                                 <div class="social">
-                                    <a class="fa fa-share-alt" id="zclip" href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle }, this.Request.Url.Scheme)"></a>
+                                    <a class="fa fa-share-alt" id="zclip" href="@Url.Action("Detail", "Article", new { categorySeoName = article.ArticleCategorySeoName, seoTitle = article.SeoTitle }, this.Request.Url.Scheme)"></a>
                                 </div>
                                 <div class="link">
-                                    <input type="text" readonly="readonly" placeholder="Link" onclick="$(this).select();" value="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle }, this.Request.Url.Scheme)">
+                                    <input type="text" readonly="readonly" placeholder="Link" onclick="$(this).select();" value="@Url.Action("Detail", "Article", new { categorySeoName = article.ArticleCategorySeoName, seoTitle = article.SeoTitle }, this.Request.Url.Scheme)">
                                 </div>
                                 <div class="addthis_native_toolbox"></div>
                                 <div class="source">
@@ -137,7 +137,7 @@
                             <div class="article-paging">
                                 @if (nextPage != null)
                                 {
-                                    <a href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle, page = nextPage.PageNumber }, this.Request.Url.Scheme)" class="next-page"><strong>Trang kế</strong> <i class="fa fa-chevron-right"></i> @nextPage.PageName</a>
+                                    <a href="@Url.Action("Detail", "Article", new { categorySeoName = article.ArticleCategorySeoName, seoTitle = article.SeoTitle, page = nextPage.PageNumber }, this.Request.Url.Scheme)" class="next-page"><strong>Trang kế</strong> <i class="fa fa-chevron-right"></i> @nextPage.PageName</a>
                                 }
                                 <div class="pagination-box pull-right">
                                     <ul class="pagination">
@@ -152,7 +152,7 @@
                                                 }
                                                 else
                                                 {
-                                                    <a href="@Url.Action("Detail", "Article", new { seoCategoryName = article.ArticleSeoCategoryName, seoTitle = article.SeoTitle, page = contentSectionPage.PageNumber }, this.Request.Url.Scheme)">@contentSectionPage.PageNumber</a>
+                                                    <a href="@Url.Action("Detail", "Article", new { categorySeoName = article.ArticleCategorySeoName, seoTitle = article.SeoTitle, page = contentSectionPage.PageNumber }, this.Request.Url.Scheme)">@contentSectionPage.PageNumber</a>
                                                 }
                                             </li>
                                         }
@@ -163,7 +163,7 @@
                         }
                         </article><!-- .post -->
                         @{Html.RenderPartial("_MiniSliderBox", new ArticleListViewModel { Articles = articles, Title = "Thủ thuật" });}
-                        @*<h3 class="title slim">Comments</h3>
+                        <h3 class="title slim">Comments</h3>
                         <ul class="commentlist">
                             <li>
                                 <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
@@ -174,6 +174,38 @@
                                 <p class="description">
                                     Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </p>
+                                <ul class="commentlist">
+                                    <li>
+                                        <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
+                                        <div class="meta">
+                                            <span>Mike Example</span>,
+                                            <span class="time">03.11.2013, 10:45:</span>
+                                        </div>
+                                        <p class="description">
+                                            Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
+                                        <div class="meta">
+                                            <span>Mike Example</span>,
+                                            <span class="time">03.11.2013, 10:45:</span>
+                                        </div>
+                                        <p class="description">
+                                            Etiam mollis volutpat odio, id euismod justo gravida a. Aliquam erat volutpat. Phasellus faucibus venenatis lorem, vitae commodo elit pretium et. Duis rhoncus lobortis congue. Vestibulum et purus dui, vel porta lectus. Sed vulputate pulvinar adipiscing. It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
+                                        <div class="meta">
+                                            <span>Mike Example</span>,
+                                            <span class="time">03.11.2013, 10:45:</span>
+                                        </div>
+                                        <p class="description">
+                                            Etiam mollis volutpat odio, id euismod justo gravida a. Aliquam erat volutpat. Phasellus faucibus venenatis lorem, vitae commodo elit pretium et. Duis rhoncus lobortis congue. Vestibulum et purus dui, vel porta lectus. Sed vulputate pulvinar adipiscing. It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        </p>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
                                 <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
@@ -225,7 +257,7 @@
                                 <span class="required pull-right"><b>*</b> Required Field</span>
                                 <button class="btn btn-default">Submit</button>
                             </div>
-                        </form>*@
+                        </form>
                     </div><!-- .content -->
                 </div>
                 <div class="sidebar col-sm-3 col-md-3">
