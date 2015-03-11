@@ -12072,7 +12072,6 @@ padding-bottom: 20px;
 .article-footer {
     margin-top: 20px;
     height: 50px;
-    border-bottom: 1px solid #e1e1e1;
 }
 
 .article-footer > div {
@@ -12181,4 +12180,69 @@ padding-bottom: 20px;
 .entry-content .content-section .content{
     margin-bottom: 20px;
     display: inline-block;
+}
+
+.post .entry-content {
+  margin: 0;
+padding-bottom: 20px;
+border-bottom: 1px solid #e1e1e1;
+}
+
+.article-paging {
+    margin-bottom: 25px;
+}
+
+.blog-post .post {
+    margin-bottom: 60px;
+}
+
+.blog-post .commentlist li, .blog-post .commentlist li:first-child {
+    padding: 15px 0 0 0;
+    border-top-width: 1px;
+    position: relative;
+}
+
+.blog-post .commentlist li .description {
+    padding-bottom: 15px;
+}
+
+.blog-post .commentlist li ul.commentlist {
+    margin: 0 0 0 40px;
+}
+
+ul.commentlist li .meta .like-count {
+    color: #00ade0;
+    font-size: 13px;
+    padding-left: 10px;
+}
+
+ul.commentlist li .meta .button-list {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+ul.commentlist li .meta .button-list a {
+    margin-right: 20px;
+    font-size: 13px;
+    color: #7f7f7f;
+    background: #ccc;
+}
+
+ul.commentlist li .meta .button-list a:hover,  ul.commentlist li .meta .button-list a.active{
+    color: white;
+    background: #00ade0;
+}
+
+ul.commentlist li .meta .button-list {
+    display: none;
+}
+
+ul.commentlist > li > div.comment:hover > .meta > .button-list {
+    display: block;
+}
+
+.blog-post .comments-form .button-set {
+    margin: 0 0 20px 0;
+    float: right;
 }

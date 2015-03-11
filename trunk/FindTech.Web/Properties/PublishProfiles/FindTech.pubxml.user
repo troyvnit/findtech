@@ -6080,7 +6080,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2015 17:42:30</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Create.cshtml">
-      <publishTime>02/10/2015 23:31:52</publishTime>
+      <publishTime>03/07/2015 11:08:08</publishTime>
     </File>
     <File Include="Areas/BO/Views/ArticleBO/Index.cshtml">
       <publishTime>01/31/2015 13:30:32</publishTime>
@@ -6136,6 +6136,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/AutoMapper.Net4.dll">
       <publishTime>11/16/2014 12:11:29</publishTime>
     </File>
+    <File Include="bin/CloudinaryDotNet.dll">
+      <publishTime>03/03/2015 19:57:33</publishTime>
+    </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/27/2014 19:45:39</publishTime>
     </File>
@@ -6143,13 +6146,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:40</publishTime>
     </File>
     <File Include="bin/FindTech.Entities.dll">
-      <publishTime>03/03/2015 10:36:19</publishTime>
+      <publishTime>03/07/2015 13:14:26</publishTime>
+    </File>
+    <File Include="bin/FindTech.Repository.dll">
+      <publishTime>03/07/2015 13:14:28</publishTime>
     </File>
     <File Include="bin/FindTech.Services.dll">
-      <publishTime>03/03/2015 10:36:20</publishTime>
+      <publishTime>03/07/2015 13:14:30</publishTime>
     </File>
     <File Include="bin/FindTech.Web.dll">
-      <publishTime>03/03/2015 10:36:25</publishTime>
+      <publishTime>03/07/2015 13:14:36</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
       <publishTime>11/04/2014 18:18:06</publishTime>
@@ -7403,7 +7409,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/04/2014 09:19:05</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>11/16/2014 12:11:42</publishTime>
+      <publishTime>03/03/2015 19:58:04</publishTime>
     </File>
     <File Include="UIFramework/Progressive/css/animate.css">
       <publishTime>01/06/2015 20:33:07</publishTime>
@@ -8747,7 +8753,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:37</publishTime>
     </File>
     <File Include="Views/Article/Detail.cshtml">
-      <publishTime>02/18/2015 16:38:05</publishTime>
+      <publishTime>03/07/2015 12:20:36</publishTime>
     </File>
     <File Include="Views/Article/_NewsBoxs.cshtml">
       <publishTime>01/15/2015 15:48:55</publishTime>
@@ -8795,7 +8801,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:45:38</publishTime>
     </File>
     <File Include="Views/Shared/_HotArticleBox.cshtml">
-      <publishTime>02/02/2015 10:31:51</publishTime>
+      <publishTime>03/07/2015 12:20:36</publishTime>
     </File>
     <File Include="Views/Shared/_ImageGallerySlider.cshtml">
       <publishTime>02/18/2015 08:54:38</publishTime>
@@ -8807,13 +8813,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/16/2015 15:24:54</publishTime>
     </File>
     <File Include="Views/Shared/_ListItemArticleBox.cshtml">
-      <publishTime>02/08/2015 13:29:20</publishTime>
+      <publishTime>03/07/2015 12:20:36</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>10/27/2014 19:45:38</publishTime>
     </File>
     <File Include="Views/Shared/_MiniArticleBox.cshtml">
-      <publishTime>02/02/2015 10:31:51</publishTime>
+      <publishTime>03/07/2015 12:20:36</publishTime>
     </File>
     <File Include="Views/Shared/_MiniListBox.cshtml">
       <publishTime>02/08/2015 21:50:01</publishTime>
@@ -8822,13 +8828,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/07/2015 23:06:43</publishTime>
     </File>
     <File Include="Views/Shared/_NewsBox.cshtml">
-      <publishTime>02/18/2015 09:02:39</publishTime>
+      <publishTime>03/07/2015 12:20:37</publishTime>
     </File>
     <File Include="Views/Shared/_OpinionPanel.cshtml">
       <publishTime>02/18/2015 15:53:39</publishTime>
     </File>
     <File Include="Views/Shared/_ReviewBox.cshtml">
-      <publishTime>03/03/2015 10:34:07</publishTime>
+      <publishTime>03/07/2015 12:20:36</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>10/27/2014 19:44:49</publishTime>
@@ -8837,7 +8843,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2014 19:44:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/08/2015 23:09:24</publishTime>
+      <publishTime>03/07/2015 13:14:43</publishTime>
     </File>
   </ItemGroup>
 </Project>
