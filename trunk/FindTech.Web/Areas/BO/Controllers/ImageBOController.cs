@@ -370,10 +370,29 @@ namespace FindTech.Web.Areas.BO.Controllers
 
         public virtual ActionResult CropImage(string imagePath, float scales, int ws, int hs, int xs, int ys, float scaler, int wr, int hr, int xr, int yr)
         {
-            string url = cloudinary.Api.UrlImgUp.Transform(new Transformation().Width((int)(ws/scales)).Height((int)(hs / scales)).Crop("crop").X((int)(xs/scales)).Y((int)(ys/scales))
-                .Chain().Width(275).Height(275).Crop("fill"))
+            ws = (int)Math.Round((ws / scales), 0);
+            hs = (int)Math.Round((hs / scales), 0);
+            xs = (int)Math.Round((xs / scales), 0);
+            ys = (int)Math.Round((ys / scales), 0);
+
+            wr = (int)Math.Round((wr / scaler), 0);
+            hr = (int)Math.Round((hr / scaler), 0);
+            xr = (int)Math.Round((xr / scaler), 0);
+            yr = (int)Math.Round((yr / scaler), 0);
+
+            string urls = cloudinary.Api.UrlImgUp.Transform(new Transformation().Width(ws).Height(hs).Crop("crop").X(xs).Y(ys)
+                .Chain().Width(300).Height(300).Crop("fill"))
                 .BuildUrl(imagePath);
-            return Json(url);
+            string urlr = cloudinary.Api.UrlImgUp.Transform(new Transformation().Width(wr).Height(hr).Crop("crop").X(xr).Y(yr)
+                .Chain().Width(150).Height(100).Crop("fill"))
+                .BuildUrl(imagePath);
+            Object obj = new
+            {
+                avatar = urls,
+                squareAvatar = urls.Replace("c_fill,h_300,w_300", "c_fill,h_height,w_width"),
+                rectangleAvatar = urlr.Replace("c_fill,h_100,w_150", "c_fill,h_height,w_width")
+            };
+            return Json(obj);
 
             //crop(imagePath, scales, ws, hs, xs, ys);
             //crop(imagePath, scaler, wr, hr, xr, yr);
