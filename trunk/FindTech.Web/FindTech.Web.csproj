@@ -266,6 +266,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="app\controllers\ArticleDetailCtrl.js" />
     <Content Include="Areas\BO\UIFramework\Guillotine\css\jquery.guillotine.css" />
     <Content Include="Areas\BO\UIFramework\Guillotine\js\jquery.guillotine.js" />
     <Content Include="Areas\BO\UIFramework\Guillotine\js\jquery.guillotine.min.js" />

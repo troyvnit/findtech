@@ -80,6 +80,8 @@ namespace FindTech.Web.App_Start
                 .RegisterType<IBenchmarkGroupService, BenchmarkGroupService>()
                 .RegisterType<IRepositoryAsync<Image>, Repository<Image>>()
                 .RegisterType<IImageService, ImageService>()
+                .RegisterType<IRepositoryAsync<Comment>, Repository<Comment>>()
+                .RegisterType<ICommentService, CommentService>()
                 .RegisterType<IFindTechStoredProcedures, FindTechContext>(new PerRequestLifetimeManager())
                 .RegisterType<IStoredProcedureService, StoredProcedureService>(); ;
         }
