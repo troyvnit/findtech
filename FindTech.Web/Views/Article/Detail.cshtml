@@ -26,62 +26,62 @@
     </div><!-- .breadcrumb-box -->
 </div>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51a2fc0f2f4412f7" async="async"></script>
-<section id="article">
+<section id="article" ng-controller="ArticleDetailCtrl">
     <div class="container">
         <div class="content">
             <div class="row">
                 <div class="col-sm-12 col-md-9">
                     <header class="page-header">
                         <div class="container-fluid">
-                                <div class="row">
-                                    @if (article != null)
-                                    {
-                                        <h1 class="title">@article.Title</h1>
-                                        <div class="entry-meta">
-                                            <div class="posted-info"><span class="blurry-text">Đăng:</span><strong> @article.PublishedDate.ToString("dd MMM yy HH:mm:ss", new CultureInfo("vi-VN"))<span class="separator">|</span><span class="blurry-text">Bởi:</span> @article.CreatedUserDisplayName</strong></div>
-                                            <span class="meta btn-icon tags">
-                                                <span class="blurry-text">Nhãn:</span>
-                                                @if (article.Tags != null)
-                                                {
-                                                    foreach (var tag in article.Tags.Split(','))
-                                                    {
-                                                        <a href="#">@tag</a>
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    foreach (var tag in article.SeoTitle.Split('-'))
-                                                    {
-                                                        <a href="#">@tag</a>
-                                                    }
-                                                }
-                                            </span>
-                                            @if (contentSectionPages.Count > 0)
+                            <div class="row">
+                                @if (article != null)
+                                {
+                                    <h1 class="title">@article.Title</h1>
+                                    <div class="entry-meta">
+                                        <div class="posted-info"><span class="blurry-text">Đăng:</span><strong> @article.PublishedDate.ToString("dd MMM yy HH:mm:ss", new CultureInfo("vi-VN"))<span class="separator">|</span><span class="blurry-text">Bởi:</span> @article.CreatedUserDisplayName</strong></div>
+                                        <span class="meta btn-icon tags">
+                                            <span class="blurry-text">Nhãn:</span>
+                                            @if (article.Tags != null)
                                             {
-                                                <div class="go-to-page pull-right">
-                                                    <i class="fa fa-bars"></i>Đi đến trang
-                                                    <div class="list-group">
-                                                        @foreach (var contentSectionPage in contentSectionPages)
-                                                        {
-                                                            if (contentSectionPage.IsCurrentPage)
-                                                            {
-                                                                <span class="list-group-item"><i class="fa fa-chevron-circle-right"></i>@contentSectionPage.PageName</span>
-                                                            }
-                                                            else
-                                                            {
-                                                                <a href="@Url.Action("Detail", "Article", new { categorySeoName = article.ArticleCategorySeoName, seoTitle = article.SeoTitle, page = contentSectionPage.PageNumber }, this.Request.Url.Scheme)" class="list-group-item"><i class="fa fa-chevron-circle-right"></i>@contentSectionPage.PageName</a>
-                                                            }
-                                                        }
-                                                    </div>
-                                                </div>
+                                                foreach (var tag in article.Tags.Split(','))
+                                                {
+                                                    <a href="#">@tag</a>
+                                                }
                                             }
-                                        </div>
-                                    }
-                                    else
-                                    {
-                                        <h1 class="title">Không tìm thấy bài viết</h1>
-                                    }
-                                </div>
+                                            else
+                                            {
+                                                foreach (var tag in article.SeoTitle.Split('-'))
+                                                {
+                                                    <a href="#">@tag</a>
+                                                }
+                                            }
+                                        </span>
+                                        @if (contentSectionPages.Count > 0)
+                                        {
+                                            <div class="go-to-page pull-right">
+                                                <i class="fa fa-bars"></i>Đi đến trang
+                                                <div class="list-group">
+                                                    @foreach (var contentSectionPage in contentSectionPages)
+                                                    {
+                                                        if (contentSectionPage.IsCurrentPage)
+                                                        {
+                                                            <span class="list-group-item"><i class="fa fa-chevron-circle-right"></i>@contentSectionPage.PageName</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <a href="@Url.Action("Detail", "Article", new { categorySeoName = article.ArticleCategorySeoName, seoTitle = article.SeoTitle, page = contentSectionPage.PageNumber }, this.Request.Url.Scheme)" class="list-group-item"><i class="fa fa-chevron-circle-right"></i>@contentSectionPage.PageName</a>
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                                else
+                                {
+                                    <h1 class="title">Không tìm thấy bài viết</h1>
+                                }
+                            </div>
                         </div>
                     </header>
                     <div class="content blog blog-post">
@@ -183,12 +183,12 @@
                                         Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                     </p>
                                 </div>
-                                <ul class="commentlist">
+                                <ul class="commentlist" ng-repeat="comment in comments">
                                     <li>
                                         <div class="comment">
                                             <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
                                             <div class="meta">
-                                                <span>Mike Example</span>,
+                                                <span>{{comment.CommentatorEmail}}</span>,
                                                 <span class="time">03.11.2013, 10:45:</span>
                                                 <span class="like-count">30 <i class="fa fa-thumbs-up"></i></span>
                                                 <span class="button-list">
@@ -198,43 +198,7 @@
                                                 </span>
                                             </div>
                                             <p class="description">
-                                                Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="comment">
-                                            <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
-                                            <div class="meta">
-                                                <span>Mike Example</span>,
-                                                <span class="time">03.11.2013, 10:45:</span>
-                                                <span class="like-count">30 <i class="fa fa-thumbs-up"></i></span>
-                                                <span class="button-list">
-                                                    <a href="#" class="btn btn-xs"><i class="fa fa-mail-reply"></i> Trả lời</a>
-                                                    <a href="#" class="btn btn-xs"><i class="fa fa-thumbs-up"></i> Thích</a>
-                                                    <a href="#" class="btn btn-xs"><i class="fa fa-bell"></i> Báo xấu</a>
-                                                </span>
-                                            </div>
-                                            <p class="description">
-                                                Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="comment">
-                                            <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
-                                            <div class="meta">
-                                                <span>Mike Example</span>,
-                                                <span class="time">03.11.2013, 10:45:</span>
-                                                <span class="like-count">30 <i class="fa fa-thumbs-up"></i></span>
-                                                <span class="button-list">
-                                                    <a href="#" class="btn btn-xs"><i class="fa fa-mail-reply"></i> Trả lời</a>
-                                                    <a href="#" class="btn btn-xs"><i class="fa fa-thumbs-up"></i> Thích</a>
-                                                    <a href="#" class="btn btn-xs"><i class="fa fa-bell"></i> Báo xấu</a>
-                                                </span>
-                                            </div>
-                                            <p class="description">
-                                                Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                                {{comment.Content}}
                                             </p>
                                         </div>
                                     </li>

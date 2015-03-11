@@ -30,9 +30,36 @@ namespace FindTech.Web.Controllers
 
         public ActionResult GetComments(string objectType, string objectId)
         {
+            var comments = new List<CommentModel>()
+            {
+                new CommentModel
+                {
+                    CommentatorEmail = "troy@ifind.vn",
+                    Content = "Nhờ có panel LCD chất lượng cao nên cả 2 đều cho góc nhìn rộng rất tốt đặc biệt là Iphone 6. Màn hình của Sony có chế độ siêu nhạy cho phép bạn có thể sử dụng ngay cả khi đang mang găng tay, một điều khá tiện dụng với người dùng nhất là khi mùa đông đang đến."
+                },
+                new CommentModel
+                {
+                    CommentatorEmail = "troy@ifind.vn",
+                    Content = "Nhờ có panel LCD chất lượng cao nên cả 2 đều cho góc nhìn rộng rất tốt đặc biệt là Iphone 6. Màn hình của Sony có chế độ siêu nhạy cho phép bạn có thể sử dụng ngay cả khi đang mang găng tay, một điều khá tiện dụng với người dùng nhất là khi mùa đông đang đến."
+                },
+                new CommentModel
+                {
+                    CommentatorEmail = "troy@ifind.vn",
+                    Content = "Nhờ có panel LCD chất lượng cao nên cả 2 đều cho góc nhìn rộng rất tốt đặc biệt là Iphone 6. Màn hình của Sony có chế độ siêu nhạy cho phép bạn có thể sử dụng ngay cả khi đang mang găng tay, một điều khá tiện dụng với người dùng nhất là khi mùa đông đang đến."
+                },
+                new CommentModel
+                {
+                    CommentatorEmail = "troy@ifind.vn",
+                    Content = "Nhờ có panel LCD chất lượng cao nên cả 2 đều cho góc nhìn rộng rất tốt đặc biệt là Iphone 6. Màn hình của Sony có chế độ siêu nhạy cho phép bạn có thể sử dụng ngay cả khi đang mang găng tay, một điều khá tiện dụng với người dùng nhất là khi mùa đông đang đến."
+                },
+                new CommentModel
+                {
+                    CommentatorEmail = "troy@ifind.vn",
+                    Content = "Nhờ có panel LCD chất lượng cao nên cả 2 đều cho góc nhìn rộng rất tốt đặc biệt là Iphone 6. Màn hình của Sony có chế độ siêu nhạy cho phép bạn có thể sử dụng ngay cả khi đang mang găng tay, một điều khá tiện dụng với người dùng nhất là khi mùa đông đang đến."
+                }
+            };
 
-
-            return Json(false);
+            return Json(comments, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Create(string model)

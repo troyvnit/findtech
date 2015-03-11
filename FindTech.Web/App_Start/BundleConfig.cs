@@ -186,6 +186,8 @@ namespace FindTech.Web
                    "~/UIFramework/Progressive/js/jssorslider/jssor.slider.js",
                    "~/Content/Article/js/Detail.js"));
 
+            bundles.Add(new ScriptBundle("~/fo/angularjs").IncludeDirectory("~/app", "*.js", true));
+
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
             BundleTable.EnableOptimizations = false;

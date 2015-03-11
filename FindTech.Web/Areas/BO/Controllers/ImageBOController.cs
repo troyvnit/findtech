@@ -144,12 +144,12 @@ namespace FindTech.Web.Areas.BO.Controllers
             string url = cloudinary.Api.UrlImgUp.Transform(new Transformation().Width(80).Height(80).Crop("pad")).BuildUrl(path);
             if (url != null)
             {
-                HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(url);
-                // Sends the HttpWebRequest and waits for the response.			
-                HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
-                // Gets the stream associated with the response.
-                Stream receiveStream = myHttpWebResponse.GetResponseStream();
-                return new FileStreamResult(receiveStream, "image/jpg");
+                //HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+                //// Sends the HttpWebRequest and waits for the response.			
+                //HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
+                //// Gets the stream associated with the response.
+                //Stream receiveStream = myHttpWebResponse.GetResponseStream();
+                //return new FileStreamResult(receiveStream, "image/jpg");
             }
             return Json(false);
             //return new File("http://res.cloudinary.com/ifind-vn/image/upload/c_pad,h_80,w_80/v1425529303/el05mkztm6ztgrwl0mne.jpg");
