@@ -88,7 +88,8 @@ namespace FindTech.Web.Areas.BO.Controllers
                 Tags = true,
                 Context = true,
                 Moderations = true,
-                Type = "upload"
+                Type = "upload",
+                MaxResults = 100
             };
             var listResource = cloudinary.ListResources(listResourceParams).Resources;
 
@@ -261,21 +262,28 @@ namespace FindTech.Web.Areas.BO.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public virtual ActionResult Create(string path, FileBrowserEntry entry)
         {
-            path = NormalizePath(path);
-            var name = entry.Name;
-
-            if (!string.IsNullOrEmpty(name) && AuthorizeCreateDirectory(path, name))
+            var imageUploadParams = new ImageUploadParams()
             {
-                var physicalPath = Path.Combine(Server.MapPath(path), name);
+                Folder = "testFolders"
+            };
+            var result = cloudinary.Upload(imageUploadParams);
 
-                if (!Directory.Exists(physicalPath))
-                {
-                    Directory.CreateDirectory(physicalPath);
-                }
+            return Json(null);
+            //path = NormalizePath(path);
+            //var name = entry.Name;
 
-                return Json(null);
-            }
-            return Json(false);
+            //if (!string.IsNullOrEmpty(name) && AuthorizeCreateDirectory(path, name))
+            //{
+            //    var physicalPath = Path.Combine(Server.MapPath(path), name);
+
+            //    if (!Directory.Exists(physicalPath))
+            //    {
+            //        Directory.CreateDirectory(physicalPath);
+            //    }
+
+            //    return Json(null);
+            //}
+            //return Json(false);
         }
 
 
