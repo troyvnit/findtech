@@ -45,6 +45,8 @@
                                             <img data-src="holder.js/100%x300" alt="100%x300" id="imgAvatar" src="@Model.Avatar" />
                                         </a>
                                         <input type="hidden" id="avatarHidden" name="Avatar" value="@Model.Avatar" />
+                                        <input type="hidden" id="squareAvatarHidden" name="squareAvatar" value="@Model.SquareAvatar"/>
+                                        <input type="hidden" id="rectangleAvatarHidden" name="rectangleAvatar" value="@Model.RectangleAvatar"/>
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-9">
@@ -672,9 +674,13 @@
                 $('#imgCroper').modal('hide');
                 //document.getElementById("imgAvatar").src = '/ImageBO/Image?path=' + data;
                 //document.getElementById("avatarHidden").value = '/ImageBO/Image?path=' + data;
+                //var result = JSON.parse(data);
 
-                document.getElementById("imgAvatar").src = data;
-                document.getElementById("avatarHidden").value = data;
+                document.getElementById("imgAvatar").src = data.avatar;
+                document.getElementById("avatarHidden").value = data.avatar;
+                document.getElementById("squareAvatarHidden").value = data.squareAvatar;
+                document.getElementById("rectangleAvatarHidden").value = data.rectangleAvatar;
+
             },
             error: function (data) { }
         });

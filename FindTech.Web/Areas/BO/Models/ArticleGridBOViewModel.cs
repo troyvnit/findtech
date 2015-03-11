@@ -15,8 +15,6 @@ namespace FindTech.Web.Areas.BO.Models
         public string Tags { get; set; }
         public int Priority { get; set; }
         public string Avatar { get; set; }
-        public string SquareAvatar { get; set; }
-        public string RectangleAvatar { get; set; }
         public DateTime PublishedDate { get; set; }
         public string Author { get; set; }
         public string SourceId { get; set; }

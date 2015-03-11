@@ -278,7 +278,8 @@ namespace FindTech.Web.Areas.BO.Controllers
                                             PublicId = Path.GetFileNameWithoutExtension(seoTitle + "-avatar")
                                         };
                                         var result = cloudinary.Upload(imageUploadParams);
-                                        avatar = Url.Action("Image", "ImageBO", new { path = seoTitle + "-avatar" });
+                                        avatar = result.Uri.ToString();
+                                        //avatar = Url.Action("Image", "ImageBO", new { path = seoTitle + "-avatar" });
                                         //return new FileStreamResult(receiveStream, "image/jpg");
                                     }
                                     var article = new Article
