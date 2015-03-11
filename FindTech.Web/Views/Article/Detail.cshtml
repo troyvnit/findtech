@@ -86,7 +86,7 @@
                     </header>
                     <div class="content blog blog-post">
                         <article class="post">
-                            <div class="entry-content frame-shadow-lifted">
+                            <div class="entry-content">
                                 @if (currentPage == null || currentPage.PageNumber == minPageNumber)
                                 {
                                     @Html.Raw(article.Content);
@@ -104,6 +104,35 @@
                                     </section>
                                 }
                             </div>
+                            @if (contentSectionPages.Count > 0)
+                            {
+                                <div class="article-paging">
+                                    @if (nextPage != null)
+                                    {
+                                        <a href="@Url.Action("Detail", "Article", new { categorySeoName = article.ArticleCategorySeoName, seoTitle = article.SeoTitle, page = nextPage.PageNumber }, this.Request.Url.Scheme)" class="next-page"><strong>Trang kế</strong> <i class="fa fa-chevron-right"></i> @nextPage.PageName</a>
+                                    }
+                                    <div class="pagination-box pull-right">
+                                        <ul class="pagination">
+                                            @*<li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>*@
+                                            @foreach (var contentSectionPage in contentSectionPages)
+                                            {
+                                                var activeClass = contentSectionPage.IsCurrentPage ? "active" : "";
+                                                <li class="@activeClass">
+                                                    @if (contentSectionPage.IsCurrentPage)
+                                                    {
+                                                        <span>@contentSectionPage.PageNumber</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a href="@Url.Action("Detail", "Article", new { categorySeoName = article.ArticleCategorySeoName, seoTitle = article.SeoTitle, page = contentSectionPage.PageNumber }, this.Request.Url.Scheme)">@contentSectionPage.PageNumber</a>
+                                                    }
+                                                </li>
+                                            }
+                                            @*<li><a href="#"><i class="fa fa-angle-right"></i></a></li>*@
+                                        </ul>
+                                    </div>
+                                </div>
+                            }
                             <div class="opinion">
                                 <span class="title">Đánh giá bài viết: </span>
                                 @if (Session["RatedOpinion"] != null)
@@ -132,130 +161,134 @@
                                     <span class="blurry-text">Nguồn: </span><strong>@article.SourceName</strong>
                                 </div>
                             </div>
-                        @if (contentSectionPages.Count > 0)
-                        {
-                            <div class="article-paging">
-                                @if (nextPage != null)
-                                {
-                                    <a href="@Url.Action("Detail", "Article", new { categorySeoName = article.ArticleCategorySeoName, seoTitle = article.SeoTitle, page = nextPage.PageNumber }, this.Request.Url.Scheme)" class="next-page"><strong>Trang kế</strong> <i class="fa fa-chevron-right"></i> @nextPage.PageName</a>
-                                }
-                                <div class="pagination-box pull-right">
-                                    <ul class="pagination">
-                                        @*<li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>*@
-                                        @foreach (var contentSectionPage in contentSectionPages)
-                                        {
-                                            var activeClass = contentSectionPage.IsCurrentPage ? "active" : "";
-                                            <li class="@activeClass">
-                                                @if (contentSectionPage.IsCurrentPage)
-                                                {
-                                                    <span>@contentSectionPage.PageNumber</span>
-                                                }
-                                                else
-                                                {
-                                                    <a href="@Url.Action("Detail", "Article", new { categorySeoName = article.ArticleCategorySeoName, seoTitle = article.SeoTitle, page = contentSectionPage.PageNumber }, this.Request.Url.Scheme)">@contentSectionPage.PageNumber</a>
-                                                }
-                                            </li>
-                                        }
-                                        @*<li><a href="#"><i class="fa fa-angle-right"></i></a></li>*@
-                                    </ul>
-                                </div>
-                            </div>
-                        }
+                            <hr class="shadow">
                         </article><!-- .post -->
                         @{Html.RenderPartial("_MiniSliderBox", new ArticleListViewModel { Articles = articles, Title = "Thủ thuật" });}
-                        <h3 class="title slim">Comments</h3>
+                        <h4 class="title slim">3 Bình luận</h4>
                         <ul class="commentlist">
                             <li>
-                                <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
-                                <div class="meta">
-                                    <span>Mike Example</span>,
-                                    <span class="time">03.11.2013, 10:45:</span>
+                                <div class="comment">
+                                    <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
+                                    <div class="meta">
+                                        <span>Mike Example</span>,
+                                        <span class="time">03.11.2013, 10:45:</span>
+                                        <span class="like-count">30 <i class="fa fa-thumbs-up"></i></span>
+                                        <span class="button-list">
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-mail-reply"></i> Trả lời</a>
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-thumbs-up"></i> Thích</a>
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-bell"></i> Báo xấu</a>
+                                        </span>
+                                    </div>
+                                    <p class="description">
+                                        Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    </p>
                                 </div>
-                                <p class="description">
-                                    Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                </p>
                                 <ul class="commentlist">
                                     <li>
-                                        <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
-                                        <div class="meta">
-                                            <span>Mike Example</span>,
-                                            <span class="time">03.11.2013, 10:45:</span>
+                                        <div class="comment">
+                                            <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
+                                            <div class="meta">
+                                                <span>Mike Example</span>,
+                                                <span class="time">03.11.2013, 10:45:</span>
+                                                <span class="like-count">30 <i class="fa fa-thumbs-up"></i></span>
+                                                <span class="button-list">
+                                                    <a href="#" class="btn btn-xs"><i class="fa fa-mail-reply"></i> Trả lời</a>
+                                                    <a href="#" class="btn btn-xs"><i class="fa fa-thumbs-up"></i> Thích</a>
+                                                    <a href="#" class="btn btn-xs"><i class="fa fa-bell"></i> Báo xấu</a>
+                                                </span>
+                                            </div>
+                                            <p class="description">
+                                                Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                            </p>
                                         </div>
-                                        <p class="description">
-                                            Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </p>
                                     </li>
                                     <li>
-                                        <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
-                                        <div class="meta">
-                                            <span>Mike Example</span>,
-                                            <span class="time">03.11.2013, 10:45:</span>
+                                        <div class="comment">
+                                            <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
+                                            <div class="meta">
+                                                <span>Mike Example</span>,
+                                                <span class="time">03.11.2013, 10:45:</span>
+                                                <span class="like-count">30 <i class="fa fa-thumbs-up"></i></span>
+                                                <span class="button-list">
+                                                    <a href="#" class="btn btn-xs"><i class="fa fa-mail-reply"></i> Trả lời</a>
+                                                    <a href="#" class="btn btn-xs"><i class="fa fa-thumbs-up"></i> Thích</a>
+                                                    <a href="#" class="btn btn-xs"><i class="fa fa-bell"></i> Báo xấu</a>
+                                                </span>
+                                            </div>
+                                            <p class="description">
+                                                Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                            </p>
                                         </div>
-                                        <p class="description">
-                                            Etiam mollis volutpat odio, id euismod justo gravida a. Aliquam erat volutpat. Phasellus faucibus venenatis lorem, vitae commodo elit pretium et. Duis rhoncus lobortis congue. Vestibulum et purus dui, vel porta lectus. Sed vulputate pulvinar adipiscing. It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </p>
                                     </li>
                                     <li>
-                                        <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
-                                        <div class="meta">
-                                            <span>Mike Example</span>,
-                                            <span class="time">03.11.2013, 10:45:</span>
+                                        <div class="comment">
+                                            <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
+                                            <div class="meta">
+                                                <span>Mike Example</span>,
+                                                <span class="time">03.11.2013, 10:45:</span>
+                                                <span class="like-count">30 <i class="fa fa-thumbs-up"></i></span>
+                                                <span class="button-list">
+                                                    <a href="#" class="btn btn-xs"><i class="fa fa-mail-reply"></i> Trả lời</a>
+                                                    <a href="#" class="btn btn-xs"><i class="fa fa-thumbs-up"></i> Thích</a>
+                                                    <a href="#" class="btn btn-xs"><i class="fa fa-bell"></i> Báo xấu</a>
+                                                </span>
+                                            </div>
+                                            <p class="description">
+                                                Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                            </p>
                                         </div>
-                                        <p class="description">
-                                            Etiam mollis volutpat odio, id euismod justo gravida a. Aliquam erat volutpat. Phasellus faucibus venenatis lorem, vitae commodo elit pretium et. Duis rhoncus lobortis congue. Vestibulum et purus dui, vel porta lectus. Sed vulputate pulvinar adipiscing. It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </p>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
-                                <div class="meta">
-                                    <span>Mike Example</span>,
-                                    <span class="time">03.11.2013, 10:45:</span>
+                                <div class="comment">
+                                    <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
+                                    <div class="meta">
+                                        <span>Mike Example</span>,
+                                        <span class="time">03.11.2013, 10:45:</span>
+                                        <span class="like-count">30 <i class="fa fa-thumbs-up"></i></span>
+                                        <span class="button-list">
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-mail-reply"></i> Trả lời</a>
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-thumbs-up"></i> Thích</a>
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-bell"></i> Báo xấu</a>
+                                        </span>
+                                    </div>
+                                    <p class="description">
+                                        Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    </p>
                                 </div>
-                                <p class="description">
-                                    Etiam mollis volutpat odio, id euismod justo gravida a. Aliquam erat volutpat. Phasellus faucibus venenatis lorem, vitae commodo elit pretium et. Duis rhoncus lobortis congue. Vestibulum et purus dui, vel porta lectus. Sed vulputate pulvinar adipiscing. It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                </p>
                             </li>
                             <li>
-                                <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
-                                <div class="meta">
-                                    <span>Mike Example</span>,
-                                    <span class="time">03.11.2013, 10:45:</span>
+                                <div class="comment">
+                                    <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
+                                    <div class="meta">
+                                        <span>Mike Example</span>,
+                                        <span class="time">03.11.2013, 10:45:</span>
+                                        <span class="like-count">30 <i class="fa fa-thumbs-up"></i></span>
+                                        <span class="button-list">
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-mail-reply"></i> Trả lời</a>
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-thumbs-up"></i> Thích</a>
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-bell"></i> Báo xấu</a>
+                                        </span>
+                                    </div>
+                                    <p class="description">
+                                        Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    </p>
                                 </div>
-                                <p class="description">
-                                    Etiam mollis volutpat odio, id euismod justo gravida a. Aliquam erat volutpat. Phasellus faucibus venenatis lorem, vitae commodo elit pretium et. Duis rhoncus lobortis congue. Vestibulum et purus dui, vel porta lectus. Sed vulputate pulvinar adipiscing. It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                </p>
                             </li>
                         </ul>
 
-                        <h3 class="title slim">Leave a Reaply</h3>
+                        <h4 class="title slim">Bình luận của bạn</h4>
 
                         <form class="comments-form">
-                            <label>Name: <span class="required">*</span></label>
                             <div class="row">
-                                <div class="col-sm-6 col-md-6">
-                                    <input class="form-control" type="text">
-                                </div>
-                            </div>
-
-                            <label>Email Adress: <span class="required">*</span></label>
-                            <div class="row">
-                                <div class="col-sm-6 col-md-6">
-                                    <input class="form-control" type="email">
-                                </div>
-                            </div>
-                            <label>Comment: </label>
-                            <div class="row">
-                                <div class="comment-box col-sm-10 col-md-10">
+                                <div class="comment-box col-sm-12 col-md-12">
                                     <textarea class="form-control"></textarea>
-                                    <i>Note: HTML is not translated!</i>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="button-set">
-                                <span class="required pull-right"><b>*</b> Required Field</span>
-                                <button class="btn btn-default">Submit</button>
+                                <button class="btn btn-default">Gửi</button>
                             </div>
                         </form>
                     </div><!-- .content -->

@@ -2,6 +2,6 @@
 {
     public enum ObjectType
     {
-        Article, Device
+        Article, Device, Comment
     }
 }
