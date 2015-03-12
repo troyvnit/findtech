@@ -12202,6 +12202,10 @@ border-bottom: 1px solid #e1e1e1;
     position: relative;
 }
 
+.blog-post .commentlist li .comment {
+    min-height: 105px;
+}
+
 .blog-post .commentlist li .description {
     padding-bottom: 15px;
 }

@@ -82,6 +82,8 @@ namespace FindTech.Web.App_Start
                 .RegisterType<IImageService, ImageService>()
                 .RegisterType<IRepositoryAsync<Comment>, Repository<Comment>>()
                 .RegisterType<ICommentService, CommentService>()
+                .RegisterType<IRepositoryAsync<Like>, Repository<Like>>()
+                .RegisterType<ILikeService, LikeService>()
                 .RegisterType<IFindTechStoredProcedures, FindTechContext>(new PerRequestLifetimeManager())
                 .RegisterType<IStoredProcedureService, StoredProcedureService>(); ;
         }

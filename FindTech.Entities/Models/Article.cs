@@ -40,6 +40,5 @@ namespace FindTech.Entities.Models
         public virtual ICollection<ContentSection> ContentSections { get; set; }
         public virtual ICollection<Device> RelatedDevices { get; set; }
         public virtual ICollection<Opinion> Opinions { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; }
     }
 }
