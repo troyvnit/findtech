@@ -164,15 +164,15 @@
                             <hr class="shadow">
                         </article><!-- .post -->
                         @{Html.RenderPartial("_MiniSliderBox", new ArticleListViewModel { Articles = articles, Title = "Thủ thuật" });}
-                        <h4 class="title slim">3 Bình luận</h4>
-                        <ul class="commentlist">
+                        <h4 class="title slim">{{comments.length}} Bình luận</h4>
+                        <ul class="commentlist" ng-repeat="comment in comments">
                             <li>
                                 <div class="comment">
                                     <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
                                     <div class="meta">
-                                        <span>Mike Example</span>,
+                                        <span>{{comment.CommentatorEmail}}</span>,
                                         <span class="time">03.11.2013, 10:45:</span>
-                                        <span class="like-count">30 <i class="fa fa-thumbs-up"></i></span>
+                                        <span class="like-count">{{comment.LikeCount}} <i class="fa fa-thumbs-up"></i></span>
                                         <span class="button-list">
                                             <a href="#" class="btn btn-xs"><i class="fa fa-mail-reply"></i> Trả lời</a>
                                             <a href="#" class="btn btn-xs"><i class="fa fa-thumbs-up"></i> Thích</a>
@@ -180,17 +180,17 @@
                                         </span>
                                     </div>
                                     <p class="description">
-                                        Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        {{comment.Content}}
                                     </p>
                                 </div>
-                                <ul class="commentlist" ng-repeat="comment in comments">
+                                <ul class="commentlist" ng-repeat="reply in comment.Replies">
                                     <li>
                                         <div class="comment">
                                             <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
                                             <div class="meta">
-                                                <span>{{comment.CommentatorEmail}}</span>,
+                                                <span>{{reply.CommentatorEmail}}</span>,
                                                 <span class="time">03.11.2013, 10:45:</span>
-                                                <span class="like-count">30 <i class="fa fa-thumbs-up"></i></span>
+                                                <span class="like-count">{{reply.LikeCount}} <i class="fa fa-thumbs-up"></i></span>
                                                 <span class="button-list">
                                                     <a href="#" class="btn btn-xs"><i class="fa fa-mail-reply"></i> Trả lời</a>
                                                     <a href="#" class="btn btn-xs"><i class="fa fa-thumbs-up"></i> Thích</a>
@@ -198,47 +198,11 @@
                                                 </span>
                                             </div>
                                             <p class="description">
-                                                {{comment.Content}}
+                                                {{reply.Content}}
                                             </p>
                                         </div>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                <div class="comment">
-                                    <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
-                                    <div class="meta">
-                                        <span>Mike Example</span>,
-                                        <span class="time">03.11.2013, 10:45:</span>
-                                        <span class="like-count">30 <i class="fa fa-thumbs-up"></i></span>
-                                        <span class="button-list">
-                                            <a href="#" class="btn btn-xs"><i class="fa fa-mail-reply"></i> Trả lời</a>
-                                            <a href="#" class="btn btn-xs"><i class="fa fa-thumbs-up"></i> Thích</a>
-                                            <a href="#" class="btn btn-xs"><i class="fa fa-bell"></i> Báo xấu</a>
-                                        </span>
-                                    </div>
-                                    <p class="description">
-                                        Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="comment">
-                                    <img class="avatar" width="84" height="84" src="img/avatar.png" alt="">
-                                    <div class="meta">
-                                        <span>Mike Example</span>,
-                                        <span class="time">03.11.2013, 10:45:</span>
-                                        <span class="like-count">30 <i class="fa fa-thumbs-up"></i></span>
-                                        <span class="button-list">
-                                            <a href="#" class="btn btn-xs"><i class="fa fa-mail-reply"></i> Trả lời</a>
-                                            <a href="#" class="btn btn-xs"><i class="fa fa-thumbs-up"></i> Thích</a>
-                                            <a href="#" class="btn btn-xs"><i class="fa fa-bell"></i> Báo xấu</a>
-                                        </span>
-                                    </div>
-                                    <p class="description">
-                                        Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus. Vestibulum adipiscing, eros quis lobortis dictum.  It enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    </p>
-                                </div>
                             </li>
                         </ul>
 

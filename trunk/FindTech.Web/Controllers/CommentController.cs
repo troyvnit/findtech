@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FindTech.Entities.Models;
+using FindTech.Entities.Models.Enums;
 using FindTech.Services;
 using FindTech.Web.Models;
 using Newtonsoft.Json;
@@ -15,11 +16,13 @@ namespace FindTech.Web.Controllers
     public class CommentController : Controller
     {
         private ICommentService commentService { get; set; }
+        private ILikeService likeService { get; set; }
         private IUnitOfWorkAsync unitOfWork { get; set; }
 
-        public CommentController(ICommentService commentService, IUnitOfWorkAsync unitOfWork)
+        public CommentController(ICommentService commentService, ILikeService likeService, IUnitOfWorkAsync unitOfWork)
         {
             this.commentService = commentService;
+            this.likeService = likeService;
             this.unitOfWork = unitOfWork;
         }
         // GET: Comment
@@ -28,36 +31,22 @@ namespace FindTech.Web.Controllers
             return View();
         }
 
-        public ActionResult GetComments(string objectType, string objectId)
+        public ActionResult GetComments(ObjectType objectType, int objectId)
         {
-            var comments = new List<CommentModel>()
-            {
-                new CommentModel
-                {
-                    CommentatorEmail = "troy@ifind.vn",
-                    Content = "Nhờ có panel LCD chất lượng cao nên cả 2 đều cho góc nhìn rộng rất tốt đặc biệt là Iphone 6. Màn hình của Sony có chế độ siêu nhạy cho phép bạn có thể sử dụng ngay cả khi đang mang găng tay, một điều khá tiện dụng với người dùng nhất là khi mùa đông đang đến."
-                },
-                new CommentModel
-                {
-                    CommentatorEmail = "troy@ifind.vn",
-                    Content = "Nhờ có panel LCD chất lượng cao nên cả 2 đều cho góc nhìn rộng rất tốt đặc biệt là Iphone 6. Màn hình của Sony có chế độ siêu nhạy cho phép bạn có thể sử dụng ngay cả khi đang mang găng tay, một điều khá tiện dụng với người dùng nhất là khi mùa đông đang đến."
-                },
-                new CommentModel
-                {
-                    CommentatorEmail = "troy@ifind.vn",
-                    Content = "Nhờ có panel LCD chất lượng cao nên cả 2 đều cho góc nhìn rộng rất tốt đặc biệt là Iphone 6. Màn hình của Sony có chế độ siêu nhạy cho phép bạn có thể sử dụng ngay cả khi đang mang găng tay, một điều khá tiện dụng với người dùng nhất là khi mùa đông đang đến."
-                },
-                new CommentModel
-                {
-                    CommentatorEmail = "troy@ifind.vn",
-                    Content = "Nhờ có panel LCD chất lượng cao nên cả 2 đều cho góc nhìn rộng rất tốt đặc biệt là Iphone 6. Màn hình của Sony có chế độ siêu nhạy cho phép bạn có thể sử dụng ngay cả khi đang mang găng tay, một điều khá tiện dụng với người dùng nhất là khi mùa đông đang đến."
-                },
-                new CommentModel
-                {
-                    CommentatorEmail = "troy@ifind.vn",
-                    Content = "Nhờ có panel LCD chất lượng cao nên cả 2 đều cho góc nhìn rộng rất tốt đặc biệt là Iphone 6. Màn hình của Sony có chế độ siêu nhạy cho phép bạn có thể sử dụng ngay cả khi đang mang găng tay, một điều khá tiện dụng với người dùng nhất là khi mùa đông đang đến."
-                }
-            };
+            var comments =
+                commentService.GetComments(objectId, objectType).ToList().Select(a => new CommentModel
+                    {
+                        CommentId = a.CommentId,
+                        CommentatorEmail = a.CommentatorEmail,
+                        Content = a.Content,
+                        CreatedDate = a.CreatedDate,
+                        LikeCount = likeService.GetLikeCount(a.CommentId, ObjectType.Comment),
+                        ObjectId = a.ObjectId,
+                        ObjectType = a.ObjectType,
+                        Replies =
+                            commentService.GetReplies(a.CommentId)
+                                .Select(Mapper.Map<CommentModel>)
+                    });
 
             return Json(comments, JsonRequestBehavior.AllowGet);
         }
